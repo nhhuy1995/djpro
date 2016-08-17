@@ -1,0 +1,99 @@
+<div id="content">
+	<div id="left-listen-column">
+		<div id="search-tool-block" class="column-bit">
+			<div class="column-title tool-cat">
+				<i class="icon-search"></i> Tìm kiếm Google với từ khóa:
+				<h2 class="h2">
+					<strong></strong>
+				</h2>
+			</div>
+			<div class="column-content">
+				<style>
+					.gsc-control-cse, .cse .gsc-control-cse, .gsc-control-cse {
+						background: 0;
+						border: 0
+					}
+					
+					.gsc-above-wrapper-area, .gsc-refinementsArea {
+						border: 0
+					}
+					
+					.cse .gsc-results, .gsc-results {
+						margin-top: 0
+					}
+					
+					.gsc-webResult.gsc-result, .gsc-results .gsc-imageResult {
+						background: 0
+					}
+					
+					.gsc-webResult.gsc-result:hover, .gsc-imageResult:hover {
+						background: #252525;
+						border-left: 1px solid #444
+					}
+					
+					.cse .gsc-results, .gsc-results {
+						background: #222
+					}
+					
+					.cse .gsc-webResult.gsc-result, .gsc-webResult.gsc-result,
+						.gsc-imageResult-classic, .gsc-imageResult-column {
+						border-left: 1px solid #333
+					}
+					
+					.gs-webResult .gs-snippet, .gs-imageResult .gs-snippet,
+						.gs-fileFormatType {
+						color: #555;
+						font-size: 11px
+					}
+					
+					.gs-webResult div.gs-visibleUrl, .gs-imageResult div.gs-visibleUrl {
+						color: #777;
+						font-size: 11px
+					}
+					
+					.gsc-control-cse .gs-spelling, .gsc-control-cse .gs-result .gs-title,
+						.gsc-control-cse .gs-result .gs-title * {
+						font-size: 15px !important
+					}
+					
+					.gsc-control-cse .gs-result .gs-title, .gsc-control-cse .gs-result .gs-title *:hover
+						{
+						color: #388f38 !important
+					}
+					
+					.gsc-results .gsc-cursor-box .gsc-cursor-page {
+						background: none !important;
+						text-decoration: none !important
+					}
+					
+					.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+						background: #444 !important;
+						padding: 3px
+					}
+				</style>
+				<script>
+                    (function() {
+                        var cx = '002960563011244959048:k0r5xxhna3m';
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                                '//www.google.com/cse/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                    })();
+                </script>
+				<gcse:search></gcse:search>
+
+			</div>
+		</div>
+
+		<div id="search-tool-block" class="column-bit">
+			<div class="column-content">Chức năng tìm kiếm bằng hệ thống đang
+				được bảo trì ! Trong thời gian đó bạn hãy sử dụng khung tìm kiếm
+				bằng Google ở trên nhé !</div>
+		</div>
+	</div>
+    <?php $this->partial("partial/rightSlideBar", array("type" => "audio")) ?>
+    <div class="clear"></div>
+</div>

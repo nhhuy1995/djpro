@@ -1,0 +1,25 @@
+<?php 
+	if (!isset($mediaId)){
+	}
+	
+	if (!isset($type)){
+		$type = 'audio';
+	}
+?>
+<div id="shareCode" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ẩn</button>
+        <h3 id="myModalLabel">Chèn vào Web, Forum</h3>
+    </div>
+    <div class="modal-body">
+        <p>
+        <p>Click vào khung mã tương ứng rồi bấm Ctrl + C để copy Code:</p>
+        <div><span>Đường dẫn:</span> <input class="embed-input" type="text" value="<?php echo Helper::makeShortLink($mediaId, $type)?>" readonly="readonly" onclick="this.select();" /></div>
+        <div><span>Nhúng web:</span> <input class="embed-input" type="text" value="&lt;embed src=&quot;<?php echo Helper::makeShortEmbedLink($mediaId, $type); ?>&quot; width=&quot;640&quot; height=&quot;390&quot; loop=&quot;true&quot; quality=&quot;high&quot; pluginspage=&quot;http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash&quot; /&gt;" readonly="readonly" onclick="this.select();" /></div>
+        <div><span>Nhúng forum:</span> <input class="embed-input" type="text" value="[FLASH]<?php echo Helper::makeShortEmbedLink($mediaId, $type); ?>[/FLASH]" readonly="readonly" onclick="this.select();" /></div>
+        </p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Đóng lại</button>
+    </div>
+</div>

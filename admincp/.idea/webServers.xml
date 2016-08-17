@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9eed7616-abe5-4106-9432-409f83bb0945" name="djpro_cms" url="http://108.61.250.47">
+        <fileTransfer host="108.61.250.47" port="21" rootFolder="/home/djcms/public_html" password="dfcedfc0dfc9dfc7dfd9dfeadf8e" username="djcms">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

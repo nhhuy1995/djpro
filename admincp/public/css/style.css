@@ -1,0 +1,74 @@
+ul {
+    list-style: outside none none;
+}
+
+.wrap-search {
+    float: right;
+}
+
+.btnsubmit {
+    padding: 20px 100px;
+}
+
+/* css getcategory*/
+.suggestion {
+    background-color: #fff;
+    box-shadow: 0 2px 13px 0 rgba(50, 50, 50, 0.24);
+    display: none;
+    margin-top: 35px;
+    padding: 10px;
+    position: absolute;
+    width: 450px;
+    z-index: 10;
+    margin-top: -0px;
+}
+
+.suggestion .closebtn {
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    right: 2px;
+    top: -4px;
+}
+
+ul, li {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+.suggestion ul li {
+    cursor: pointer;
+    padding: 4px 0;
+}
+
+#wrap-main table thead tr th {
+    font-weight: bold;
+}
+
+.edit_score {
+    font-size: 14px;
+    color: #0000ff;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+/*.fillter_category{*/
+/*margin-left: 30px;*/
+/*}*/
+
+.pop-up-edit-item {
+    position: absolute;
+    border: 2px solid #ccc;
+    background: #fff;
+    right: 25px;
+    padding: 20px;
+    z-index: 100;
+    max-width: 450px;
+}
+
+.mg-bt-30 {
+    margin-bottom: 30px;
+}

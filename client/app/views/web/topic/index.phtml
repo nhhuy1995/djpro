@@ -1,0 +1,39 @@
+<?php $this->partial("partial/breadCrumbs", array("categorys" => $category)) ?>
+<div id="left-listen-column">
+    <div class="column-bit">
+        <div class="column-title music-cat">Chủ đề chọn lọc</div>
+        <div class="column-content">
+            <div id="list-news-cat">
+                <?php if (count($topicobj)):?>
+                    <?php foreach ($topicobj as $topic):?>
+                    <?php 
+                    	$id = $topic['_id'];
+                    	$topicName = $topic['name'];
+                    ?>
+                    <div class="news-bit topic-bit">
+                        <div class="news-cover">
+                            <div class="img-cover">
+                                <a title="<?php echo $topicName?>" href="<?php echo Helper::makeTopicLink($topicName, $id)?>">
+                                <img class="img162" width="162" height="162" alt="<?php echo $topicName;?>" src="<?php echo $topic['priavatar']; ?>"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="news-info">
+                            <h3 class="news-name">
+                                <a title="<?php echo $topicName?>" href="<?php echo Helper::makeTopicLink($topicName, $id)?>"><?php echo $topicName?></a>
+                            </h3>
+                            <div class="news-profile">
+                                <span class="news-view"><i class="fa fa-headphones"></i> <?php echo $topic['view']; ?> lượt</span>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach;?>
+                <?php endif;?>
+            </div>
+            <div class="clear"></div>
+            <?php $this->partial("partial/paging", array("totalNumber" => $mediaCount, "pageTotal" => $pageTotal)) ?>
+        </div>
+
+    </div>
+</div>
+<?php $this->partial("partial/rightSlideBar") ?>

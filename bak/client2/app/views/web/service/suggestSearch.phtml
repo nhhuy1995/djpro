@@ -1,0 +1,100 @@
+<div id="search-suggest">
+    <div class="vietcom-suggest">
+        <div id="wrap-suggest">
+            <!-- noresult music -->
+            <?php if (strlen($alertContent)):?>
+                <?php echo $alertContent; ?>
+            <?php else :?>
+            <?php if (count($audioList)):?>
+            <div class="sg_audio">
+                <div class="sg_l">Music</div>
+                <div class="sg_r">
+                    <ul>
+                        <?php foreach ($audioList as $value): ?>
+                        <?php $name = $value->name; ?>
+                        <li>
+                            <div class="sg_info">
+                                <a href="<?php echo Helper::urlGenerate($name, $value->_id, "audio"); ?>" class="sg_name" title="<?php echo $name; ?>"><?php echo $name; ?></a>
+                            </div>
+                        </li>
+                        <?php endforeach;?>
+                    </ul>
+                </div>
+            </div>
+            <?php endif;?>
+
+            <?php if (count($videoList)):?>
+            <div class="sg_video">
+                <div class="sg_l">Video</div>
+                <div class="sg_r">
+                    <ul>
+                        <?php foreach ($videoList as $value): ?>
+                        <?php $name = $value->name; ?>
+                        <li>
+                            <div class="sg_thumb">
+                                <a href="<?php echo Helper::makeVideoLink($name, $value->_id); ?>" title="<?php echo $name; ?>">
+                                    <img alt="<?php echo $name; ?>" src="<?php echo $value->priavatar; ?>">
+                                </a>
+                            </div>
+                            <div class="sg_info">
+                                <a href="<?php echo Helper::makeVideoLink($name, $value->_id); ?>" class="sg_name" title="<?php echo $name; ?>"><?php echo $name; ?></a>
+                            </div>
+                        </li>
+                        <?php endforeach;?>
+                    </ul>
+                </div>
+            </div>
+            <?php endif;?>
+            
+            <!-- endnoresult video -->
+            
+            <?php if (count($albumList)):?>
+            <div class="sg_album">
+                <div class="sg_l">Album</div>
+                <div class="sg_r">
+                    <ul>
+                        <?php foreach ($albumList as $value): ?>
+                        <?php $name = $value->name; ?>
+                        <li>
+                            <div class="sg_thumb">
+                                <a href="<?php echo Helper::urlGenerate($name, $value->_id, "album"); ?>" title="<?php echo $name; ?>">
+                                    <img alt="<?php echo $name; ?>" src="<?php echo $value->priavatar; ?>">
+                                </a>
+                            </div>
+                            <div class="sg_info">
+                                <a href="<?php echo Helper::urlGenerate($name, $value->_id, "album"); ?>" class="sg_name" title="<?php echo $name; ?>"><?php echo $name; ?></a>
+                            </div>
+                        </li>
+                        <?php endforeach;?>
+                    </ul>
+                </div>
+            </div>
+            <?php endif;?>
+            
+            <!-- noresult artist -->
+            <?php if (count($singerList)):?>
+            <div class="sg_album">
+                <div class="sg_l">Artist</div>
+                <div class="sg_r">
+                    <ul>
+                        <?php foreach ($singerList as $value): ?>
+                        <?php $name = $value->name; ?>
+                        <li>
+                            <div class="sg_thumb">
+                                <a href="<?php echo Helper::makeUserLink($name, $value->_id); ?>" title="nhacdj">
+                                    <img alt="<?php echo $name; ?>" src="<?php echo $value->priavatar; ?>">
+                                </a>
+                            </div>
+                            <div class="sg_info">
+                                <a href="<?php echo Helper::makeUserLink($name, $value->_id); ?>" class="sg_name" title="<?php echo $name; ?>"><?php echo $name; ?></a>
+                            </div>
+                        </li>
+                        <?php endforeach;?>
+                    </ul>
+                </div>
+            </div>
+            <?php endif;?>
+            <?php endif;?>
+        </div>
+    </div>
+</div>

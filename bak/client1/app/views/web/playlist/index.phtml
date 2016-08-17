@@ -1,0 +1,155 @@
+<?php $this->partial("partial/breadCrumbs", array("categorys" => $category)) ?>
+<div id="left-listen-column">
+    <div class="column-bit">
+        <div class="column-title music-cat">Playlist chọn lọc</div>
+        <div class="column-content">
+            <div class="break-list-line"></div>
+            <div id="list-news-cat">
+                <?php foreach ($playList as $value):?>
+                <?php 
+                	$name = $value->name;
+                	$playListUrl = Helper::urlGenerate($name, $value->_id, $type);
+                ?>
+                <div class="news-bit" id="playlist-<?php echo $value->_id; ?>">
+                    <div class="news-cover">
+                        <div class="img-cover">
+                            <a title="<?php echo $name; ?>" href="<?php echo $playListUrl; ?>">
+                            <img class="img162" width="162" height="162" alt="<?php echo $name; ?>" src="<?php echo $value->priavatar; ?>"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="news-info">
+                        <h3 class="news-name">
+                            <a title="<?php echo $name; ?>" href="<?php echo $playListUrl; ?>"><?php echo $name; ?></a>
+                        </h3>
+
+                        <div class="news-profile">
+                            <span class="news-view"><i class="fa fa-eye"></i> <?php echo $value->view; ?></span>
+                            <span class="news-date"><i class="fa fa-calendar"></i><?php echo date("d-m-Y", $value->datecreate);?> </span>
+                            <span class="news-like"><i class="fa fa-thumbs-up"></i> <?php echo $value->liked; ?></span>
+                        </div>
+                        <div class="news-desc"><?php echo $value->description; ?></div>
+                        <?php if ($userId == $value->usercreate):?>
+                            <div>
+                                <a onclick="editPlaylist(<?php echo $value->_id; ?>)" href="javascript:;" title="" rel="tooltip" data-original-title="Sửa thông tin của bài hát trong Playlist">
+                                    <i class="icon-edit"></i> Sửa
+                                </a>
+                                -
+                                <a onclick="removePlaylist(<?php echo $value->_id; ?>)" href="javascript:;" title="" rel="tooltip" data-original-title="Xóa playlist này">
+                                    <i class="icon-trash"></i> Xóa
+                                </a>
+                            </div>
+                        <?php endif;?>
+                    </div>
+                    <br class="clear"/>
+                </div>
+                <?php endforeach;?>
+            </div>
+            <div class="clear"></div>
+            <div class="break-list-line1"></div>
+
+            <?php $this->partial("partial/paging", array("totalNumber" => $mediaCount, "pageTotal" => $pageTotal)) ?>
+        </div>
+
+    </div>
+    <div id="playlistIdInEdit" data-plid=""></div>
+</div>
+<div aria-hidden="false" aria-labelledby="superComTitle" role="dialog" tabindex="-1" class="modal hide fade in" id="tuoigiAlert" style="display: none;">
+    <div class="modal-header"><button aria-hidden="true" data-dismiss="modal" class="close" type="button">Ẩn</button><h3 id="superComTitle">Chỉnh sửa Playlist</h3></div>
+    <div class="modal-body"><div id="tuoigiAlertContent"><style>
+        #list-playlist-article{
+            margin-left:15px;
+            border:1px solid #d4d4d4;
+            border-bottom:0;
+            max-height: 200px;
+            overflow: auto;
+            position: relative;
+            margin-top:10px;
+        }
+
+        #list-playlist-article li{
+            border-bottom:1px solid #d4d4d4;
+            border-top:1px solid #fff;
+            background:whitesmoke;
+            padding:5px;
+            cursor:row-resize;
+        }
+
+        #list-playlist-article li .atpl-title{
+            width:430px;
+            height:20px;
+            overflow: hidden;
+            display: inline-block;
+        }
+    </style>
+
+<form action="/service/preEditPlaylist" method="post" id="edit-playlist-form" class="form-horizontal">
+   <div class="control-group">
+       <label for="playlistName" class="control-label">Tên Playlist:</label>
+       <div class="controls">
+           <input type="text" data-prompt-position="bottomLeft" ng-model="playlistName" id="playlistName" name="playlistName" style="width:320px;" required="true">
+       </div>
+   </div>
+   <div class="control-group">
+       <label for="playlistAvatar" class="control-label">Ảnh đại diện Playlist:</label>
+       <div class="controls">
+           <input type="text" onclick="this.select();" ng-model="priavatar" placeholder="Ảnh đại diện Playlist" id="playlistAvatar" name="playlistAvatar" style="width:320px;">
+       </div>
+   </div>
+   <div class="control-group">
+       <label for="playlistDesc" class="control-label">Mô tả Playlist:</label>
+       <div class="controls">
+           <textarea data-prompt-position="bottomLeft" placeholder="Mô tả Playlist" id="playlistDesc" name="description" ng-model="description" style="width:320px; height:80px"></textarea>
+       </div>
+   </div>
+   <div class="control-group">
+   <b>Sắp xếp bài hát trong playlist:</b>
+       <ul id="list-playlist-article" class="ui-sortable" >
+           <li ng-repeat="song in listsong">
+               <span class="atpl-title">{{song.name}}</span>
+               <a class="delete right" href="javascript:void(0)" ng-click="deleteSong($index)" >
+                   <i class="icon-trash"></i> Xóa</a>
+               <input type="hidden" value="{{song._id}}" name="listAt[]">
+           </li>
+       </ul>
+   </div>
+
+   <div class="control-group">
+       <div class="controls">
+           <button type="submit" class="btn btn-info" id="acceptEditPlaylist" name="acceptEditPlaylist"><i class="icon-pencil"></i> Cập nhật</button>
+       </div>
+   </div>
+
+   <input type="hidden" value="editplaylist" name="act">
+   <input type="hidden" value="{{playlistId}}" name="playlistId">
+   <input type="hidden" value='<?php echo Helper::currentPageURL(); ?>' name="refUrl">
+   <input type="hidden" value="C5UecSuybFiVj5k" name="tokenkey">
+</form>
+
+</div></div>
+    <div class="modal-footer"><button aria-hidden="true" data-dismiss="modal" class="btn btn-primary">Tắt đi</button></div>
+</div>
+<?php $this->partial("partial/rightSlideBar") ?>
+<script>
+    function editPlaylist(plid) {
+        $("#playlistIdInEdit").attr('data-plid', plid);
+        angular.element($("#edit-playlist")).scope().loadPlaylistDetail();
+    }
+
+    function removePlaylist(plid) {
+        var c = confirm('Bạn chắc chắn muốn xóa Playlist này ?');
+        if (c == true) {
+            $.post('/service/deletePlaylist', {act: 'deleteplaylist', plid: plid}, function (re) {
+                if (re.status == 1) $('#playlist-' + plid).fadeOut(1500);
+                notifiBL(re.message, re.type);
+                console.log(re.data);
+                return false;
+            });
+        } else return false;
+    }
+    function loadModa1(title, content) {
+        $("#tuoigiAlert #superComTitle").html(title);
+        $("#tuoigiAlert #tuoigiAlertContent").html(content);
+        $("#tuoigiAlert").modal("show");
+    }
+</script>

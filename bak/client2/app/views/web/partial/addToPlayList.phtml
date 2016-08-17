@@ -1,0 +1,32 @@
+<div id="my-playlist-box" style="display: none;">
+    <div id="addPlaylist_at_id" data-atid=""></div>
+    <div id="playlist-list-title">
+        Chọn playlist muốn thêm
+        <a href="javascript:void(0);" id="closeAddPlaylist">(Đóng lại)</a>
+    </div>
+    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: auto;">
+        <div id="playlist-list" style="overflow: hidden; width: auto; height: auto;">
+        </div>
+        <div class="slimScrollBar ui-draggable"
+             style="background: none repeat scroll 0% 0% rgb(119, 119, 119); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 64px;"></div>
+        <div class="slimScrollRail"
+             style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: none repeat scroll 0% 0% rgb(68, 68, 68); opacity: 0.2; z-index: 90; right: 1px;"></div>
+    </div>
+    <div id="add-new-playlist">
+        <input type="text" name="playlist_name" placeholder="Thêm playlist mới. Gõ tên vào đây..."
+               id="add-playlist-name">
+        <a href="javascript:void(0);" class="btn btn-success" id="add-new-playlist-btn"
+           onclick="addNewPlaylist()">Thêm</a>
+    </div>
+    <div id="my-playlist-list"><a href="./playlist-cua-toi.html" title="Xem danh sÃ¡ch Playlist cá»§a báº¡n">XEM DANH SÁCH PLAYLIST CỦA BẠN</a></div>
+</div>
+
+<script>
+    $('#my-playlist-box #playlist-list').slimScroll(
+            { height: 'auto', railVisible: true, railColor: '#444', color: '#777' }
+    );
+    $('#closeAddPlaylist').click(function () {
+        $('#background-popup').hide();
+        $('#my-playlist-box').hide();
+    });
+</script>

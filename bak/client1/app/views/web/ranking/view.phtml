@@ -1,0 +1,46 @@
+<div id="content">
+<?php $this->partial("partial/breadCrumbs", array("categorys" => $category)) ?>
+<div id="left-listen-column">    
+    <div class="column-bit">
+        <div class="column-title music-cat">Bảng xếp hạng nhạc sàn</div>
+        <div class="column-content">
+            <div class="select-charts center">
+                <p>
+                    <a title="Nhạc sàn nghe nhiều nhất" href="bang-xep-hang-audio-w" class="btn btn-mini <?php if ($type == 'audio'):?>btn-success<?php else :?>btn-default<?php endif;?>"><i class="fa fa-music"></i> Nhạc</a>
+                    <a title="Video nhạc sàn xem nhiều nhất" href="bang-xep-hang-video-w" class="btn btn-mini <?php if ($type == 'video'):?>btn-success<?php else :?>btn-default<?php endif;?>"><i class="fa fa-film"></i> Video</a>
+                </p>
+                <p>
+                    <a title="Nhạc sàn nghe nhiều nhất trong tuần" href="bang-xep-hang-<?php echo $type; ?>-w" class='btn btn-mini <?php if ($range == 'w'):?> btn-warning <?php endif;?>'><?php if ($range == 'w'):?><i class="fa fa-check"></i><?php endif;?> Tuần</a>
+                    <a title="Nhạc sàn nghe nhiều nhất trong tháng" href="bang-xep-hang-<?php echo $type; ?>-m" class='btn btn-mini <?php if ($range == 'm'):?> btn-warning <?php endif;?>'><?php if ($range == 'm'):?><i class="fa fa-check"></i><?php endif;?> Tháng</a>
+                    <a title="Nhạc sàn nghe nhiều nhất trong năm" href="bang-xep-hang-<?php echo $type; ?>-y" class='btn btn-mini <?php if ($range == 'y'):?> btn-warning <?php endif;?>'><?php if ($range == 'y'):?><i class="fa fa-check"></i><?php endif;?> Năm</a>
+                </p>
+            </div>
+
+            <div class="charts-list <?php if ($type == 'video'):?>video-charts<?php endif;?> clearfix">
+                <?php if (count($mediaList)):?>
+                <?php foreach ($mediaList as $key => $media):?>
+                <?php 
+                	$mediaUrl = Helper::urlGenerate($media['name'], $media['_id'], $type);
+                ?>
+                <div class="charts-bit">
+                    <div class="charts-num no<?php echo $key + 1; ?>"><span><?php echo $key + 1; ?></span></div>
+                    <div class="charts-info">
+                        <a href="<?php echo $media['intenetlink']; ?>" title="<?php echo $media['name']; ?>"><img src="<?php echo $type == 'video' ? $media['priavatar'] : $media['cAvatar']; ?>#" class="charts-thumb" alt="Charts Thumb" /></a>
+                        <div>
+                            <h3><a href="<?php echo $media['intenetlink']; ?>"  title="<?php echo $media['name']; ?>"><?php echo $media['name']; ?></a></h3>
+                            <p><i class="fa fa-user"></i> <a href="<?php echo $media['userlink']; ?>"><?php echo $media['mediacreateby']; ?></a> <span>/</span> <i class="fa fa-headphones"></i> <?php echo $media['view']; ?></p>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach;?>
+                <?php endif;?>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<?php $this->partial("partial/rightSlideBar") ?>
+</div>
+
+<div class="clear"></div>

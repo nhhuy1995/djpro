@@ -1,0 +1,11 @@
+<div class="userinfo">
+    <p><img src="<?php echo strlen($userData['priavatar']) <= 0 ? "/wap/images/01.png" : $userData['priavatar']; ?>" class="imgavatar_big" /></p>
+</div>
+<div>
+<p>Họ và tên: <?php echo $userData['name']; ?></p>
+<p>Tên đăng nhập : <?php echo $userData['username']; ?></p>
+<p>Ngày sinh: <?php echo date("d-m-Y", $userData['dob']); ?></p>
+<p><a href="<?php echo $userPostedLink; ?>">Xem chi tiết các tác phẩm đã đăng</a></p>
+<p><a href="/user/changePassword">Đổi mật khẩu</a></p>
+<p style="margin-top: 40px;text-align: center;"><a class="btn btn-danger" href="/user/logout">Đăng xuất</a></p>
+</div>

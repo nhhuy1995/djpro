@@ -1,0 +1,721 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Dj.pro.vn</title> 
+    <link rel="stylesheet" href="skins/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="skins/responsive.css" type="text/css" media="all">
+    <link rel="stylesheet" href="skins/font-awesome.css" type="text/css" media="all">
+    <link rel="stylesheet" href="skins/login.css" />
+    
+    
+    
+    <link rel="stylesheet" href="skins/update.css" />
+	 
+    <script type="text/javascript" src="js/jquery.min.js"></script>  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--> 
+    
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>     
+ 
+    <!-- Start js-scroller-->
+	<script type="text/javascript" src="js/jquery.nanoscroller.js"></script>
+    <script type="text/javascript">
+        $(function(){
+        
+          $('.nano').nanoScroller({
+            preventPageScrolling: true
+          });
+         
+        });
+    </script> 
+    
+	<script type="text/javascript">
+		$(document).ready(function() {
+		 $(".accordion-desc").fadeOut(0);
+		 $(".accordion").click(function() {
+			  $(".accordion-desc").not($(this).next()).slideUp('fast');
+			  $(this).next().slideToggle(400);
+		 });
+	});
+		
+	</script>
+	 
+</head>
+
+<body>
+
+<header id="header"> 
+   
+    <section class="bg">
+        <div class="navbar"> 
+            <div class="header-top">
+              <div class="container">
+                 <div class="row">
+                   <div class="col-md-3 col-sm-3"><h1 class="logo">DJ.PRO.VN</h1></div>
+                   <div class="col-md-5 col-sm-4"> 
+                      <form class="search" method="post" action="" >
+                             <input type="text" name="q" placeholder="--- Nhập từ khóa ---" />
+                            <a href="" onclick=""><i class="fa fa-search"></i></a>
+                         </form>
+                      </div>  
+                   <div class="col-md-4 col-sm-5"> 
+                       
+                       <div class="col-mobile">
+                            <ul class="navuser" style="float:left">
+                                <li class="dropdown">
+                                  <a href="#" style="position:relative;" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i>
+								  <span class="tmn-counts">9</span>Thông báo</a>
+                                  <ul class="dropdown-menu" style=" width:200px">
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Thông báo từ ban quản trị</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Thông báo từ ban quản trị</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Thông báo từ ban quản trị</a></li> 
+                                  </ul>
+                                </li>
+                            </ul>
+                            
+                       </div>
+                   </div>
+                </div>     
+              </div>       
+            </div><!--End-header-top-->
+               
+               
+            <div class="navbar-header">
+                <div class="container"> 
+                  <button type="button" class="navbar-toggle btn responsive-menu collapsed" data-toggle="collapse" data-target=".navbar-collapse"> 
+                     <span class="sr-only">menu</span>
+                  </button>
+                   
+                </div><!-- /.container -->
+            </div><!-- /.navbar-header -->
+   
+        </div><!-- /.navbar-collapse -->   
+    </section>
+    
+</header>
+ 
+ 
+ <div class="container">
+    <div class="row">
+		<ul class="media-func">
+			<li><i class="fa fa-plus"></i> <a href="#" data-toggle="modal" data-target="#add-playlist">Thêm vào playlist</a></li> 
+			<li><i class="fa fa-thumbs-up"></i> <a href="#" data-toggle="modal" data-target="#user-like">xem tổng số người thích or không thích</a></li>
+			<li><i class="fa fa-share-alt"></i> <a href="#" data-toggle="modal" data-target="#share-popup">Chia sẻ</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="container">   
+    <div class="row">
+	    <div class="td_heading"><h2><a href="#">Hỏi đáp</a><i class="fa fa-angle-right"></i></h2></div>
+		<div class="accordion">
+			 <a href="#"><h4>1. Dot TK có một cơ sở dữ liệu WHOIS?</h4><i class="fa fa-question"></i></a>
+		</div>
+		<div class="accordion-desc">
+			 <p>Đúng vậy. Thông tin WHOIS hiện hành cho tất cả các tên miền. Tuy nhiên, nó chỉ cung cấp thông tin cá nhân cho những tên miền TRẢ TIỀN. Thông tin cá nhân của những người sử dụng những tên miền miễn phí được bảo vệ theo như điều khoản về sự riêng tư cá nhân của Dot TK (Privacy Policy), vì vậy thông tin cá nhân của những tên miền đó sẽ không được hiện ra.<p>
+		</div>
+		<div class="accordion">
+			 <a href="#"><h4>2. Sự riêng tư cá nhân được đảm bảo thế nào ở Dot TK?</h4><i class="fa fa-question"></i></a>
+		</div>
+		<div class="accordion-desc"> 
+			 <p>Bạn có thể tin rằng riêng tư của bạn được bảo vệ với sự tôn trọng tuyệt đối. Bạn có thể xem điều khoản của chúng tôi Điều khoản bảo vệ sự riêng tư cá nhân của Dot TK.<p>
+		</div>
+		<div class="accordion">
+			 <a href="#"><h4>3. Các cách thức thanh toán khác?</h4><i class="fa fa-question"></i></a>
+		</div>
+		<div class="accordion-desc">
+			 <p>Hiện tại bạn có thể thanh toán bằng các loại thẻ tín dụng (VISA, MasterCard, American Express, Discovery và JCB), bằng PayPal và chuyển khoản ngân hàng. Những người sống tại Anh có thể thanh toán bằng cheque.<p>
+		</div>
+		<div class="accordion">
+			 <a href="#"><h4>4. Vì sao thẻ tín dụng của tôi bị từ chối trong quá trình đăng ký?</h4><i class="fa fa-question"></i></a>
+		</div>
+		<div class="accordion-desc"> 
+			 <p>Thông tin về lí do vì sao thẻ tín dụng của bạn bị từ chối, xin vui lòng liên hệ với ngân hàng hoặc nhà cung cấp thẻ tín dụng của bạn. Trong lúc đó, chúng tôi khuyên bạn nên thử sử dụng một thẻ khác để đăng ký tên miền. Nếu lỗi vẫn xảy ra, xin bạn vui lòng liên hệ với chúng tôi qua trang web hỗ trợ của Dot TK.<p>
+		</div>
+			
+    </div><!-- end of container -->
+</div>  
+
+<div class="container">   
+    <div class="row">
+	    <div class="td_heading"><h2><a href="#">Nhận tin nhắn từ ban quản trị</a><i class="fa fa-angle-right"></i></h2></div>
+        
+        <div class="message-list" id="message-list">
+            <!-- #section:pages/inbox.message-list.item -->
+            <div class="message-item message-unread">
+                <label class="inline">
+                    <input type="checkbox" class="ace">
+                    <span class="lbl"></span>
+                </label>
+    
+                <i class="message-star ace-icon fa fa-star orange2"></i>
+                <span class="sender" title="Alex John Red Smith">Alex John Red Smith </span>
+                <span class="func"><a href="#">Xóa</a></span>
+                <span class="func"><a href="#">Xem</a></span>
+                <span class="time">1:33 pm</span>
+                <span class="attachment">
+                    <i class="ace-icon fa fa-paperclip"></i>
+                </span>
+                <span class="summary">
+                    <span class="text">
+                        Click to open this message
+                    </span>
+                </span>
+            </div>
+    
+            <!-- /section:pages/inbox.message-list.item -->
+    
+            <!-- #section:pages/inbox.message-list.item -->
+            <div class="message-item message-unread">
+                <label class="inline">
+                    <input type="checkbox" class="ace">
+                    <span class="lbl"></span>
+                </label>
+    
+                <i class="message-star ace-icon fa fa-star-o light-grey"></i>
+    
+                <span class="sender" title="John Doe">
+                    John Doe
+                    <span class="light-grey">(4)</span>
+                </span>
+                <span class="func"><a href="#">Xóa</a></span>
+                <span class="func"><a href="#">Xem</a></span>
+                <span class="time">7:15 pm</span>
+    
+                <span class="attachment">
+                    <i class="ace-icon fa fa-paperclip"></i>
+                </span>
+    
+                <span class="summary">
+                    <span class="badge badge-pink mail-tag"></span>
+                    <span class="text">
+                        Clik to open this message right here
+                    </span>
+                </span>
+            </div>
+    
+            <!-- /section:pages/inbox.message-list.item -->
+    
+            <!-- #section:pages/inbox.message-list.item -->
+            <div class="message-item">
+                <label class="inline">
+                    <input type="checkbox" class="ace">
+                    <span class="lbl"></span>
+                </label>
+    
+                <i class="message-star ace-icon fa fa-star-o light-grey"></i>
+                <span class="sender" title="Philip Markov">Philip Markov </span>
+                <span class="func"><a href="#">Xóa</a></span>
+                <span class="func"><a href="#">Xem</a></span>
+                <span class="time">10:15 am</span>
+    
+                <span class="attachment">
+                    <i class="ace-icon fa fa-paperclip"></i>
+                </span>
+    
+                <span class="summary">
+                    <span class="message-flags">
+                        <i class="ace-icon fa fa-reply light-grey"></i>
+                    </span>
+                    <span class="text">
+                        Photo booth beard raw denim letterpress vegan
+                    </span>
+                </span>
+            </div>
+    
+            <!-- /section:pages/inbox.message-list.item -->
+     
+            <!-- #section:pages/inbox.message-list.item -->
+            <div class="message-item">
+                <label class="inline">
+                    <input type="checkbox" class="ace">
+                    <span class="lbl"></span>
+                </label>
+    
+                <i class="message-star ace-icon fa fa-star-o light-grey"></i>
+                <span class="sender" title="Shrek">Shrek </span>
+                <span class="func"><a href="#">Xóa</a></span>
+                <span class="func"><a href="#">Xem</a></span>
+                <span class="time">March 28</span>
+    
+                <span class="attachment">
+                    <i class="ace-icon fa fa-paperclip"></i>
+                </span>
+    
+                <span class="summary">
+                    <span class="message-flags">
+                        <i class="ace-icon fa fa-flag fa-flip-horizontal light-grey"></i>
+                    </span>
+                    <span class="text">
+                        Photo booth beard raw denim letterpress vegan messenger
+                    </span>
+                </span>
+            </div>
+    
+            <!-- /section:pages/inbox.message-list.item -->
+     
+        </div>
+        
+    </div>
+</div>
+
+<div class="container">   
+    <div class="row">
+	    <div class="td_heading"><h2><a href="#">Chat box</a><i class="fa fa-angle-right"></i></h2></div>
+		<div class="row">
+        <div class="col-sm-3 col-xs-12">
+          <div class="col-inside-lg decor-default chat">
+            <div class="chat-users nano">
+			<div class="content">
+              <h6>Online</h6>
+                <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="User name">
+                    <div class="status off"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div>
+                <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar2.png" alt="User name">
+                    <div class="status online"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div>
+                <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar3.png" alt="User name">
+                    <div class="status busy"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div>
+                <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar4.png" alt="User name">
+                    <div class="status offline"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div>
+                <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar5.png" alt="User name">
+                    <div class="status off"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div>
+                <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar6.png" alt="User name">
+                    <div class="status online"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div>
+                <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="User name">
+                    <div class="status busy"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div>
+                <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar2.png" alt="User name">
+                    <div class="status offline"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div>
+                <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar3.png" alt="User name">
+                    <div class="status off"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div>
+                <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar4.png" alt="User name">
+                    <div class="status online"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div>
+                <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar5.png" alt="User name">
+                    <div class="status busy"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div>
+                <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar6.png" alt="User name">
+                    <div class="status offline"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div>
+                <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar7.png" alt="User name">
+                    <div class="status off"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div>
+                <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="User name">
+                    <div class="status off"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="col-inside-lg decor-default chat">
+            <div class="chat-body nano">
+			  <div class="content">
+              <h6>Mini Chat</h6>
+              <div class="answer left">
+                <div class="avatar">
+                  <img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="User name">
+                  <div class="status offline"></div>
+                </div>
+                <div class="name">Alexander Herthic (Admin) - <a href="#">Trả lời</a> - <a href="#">Sửa</a> - <a href="#">Xóa</a></div>
+                <div class="text">
+                  Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adiping elit
+                </div>
+                <div class="time">5 min ago</div>
+              </div>
+              <div class="answer right">
+                <div class="avatar">
+                  <img src="http://bootdey.com/img/Content/avatar/avatar2.png" alt="User name">
+                  <div class="status offline"></div>
+                </div>
+                <div class="name">Tuan Nguyen (Admin) - <a href="#">Trả lời</a> - <a href="#">Sửa</a> - <a href="#">Xóa</a></div>
+                <div class="text">
+                  Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adiping elit
+                </div>
+                <div class="time">5 min ago</div>
+              </div>
+              <div class="answer left">
+                <div class="avatar">
+                  <img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="User name">
+                  <div class="status online"></div>
+                </div>
+                <div class="name">Alexander Herthic</div>
+                <div class="text">
+                  ...
+                </div>
+                <div class="time">5 min ago</div>
+              </div>
+              <div class="answer right">
+                <div class="avatar">
+                  <img src="http://bootdey.com/img/Content/avatar/avatar2.png" alt="User name">
+                  <div class="status busy"></div>
+                </div>
+                <div class="name">Alexander Herthic</div>
+                <div class="text">
+                  It is a long established fact that a reader will be. Thanks Mate!
+                </div>
+                <div class="time">5 min ago</div>
+              </div>
+              <div class="answer right">
+                <div class="avatar">
+                  <img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="User name">
+                  <div class="status off"></div>
+                </div>
+                <div class="name">Alexander Herthic</div>
+                <div class="text">
+                  It is a long established fact that a reader will be. Thanks Mate!
+                </div>
+                <div class="time">5 min ago</div>
+              </div>
+              <div class="answer left">
+                <div class="avatar">
+                  <img src="http://bootdey.com/img/Content/avatar/avatar2.png" alt="User name">
+                  <div class="status offline"></div>
+                </div>
+                <div class="name">Alexander Herthic</div>
+                <div class="text">
+                  Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adiping elit
+                </div>
+                <div class="time">5 min ago</div>
+              </div>
+              <div class="answer right">
+                <div class="avatar">
+                  <img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="User name">
+                  <div class="status offline"></div>
+                </div>
+                <div class="name">Alexander Herthic</div>
+                <div class="text">
+                  Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adiping elit
+                </div>
+                <div class="time">5 min ago</div>
+              </div>
+              <div class="answer left">
+                <div class="avatar">
+                  <img src="http://bootdey.com/img/Content/avatar/avatar2.png" alt="User name">
+                  <div class="status online"></div>
+                </div>
+                <div class="name">Alexander Herthic</div>
+                <div class="text">
+                  ...
+                </div>
+                <div class="time">5 min ago</div>
+              </div>
+              <div class="answer right">
+                <div class="avatar">
+                  <img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="User name">
+                  <div class="status busy"></div>
+                </div>
+                <div class="name">Alexander Herthic</div>
+                <div class="text">
+                  It is a long established fact that a reader will be. Thanks Mate!
+                </div>
+                <div class="time">5 min ago</div>
+              </div>
+              <div class="answer right">
+                <div class="avatar">
+                  <img src="http://bootdey.com/img/Content/avatar/avatar2.png" alt="User name">
+                  <div class="status off"></div>
+                </div>
+                <div class="name">Alexander Herthic</div>
+                <div class="text">
+                  It is a long established fact that a reader will be. Thanks Mate!
+                </div>
+                <div class="time">5 min ago</div>
+              </div>
+              <div class="answer-add">
+                <input placeholder="Write a message">
+                <span class="answer-btn answer-btn-1"></span>
+                <span class="answer-btn answer-btn-2"></span>
+              </div>
+            </div>
+			</div>
+          </div>
+        </div>
+        </div>
+	</div>
+</div>
+
+		
+ 
+<!--===================footer=====================-->
+
+<footer>
+    <div class="container">
+       <div class="row">
+        <div class="col-md-2 col-sm-3 col-xs-6">
+            <ul class="list1">
+                <li><a href="#">Việt Remix</a></li>
+                <li><a href="#">VN DJ Producer</a></li>
+                <li><a href="#">Dance</a></li>
+                <li><a href="#">Nonstop</a></li>
+                <li><a href="#">Dubstep</a></li>
+            </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+            <ul class="list1">
+                <li><a href="#">Việt Remix</a></li>
+                <li><a href="#">VN DJ Producer</a></li>
+                <li><a href="#">Dance</a></li>
+                <li><a href="#">Nonstop</a></li>
+                <li><a href="#">Dubstep</a></li>
+            </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+            <ul class="list1">
+                <li><a href="#">Việt Remix</a></li>
+                <li><a href="#">VN DJ Producer</a></li>
+                <li><a href="#">Dance</a></li>
+                <li><a href="#">Nonstop</a></li>
+                <li><a href="#">Dubstep</a></li>
+            </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+            <ul class="list1">
+                <li><a href="#">Điều khoản thảo thuận</a></li>
+                <li><a href="#">Chính sách riêng tư</a></li>
+                <li><a href="#">Chính sách bản quyền</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Quảng cáo</a></li>
+            </ul>
+        </div>
+         
+        <div class="col-md-4 col-sm-12 col-xs-12">
+            <div class="share">
+               <h2>Share online</h2>
+                   <ul class="social">
+                     <li><a rel="nofollow" class="tooltip-top" title="Share Facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                     <li><a rel="nofollow" class="tooltip-top" title="Share Google +" href="#"><i class="fa fa-google-plus"></i></a></li>
+                     <li><a rel="nofollow" class="tooltip-top" title="Share Twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                     <li><a rel="nofollow" class="tooltip-top" title="Share Instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                   </ul>
+             </div>
+            <p class="privacy">© <span>2015</span> Design by ldhiep.design@gmail.com &nbsp;|&nbsp;<a href="#">www.dj.pro.vn</a></p> 
+        </div>
+    </div>
+  </div>  
+</footer>
+
+<a href="#" class="cd-top">Top</a> 
+
+
+<!-- form-chia-se-popup -->	
+<div class="modal fade" id="share-popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Chia sẻ link</h4>
+          </div>
+          <div class="modal-body">
+           
+				<form class="cd-form"> 
+
+					<p class="fieldset">
+						<i class="fa fa-link"></i>
+						<input class="full-width has-padding has-border" type="text"  value="http://dj.pro.vn/viet-mix-vo-nguoi-ta-hoaprox-remix-m1463043781.html">  
+					</p>
+					
+					<p class="fieldset">
+                        <i class="fa fa-file-code-o"></i>
+						<input class="full-width has-padding has-border" type="text"  value="<iframe src=&quot;http://www.nhaccuatui.com/lh/auto/9Nt4s2YGaJe0&quot; width=&quot;316&quot; height=&quot;587&quot; frameborder=&quot;0&quot; allowfullscreen></iframe>">
+					</p>
+          
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Chia sẻ">
+					</p>
+				</form>
+
+          </div>
+      </div>
+   </div>
+</div>
+
+
+<!-- form-add-playlist -->	
+<div class="modal fade" id="add-playlist" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Chọn playlist muốn thêm</h4>
+          </div>
+          <div class="modal-body">
+           
+			<ul class="m-add-playlist"> 
+			    <div style="height:150px">
+					<div class="nano">
+					   <div class="content">
+							<li> 
+							   <span><i class="fa fa-music"></i><a href="#" title="">Bạn chưa có Playlist nào</a></span>
+							</li>
+							<li> 
+							   <span><i class="fa fa-music"></i><a href="#" title="">Nhạc Dj mới nhất hiện nay</a></span>
+							</li>
+                            <li> 
+							   <span><i class="fa fa-music"></i><a href="#" title="">Nhạc sàn cực mạnh</a></span>
+							</li>
+							<li> 
+							   <span><i class="fa fa-music"></i><a href="#" title="">Nhạc Dj mới nhất hiện nay</a></span>
+							</li>
+                            <li> 
+							   <span><i class="fa fa-music"></i><a href="#" title="">Nhạc sàn cực mạnh</a></span>
+							</li>
+							<li> 
+							   <span><i class="fa fa-music"></i><a href="#" title="">Nhạc Dj mới nhất hiện nay</a></span>
+							</li>
+                            
+			        	</div>
+				    </div>
+				</div>
+			</ul>
+            
+            <div class="col-add-plt">
+                <form method="post" action="">
+                     <div class="col-md-9 col-sm-9 col-xs-8"><input class="ip-ptl" type="text" name="q" placeholder="--- Thêm playlist mới ---"></div>
+                     <div class="col-md-3 col-sm-3 col-xs-4"><button class="btn-plt">Thêm</button></div>
+                </form>
+            </div>
+          </div>
+      </div>
+   </div>
+</div> 
+ 
+<!-- form-user-like -->	
+<div class="modal fade" id="user-like" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"><i class="fa fa-thumbs-up"></i> 11 thích</h4>
+          </div>
+          <div class="modal-body">
+           
+			<ul class="m-user"> 
+			    <div style="height:300px">
+					<div class="nano">
+					   <div class="content">
+							<li>
+							   <a href="#" title="#" class="thumb pull-left"><img src="images/alb-hqh4.jpg" alt=""></a>
+							   <h3><a href="#" title="">Hung Viet</a></h3>
+							   <p><i class="fa fa-thumbs-up"></i> 234</p> 
+							</li>
+							<li>
+							   <a href="#" title="#" class="thumb pull-left"><img src="images/alb-hqh4.jpg" alt=""></a>
+							   <h3><a href="#" title="">Viet piano</a></h3>
+							   <p><i class="fa fa-thumbs-up"></i> 234</p> 
+							</li>
+							<li>
+							   <a href="#" title="#" class="thumb pull-left"><img src="images/alb-hqh4.jpg" alt=""></a>
+							   <h3><a href="#" title="">Tuan dj</a></h3>
+							   <p><i class="fa fa-thumbs-up"></i> 234</p> 
+							</li>
+							<li>
+							   <a href="#" title="#" class="thumb pull-left"><img src="images/alb-hqh4.jpg" alt=""></a>
+							   <h3><a href="#" title="">Hoang Huy</a></h3>
+							   <p><i class="fa fa-thumbs-up"></i> 234</p> 
+							</li>
+							<li>
+							   <a href="#" title="#" class="thumb pull-left"><img src="images/alb-hqh4.jpg" alt=""></a>
+							   <h3><a href="#" title="">Hung Ngo</a></h3>
+							   <p><i class="fa fa-thumbs-up"></i> 234</p> 
+							</li>
+							<li>
+							   <a href="#" title="#" class="thumb pull-left"><img src="images/alb-hqh4.jpg" alt=""></a>
+							   <h3><a href="#" title="">Hung Ngo</a></h3>
+							   <p><i class="fa fa-thumbs-up"></i> 234</p> 
+							</li>
+			        	</div>
+				    </div>
+				</div>
+			</ul>
+          </div>
+      </div>
+   </div>
+</div> 
+                      
+</body>
+</html>

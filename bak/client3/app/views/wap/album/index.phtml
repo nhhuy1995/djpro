@@ -1,0 +1,17 @@
+<h5 class="center text-success">Danh sách <?php echo $listAlbumTitle ?> - Trang <?php echo $p ?></h5>
+
+<div class="video-list no-margin">
+    <?php foreach ($albumList as $album):?>
+    <?php 
+    	$albumName = $album->name;
+        $albumUrl = Helper::urlGenerate($album->name, $album->_id, 'album');
+    ?>
+        <div class="video-bit">
+            <a title="<?php echo $albumName ?>" href="<?php echo $albumUrl; ?>"><img width="100" height="60" src="<?php echo $album->priavatar; ?>" alt="<?php echo $albumName; ?>" /><i class="fa fa-youtube-play video-play-icon"></i></a>
+            <h3><a href="<?php echo $albumUrl; ?>" title="<?php echo $albumName ?>"><?php echo $albumName ?></a></h3>
+            <div class="video-views"><i class="fa fa-eye"></i> Lượt xem: <?php echo $album->view; ?></div>
+            <div class="clearfix"></div>
+        </div>
+    <?php endforeach; ?>
+</div>
+<div class="btn-group btn-group-justified"><a class="btn btn-default" href="?p=<?php echo ($p - 1 == 0) ? 1 : $p - 1; ?>" title="Trang trước"><i class="fa fa-angle-left"></i> Trang trước</a><a class="btn btn-default" href="?p=<?php echo $p + 1 ?>" title="Trang sau"><i class="fa fa-angle-right"></i> Trang sau</a></div>

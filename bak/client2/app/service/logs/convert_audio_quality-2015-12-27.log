@@ -1,0 +1,30 @@
+XCache requires Zend Engine API version 220090626.
+The Zend Engine API version 220131226 which is installed, is newer.
+Contact mOo at http://xcache.lighttpd.net for a later version of XCache.
+
+PHP Notice:  Undefined index: SERVER_PROTOCOL in /home/cms/public_html/app/config/config.php on line 8
+PHP Notice:  Undefined index: HTTP_HOST in /home/cms/public_html/app/config/config.php on line 9
+PHP Warning:  include(/home/cms/public_html/app/service/../../vendor/autoload.php): failed to open stream: No such file or directory in /home/cms/public_html/app/service/ConvertWorker.php on line 12
+PHP Warning:  include(): Failed opening '/home/cms/public_html/app/service/../../vendor/autoload.php' for inclusion (include_path='.:/usr/share/pear:/usr/share/php') in /home/cms/public_html/app/service/ConvertWorker.php on line 12
+PHP Fatal error:  Class 'DjCms\Library\Queue\RabbitmqReceive' not found in /home/cms/public_html/app/service/ConvertWorker.php on line 67
+XCache requires Zend Engine API version 220090626.
+The Zend Engine API version 220131226 which is installed, is newer.
+Contact mOo at http://xcache.lighttpd.net for a later version of XCache.
+
+PHP Notice:  Undefined index: SERVER_PROTOCOL in /home/cms/public_html/app/config/config.php on line 8
+PHP Notice:  Undefined index: HTTP_HOST in /home/cms/public_html/app/config/config.php on line 9
+PHP Fatal error:  Class 'DjCms\Library\Queue\RabbitmqReceive' not found in /home/cms/public_html/app/service/ConvertWorker.php on line 67
+XCache requires Zend Engine API version 220090626.
+The Zend Engine API version 220131226 which is installed, is newer.
+Contact mOo at http://xcache.lighttpd.net for a later version of XCache.
+
+PHP Notice:  Undefined index: SERVER_PROTOCOL in /home/cms/public_html/app/config/config.php on line 8
+PHP Notice:  Undefined index: HTTP_HOST in /home/cms/public_html/app/config/config.php on line 9
+PHP Fatal error:  Class 'DjCms\Library\Queue\RabbitmqReceive' not found in /home/cms/public_html/app/service/ConvertWorker.php on line 67
+XCache requires Zend Engine API version 220090626.
+The Zend Engine API version 220131226 which is installed, is newer.
+Contact mOo at http://xcache.lighttpd.net for a later version of XCache.
+
+PHP Notice:  Undefined index: SERVER_PROTOCOL in /home/cms/public_html/app/config/config.php on line 8
+PHP Notice:  Undefined index: HTTP_HOST in /home/cms/public_html/app/config/config.php on line 9
+PHP Fatal error:  Class 'DjCms\Library\Queue\RabbitmqReceive' not found in /home/cms/public_html/app/service/ConvertWorker.php on line 67

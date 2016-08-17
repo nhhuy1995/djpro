@@ -1,0 +1,219 @@
+<div id="content">
+<?php $this->partial("partial/breadCrumbs", array("data" => $category)) ?>
+<div id="left-listen-column">
+	<?php if (count($categoryList)):?>
+	<div class="column-bit">
+        <div class="column-title music-cat">Thể loại <?php echo $category->type?></div>
+        <div class="column-content">
+            <p class="center">Hãy chọn danh mục bạn muốn xem:</p>
+            <ul id="child-cat-list">
+            <?php foreach ($categoryList as $category):?>
+            <?php 
+            	$categoryName = $category->name;
+            	$icon = ($categoryType == 'video') 
+            			? 'fa-film' 
+						: 'fa-music';
+            ?>
+                <li><a class="white-title" title="<?php echo $categoryName?>" href="<?php echo Helper::urlFriendly($categoryName, $category->_id)?>"><i class="fa <?php echo $icon; ?>"></i><?php echo $categoryName?></a></li>
+            <?php endforeach;?>
+            </ul>
+        </div>
+    </div>
+    <?php endif;?>
+
+    <div class="column-bit">
+        <div class="column-title music-cat">Nonstop</div>
+        <div class="column-content">
+        	<?php if ($categoryType == 'video'):?>
+        		<div id="list-video-cat">
+                    <?php foreach ($mediaList as $media):?>
+                	<?php 
+                		$mediaName = $media->name;
+                		$mediaId = $media->_id;
+                	?>
+                    <div class="video-bit">
+                        <div class="video-thumb">
+                            <a title="<?php echo $mediaName; ?>" href="<?php echo Helper::urlGenerate($mediaName, $mediaId, $categoryType); ?>">
+                            <img alt="<?php echo $mediaName; ?>" src="<?php echo $media->priavatar; ?>#"/>
+
+                            <div class="play-video-icon"></div>
+                            </a>
+                        </div>
+                        <div class="video-title">
+                            <h3>
+                                <a title="<?php echo $mediaName; ?>" href="<?php echo Helper::urlGenerate($mediaName, $mediaId, $categoryType)?>">
+                                <?php echo $mediaName; ?></a>
+                            </h3>
+                        </div>
+                    </div>
+                    <?php endforeach;?>
+                </div>
+        	<?php else :?>
+            <div class="song-list">
+                <?php foreach ($mediaList as $media):?>
+                <?php $mediaName = $media->name?>
+                <div class="song-bit">
+                    <span class="song-icon"><i class="fa fa-music"></i></span>
+                    <div class="song-name"><h3><a href="<?php echo Helper::urlGenerate($mediaName, $media->_id, $categoryType)?>" title="<?php echo $mediaName?>"><?php echo $mediaName?></a></h3></div>
+                    <div class="add-to-playlist"><a onclick="showAddPlaylist(5)" href="javascript:void(0)" title="Thêm vào playlist nhạc"></a></div>
+                    <div class="song-listen"><?php echo $media->view?> lượt</div>
+                </div>
+                <?php endforeach?>
+            </div>
+            <?php endif;?>
+            <?php $this->partial("partial/paging", array("totalNumber" => $mediaCount, "pageTotal" => $pageTotal)) ?>
+        </div>
+    </div>
+</div>
+<div id="my-playlist-box" style="display: none;">
+    <div id="addPlaylist_at_id" data-atid=""></div>
+    <div id="playlist-list-title">
+        Chọn Playlist muốn thêm
+        <a href="javascript:void(0);" id="closeAddPlaylist">(Đóng lại)</a>
+    </div>
+    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: auto;">
+        <div id="playlist-list" style="overflow: hidden; width: auto; height: auto;">
+        </div>
+        <div class="slimScrollBar ui-draggable"
+             style="background: none repeat scroll 0% 0% rgb(119, 119, 119); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 64px;"></div>
+        <div class="slimScrollRail"
+             style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: none repeat scroll 0% 0% rgb(68, 68, 68); opacity: 0.2; z-index: 90; right: 1px;"></div>
+    </div>
+    <div id="add-new-playlist">
+        <input type="text" name="playlist_name" placeholder="Thêm Playlist mới - gõ tên Playlist vào đây..."
+               id="add-playlist-name">
+        <a href="javascript:void(0);" class="btn btn-success" id="add-new-playlist-btn"
+           onclick="addNewPlaylist()">Thêm</a>
+    </div>
+    <div id="my-playlist-list"><a href="./playlist-cua-toi.html" title="Xem danh sách Playlist của bạn">XEM DANH SÁCH
+            PLAYLIST CỦA BẠN</a></div>
+</div>
+<!-- right column begin -->
+<div id="right-listen-column">
+    <div class="column-bit right-column">
+        <div class="column-title">Ca khúc chọn lọc</div>
+        <div class="column-content">
+            <ul class="top-list">
+                <?php foreach ($mediaChoiceList as $key=>$value):?>
+                <?php $mediaName = $value->name?>
+                <li>
+                    <div class="top-icon top<?php echo $key+1?>"><?php echo $key+1?>.</div>
+                    <div class="top-right">
+                        <h3><a href="/bai-hat/<?php echo Helper::urlFriendly($mediaName, $value->_id)?>"title="<?php echo $mediaName?>"><?php echo $mediaName;?></a></h3>
+                    </div>
+                    <br class="clear"/>
+                </li>
+                <?php endforeach?>
+            </ul>
+        </div>
+    </div>
+    <div data-ng-app="myApp">
+        <div id="center-top-content" ng-controller="ViewTopMedia" style="margin-bottom: 10px">
+            <div class="tab-title">
+                <div class="tabs">
+                    <div class= "tab" ng-class="{'active': sorttype=='view'}" id="top-listen-btn">
+                        <a ng-click="changeSort('view', 'top-listen-btn');">Top Nghe Nhiều</a>
+                    </div>
+                    <div class= "tab" ng-class="{'active': sorttype=='down'}" id="top-down-btn">
+                        <a ng-click="changeSort('down', 'top-down-btn');">Top Tải Nhiều</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="top-article">
+                <div class="choose-button selecttopviewmedia">
+                    <a class="btn-choose left-btn active" ng-click="getTopArticle('w','audio','view',1);">Tuần</a>
+                    <a class="btn-choose middle-btn" ng-click="getTopArticle('m','audio','view', 2);">Tháng</a>
+                    <a class="btn-choose right-btn" ng-click="getTopArticle('y','audio','view',3);">Năm</a>
+                </div>
+
+                <ul class="top-list">
+                    <li ng-repeat="media in listviewtopmedia">
+                        <div class="top-right">
+                            <span class="top-icon top{{media.index}}">{{media.index}}.</span>
+                            <h3><a href="{{media.intenetlink}}" title="{{media.name}}">{{media.name}}</a></h3>
+                        </div>
+                        <br class="clear"/>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div id="right-top-content" ng-controller="ViewTopUser">
+            <div class="tab-title">
+                <div class="tabs">
+                    <div  class= "tab" ng-class="{'active': sorttype=='like'}" id="top-like-btn">
+                        <a ng-click="changeSort('like', 'top-like-btn');">Like</a></div>
+                    <!--<div class="tab" id="top-comment-btn"><a href="javascript:getTopUser('week','comment','top-user');">Comment</a></div>-->
+                    <div  class= "tab" ng-class="{'active': sorttype=='post'}" id="top-poster-btn">
+                        <a ng-click="changeSort('post', 'top-poster-btn');">Poster</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="top-user">
+                <div class="choose-button selecttopviewuser">
+                    <a class="btn-choose left-btn active" ng-click="getTopUser('w', 1);">Tuần</a>
+                    <a class="btn-choose middle-btn" ng-click="getTopUser('m', 2);">Tháng</a>
+                    <a class="btn-choose right-btn" ng-click="getTopUser('y', 3);">Năm</a>
+                </div>
+
+                <ul class="top-list">
+                    <li ng-repeat="user in listviewtopuser">
+                        <div class="top-right">
+                            <div class="user-name">
+                                <span class="top-icon top{{user.index}}">{{user.index}}.</span>
+                                <a class="postername" href="{{user.internetlink}}" title="{{user.username}}">{{user.username}}</a></div>
+                            <div class="user-count">{{user.count}}</div>
+                        </div>
+                        <br class="clear"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+    <!-- Begin: video right slidebar -->
+    <div class="right-bottom-content" ng-controller="ViewTopMediaWithImage"  ng-init="getTopMedia('video','w', 1)">
+            <div class="tab-title">
+                <div class="tabs">
+                    <div  class="tab" ng-class="{'active': sorttype=='view'}" id="btn-video-view-choose">
+                        <a ng-click="changeSort('video','view');">
+                            Video xem nhiều
+                        </a>
+                    </div>
+                        <div class="tab" ng-class="{'active': sorttype=='down'}" id="btn-video-like-choose">
+                            <a ng-click="changeSort('video','down');" >
+                                Video tải nhiều
+                            </a>
+                        </div>
+                </div>
+            </div>
+            <div class="tab-content">
+            <div id="news-choose" class="choose-button selecttopothermedia">
+                <a class="btn-choose left-btn active" ng-click="getTopMedia('video','w', 1);">Tuần</a>
+                <a class="btn-choose middle-btn" ng-click="getTopMedia('video','m', 2);">Tháng</a>
+                <a class="btn-choose right-btn" ng-click="getTopMedia('video','y', 3);">Năm</a>
+            </div>
+            <div id="top-video-data">
+                <div id="view-w-2" class="top-video-news" style="">
+                    <div class="top-video-bit" ng-repeat="media in listMedia">
+	                    <a href="{{media.intenetlink}}" class="top-video-thumb">
+	                    	<img width="112" height="63" title="{{media.name}}" alt="Video thumb" src="{{media.priavatar}}#">
+	                    	<span class="top-rank">{{media.index}}</span>
+	                    </a>
+	
+	                    <div class="top-meta"><h3><a title="{{media.name}}" href="{{media.intenetlink}}">{{media.name}}</a></h3>
+                            <p ng-if="sorttype=='view'">Lượt xem: {{media.view}}</p>
+                            <p ng-if="sorttype=='down'">Lượt down: {{media.down}}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="edit-playlist" ng-controller="EditPlaylist"></div>
+    </div>
+    </div>
+    <!-- End: video right slidebar -->
+    
+</div>
+<!-- Right Column end -->
+<div class="clear"></div>

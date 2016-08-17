@@ -1,0 +1,323 @@
+<div id="content">
+<?php $this->partial("partial/breadCrumbs", array("categorys" => $category)) ?>
+<?php 
+	$albumName = $album['name'];
+	$albumId = $album['_id'];
+?>
+<div id="wrap-listen">
+    <div id="left-column">
+        <div class="column-bit">
+            <div class="column-title white-title poster-title"><i class="fa fa-user"></i> Thông tin</div>
+            <div class="column-content">
+                <div class="poster-avatar">
+                    <a title="<?php echo $albumName; ?>" href="#"><img src="<?php echo $album['priavatar']; ?>#" alt="<?php echo $albumName; ?>"></a>
+                </div>
+                <div class="poster-username"><a title="<?php echo $albumName; ?>" href="<?php echo Helper::urlGenerate($albumName, $albumId, $type)?>"><?php echo $albumName; ?></a></div>
+                <div class="album-desc">
+                    <!-- album description -->
+                </div>
+                <br class="clear" />
+
+                <div class="seperator-line1"></div>
+                <div class="seperator-line2"></div>
+
+                <div class="article-info">
+                    <input type="hidden" value="836" id="albumID" />
+
+                    <div>
+                        <i class="fa fa-play-circle"></i> Lượt nghe: <span><?php echo $album['view']; ?></span>
+                    </div>
+                    <div>
+                        <i class="fa fa-thumbs-up"></i> Thích:
+                        <span>
+                            <a href="javascript:showUserLike('<?php echo $albumId; ?>','album');" title="" rel="tooltip" id="like-album-count" data-original-title="Xem những ai thích album này"><?php echo $album['liked']; ?></a>
+                        </span>
+                    </div>
+                    <div>
+                        <i class="fa fa-thumbs-down"></i> Không thích:
+                        <span>
+                            <a href="javascript:showUserDisLike('<?php echo $album['disliked']; ?>','album')(0);" title="" rel="tooltip" id="dislike-album-count" data-original-title="Xem những ai không thích album này"><?php echo $album['disliked'] ?></a>
+                        </span>
+                    </div>
+                    <!-- nolist cat -->
+                    <div><i class="fa fa-bullseye"></i> Thể loại: <span>
+                        <?php foreach ($album['categoryList'] as $category):?>
+                        <?php 
+                        	$categoryName = $category->name;
+                        ?>
+                            <a title="<?php echo $categoryName; ?>" href="<?php echo Helper::urlGenerate($categoryName, $category->_id, 'category')?>"><?php echo $categoryName; ?></a>
+                        <?php endforeach;?>
+                    </span></div>
+                    <!-- endnolist cat -->
+
+                    <div class="clear"></div>
+                </div>
+                
+                <?php 
+                	$tagList = $album['tagList'];
+                ?>
+                <?php if (count($tagList)):?>
+                <div class="seperator-line1 clearfix"></div>
+                <div class="seperator-line2"></div>
+                <div class="mediainfo-padding">
+                    <b><i class="fa fa-tags"></i> Tags:</b>
+                    <div class="tag-cloud" style="overflow: hidden; width: auto; height: auto;">
+                        <ul>
+                            <?php foreach ($tagList as $tag):?>
+                            <?php 
+                            	$tagName = $tag->name;
+                            ?>
+                            <li><a href="<?php echo Helper::urlGenerate($tagName, $tag->_id, 'tag')?>" title="<?php echo $tagName; ?>" target="_blank"><span></span><?php echo $tagName; ?></a></li>
+                            <?php endforeach;?>
+                        </ul>
+                    </div>
+                </div>
+                <?php endif;?>
+
+                <div class="seperator-line1"></div>
+                <div class="seperator-line2"></div>
+                <div class="white-title poster-title"><i class="fa fa-folder"></i> Album khác</div>
+                <div id="album-list" style="max-height: 260px;margin-top:10px;">
+                    <?php if (count($albumReference)):?>
+                    	<?php foreach ($albumReference as $value):?>
+                    		<?php 
+                    			$name = $value->name;
+                    		?>
+                            <div class="album-bit">
+                                <div class="album-cover"><a title="<?php echo $name; ?>" href="<?php echo Helper::urlGenerate($name, $value->_id, 'album')?>"><img
+                                        src="<?php echo $value->priavatar; ?>" alt="<?php echo $name; ?>"></a></div>
+                                <div class="album-name"><a title="<?php echo $name; ?>" href="<?php echo Helper::urlGenerate($name, $value->_id, 'album')?>"><?php echo $name; ?></a>
+                                </div>
+                            </div>
+                        <?php endforeach;?>
+                    <?php endif;?>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div id="center-column" class="albumcenter">
+        <div class="column-bit">
+            <div class="column-title listen-title music-cat"><h1><?php echo $albumName; ?></h1></div>
+            <div class="column-content">
+                <div id="media-player">
+                    <div class="mplay">
+                        <?php if (count($mediaList)):?>
+                            <div id="my_mediaplayer"></div>
+                        <?php endif;?>
+                    </div>
+
+                        <div id="wrap-listsong" style="overflow: hidden; width: auto; height: auto;">
+                                <?php if (count($mediaList) == 0):?>
+                                    <div class="alert alert-error center">Playlist này hiện chưa có bài hát nào !</div>
+                                <?php else :?>
+                                <div id="list-album-playlist-song" style="overflow: hidden; width: auto; height: auto;">
+                                    <?php foreach ($mediaList as $media):?>
+                                    	<?php 
+                                    		$mediaName = $media->name;
+                                    		$mediaId = $media->_id;
+                                    		++$index;
+                                    	?>
+                                        <div class="song-item clear" id="song_<?php echo $mediaId; ?>">
+                                            <div class="song-name" >
+                                                <div class="left tovernone">
+                                                    <input type="hidden" value="music" id="m_type9">
+                                                    <?php echo $index; ?>.
+                                                    <a title="<?php echo $mediaName; ?>" data-src="<?php echo Helper::switchlink($media->link)?>" data-title="<?php echo $mediaName; ?>" data-id="<?php echo $mediaId; ?>" data-index="<?php echo $index; ?>"
+                                                           href="<?php echo Helper::urlGenerate($mediaName, $mediaId, 'audio')?>"
+                                                    ><?php echo $mediaName; ?>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="song-tool">
+                                                <a title="Tải bài hát này"
+                                                href="<?php echo Helper::makeDownloadLink($mediaName, $mediaId) ?>?key=suSqTiu3rK"
+                                                target="_blank"><i class="fa fa-cloud-download"></i></a>
+                                                <a title="Nghe riêng bài hát này"
+                                                href="<?php echo Helper::urlGenerate($mediaName, $mediaId, 'audio')?>"
+                                                target="_blank"><i class="fa fa-play-circle"></i></a>
+                                                <a title="Thêm bài hát này vào Playlist"
+                                                class="addPlaylist-btn" href="javascript:void(0);" onclick="showAddPlaylist(<?php echo $mediaId?>)"><i class="fa fa-plus-square"></i></a>
+                                            </div>
+                                        </div>
+                                    <?php endforeach;?>
+                                </div>
+                                <?php endif;?>
+                        </div>
+                        <div class="slimScrollBar ui-draggable"
+                        style="background: none repeat scroll 0% 0% rgb(119, 119, 119); width: 7px; position: absolute; top: 114px; opacity: 0.4; border-radius: 7px; z-index: 99; right: 1px; height: 87px; display: none;"></div>
+                        <div class="slimScrollRail"
+                        style="width: 7px; height: 100%; position: absolute; top: 0px; border-radius: 7px; background: none repeat scroll 0% 0% rgb(68, 68, 68); opacity: 0.2; z-index: 90; right: 1px; display: none;"></div>
+                    <!--</div>-->
+                    <div class="clear"></div>
+                </div>
+
+                <script type="text/javascript">
+
+                    $(function () {
+                        var isBackClick = false;
+                        var isFirstPlay = false;
+                        var pl = [];
+                        var elemPlayer = $("#list-album-playlist-song .song-item .song-name .tovernone a");
+                        if (!history) history = window.history;
+                        elemPlayer.each(function () {
+                            pl.push({
+                                'file': $(this).attr('data-src'),
+                                'title': $(this).attr('data-title'),
+                                'mediaid': $(this).attr('data-id')
+                            });
+                        });
+                         var privateplayer = jwplayer('my_mediaplayer').setup({
+                            flashplayer: "/web/js/plugin/jwplayer/player.swf",
+                            //file: elemPlayer.first().attr('data-src'),
+                            width: "450",
+                            height: 29,
+                            autostart: false,
+                            skin: "/web/js/plugin/jwplayer/skins/vi/vi.xml",
+                            controlbar: 'bottom',
+                            dock: 'false',
+                            abouttext: "Nhac dj",
+                            aboutlink: "__",
+                            playlist: pl,
+                            repeat: 'always',
+                            events: {
+                                onPlaylistItem: function (event) {
+                                    console.log(isBackClick);
+                                    console.log("isFirstPlay: "+isFirstPlay);
+                                    item = jwplayer().getPlaylistItem();
+                                    $("#song_" + item.mediaid).addClass('play-song').siblings().removeClass('play-song');
+                                    if (isBackClick == false )
+                                        history.pushState({index : item.index}, 'play_media_detail', '<?php echo $_SERVER['HTTP_X_ORIGINAL_URL']?>?st=' + item.index);
+                                    if (isFirstPlay == true) {
+                                        history.replaceState({index : item.index}, 'play_media_detail', '<?php echo $_SERVER['HTTP_X_ORIGINAL_URL']?>?st=' + item.index);
+                                        isFirstPlay =  false;
+                                        isBackClick = false;
+                                    }
+                                }
+                            }
+
+                        });
+                        elemPlayer.click(function (e) {
+                            e.preventDefault();
+                            isBackClick = false;
+                            privateplayer.playlistItem($(this).attr('data-index') - 1);
+                        });
+                        window.onpopstate = function (e) {
+                            if (e.state != null) {
+                                isBackClick = true;
+                                privateplayer.playlistItem(e.state.index);
+                            }
+
+                        }
+                        <?php if ($playingItem):?>
+                        isBackClick = true;
+                        isFirstPlay = true;
+                        privateplayer.playlistItem(<?php echo $playingItem; ?>);
+                        <?php endif;?>
+                    });
+                    </script>
+                <div id="recommended"><p class="center"><i class="icon-thumbs-up"></i> Bấm thích và +1 nếu bạn thấy album này ấn tượng</p>
+
+                    <div class="center">
+                        <div class="fb-like" data-href="<?php echo Helper::urlGenerate($albumName, $albumId, "album") ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                        <div class="g-plusone" data-size="medium" data-href="<?php echo Helper::urlGenerate($albumName, $albumId, "album") ?>"></div>
+                    </div>
+                </div>
+                <div class="seperator-line1"></div>
+                <div class="seperator-line2"></div>
+               
+                <?php $this->partial("partial/comment", array("data" => $album, "type" => 'album')) ?>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Column -->
+    <div id="right-listen-column" class="right-column-album">
+        <div class="column-bit">
+            <div class="column-title white-title"><i class="icon-star"></i> Thao tác</div>
+            <div class="column-content">
+                <div class="listen-tools center">
+
+                    <p class="vote">
+                        <a class="btn btn-small" id="like-album" title="" rel="tooltip" href="javascript:likearticle(<?php echo $albumId; ?>, <?php echo $user->_id; ?>, 'album')"
+                           data-original-title="Thích album"><i class="fa fa-thumbs-up"></i> Thích
+                        </a>
+                        <a class="btn btn-small" id="dislike-album" title="" rel="tooltip" href="javascript:dislikearticle(<?php echo $albumId; ?>, <?php echo $user->_id; ?>, 'album')"
+                           data-original-title="Không thích album này"><i class="fa fa-thumbs-down"></i> Ko Thích
+                        </a>
+                    </p>
+
+                    <p><i class="fa fa-external-link"></i> Chèn vào web, Forum:</p>
+                    <p class="utility">
+                        <a href="#shareCode" class="btn btn-mini" data-toggle="modal" role="button"><i class="fa fa-code"></i> Nhúng web</a>
+                        <?php $this->partial("partial/embedPopup") ?>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- nolist data -->
+        <div class="column-bit">
+            <div class="column-title white-title"><i class="icon-headphones"></i> Các album cùng chuyên mục</div>
+            <div class="column-content">
+                <div class="center no-margin" id="list-album-cat" style="max-height: 260px">
+                    <?php if (count($albumReference)):?>
+                    <?php foreach ($albumReference as $value):?>
+                    <?php 
+                    	$albumName = $value->name;
+                    	$albumId = $value->_id;
+                    	$albumUrl = Helper::urlGenerate($albumName, $albumId, 'album');
+                    ?>
+                    <div class="album-bit no-padding no-border">
+                        <div style="float: none; margin-left:25px;" class="album-cover">
+                            <div class="img-cover">
+                                <div class="bgcover"></div>
+                                <a title="<?php echo $albumName; ?>" href="<?php echo $albumUrl; ?>">
+                                <img width="152" height="152" alt="<?php echo $albumName; ?>" src="<?php echo $value->priavatar; ?>"
+                                     class="img152"></a>
+                            </div>
+                        </div>
+                        <h3 class="album-name"><a title="<?php echo $albumName; ?>" href="<?php echo $albumUrl; ?>"><?php echo $albumName; ?></a>
+                        </h3>
+                        <br class="clear">
+                    </div>
+                    <?php endforeach;?>
+                    <?php endif;?>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!-- endnolist data -->
+        <div class="column-bit">
+            <div class="column-title white-title"><i class="icon-headphones"></i> &nbsp; Bạn đã nghe chưa ?</div>
+            <div class="column-content">
+                <ul class="top-list">
+                    <?php foreach ($mediaChoiceList as $media):?>
+                    <?php 
+                    	++$counter;
+                    	$mediaName = $media->name;
+                    ?>
+                    <li>
+                        <div class="top-icon top<?php echo $counter; ?>"><?php echo $counter; ?>.</div>
+                        <div class="top-right albumright_listitem">
+                            <h3><a href="<?php echo Helper::urlGenerate($mediaName, $media->_id, 'audio')?>" title="<?php echo $mediaName; ?>"><?php echo $mediaName; ?></a></h3>
+                        </div>
+                        <br class="clear"/>
+                    </li>
+                    <?php endforeach;?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="clear"></div>
+</div>
+<?php $this->partial("partial/addToPlayList") ?>
+<?php $this->partial("partial/userLikeList", array("mediaId" => $album['_id'], "type" => $type)) ?>
+<script>
+    $('#album-list, #list-album-cat, #wrap-listsong').slimScroll({height: "auto", railVisible: true, railColor: "#444", color: "#777"});
+</script>

@@ -1,0 +1,857 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline
+}
+
+html {
+    line-height: 1
+}
+
+ol, ul {
+    list-style: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle
+}
+
+q, blockquote {
+    quotes: none
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none
+}
+
+a img {
+    border: none
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, Arial, sans-serif;
+}
+
+@media only screen and (min-width: 1024px) {
+    .chart-row {
+        margin-left: 167px;
+    }
+}
+
+@media only screen and (min-width: 1364px) {
+    .chart-row {
+        margin-left: 0
+    }
+}
+
+.streaming-player {
+    position: absolute;
+    height: 32px;
+    right: 0;
+    width: 32px;
+    white-space: nowrap;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    -moz-transition: width 0.3s ease;
+    -o-transition: width 0.3s ease;
+    -webkit-transition: width 0.3s ease;
+    transition: width 0.3s ease
+}
+
+.streaming-player .streaming-player-play {
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    border: 2px solid black;
+    margin: -3px 0 0 -2px;
+    height: 36px;
+    width: 36px
+}
+
+.chart-data-header .streaming-player .streaming-player-play {
+    border-color: white
+}
+
+@media only screen and (min-width: 1024px) {
+    .streaming-player .streaming-player-play:hover {
+        border-color: #1cace2
+    }
+
+    .streaming-player .streaming-player-play:hover i {
+        color: #1cace2
+    }
+}
+
+.streaming-player i {
+    background: white;
+    line-height: 32px;
+    text-align: center;
+    width: 32px
+}
+
+.streaming-player i:before {
+    margin-left: 3px
+}
+
+.streaming-player a, .streaming-player span {
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden
+}
+
+.streaming-player a.spotify, .streaming-player a.rdio, .streaming-player span.spotify, .streaming-player span.rdio {
+    height: 24px;
+    width: 24px;
+    margin-top: -2px;
+    opacity: 0;
+    text-indent: 100%;
+    visibility: hidden
+}
+
+.streaming-player a.spotify, .streaming-player span.spotify {
+    background: transparent url('') scroll no-repeat center center;
+    background-size: 24px
+}
+
+.streaming-player a.rdio, .streaming-player span.rdio {
+    width: 30px;
+    background: transparent url('') scroll no-repeat center center;
+    background-size: 29px
+}
+
+.streaming-player a:last-child, .streaming-player span:last-child {
+    margin-right: .25em
+}
+
+.streaming-player.open {
+    background-color: #EEE;
+    border: 1px solid #DDD;
+    width: 103px
+}
+
+.streaming-player.open .streaming-player-play {
+    border: 2px solid #B9B9B9
+}
+
+.streaming-player.open .streaming-player-play i {
+    color: #B9B9B9;
+    background: #fff
+}
+
+.streaming-player.open .spotify, .streaming-player.open .rdio {
+    opacity: 1;
+    -moz-transition: opacity 0.2s ease 0.2s;
+    -o-transition: opacity 0.2s ease 0.2s;
+    -webkit-transition: opacity 0.2s ease;
+    -webkit-transition-delay: 0.2s;
+    transition: opacity 0.2s ease 0.2s;
+    visibility: visible
+}
+
+.streaming-player.alwaysopen .spotify {
+    height: 30px;
+    width: 76px;
+    left: -76px;
+    background: #fff url('') scroll no-repeat 90% center;
+    background-size: 20px auto;
+    border: 1px solid #83c04c !important;
+    border-radius: .25em;
+    display: block;
+    opacity: 1;
+    text-indent: 100px;
+    visibility: visible
+}
+
+@media only screen and (min-width: 1024px) {
+    .streaming-player.alwaysopen .spotify {
+        left: -63px
+    }
+}
+
+@media only screen and (min-width: 1364px) {
+    .streaming-player.alwaysopen .spotify {
+        left: -76px
+    }
+}
+
+.streaming-player.alwaysopen .spotify:before {
+    content: 'PLAY';
+    position: absolute;
+    color: black;
+    font-size: .9em;
+    left: 7px;
+    z-index: 1;
+    display: block;
+    text-indent: 0;
+    top: 7px
+}
+
+.chart-row .streaming-player.alwaysopen .spotify {
+    position: absolute
+}
+
+.chart-row {
+    position: relative;
+    border-top: 1px solid #CDCDCD;
+    border-bottom: 1px solid transparent;
+    background: #fff
+}
+
+.chart-row:hover {
+    background: #f5f5f5
+}
+
+.chart-row:last-of-type {
+    border-bottom-color: #CDCDCD
+}
+
+@media only screen and (min-width: 1024px) {
+    .chart-row:hover {
+        border-color: black
+    }
+
+    .chart-row:hover ~ .chart-row {
+        border-top-color: transparent;
+        border-bottom-color: #CDCDCD
+    }
+
+    .chart-row a:hover, .chart-row .streaming-player-wrap span:hover {
+        color: #1cace2
+    }
+}
+
+.chart-row a {
+    color: black;
+    text-decoration: none
+}
+
+.row-primary {
+    position: relative;
+    padding-left: 66px;
+    min-height: 120px
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-primary {
+        min-height: 0;
+        padding-left: 34px
+    }
+}
+
+.row-primary .streaming-player-wrap {
+    position: absolute;
+    right: 14px;
+    top: 20px
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-primary .streaming-player-wrap {
+        top: 16px
+    }
+}
+
+@media only screen and (min-width: 1364px) {
+    .row-primary .streaming-player-wrap {
+        right: 0
+    }
+}
+
+.row-history {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 66px;
+    background-color: #E7E7E7
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-history {
+        width: 34px
+    }
+
+    .chart-row:hover .row-history {
+        background-color: #2A2A2A
+    }
+}
+
+.row-history:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 61px;
+    background: white none;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+    opacity: 0.5
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-history:before {
+        height: 68px
+    }
+}
+
+.row-history:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 73px;
+    width: 100%;
+    text-align: center;
+    color: #8c8e90;
+    font-family: FontAwesome
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-history:after {
+        top: 41px
+    }
+
+    .chart-row:hover .row-history:after {
+        color: white
+    }
+}
+
+.row-history-none:before {
+    display: none
+}
+
+.chart-row:hover .row-history-none {
+    background-color: #E7E7E7
+}
+
+.row-history-rising:before, .row-history-falling:before {
+    height: 72px
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-history-rising:before, .row-history-falling:before {
+        height: 80px
+    }
+}
+
+.row-history-rising:before {
+    background: transparent url('images/chart-tang.png') scroll no-repeat top left;
+    background-size: 100% 100%
+}
+
+.row-history-rising:after {
+    content: "\f062";
+    color: #05c648
+}
+
+.row-history-falling:before {
+    background: transparent url("images/chart-giam.png") scroll no-repeat top left;
+    background-size: 100% 100%
+}
+
+.row-history-falling:after {
+    content: "\f063";
+    color: #f93c33
+}
+
+.row-history-steady:after {
+    content: "\f061"
+}
+
+.row-history-new:after {
+    content: ''
+}
+
+.row-history-reentry:after {
+    content: "\f021"
+}
+
+.row-award-indicator, .row-new-indicator {
+    position: absolute;
+    left: -4px;
+    top: 4px;
+    height: 1.333em;
+    padding: 0 3px;
+    font-size: .75em;
+    line-height: 1.333;
+    background: black none;
+    color: white;
+    text-align: center
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-award-indicator, .row-new-indicator {
+        top: 14px
+    }
+}
+
+.row-award-indicator i, .row-new-indicator i {
+    padding: 2px 0 0 2px
+}
+
+.row-award-indicator:before, .row-new-indicator:before, .row-award-indicator:after, .row-new-indicator:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 0;
+    width: 0
+}
+
+.row-award-indicator:before, .row-new-indicator:before {
+    top: 16px;
+    left: 0;
+    border: 2px solid #666;
+    border-left-color: transparent;
+    border-bottom-color: transparent
+}
+
+.row-award-indicator:after, .row-new-indicator:after {
+    top: 0;
+    left: 100%;
+    border-top: 8px solid black;
+    border-bottom: 8px solid black;
+    border-right: 4px solid transparent
+}
+
+.row-new-indicator {
+    top: 72px
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-new-indicator {
+        top: 40px
+    }
+}
+
+.row-bullet {
+    position: absolute;
+    top: 94px;
+    left: 0;
+    text-align: center;
+    width: 66px
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-bullet {
+        width: 34px;
+        top: auto;
+        bottom: .25em
+    }
+
+    .chart-row:hover .row-bullet {
+        color: white
+    }
+}
+
+.row-rank {
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 66px;
+    font-size: 2.5em;
+    line-height: 1;
+    text-align: center
+}
+
+.row-rank .last-week {
+    display: none
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-rank {
+        position: static;
+        display: inline-block;
+        vertical-align: top;
+        width: 106px;
+        font-size: 3.875em;
+        margin-top: 20px
+    }
+
+    .row-rank span {
+        display: block
+    }
+
+    .row-rank .last-week {
+        display: block;
+        width: 100%;
+        color: #989898;
+        font-size: .2em;
+        line-height: 1
+    }
+}
+
+.row-image {
+    background-color: grey;
+    background-image: url("images/bg-dist.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    display: inline-block;
+    vertical-align: top;
+    width: 53px;
+    height: 53px;
+    margin: 24px 12px
+}
+
+@media only screen and (max-width: 979px) {
+    .row-imagevd {
+        margin: 26px 12px 6px 12px !important;
+    }
+}
+
+.row-imagevd {
+    background-color: grey;
+    background-image: url("images/bg-dist.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    display: inline-block;
+    vertical-align: top;
+    width: 108px;
+    height: 66px;
+    margin: 16px 12px 18px 0
+}
+
+.row-imagevd img {
+    width: 108px;
+    height: 66px;
+    vertical-align: middle
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-image {
+        margin: 6px 12px 6px 0;
+        width: 91px;
+        height: 91px
+    }
+}
+
+.row-title {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 141px)
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-title {
+        width: calc(100% - 285px)
+    }
+}
+
+.row-title h2 {
+    margin-top: 24px;
+    font-size: 1.2em;
+    line-height: 1
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-title h2 {
+        margin-top: 20px
+    }
+}
+
+.row-title h3 {
+    font-size: 0.86em;
+    line-height: 1.166666667;
+    margin: 4px 0 10px
+}
+
+.row-title span {
+    font-size: 13px;
+}
+
+.row-title a {
+    color: #1cace2
+}
+
+.row-title a:hover {
+    text-decoration: underline
+}
+
+.row-ticket, .row-watch {
+    bottom: 5px;
+    right: 14px;
+    position: absolute
+}
+
+.row-download {
+    bottom: 25px;
+    font-size: 13px;
+    right: 10px;
+    position: absolute
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-ticket, .row-watch {
+        bottom: 5px;
+        right: 14px
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-ticket a, .row-watch a {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        text-indent: 0;
+        background-color: transparent;
+        padding: 0;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        font-size: .625em;
+        line-height: 1.6;
+        text-transform: uppercase
+    }
+
+    .row-ticket a i, .row-watch a i {
+        font-size: 1.6em;
+        line-height: 1;
+        vertical-align: bottom
+    }
+
+    .row-ticket a:before, .row-watch a:before {
+        display: none
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-watch + .row-ticket {
+        right: 74px
+    }
+}
+
+.row-secondary-toggle a {
+    display: block;
+    height: 1.5em;
+    width: 3em;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5em;
+    background-color: #EEE;
+    color: #1cace2;
+    text-align: center;
+    -moz-border-radius-topleft: 1.5em;
+    -webkit-border-top-left-radius: 1.5em;
+    border-top-left-radius: 1.5em;
+    -moz-border-radius-topright: 1.5em;
+    -webkit-border-top-right-radius: 1.5em;
+    border-top-right-radius: 1.5em
+}
+
+.secondary-visible .row-secondary-toggle a {
+    background-color: black
+}
+
+.row-secondary-toggle a i {
+    font-size: 1.5em;
+    line-height: 1.25em
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-secondary-toggle {
+        display: none
+    }
+}
+
+.row-secondary {
+    background-color: black;
+    color: white;
+    padding: 0 10px 20px;
+    display: none
+}
+
+.secondary-visible .row-secondary {
+    display: block
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-secondary {
+        width: 147px;
+        padding: 0;
+        margin-right: 20px;
+        position: absolute;
+        right: 100%;
+        top: 50%;
+        margin-top: -25px;
+        background-color: white;
+        color: black
+    }
+
+    .row-new .row-secondary {
+        margin-top: -9px
+    }
+
+    .secondary-visible .row-secondary {
+        display: none
+    }
+
+    .chart-row:hover .row-secondary, .chart-row.secondary-visible:hover .row-secondary {
+        display: block
+    }
+}
+
+.row-secondary .stats {
+    display: table;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black
+}
+
+.row-secondary .stats .label {
+    font-size: 10px;
+    text-transform: uppercase
+}
+
+.row-secondary .stats .value {
+    font-size: 20px
+}
+
+.row-secondary .stats > div {
+    display: table-cell;
+    text-align: center;
+    width: 33%;
+    padding: .5em 0;
+    border-left: 1px solid #383838
+}
+
+.row-secondary .stats > div:first-of-type {
+    border-left: none
+}
+
+.row-secondary .stats > div span {
+    display: block
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-secondary .stats {
+        border-bottom: 0;
+        border-top: 0;
+        display: block;
+        height: 50px;
+        white-space: nowrap
+    }
+
+    .row-secondary .stats > div {
+        padding: 0;
+        margin-top: 4px;
+        display: block;
+        float: left;
+        white-space: normal;
+        width: calc(33% - 1px)
+    }
+
+    .row-secondary .stats:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        height: 0;
+        width: 0;
+        border-left: 20px solid black;
+        border-right: 20px solid transparent;
+        border-top: 25px solid transparent;
+        border-bottom: 25px solid transparent
+    }
+
+    .row-secondary .stats .stats-top-spot .label {
+        letter-spacing: -0.5px
+    }
+}
+
+.row-secondary .row-awards {
+    max-width: 300px;
+    margin: .5em auto 0;
+    border-top: 1px solid #383838
+}
+
+@media only screen and (min-width: 1024px) {
+    .row-secondary .row-awards {
+        border-top: none;
+        margin-top: 0
+    }
+}
+
+.row-secondary .row-awards li {
+    padding: .5em 0 .5em 2em;
+    border-bottom: 1px solid #383838
+}
+
+.row-secondary .row-awards li .fa-li {
+    width: 1em;
+    left: .5em;
+    top: .5em
+}
+
+.chart-data-header {
+    position: relative;
+    background-color: black;
+    color: white;
+    margin-bottom: .75em;
+    min-height: 54px
+}
+
+@media only screen and (min-width: 1024px) {
+    .chart-data-header {
+        margin-left: 167px
+    }
+}
+
+@media only screen and (min-width: 1364px) {
+    .chart-data-header {
+        margin-left: 0
+    }
+}
+
+.chart-nav {
+    font-size: 1.125em;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    padding: .5em 0
+}
+
+.chart-nav:before {
+    color: #a3a3a3;
+    content: attr(data-timeperiod);
+    font-size: .5em;
+    display: block
+}
+
+.chart-nav-link {
+    color: #1cace2;
+    position: relative;
+    display: inline-block;
+    padding: .25em
+}
+
+.chart-nav-link:hover {
+    text-decoration: none
+}
+
+.chart-nav-link.is-disabled {
+    color: #484647;
+    cursor: text
+}

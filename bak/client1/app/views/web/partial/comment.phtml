@@ -1,0 +1,130 @@
+<?php
+	$title = 'Thành viên bình luận';
+	
+	$dataId = is_object($data) 
+			? $data->_id
+			: $data['_id'];
+	
+	/* switch ($type){
+		case 'album':
+			$faceplugin_width = '675px';
+			$faceplugin_link = Helper::makeShortLink($dataId, $type);
+			break;
+		
+		case 'playList':
+			$faceplugin_width = '675px';
+			$faceplugin_link = Helper::makeShortLink($dataId, $type);
+			break;
+			
+		case 'user':
+			$faceplugin_width = '675px';
+			$faceplugin_link = Helper::makeShortLink($dataId, $type);
+			break;
+		
+		default:
+			$faceplugin_width = '675px';
+			$faceplugin_link = $domain . Helper::makeShortLink($dataId, $type);
+			break;
+	} */
+?>
+
+<div class="cmt-box">
+
+    <div class="cmt-box-title"><i class="fa fa-comment"></i> <?php echo $title; ?> <span title="Tổng số bình luận" rel="tooltip"></span>:</div>
+    
+    <?php if ($authentication == false):?>
+    <div class="alert">
+        Hãy đăng nhập để có thể bình luận !
+    </div>
+    <?php else :?>
+    <div class="post-cmt cmt">
+        <a href="<?php echo Helper::makeUserLink($userData['username'], $dataId);?>" title="Đến trang tài khoản" class="avatar left"><img alt="<?php echo $userData['name'];?>" src="<?php echo $userData['priavatar'];?>"/></a>
+        <div class="post-cmt-form">
+            <div class="form-controls"><span class="text-box-decor"></span>
+                <textarea placeholder="Viết cảm nhận vào đây..." class="text-field textarea" rows="10" cols="30" autocomplete="off" style="height: 32px;" id="txtComment"></textarea>
+            </div>
+            <div class="form-more-info">
+                <input type="button" value="Đăng bình luận" class="btn btn-xs" id="sendpcomment" />
+            </div>
+        </div>
+    </div>
+    <?php endif;?>
+    <!-- endunlogin lg -->
+    <div id="cmitem"></div>
+    <p></p>
+    <script>
+        $(document).ready(function () {
+            loadComment(<?php echo $dataId; ?>, 0, null, '<?php echo $type;?>');
+            $('#cmitem').slimScroll({height: 'auto', railVisible: true, wheelStep: 5, railColor: '#444', color: '#777'});
+        });
+        $('#sendpcomment').click(function (e) { addComment(<?php echo $dataId; ?>, 0, 'txtComment', null, '<?php echo $type; ?>');})
+    </script>
+    <a data-page="2" href="javascript:void(0)" onclick="loadComment('<?php echo $dataId; ?>', 0, this,'<?php echo $type; ?>')" class="view-more-cmt" id="view-main-comment"><i class="icon-angle-down"></i> Xem thêm bình luận</a>
+    <div id="reply-comment-${id}" class="reply-comment"> 
+        <textarea class="text-field textarea" cols="10" rows="3" placeholder="Viết nội dung trả lời..." id="_txtComment${id}"></textarea>
+        <div class="reply-comment-btn">
+            <a href="javascript:void(0);" id="send-reply-comment-${pid}" onclick="addComment(${atid},'${id}','_txtComment${id}','reply-cmt-${id}',1)" class="btn btn-mini">Gửi trả lời</a>
+            <a onclick="article.hiderpform(${pid})" href="javascript:void(0);" class="btn btn-mini">Hủy bỏ</a>
+        </div>
+    </div>
+
+    <?php if (false):?>
+    <div id="facebook-cm">
+        <div class="cmt-box-title"><i class="fa fa-facebook-square"></i> - Bình luận bằng tài khoản Facebook</div>
+        <div id="fb-root"></div>
+        <div class="fb-comments" data-href="<?php echo $faceplugin_link;?>" data-width="<?php echo $faceplugin_width; ?>" data-numposts="20" data-colorscheme="dark">Đang tải bình luận, vui lòng đợi chút !</div>
+	</div>
+	<?php endif;?>
+</div>
+
+<script id="_tmplComment" type="text/x-jquery-tmpl">
+    <div class="cmt" id="pcm-${id}">
+        <a href="${uinfo.userlink}" title="${uinfo.username}" class="avatar left">
+            <img src="${uinfo.priavatar}#" alt="${uinfo.username}"/>
+        </a>
+                <span class="cmt-head">
+                    <a href="${uinfo.userLink}" title="${uinfo.username}" class="display-name">${uinfo.username}</a>,
+                    <span>${datecreate} - ${totalReply}</span>
+                    {{if totalReply != "0" }}
+                    <span  style="margin-left: 20px"> ${totalReply} trả lời</span>
+                    {{/if}}
+
+                    <?php if ($authentication):?>
+                    <span class="cmt-interact">
+                        <!-- btnreply rp --> <a href="javascript:void(0);" onclick="showrpform('${id}')" class="reply-cmt"><i class="icon-reply"></i> Trả lời</a><!-- endbtnreply rp -->
+                    </span>
+                    <?php endif;?>
+                </span>
+        <div class="cmt-content"> ${content}</div>
+
+        <div id="reply-comment-${id}" class="reply-comment">
+            <textarea class="text-field textarea" cols="10" rows="3" placeholder="Viết nội dung trả lời..." id="_txtComment${id}"></textarea>
+            <div class="reply-comment-btn">
+                <a href="javascript:void(0);" id="send-reply-comment-${pid}" onclick="addComment(${atid},'${id}','_txtComment${id}','reply-cmt-${id}','<?php echo $type;?>')" class="btn btn-mini">Gửi trả lời</a>
+                <a onclick="hiderpform(${id})" href="javascript:void(0);" class="btn btn-mini">Hủy bỏ</a>
+            </div>
+        </div>
+        <div class="reply-cmt-list">
+        <div id="reply-cmt-${id}">
+        </div>
+         {{if totalReply != "0" }}
+            <a href="javascript:void(0)" data-page="1" onclick="return loadComment(${atid},'${id}',this, '${type}')" id="view-more-child-${id}" class="view-more-cmt"><i class="icon-angle-down"></i> Xem thêm các trả lời</a>
+         {{/if}}
+        <div class="clear"></div>
+        <a title="Click vào đây để Ẩn / Hiện danh sách các trả lời" href="javascript:void(0);" onclick="showhidecm('${id}')" id="show-hide-child-${id}" style="display: none !important;" class="view-more-cmt">Ẩn - Hiện các trả lời</a>
+        </div>
+    </div>
+</script>
+
+<script id="_tmplReplyComment" type="text/x-jquery-tmpl">
+    <div class="cmt" id="cm-${id}">
+        <a href="${uinfo.userLink}" title="${uinfo.username}" class="avatar left">
+            <img src="${uinfo.priavatar}#" alt="${uinfo.username}"/>
+        </a>
+        <span class="cmt-head">
+            <a href="${uinfo.userLink}" title="${uinfo.username}" class="display-name">${uinfo.username}</a>,
+            <span>${datecreate}</span>
+        </span>
+        <div class="cmt-content"> ${content}</div>
+    </div>
+</script>

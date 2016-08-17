@@ -1,0 +1,82 @@
+<div class="menu">
+    <div id="wrap-bg"></div>
+    <div class="wrapper">
+        <div id="logo-top"><a title="Trở về trang chủ" href="/">DJ.pro.vn</a></div>
+
+        <div id="TuoiGiNotifi">
+            <div id="notifi-btn">
+                &nbsp;
+            </div>
+        </div>
+        <div id="tuoigi-search">
+            <form action="/tim-kiem">
+                <input type="text" placeholder="Gõ từ khóa muốn tìm kiếm rồi bấm Enter...." name="q" id="q1" autocomplete="off" oninput="inputKeySearch()">
+                <input type="submit" value="" class="onlyie6">
+            </form>
+            <div id="search-result-box" style="display: block;">
+
+            </div>
+            <div id="tuoigi-suggest"></div>
+        </div>
+        <div id="utility-area">
+            <a title="Bấm vào đây để Đóng / Mở khung tìm kiếm với Google" id="user-utility-btn" href="javascript:void(0);" class="utility-link">Tìm với Google</a>
+            <div id="utilityBox" style="display: none;"><ul>
+                    <li>Công cụ tìm kiếm tất cả những gì bạn cần trong website bằng Google</li>
+                    <script>
+                        (function() {
+                            var cx = '002960563011244959048:xssv7esz1ec';
+                            var gcse = document.createElement('script');
+                            gcse.type = 'text/javascript';
+                            gcse.async = true;
+                            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                            '//www.google.com/cse/cse.js?cx=' + cx;
+                            var s = document.getElementsByTagName('script')[0];
+                            s.parentNode.insertBefore(gcse, s);
+                        })();
+                    </script>
+                    <gcse:search></gcse:search>
+                    <li class="sepe-top"><a href="http://goo.gl/t1Pv8X" target="_blank" title="Trang upload ảnh miễn phí - tốc độ cực nhanh" class="text-warning"><i class="icon-picture"></i> Upload Ảnh Miễn Phí</a></li>
+                    <li class="right"><a title="Tắt khung công cụ này" id="close-utility-box" href="javascript:void(0);" class="utility-link"> × Tắt khung này</a></li>
+                </ul>
+            </div>
+        </div>
+        <?php if ($authentication == false):?>
+        <div id="tuoigi-user-bar">
+            <input type="hidden" value="0" id="userLoginID">
+            <a title="Đăng ký tài khoản mới" href="/dang-ky"><i class="icon-user"></i> Đăng ký tài khoản mới</a>
+            &nbsp;&nbsp;-&nbsp;&nbsp;
+            <a onclick="return false;" href="/dang-nhap" id="login-btn" title="Đăng nhập"><i class="icon-lock"></i> Đăng nhập <span class="dropdown-arrow">▲</span></a>
+            <div id="loginBox">
+                <form action="/dang-nhap" method="post">
+                    <label><span>Tên đăng nhập:</span> <input type="text" id="username-login" name="username" required="true"></label>
+                    <label><span>Mật khẩu:</span> <input type="password" id="password-login" name="password" required="true"></label>
+                    <label><input type="checkbox" name="remember" value="1"> Ghi nhớ đăng nhập</label>
+                    <input type="hidden" name="currentpage" value="/" />
+                    <input type="submit" value="Đăng nhập" class="btn btn-small btn-info right">
+                </form>
+                <p class="center no-margin clear"><a title="Lấy lại mật khẩu" href="quen-mat-khau.html">Bạn quên mật khẩu  ?</a></p>
+            </div>
+        </div>
+        <?php else :?>
+        <div id="tuoigi-user-bar">
+		    <input type="hidden" value="1402764791" id="userLoginID">
+		    <a title="Admin" href="/user">
+		        <img src="http://media.edaily.vn/files/teen_360/22102013/8759639566_e0070c22fd_b.jpg" alt="Avatar"> <?php echo $userData['username'] ?></a>
+		    &nbsp;&nbsp;-&nbsp;&nbsp;
+		    <a onclick="return false;" href="#" id="user-manager-btn" title="Bảng điều khiển"><i class="icon-wrench"></i> Bảng điều khiển <span class="dropdown-arrow">▲</span></a>
+		    <div id="userBox" style="display: none;">
+		        <ul>
+		            <li><a title="Upload ảnh miễn phí" href="http://goo.gl/t1Pv8X" target="_blank"><i class="fa fa-picture-o"></i> Upload ảnh miễn phí cực nhanh</a></li>
+		            <li class="sepe-bot"><a title="Trang cá nhân của bạn" href="<?php echo Helper::makeUserLink($userData['username'], $userId)?>"><i class="fa fa-home"></i> Trang cá nhân của bạn</a></li>
+		            <li class="sepe-top"><a title="Đổi mật mã" href="/user/changePassword"><i class="fa fa-lock"></i> Đổi mật khẩu</a></li>
+		            <li class="sepe-bot"><a title="Đổi thông tin tài khoản" href="/user/edit"><i class="fa fa-credit-card"></i> Đổi thông tin tài khoản</a></li>
+		            <li class="sepe-top"><a target="_blank" title="Đăng nhạc" href="/post-<?php echo $userName; ?>"><i class="fa fa-upload"></i> Đăng nhạc</a></li>
+		            <li><a title="Danh sách các bài đã đăng" href="/posted-<?php echo $userName; ?>"><i class="fa fa-list-ol"></i> Danh sách các bài đã đăng</a></li>
+		            <li class="sepe-bot"><a title="Playlist của bạn" href="/playList-<?php echo $userName; ?>"><i class="fa fa-music"></i> Playlist của bạn</a></li>
+		            <li class="sepe-top"><a title="" href="/user/logout" onclick="return confirm('Bạn chắc chắn muốn Thoát ?');"><i class="fa fa-sign-out"></i> THOÁT</a></li>
+		        </ul>
+		    </div>
+		</div>
+        <?php endif;?>
+    </div>
+</div>

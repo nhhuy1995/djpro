@@ -1,0 +1,39 @@
+<?php 
+	$mediaId = $media->_id;
+	$mediaName = $media->name;
+?>
+<div class="col-lg-12">
+	<div class="music-info">
+		<h1><?php echo $mediaName ?></h1>
+	</div>
+	<div class="music-player">           
+		<div class="youtube-player">
+			 <iframe width="100%" height="100%" src="<?php echo Helper::switchlink($media->link); ?>"></iframe>
+		</div>
+		
+		<p class="song-info center">
+			<span class="pull-left">
+				<i class="fa fa-eye"></i> <span><?php echo $media->view ?></span>
+			</span>
+			<span class="pull-right">
+				<i class="fa fa-user"></i> Đăng bởi: <a href="<?php echo Helper::makeUserLink($user->name, $user->_id)?>" title="<?php echo $user->name ?>"><?php echo $user->name ?></a>
+			</span>
+			<div class="clearfix"></div>
+		</p>
+		
+		<div class="btn-group btn-group-justified">
+		  <a onclick="<?php if($authentication){ ?>likearticle(<?php echo $mediaId; ?>) <?php } else { ?>not_login() <?php };?>" class="btn btn-default btn-sm" href="javascript:void(0);" title="Thích"><i class="fa fa-thumbs-up"></i> Like</a>
+		  <a onclick="<?php if($authentication){ ?>dislikearticle(<?php echo $mediaId; ?>) <?php } else { ?>not_login() <?php };?>" class="btn btn-default btn-sm" href="javascript:void(0);" title="Không thích"><i class="fa fa-thumbs-down"></i> Dislike</a>
+		  <a class="btn btn-default btn-sm" <?php if($authentication){ ?>href="javascript:void(0);"<?php }?> title="Thêm vào Playlist"><i class="fa fa-plus-square"></i> Thêm</a>
+		  <a class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal" href="javascript:void(0);" title="Chia sẻ"><i class="fa fa-link"></i> Chia sẻ</a>
+		</div>
+	</div>
+	
+	<div class="music-tracklist">
+		<h4 class="block-title"><i class="fa fa-info-circle"></i> Thông tin Video:</h4>
+		<div id="track-list" class="">
+		<p></p><p><?php if(isset($media->lyric)) echo $media->lyric; else { ?>Đang được cập nhật</p> <?php } ?></div>
+		<a id="show-more-tracklist" class="btn text-warning btn-sm btn-block no-display" href="javascript:void(0);"><i class="fa fa-caret-down"></i> Xem thêm</a>
+		<a id="show-less-tracklist" class="btn text-warning btn-sm btn-block" href="javascript:void(0);"><i class="fa fa-caret-up"></i> Thu gọn</a>
+	</div>
+</div>

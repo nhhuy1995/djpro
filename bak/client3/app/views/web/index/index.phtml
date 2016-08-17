@@ -1,0 +1,331 @@
+<div id="top-content">
+<div id="second-top-content">
+    <!-- Top de cu & Chatbox -->
+    <div class="left-box-home"><h4><i class="icon-music"></i> Top bài hát được đề cử nhiều nhất trong tuần bởi thành viên</h4>
+
+
+        <div id="wrap-decu">
+            <div id="top-decu-by-supercom" style="overflow: hidden; width: auto; height: auto;">
+                <?php foreach ($listMediaNomination as $key => $value):?>
+                <?php $valueName = $value->name;?>
+                <div class="top-bit">
+                    <div class="top-num">
+                        <span class="top-rank-1"><?php echo $key+1;?></span>
+                    </div>
+                    <div class="top-decu-song-name">
+                        <h3>
+                            <a href="/bai-hat/<?php echo Helper::urlFriendly($valueName, $value->_id)?>" title="<?php echo $valueName;?>"><?php echo $valueName;?></a>
+                        </h3>
+                    </div>
+                    <div class="top-count"><?php echo $value->totalVote;?></div>
+                </div>
+                <?php endforeach;?>
+
+                <div class="clear"></div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- EndTopDecu &chatbox -->
+
+    <!-- Start Right Box -->
+    <div class="right-box-home">
+        <div id="home-chatbox" class="box-content">
+
+            <p class="center">
+            </p>
+            <div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-show-border="false" data-stream="false" data-header="false" data-show-faces="true" data-colorscheme="dark" data-height="205" data-width="460"></div>
+
+        </div>
+    </div>
+</div>
+<!-- End Right Box -->
+<div class="clear"></div>
+<div class="break-top-content"></div>
+<div id="left-top-content">
+    <div class="column-title">Ca khúc chọn lọc</div>
+    <div class="column-content">
+        <ul class="top-list">
+            <?php $helper = new Helper();?>
+            <?php foreach ($mediaChoice as $index => $value):?>
+            <?php $name = $value->name;?>
+            <li>
+                <div class="top-icon top<?php echo $index+1?>"><?php echo $index+1?>.</div>
+                <div class="top-right">
+                    <h3><a href="/bai-hat/<?php echo $helper->urlFriendly($name, $value->_id);?>"
+                           title="<?php echo $name;?>"><?php echo $name?></a></h3>
+                </div>
+                <br class="clear"/>
+            </li>
+            <?php endforeach;?>
+
+
+        </ul>
+    </div>
+</div>
+<div data-ng-app="myApp">
+    <div id="center-top-content" ng-controller="ViewTopMedia" style="margin-bottom: 10px">
+        <div class="tab-title">
+            <div class="tabs">
+                <div class= "tab" ng-class="{'active': sorttype=='view'}" id="top-listen-btn">
+                    <a ng-click="changeSort('view', 'top-listen-btn');">Top Nghe Nhiều</a>
+                </div>
+                <div class= "tab" ng-class="{'active': sorttype=='down'}" id="top-down-btn">
+                    <a ng-click="changeSort('down', 'top-down-btn');">Top Tải Nhiều</a>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="top-article">
+            <div class="choose-button selecttopviewmedia">
+                <a class="btn-choose left-btn active" ng-click="getTopArticle('w','audio','view',1);">Tuần</a>
+                <a class="btn-choose middle-btn" ng-click="getTopArticle('m','audio','view', 2);">Tháng</a>
+                <a class="btn-choose right-btn" ng-click="getTopArticle('y','audio','view',3);">Năm</a>
+            </div>
+
+            <ul class="top-list">
+                <li ng-repeat="media in listviewtopmedia">
+                    <div class="top-right">
+                        <span class="top-icon top{{media.index}}">{{media.index}}.</span>
+                        <h3><a href="{{media.intenetlink}}" title="{{media.name}}">{{media.name}}</a></h3>
+                    </div>
+                    <br class="clear"/>
+                </li>
+            </ul>
+            <div class="center top-viewmore-btn"><a href="bang-xep-hang-audio-w" title="Xem thêm"><b>&raquo; Xem thêm</b></a></div>
+        </div>
+    </div>
+    <div id="right-top-content" ng-controller="ViewTopUser">
+        <div class="tab-title">
+            <div class="tabs">
+                <div  class= "tab" ng-class="{'active': sorttype=='like'}" id="top-like-btn">
+                    <a ng-click="changeSort('like', 'top-like-btn');">Like</a></div>
+                <!--<div class="tab" id="top-comment-btn"><a href="javascript:getTopUser('week','comment','top-user');">Comment</a></div>-->
+                <div  class= "tab" ng-class="{'active': sorttype=='post'}" id="top-poster-btn">
+                    <a ng-click="changeSort('post', 'top-poster-btn');">Poster</a>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="top-user">
+            <div class="choose-button selecttopviewuser">
+                <a class="btn-choose left-btn active" ng-click="getTopUser('w', 1);">Tuần</a>
+                <a class="btn-choose middle-btn" ng-click="getTopUser('m', 2);">Tháng</a>
+                <a class="btn-choose right-btn" ng-click="getTopUser('y', 3);">Năm</a>
+            </div>
+
+            <ul class="top-list">
+                <li ng-repeat="user in listviewtopuser">
+                    <div class="top-right">
+                        <div class="user-name">
+                            <span class="top-icon top{{user.index}}">{{user.index}}.</span>
+                            <a class="postername" href="{{user.internetlink}}" title="{{user.username}}">{{user.username}}</a></div>
+                        <div class="user-count">{{user.count}}</div>
+                    </div>
+                    <br class="clear"/>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<div id="my-playlist-box" style="display: none;">
+    <div id="addPlaylist_at_id" data-atid=""></div>
+    <div id="playlist-list-title">
+        Chọn Playlist muốn thêm
+        <a href="javascript:void(0);" id="closeAddPlaylist">(Đóng lại)</a>
+    </div>
+    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: auto;">
+        <div id="playlist-list" style="overflow: hidden; width: auto; height: auto;">
+        </div>
+        <div class="slimScrollBar ui-draggable"
+             style="background: none repeat scroll 0% 0% rgb(119, 119, 119); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 64px;"></div>
+        <div class="slimScrollRail"
+             style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: none repeat scroll 0% 0% rgb(68, 68, 68); opacity: 0.2; z-index: 90; right: 1px;"></div>
+    </div>
+    <div id="add-new-playlist">
+        <input type="text" name="playlist_name" placeholder="Thêm Playlist mới - gõ tên Playlist vào đây..."
+               id="add-playlist-name">
+        <a href="javascript:void(0);" class="btn btn-success" id="add-new-playlist-btn"
+           onclick="addNewPlaylist()">Thêm</a>
+    </div>
+    <div id="my-playlist-list"><a href="./playlist-cua-toi.html" title="Xem danh sách Playlist của bạn">XEM DANH SÁCH
+            PLAYLIST CỦA BẠN</a></div>
+</div>
+<div class="top-topic col-bit clearfix">
+    <div class="col-title">Chủ đề chọn lọc</div>
+    <div class="col-content">
+        <ul class="related">
+            <?php $count = 0?>
+            <?php foreach ($topicChoiceList as $value):?>
+            <?php
+                $topic_name = $value->name;
+                $value_id = $value->_id;
+            ?>
+            <li>
+                <a <?php if ($count == 4) { echo 'class="last"';}?> href="/chu-de/<?php echo Helper::urlFriendly($topic_name, $value_id)?>" title="<?php echo $topic_name?>">
+                    <img src="<?php echo $value->priavatar;?>" />
+                    <span class="icon-circle-play"><i class="fa fa-play-circle"></i></span>
+                    <div class="topic-name"><?php echo $topic_name?></div>
+                    <div class="item-mask"></div>
+                </a>
+            </li>
+            <?php $count++; endforeach;?>
+        </ul>
+    </div>
+</div>
+
+<!-- Left Column -->
+<div id="left-column" class="left-column-small">
+
+    <div class="column-bit">
+        <div id="category-title" class="home-column-title center-home-column-title"><a href="#">Danh mục</a></div>
+        <ul class="home-category">
+            <?php foreach ($homeCategoryList as $category):?>
+            <?php
+                $categoryName = $category->name;
+                $childCategory = $category->childCategory;
+            ?>
+            <li class="item1"><a title="Music" href="javascript:void(0)" class="active"><i class="fa fa-music"></i><?php echo $categoryName?></a>
+                <ul class="cat-show" style="display: block;">
+                    <?php foreach ($childCategory as $value):?>
+                    <li><a href="/danh-muc/<?php echo Helper::urlFriendly($value->name, $value->_id)?>" title="Việt Remix"><?php echo $value->name?></a></li>
+                    <?php endforeach;?>
+                </ul>
+            </li>
+            <?php endforeach;?>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        var menu_ul = $(".home-category > li > ul"), menu_a = $(".home-category > li > a");
+        menu_ul.hide();
+        $(".home-category > li > ul.cat-show").show();
+        menu_a.click(function (a) {
+            a.preventDefault();
+            if (!$(this).hasClass("active")) {
+                menu_a.removeClass("active");
+                menu_ul.filter(":visible").slideUp("fast");
+                $(this).addClass("active").next().stop(true, true).slideDown("fast")
+            } else {
+                $(this).removeClass("active");
+                $(this).next().stop(true, true).slideUp("fast")
+            }
+        });
+        $(document).ready(function(){
+            $(".home-category > li > a").click();
+            $(".home-category > li > a").first().click();
+        });
+    </script>
+    <div class="column-bit">
+        <div class="home-column-title">Album mới</div>
+        <div class="center-column-content">
+            <div id="album-list" style="max-height: 260px">
+                <?php foreach ($albumList as $album):?>
+                <?php $albumName = $album->name?>
+                <div class="album-bit">
+                    <div class="album-cover">
+                        <a href="/album/<?php echo Helper::urlFriendly($albumName, $album->_id)?>" title="<?php echo $albumName?>">
+                            <img alt="<?php echo $albumName?>" src="<?php echo $album->priavatar?>"/></a>
+                    </div>
+                    <div class="album-name">
+                        <a href="/album/<?php echo Helper::urlFriendly($albumName, $album->_id)?>" title="<?php echo $albumName?>"><?php echo $albumName?></a>
+                    </div>
+                </div>
+                <?php endforeach;?>
+            </div>
+        </div>
+    </div>
+
+    <div class="column-bit">
+        <div class="home-column-title">Deejay</div>
+        <ul class="artist-list" id="artist-dj">
+            <?php foreach ($singerList as $singer):?>
+            <?php $singerName = $singer->name;?>
+            <li><a href="#<?php //echo Helper::makeUserLink($singer->name, $singer->_id, "singer")?>" title="<?php echo $singerName;?>"><i class="fa fa-dot-circle-o"></i><?php echo $singerName;?></a></li>
+            <?php endforeach?>
+        </ul>
+    </div>
+</div>
+<!-- Left Column -->
+
+
+<!-- Center Column -->
+<div id="center-column">
+<div id="center-column-content">
+<div class="column-bit">
+
+<?php foreach ($baseCategoryList as $category):?>
+<div class="home-column-title center-column-index"><?php echo $category->name;?></div>
+<div class="column-content">
+    <div class="song-list">
+        <?php $media = $category->media;?>
+        <?php foreach ($media as $value):?>
+        <?php
+            $media_id = $value->_id;
+            $media_name = $value->name;
+        ?>
+        <div class="song-bit">
+            <span class="song-icon"><i class="fa fa-music"></i></span>
+            <div class="song-name"><h3><a href="/bai-hat/<?php echo $helper->urlFriendly($media_name, $media_id) ?>" title="<?php echo $media_name;?>"><?php echo $media_name?></a>
+
+                </h3></div>
+            <div class="add-to-playlist">
+                <a onclick="showAddPlaylist(1409135130)" href="javascript:void(0)" title="Thêm vào playlist nhạc"></a>
+            </div>
+            <div class="song-listen">3407 lượt</div>
+        </div>
+        <?php endforeach;?>
+    </div>
+    <div class="view-more">
+        <a title="Xem thêm các bài hát thuộc danh mục <?php echo $category->name; ?>" href="<?php echo Helper::urlGenerate($category->name, $category->_id, "category") ?>"><i class="fa fa-caret-down"></i>
+            Xem thêm
+            <thêm></thêm></a>
+    </div>
+</div>
+<?php endforeach?>
+</div>
+
+</div>
+</div>
+<!-- Center Column -->
+
+
+<!-- Right Column -->
+<div id="right-column" class="right-column-big">
+    <div class="column-bit">
+        <div class="home-column-title">Video chọn lọc</div>
+        <div class="column-content">
+            <div id="list-video-home">
+                <?php foreach ($topVideoMediaChoiceList as $value):?>
+                <?php $video_name = $value->name?>
+                <div class="video-bit">
+                    <div class="video-thumb">
+                        <a href="/video-<?php echo Helper::urlFriendly($video_name, $value->_id) ?>" title=""><img src="<?php echo $value->priavatar;?>" alt="<?php echo $video_name?>"/>
+                            <div class="play-video-icon"></div>
+                        </a>
+                    </div>
+                    <div class="video-title">
+                        <h3>
+                            <a href="/video-<?php echo Helper::urlFriendly($video_name, $value->_id) ?>" title="<?php echo $video_name?>"><?php echo $video_name?></a>
+                        </h3>
+                    </div>
+                </div>
+                <?php endforeach;?>
+
+                <div class="clear"></div>
+            </div>
+            <div class="view-more">
+                <a title="Xem thêm các bài hát thuộc danh sách video chọn lọc" href="/video-chon-loc"><i class="fa fa-caret-down"></i>
+                    Xem thêm
+                    <thêm></thêm></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- Right Column -->
+<div class="clear"></div>
+<script>
+    $('#album-list').slimScroll({height: "auto", railVisible: true, railColor: "#444", color: "#777"});
+</script>
