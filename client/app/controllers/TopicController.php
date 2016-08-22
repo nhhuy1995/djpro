@@ -52,7 +52,7 @@ class TopicController extends ControllerBase
         $this->view->listtopic = $listcategory;
         $this->view->listTopic_New = $listTopic_New;
         $this->view->listTopicSelectvie = $listTopicSelectvie;
-        $this->view->header = $cursor;
+        $this->view->topic_special = $cursor;
         $this->view->header = Helper::setHeader('Chủ đề','','');
     }
 
