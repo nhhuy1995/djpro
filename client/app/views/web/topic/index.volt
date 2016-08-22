@@ -4,30 +4,30 @@
     <div class="banner-gs">
         <div class="container">
             <ul class="breadcrumbs">
-                <li><a href="/"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><a href="/trang-chu.html"><i class="fa fa-home fa-lg"></i></a></li>
                 <li><a href="/chu-de.html">Chủ đề</a></li>
             </ul>
         </div>
         <div class="container">
             <div class="divpre">
-                <a href="{{ header.link }}" title="{{ header.name }}" alt="{{ header.name }}">
-                    <img height="350" alt="chủ đề" src="{{ header.banner | default("/web/images/relax.jpg") }}">
+                <a href="{{ topic_special.link }}" title="{{ topic_special.name }}" alt="{{ topic_special.name }}">
+                    <img height="350" alt="chủ đề" src="{{ topic_special.banner | default("/web/images/relax.jpg") }}">
                 </a>
 
                 <div class="box-info-artist">
                     <div class="info-artist fluid">
 
                         <div class="caption-cd">
-                            <a href="{{ header.link }}" title="{{ header.name }}" alt="{{ header.name }}">
-                                <div class="info-summary-title"><h1>{{ header.name }}</h1></div>
+                            <a href="{{ topic_special.link }}" title="{{ topic_special.name }}" alt="{{ topic_special.name }}">
+                                <div class="info-summary-title"><h1>{{ topic_special.name }}</h1></div>
                             </a>
-                            <p>{{ header.description }}
-                                {% if header.artist %}
+                            <p>{{ topic_special.description }}
+                                {% if topic_special.artist %}
                                 -
-                                {% for item in header.artist %}
+                                {% for item in topic_special.artist %}
                                 <a href="{{ item['link'] }}" title="{{ item['username'] }}" target="_blank"
-                                   alt="{{ item['username'] }}">{{ item['username'] }}</a> {% if !loop.last %}ft {% endif %}
-                                {% endfor %}
+                                   alt="{{ item['username'] }}">{{ item['username'] }}</a> {% if !loop.last %}ft. {% endif %}
+                                    {% endfor %}
                                 {% endif %}
                             </p>
                         </div>

@@ -108,7 +108,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-3 col-xs-5 col-sm-5">
-                                    <i class="fa fa-home"></i> Đến từ:
+                                    <i class="fa fa-map-marker"></i> Đến từ:
                                 </div>
                                 <div class="col-md-9 col-xs-7 col-sm-7">
                                     {{ object.from }}

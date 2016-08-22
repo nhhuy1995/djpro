@@ -34,7 +34,10 @@ class IncomingController extends ControllerBase
                 'fields' => array('_id', 'username', 'email', 'priavatar'),
                 'condition' => array('_id' => array('$in' => $listIdUser))
             ));
-            foreach ($listUser as $key => $item) $listUser[$key]['link'] = Makelink::link_view_member($item['username'], $item['_id']);
+            foreach ($listUser as $key => $item) {
+                $listUser[$key]['link'] = Makelink::link_view_member($item['username'], $item['_id']);
+                if (empty($item['priavatar']) || !isset($item['priavatar'])) $listUser[$key]['priavatar'] = Helper::getAvatarUserDefault();
+            }
         }
         $dtr['status'] = 200;
         $dtr['msg'] = 'Successfuly';
@@ -350,22 +353,28 @@ class IncomingController extends ControllerBase
 
     public function sendfeedbackAction()
     {
-        $content = $_POST['content'];
-        $atid = $_POST['atid'];
-        $type = $_POST['type'];
+        $content = $this->request->get('content');
+        $atid = $this->request->get('atid');
+        $type = $this->request->get('type');
         $uinfo = $this->session->get('uinfo');
-        $new_feedback = array(
-            "_id" => strval(strtotime('now')),
-            "content" => $content,
-            "atid" => $atid,
-            "type" => $type,
-            "datecreate" => strtotime('now'),
-            "usersendfeedback" => $uinfo['_id'],
-        );
-        Feedback::insertDocument($new_feedback);
-        $dtr['status'] = 200;
-        $dtr['msg'] = "Cám ơn bạn đã quan tâm và sử dụng nhạc tại DJ Pro. Mọi ý kiến đóng góp của bạn sẽ được BQT Dj Pro tiếp nhận và giải quyết trong thời gian sớm nhất.";
-
+        $cookie_key = 'fb_' . $atid . '_' . $type;
+        if ($this->cookies->has($cookie_key)) {
+            $dtr['status'] = 300;
+            $dtr['msg'] = "Sau 10 phút bạn mới được phép thao tác tiếp!";
+        } else {
+            $new_feedback = array(
+                "_id" => strval(strtotime('now')),
+                "content" => $content,
+                "atid" => $atid,
+                "type" => $type,
+                "datecreate" => strtotime('now'),
+                "usersendfeedback" => $uinfo['_id'],
+            );
+            Feedback::insertDocument($new_feedback);
+            $dtr['status'] = 200;
+            $dtr['msg'] = "Cám ơn bạn đã quan tâm và sử dụng nhạc tại DJ Pro. Mọi ý kiến đóng góp của bạn sẽ được BQT Dj Pro tiếp nhận và giải quyết trong thời gian sớm nhất.";
+            $this->cookies->set($cookie_key, true, time() + (60 * 10))->send(); // set cookie 10 minutus
+        }
         Helper::jsonResponse($dtr);
     }
 
@@ -446,25 +455,30 @@ class IncomingController extends ControllerBase
 
     public function addplaylistAction()
     {
-        $name = $_GET['name'];
+        $name = $this->request->get('name');
         $type = isset($_GET['type']) ? $_GET['type'] : "audio";
         $uinfo = $this->session->get('uinfo');
         if (isset($uinfo)) {
-            $newPlaylist = array(
-                '_id' => strval(strtotime('now')),
-                'name' => $name,
-                'type' => 'playlist',
-                'type_play' => $type,
-                'listsong' => [],
-                'status' => 0,
-                'namenonutf' => Helper::convertToUtf8($name),
-                'datecreate' => strtotime('now'),
-                'usercreate' => $uinfo['_id'],
-            );
-            Album::insertDocument($newPlaylist);
-            $dtr['status'] = 200;
-            $dtr['mss'] = "Successfully";
-            $dtr['data'] = $newPlaylist;
+            if (empty($name)) {
+                $dtr['status'] = 300;
+                $dtr['mss'] = "Vui lòng nhập tên playlist";
+            } else {
+                $newPlaylist = array(
+                    '_id' => strval(strtotime('now')),
+                    'name' => $name,
+                    'type' => 'playlist',
+                    'type_play' => $type,
+                    'listsong' => [],
+                    'status' => 0,
+                    'namenonutf' => Helper::convertToUtf8($name),
+                    'datecreate' => strtotime('now'),
+                    'usercreate' => $uinfo['_id'],
+                );
+                Album::insertDocument($newPlaylist);
+                $dtr['status'] = 200;
+                $dtr['mss'] = "Successfully";
+                $dtr['data'] = $newPlaylist;
+            }
         } else {
             $dtr['status'] = 300;
             $dtr['mss'] = "Vui lòng đăng nhập để sử dụng tính năng này!";

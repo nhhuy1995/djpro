@@ -47,6 +47,7 @@
                                 <div class="info-pd-top">
                                     <p>
                                         <i class="fa fa-youtube-play"></i> Lượt xem: {{ object.view }}
+                                        <i class="fa fa-download"></i> Lượt tải: {{ object.download }}
                                         {% if session['_id'] %}
                                             <span class="boutlike" style="color: white;">
                                             <i class="fa fa-thumbs-up"></i> Thích:
@@ -101,7 +102,7 @@
                             {% else %}
                                 {% set media_url = object.direct_media_url %}
                             {% endif %}
-                            <source src="{{ media_url }}" type='video/mp4' label="Default"/>
+                            <source src="{{ media_url }}" type='video/mp4' label="Auto"/>
                             {% if object.link_video_1080 %}
                                 <source src="{{ object.link_video_1080 }}" type='video/mp4' label='1080p'/>
                             {% endif %}
@@ -472,22 +473,22 @@
                             <ul class="down-app">
                                 <p>Click vào 1 trong các liên kết bên dưới để Download về máy Video: <strong>{{ object.name }}</strong></p>
                                 {% if object.link_video_1080 %}
-                                    <li><a href="javascript:void(0)" onclick="downloadMedia(this)" data-id="{{ object._id }}" data-quality="link_video_1080">1080p</a></li>
+                                    <li><a href="javascript:void(0)" onclick="downloadMedia(this)" data-id="{{ object._id }}" title="1080p" data-quality="link_video_1080">1080p</a></li>
                                 {% endif %}
                                 {% if object.link_video_720 %}
-                                    <li><a href="javascript:void(0)" onclick="downloadMedia(this)" data-id="{{ object._id }}" data-quality="link_video_720">720p</a></li>
+                                    <li><a href="javascript:void(0)" onclick="downloadMedia(this)" data-id="{{ object._id }}" title="720p" data-quality="link_video_720">720p</a></li>
                                 {% endif %}
                                 {% if object.link_video_480 %}
-                                    <li><a href="javascript:void(0)" onclick="downloadMedia(this)" data-id="{{ object._id }}" data-quality="link_video_480">480p</a></li>
+                                    <li><a href="javascript:void(0)" onclick="downloadMedia(this)" data-id="{{ object._id }}" title="480p" data-quality="link_video_480">480p</a></li>
                                 {% endif %}
                                 {% if object.link_video_360 %}
-                                    <li><a href="javascript:void(0)" onclick="downloadMedia(this)" data-id="{{ object._id }}" data-quality="link_video_360">360p</a></li>
+                                    <li><a href="javascript:void(0)" onclick="downloadMedia(this)" data-id="{{ object._id }}" title="360p" data-quality="link_video_360">360p</a></li>
                                 {% endif %}
                                 {% if object.link_video_240 %}
-                                    <li><a href="javascript:void(0)" onclick="downloadMedia(this)" data-id="{{ object._id }}" data-quality="link_video_240">240p</a></li>
+                                    <li><a href="javascript:void(0)" onclick="downloadMedia(this)" data-id="{{ object._id }}" title="240p" data-quality="link_video_240">240p</a></li>
                                 {% endif %}
                                 {% if object.link_video_144 %}
-                                    <li><a href="javascript:void(0)" onclick="downloadMedia(this)" data-id="{{ object._id }}" data-quality="link_video_144">144p</a></li>
+                                    <li><a href="javascript:void(0)" onclick="downloadMedia(this)" data-id="{{ object._id }}" title="144p" data-quality="link_video_144">144p</a></li>
                                 {% endif %}
                             </ul>
                         </div>

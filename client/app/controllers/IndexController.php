@@ -24,7 +24,7 @@ class IndexController extends ControllerBase
     {
         $this->view->listmedia = Media::ListMusicByMultiConditions(self::$TYPE_MUSIC, 10, 1);//list media by datecreate
 
-        $this->view->listMedia_ByView = Media::ListMusicByMultiConditions(self::$TYPE_MUSIC, 10, 2);//list media by view
+//        $this->view->listMedia_ByView = Media::ListMusicByMultiConditions(self::$TYPE_MUSIC, 10, 2);//list media by view
 
         $this->view->listPlaylist = Album::ListAlbumByMultiConditions(self::$TYPE_PLAYLIST, 5, 1); //List playlist
 
@@ -41,6 +41,10 @@ class IndexController extends ControllerBase
         $listIdVideo = Settings::getElementByKey(self::$TYPE_SELECTIVE_VIDEO);
         $this->view->list_SelectiveVideo = Helper::resortarray(Media::ListMusicByMultiConditions(self::$TYPE_VIDEO, 6, 1, $listIdVideo), $listIdVideo, "_id");
         $this->view->class = "mbot-20";
+
+        ##list Audio by view
+        $ranking = new RankingController();
+        $this->view->listMedia_ByView = $ranking->getMediaConditions('Media', 'audio', 'month', 10);## list music by view
 
         $this->view->header = Helper::setHeader(
             'Nhạc Sàn Mp3, Nghe nhạc DJ, Nonstop HAY mới 2016' ,
@@ -68,22 +72,22 @@ class IndexController extends ControllerBase
 
     public function dieukhoanAction()
     {
-        $this->view->title = "Điều khoản thỏa thuận";
+        $this->view->header = Helper::setHeader("Điều khoản thỏa thuận");
     }
 
     public function banquyenAction()
     {
-        $this->view->title = "Chính sách bản quyền";
+        $this->view->header = Helper::setHeader("Chính sách bản quyền");
     }
 
     public function riengtuAction()
     {
-        $this->view->title = "Chính sách riêng tư";
+        $this->view->header = Helper::setHeader("Chính sách riêng tư");
     }
 
     public function lienheAction()
     {
-        $this->view->title = "Liên hệ";
+        $this->view->header = Helper::setHeader("Liên hệ");
     }
 
     public function testAction()

@@ -233,7 +233,7 @@
 
                 <p class="fieldset">
                     <input type="checkbox" id="accept-terms" class="confirm_register">
-                    <label for="accept-terms">Tôi đồng ý với các <a href="#">Điều khoản</a> trên website</label>
+                    <label for="accept-terms">Tôi đồng ý với các <a href="/dieu-khoan-thoa-thuan.html">Điều khoản</a> trên website</label>
                 </p>
 
                 <p class="fieldset">

@@ -69,9 +69,9 @@ class ControllerBase extends Controller
 
         $this->viewComponent = new ViewComponent();
         $this->view->DOMAIN = DOMAIN;
+        $session_userinfo['link'] = Makelink::link_view_member($session_userinfo['username'],$session_userinfo['_id']);
         $this->view->session = $session_userinfo;
         $this->redisConnect = $this->getDI()->getShared('redisConnect');
-        $this->view->session = $this->session->get('uinfo');
         ##link login fb
         $appid = $this->config->facebook->appid;
         $urlfb = "https://www.facebook.com/dialog/oauth?client_id=$appid&redirect_uri=http://dj.pro.vn/user/callbackfb";

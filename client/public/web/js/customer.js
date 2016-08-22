@@ -15,6 +15,7 @@ setInterval(function () {
 
 
 function searchsubmit() {
+    var keyword = $('#txt_keyword').val();
     $('#frmsearch').submit();
 }
 /*function search() {

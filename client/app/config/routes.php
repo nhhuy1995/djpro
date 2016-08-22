@@ -1,6 +1,5 @@
 <?php
 $router = new \Phalcon\Mvc\Router();
-
 $router->add("/trang-chu.html", array(
     'controller' => 'index',
     'action' => 'index'
@@ -437,6 +436,12 @@ $router->add('/ebd_cl/{cl_id:[0-9]+}', array(
     'controller' => 'embed',
     'action' => 'collection',
     'cl_id ' => 1
+));
+
+$router->add('/ebd_v/{at_id:[0-9]+}', array(
+    'controller' => 'embed',
+    'action' => 'video',
+    'at_id ' => 1
 ));
 
 #################################################

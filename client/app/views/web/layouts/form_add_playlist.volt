@@ -65,16 +65,14 @@
             var data = re.data;
             var html = '';
             $('.list-playlist-item').empty();
-            if (data != null) {
+            if (data.length > 0) {
                 jQuery.each(data, function (index, value) {
                     html += '<li>'
                             + '<span><i class="fa fa-music"></i><a  onclick="addSoongToPlaylist(' + value._id + ')" href="javascript:void(0);">' + value.name + '</a></span>'
                     '</li>';
                 });
                 $('.list-playlist-item').append(html);
-            } else {
-                alert('Bạn chưa có playlist nào.');
-            }
+            } else  $('.list-playlist-item').html('<li id="not_playlist" style="text-align: center"><a href="javascript:void(0);">Chưa có playlist nào</a></span></li>');
         });
 
     }
@@ -87,6 +85,7 @@
             console.log(re);
             var result = re.data;
             var html = '';
+            $('#not_playlist').remove();
             if (re.status == 200) {
                 html += '<li>'
                         + '<span><i class="fa fa-music"></i><a  onclick="addSoongToPlaylist(' + result._id + ')" href="javascript:void(0);">' + result.name + '</a></span>'

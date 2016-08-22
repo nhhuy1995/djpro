@@ -74,7 +74,7 @@
                                                 <h3>
                                                      {% for itemchild in item['artist'] %}
                                                         <a href="{{ itemchild['link'] }}" title="{{ itemchild['username'] }}">{{ itemchild['username'] }}</a>
-                                                    {% if !loop.last %}<span style="font-weight: normal;">ft</span>{% endif %}
+                                                    {% if !loop.last %}<span style="font-weight: normal;">ft.</span>{% endif %}
                                                     {% endfor %}
                                                 </h3>
                                                 <span><i class="fa fa-headphones"></i> {{ item['view'] }}</span>

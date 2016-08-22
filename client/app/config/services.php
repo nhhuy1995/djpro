@@ -100,7 +100,11 @@ $di->setShared('session', function () {
     $session->start();
     return $session;
 });
-
+$di->set('cookies', function () {
+    $cookies = new Phalcon\Http\Response\Cookies();
+    $cookies->useEncryption(false);
+    return $cookies;
+}, true);
 /**
  *  Register dispatcher for use hooked method
  */
@@ -110,23 +114,22 @@ $di->set(
 
         $evManager = $di->getShared('eventsManager');
 
-        $evManager->attach(
-            "dispatch:beforeException",
-            function($event, $dispatcher, $exception)
-            {
+        $evManager->attach("dispatch", function ($event, $dispatcher, $exception) {
+            //controller or action doesn't exist
+            if ($event->getType() == 'beforeException') {
                 switch ($exception->getCode()) {
-                    case PhDispatcher::EXCEPTION_HANDLER_NOT_FOUND:
-                    case PhDispatcher::EXCEPTION_ACTION_NOT_FOUND:
-                        $dispatcher->forward(
-                            array(
-                                'controller' => 'notfound',
-                                'action' => 'show404',
-                            )
-                        );
+                    case \Phalcon\Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
+                    case \Phalcon\Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
+                        $dispatcher->forward(array(
+						    'controller' => 'notfound',
+						    'action' => 'show404',
+                        ));
+
                         return false;
                 }
             }
-        );
+        });
+
         $dispatcher = new PhDispatcher();
         $dispatcher->setEventsManager($evManager);
         $dispatcher->setDefaultNamespace('DjClient\Controller');

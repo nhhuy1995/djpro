@@ -324,8 +324,7 @@
                         {% else %}
                             <ul class="media-func ">
                                 <li class="main-nav"><i class="fa fa-plus"></i> <a class="cd-signin"
-                                                                                   href="javascript:void(0)">Thêm vào
-                                        playlist</a></li>
+                                                                                   href="javascript:void(0)">Thêm vào                            </a></li>
                                 <li><i class="fa fa-download"></i> <a href="javascript:void(0)" data-toggle="modal" data-target="#down-mp3">Tải
                                         về</a>
                                 <li class="main-nav"><i class="fa fa-thumbs-up"></i> <a class="cd-signin"
@@ -639,13 +638,13 @@
                             <ul class="down-app">
                                 <p>Click vào 1 trong các liên kết bên dưới để Download về máy Bài hát: <strong>{{ object.name }}</strong></p>
                                 {% if object.media_link_320k %}
-                                    <li><a href="javascript:void(0)" title="#" onclick="downloadMedia(this)" data-id="{{ object._id }}" data-quality="media_link_320k">320k</a></li>
+                                    <li><a href="javascript:void(0)" title="320k" onclick="downloadMedia(this)" data-id="{{ object._id }}" data-quality="media_link_320k">320k</a></li>
                                 {% endif %}
                                 {% if object.media_link_128k %}
-                                    <li><a href="javascript:void(0)" title="#" onclick="downloadMedia(this)" data-id="{{ object._id }}" data-quality="media_link_128k">128k</a></li>
+                                    <li><a href="javascript:void(0)" title="128k" onclick="downloadMedia(this)" data-id="{{ object._id }}" data-quality="media_link_128k">128k</a></li>
                                 {% endif %}
                                 {% if object.media_link_64k %}
-                                    <li><a href="javascript:void(0)" title="#" onclick="downloadMedia(this)" data-id="{{ object._id }}" data-quality="media_link_64k">64k</a></li>
+                                    <li><a href="javascript:void(0)" title="64k" onclick="downloadMedia(this)" data-id="{{ object._id }}" data-quality="media_link_64k">64k</a></li>
                                 {% endif %}
                             </ul>
                         </div>

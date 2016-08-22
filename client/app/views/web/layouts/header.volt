@@ -8,7 +8,7 @@
                         <div class="col-md-3 col-sm-3"><h1 class="logo">DJ.PRO.VN</h1></div>
                         <div class="col-md-5 col-sm-4">
                             <form action="/tim-kiem.html" method="get" class="search" id="frmsearch">
-                                <input type="text" autocomplete="off" onkeypress="searchsugget(this)" value="{{ _GET['q'] }}"  placeholder="--- Nhập từ khóa ---"
+                                <input type="text" id="txt_keyword" autocomplete="off" onkeypress="searchsugget(this)" value="{{ _GET['q'] }}"  placeholder="--- Nhập từ khóa ---"
                                        name="q">
 
                                 <div id="suggession_seach"></div>
@@ -28,6 +28,8 @@
                                                         class="fa fa-cog"></i>Bảng điều khiển</a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="/user.html"><i class="fa fa-info"></i> Thông tin cá nhân</a>
+
+                                                <li><a href="{{ session['link'] }} "><i class="fa fa-user"></i> Trang cá nhân</a>
                                                 </li>
                                                 <li class="pull-right"><a href="javascript:void(0)" data-toggle="modal" data-target="#postmusic"><i class="fa fa-upload"></i> Đăng nhạc</a>
                                                 </li>

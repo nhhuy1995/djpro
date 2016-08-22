@@ -127,6 +127,7 @@ class VideoController extends ControllerBase
         $o->view = isset($o->view) ? Helper::Numberformat($o->view) : 0;
         $o->like = isset($o->like) ? Helper::Numberformat($o->like) : 0;
         $o->dislike = isset($o->dislike) ? Helper::Numberformat($o->dislike) : 0;
+        $o->download = isset($o->download) ? Helper::Numberformat($o->download) : 0;
         ##total comment
         $total_comment = Comment::count(array(
             'conditions' => array('atid' => $id, 'type' => static::$TYPE_VIDEO),

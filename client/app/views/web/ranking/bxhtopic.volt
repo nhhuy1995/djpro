@@ -80,7 +80,7 @@
                                                 <a href="{{ itemchild['link'] }}"
                                                    title="{{ itemchild['username'] }}">{{ itemchild['username'] }}</a>
                                                 {% if !loop.last %}<span
-                                                        style="font-weight: normal;">ft</span>{% endif %}
+                                                        style="font-weight: normal;">ft.</span>{% endif %}
                                                     {% endfor %}
                                                 {% endif %}
                                             </h3>

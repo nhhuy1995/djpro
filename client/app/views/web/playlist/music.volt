@@ -88,11 +88,11 @@
                             }
 
                             if (data.media_link_320k != undefined)
-                                htmlQuality += insertMediaLink(data.media_link_320k, '320', '320k');
+                                htmlQuality += insertMediaLink(data.media_link_320k, '320', '320K');
                             if (data.media_link_128k != undefined)
-                                htmlQuality += insertMediaLink(data.media_link_128k, '128', '128k');
+                                htmlQuality += insertMediaLink(data.media_link_128k, '128', '128K');
                             if (data.media_link_64k != undefined)
-                                htmlQuality += insertMediaLink(data.media_link_64k, '64', '64k');
+                                htmlQuality += insertMediaLink(data.media_link_64k, '64', '64K');
 
                             htmlQuality += '</ul></div>';
                             $('.dropdownContain').html(htmlQuality);
@@ -360,9 +360,10 @@
                         <input type="hidden" id="url_article" value="{{ currentLink }}"/>
                         {% if session['_id'] %}
                             <ul class="media-func">
-                                <li><i class="fa fa-plus"></i> <a href="javascript:void(0)"
-                                                                  onclick="showFormAddPlaylist({{ object._id }})">Thêm
-                                        vào</a></li>
+                                <li><i class="fa fa-plus"></i>
+                                    <a onclick="showFormAddPlaylist()" data-target="#my-playlist-box" data-toggle="modal" href="javascript:void(0)">Thêm vào</a>
+                                </li>
+
                                 <li><i class="fa fa-thumbs-up"
                                        id="icon-like" {% if check_like._id %} style="color: blue;" {% endif %}></i>
                                     <a href="javascript:void(0)" onclick="likeArticle(this);" data-id="{{ object._id }}"

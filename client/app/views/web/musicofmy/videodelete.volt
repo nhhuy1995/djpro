@@ -18,9 +18,9 @@
                                 <li class=""><a href="/nhac-da-xoa.html?t=audio" class="icon icon-baihat"><span>Bài hát đã xóa</span></a>
                                 </li>
                                 <li class=""><a href="/nhac-da-xoa.html?t=playlist"
-                                                           class="icon icon-playlist"><span>Playlist đã xóa</span></a></li>
+                                                class="icon icon-playlist"><span>Playlist đã xóa</span></a></li>
                                 <li class="tab-current"><a href="/nhac-da-xoa.html?t=video"
-                                                class="icon icon-video"><span>Video đã xóa</span></a></li>
+                                                           class="icon icon-video"><span>Video đã xóa</span></a></li>
                             </ul>
                         </nav>
                         <div class="content-wrap">
@@ -34,8 +34,10 @@
                                             <div class="col-md-3 col-sm-3 col-xs-6">
                                                 <div class="block-music">
                                                     <div class="cover-outer-align">
-                                                        <img class="img-responsive" src="{{ item['priavatar'] }}"
-                                                             alt=""/>
+                                                        <a href="{{ item['link'] }}" title="{{ item['name'] }}">
+                                                            <img class="img-responsive" title="{{ item['name'] }}" src="{{ item['priavatar'] }}"
+                                                                 alt="{{ item['name'] }}"/>
+                                                        </a>
                                            <span class="icon-circle-play">
                                                <a class="button" href="{{ item['link'] }}" title=""><i
                                                            class="fa fa-play"></i></a>

@@ -5,9 +5,12 @@ use Phalcon\Mvc\User\Component;
 
 class Email extends Component
 {
-    const MAIL_ADDRESS = "no-reply@very.vn";
+//    private static $USERNAME = "no-reply@very.vn";
+    const MAIL_ADDRESS = "djpro@gmail.com";
+    protected static $USERNAME = "noreply-blogradio@vnnplus.vn";
+    protected static $PASSWORD = "hoicaigi!@#";
 
-    public static function sendMail($subject, $address, $content)
+    /*public static function sendMail($subject, $address, $content)
     {
         $headers = 'MIME-Version: 1.0' . "\r\n";
 //        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
@@ -38,5 +41,35 @@ class Email extends Component
 //            die;
 //        }
 
+    }*/
+    public static function sendMail($subject,$to,$body)
+    {
+        require '../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
+        $mail = new \PHPMailer();
+        $mail->CharSet = "UTF-8";
+//$mail->SMTPDebug = 3;                               // Enable verbose debug output
+
+        $mail->isSMTP();                                      // Set mailer to use SMTP
+        $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        $mail->Username = static::$USERNAME;                 // SMTP username
+        $mail->Password = static::$PASSWORD;                           // SMTP password
+        $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 465;                                    // TCP port to connect to
+
+        $mail->setFrom(static::MAIL_ADDRESS, "DjPro");
+        $mail->addAddress($to);
+        $mail->isHTML(true);                                  // Set email format to HTML
+
+        $mail->Subject = $subject;
+        $mail->Body = $body;
+//        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+        if (!$mail->send()) {
+            echo 'Message could not be sent.';
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
+        } else {
+//            echo 'Message has been sent';
+        }
     }
 }
