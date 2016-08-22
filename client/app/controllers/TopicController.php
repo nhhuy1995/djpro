@@ -18,7 +18,7 @@ class TopicController extends ControllerBase
     public static $TYPE_SELECTIVE_TOPIC = 'selective_topic';
     public function indexAction()
     {
-        echo 1;die;
+        // echo 1;die;
         $limit = 6;
         ## banner header
         $cursor = Album::findFirst(array(
