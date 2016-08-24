@@ -443,7 +443,6 @@ $router->add('/ebd_v/{at_id:[0-9]+}', array(
     'action' => 'video',
     'at_id ' => 1
 ));
-
 #################################################
 
 $router->handle();

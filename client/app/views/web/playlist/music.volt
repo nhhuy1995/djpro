@@ -17,8 +17,8 @@
             {% for key,item in listSong %}
             {
                 title: "{{ key+1 }}. {{ item['name'] }}",
-                artistname: "{{ item['listartist']['username'] }}",
-                artistlink: "{{ item['listartist']['link'] }}",
+                artistname: "{{ item['listartistname'] }}",
+                {#artistlink: "{{ item['listartist']['link'] }}",#}
                 free: true,
                 id: "{{ item['_id'] }}",
                 checklike: "{{ item['checklike'] }}",
@@ -750,67 +750,6 @@
     function showlogin() {
         $(".cd-signin").click();
     }
-    // function showFormAddPlaylist(atid) {
-    //     $('#my-playlist-box').show();
-    //     $('.wrap-playlist').remove();
-    //     $('#atid').val(atid);
-    //     $.get("/incoming/getallplaylist", {}, function (re) {
-    //         var data = re.data;
-    //         var html = '';
-    //         if (data != null) {
-    //             jQuery.each(data, function (index, value) {
-    //                 html +=
-    //                         '<div style="overflow: hidden; width: auto; height: auto;" id="playlist-list" class="wrap-playlist">' +
-    //                         '<div class="playlist-list-item">' +
-    //                         '<div class="playlist-list-name">' +
-    //                         '<a title="Thử Playlist mới" onclick="addSoongToPlaylist(' + value._id + ')" href="javascript:void(0);">' +
-    //                         '<i class="icon-music"></i>' + value.name + '</a>' +
-    //                         '</div>' +
-    //                         '</div>' +
-    //                         '</div>';
-    //             });
-    //             $('.slimScrollDiv').append(html);
-    //         }
-    //     });
-
-    // }
-    // function closeAddPlaylist() {
-    //     $('#my-playlist-box').css('display', 'none');
-    // }
-    // function addNewPlaylist() {
-    //     var name = $('#add-playlist-name').val();
-    //     $.get("/incoming/addplaylist", {name: name}, function (re) {
-    //         var result = re.data;
-    //         var html = '';
-    //         if (re.status == 200) {
-    //             html +=
-    //                     '<div style="overflow: hidden; width: auto; height: auto;" id="playlist-list">' +
-    //                     '<div class="playlist-list-item">' +
-    //                     '<div class="playlist-list-name">' +
-    //                     '<a title="Thử Playlist mới" onclick="addSoongToPlaylist(+results._id+)" href="javascript:void(0);">' +
-    //                     '<i class="icon-music"></i>' + result.name + '</a>' +
-    //                     '</div>' +
-    //                     '</div>' +
-    //                     '</div>';
-    //             $('.slimScrollDiv').append(html);
-    //             alert('Thêm mới Playlist thành công!');
-    //         }
-    //         else {
-    //             alert(re.mss);
-    //         }
-    //     });
-    // }
-    // function addSoongToPlaylist(plid, type) {
-    //     var atid = $('#atid').val();
-    //     $.get("/incoming/addsoongtoplaylist", {pllid: plid, atid: atid, type: type}, function (re) {
-    //         if (re.status == 200) {
-    //             alert('Thêm nhạc vào playlist thành công!');
-    //         }
-    //         else {
-    //             alert(re.mss);
-    //         }
-    //     });
-    // }
     function loadComment() {
         //check button viewmore comment
         var totalpage = {{ total_page_comment }};

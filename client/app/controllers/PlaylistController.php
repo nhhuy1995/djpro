@@ -28,7 +28,7 @@ class PlaylistController extends ControllerBase
         $listPlaylistSelectvie = Helper::resortarray(Album::ListAlbumByMultiConditions(self::$TYPE_PLAYLIST, $limit, 1, $listIdPlaylist), $listIdPlaylist, "_id");
         $this->view->listplaylist = $listPlaylist;
         $this->view->listplselective = $listPlaylistSelectvie;
-        $this->view->header = Helper::setHeader('Playlist','','');
+        $this->view->header = Helper::setHeader('Playlist', '', '');
     }
 
     public function selectiveAction()
@@ -57,7 +57,7 @@ class PlaylistController extends ControllerBase
         ));
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listPlaylist_selective = $data;
-        $this->view->header = Helper::setHeader('Playlist chọn lọc','','');
+        $this->view->header = Helper::setHeader('Playlist chọn lọc', '', '');
     }
 
     public function musicAction()
@@ -99,9 +99,12 @@ class PlaylistController extends ControllerBase
                 $o_nominations = Notify::getNotifyByType($uinfo['_id'], $item['_id'], static::$OPTION_TYPE_NOMINATIONS);
                 $item['nominations'] = isset($o_nominations->_id) ? 1 : 0;
                 $item['link'] = Makelink::link_view_article_music($item['name'], $item['_id']);
-                if (isset($artistid) || !empty($artistid)) {
+                if (isset($artistid) && !empty($artistid)) {
                     $listartist = Artist::getArtistByID($artistid);
-                    $item['listartist'] = $listartist[0];
+                    $artistName = '';
+                    foreach ($listartist as $artist) $artistName .= $artist['username'] . ' ft. ';
+                    $artistName = rtrim($artistName, 'ft. ');
+                    $item['listartistname'] = $artistName;
                 }
                 ##check link default
                 if (isset($item['media_link_64k'])) $media_url = $item['media_link_64k'];
@@ -133,7 +136,7 @@ class PlaylistController extends ControllerBase
             'check_like' => $o_like,
             'check_dislike' => $o_dislike,
             'check_nominations' => $o_nominations,
-            'currentLink' => str_replace('?','',DOMAIN . Helper::cpagerparm("")),
+            'currentLink' => str_replace('?', '', DOMAIN . Helper::cpagerparm("")),
             'iframe_share_link' => DOMAIN . Makelink::link_view_embed_collection($id),
             'total_page_comment' => $total_page_comment,
             'listmusicbyview' => $listmusicbyview,## list music by view
@@ -144,7 +147,7 @@ class PlaylistController extends ControllerBase
             'listcategory' => $listCategory,
             'object' => $o,
         ));
-        $this->view->header = Helper::setHeader($o->name,$o->description,$o->priavatar);
+        $this->view->header = Helper::setHeader($o->name, $o->description, $o->priavatar);
         RankingArticle::increaseActionNumber("view", $o->_id, $o->type);
     }
 
@@ -172,7 +175,7 @@ class PlaylistController extends ControllerBase
         ));
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listalbum = $data;
-        $this->view->header = Helper::setHeader('Playlist mới nhất','','');
+        $this->view->header = Helper::setHeader('Playlist mới nhất', '', '');
     }
 
     public function categoryAction()
@@ -205,7 +208,7 @@ class PlaylistController extends ControllerBase
             $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
             $this->view->listalbum = $data;
             $this->view->category = $category;
-            $this->view->header = Helper::setHeader($category->name,'','');
+            $this->view->header = Helper::setHeader($category->name, '', '');
         }
     }
 }

@@ -348,3 +348,7 @@ ul.list_item_rss li a.ico_rss {
     height: 2.9em;
     width: 9em !important;
 }
+
+.jp-playlist-item {
+    width: 81% !important;
+}

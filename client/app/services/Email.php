@@ -5,10 +5,12 @@ use Phalcon\Mvc\User\Component;
 
 class Email extends Component
 {
-//    private static $USERNAME = "no-reply@very.vn";
+
     const MAIL_ADDRESS = "djpro@gmail.com";
-    protected static $USERNAME = "noreply-blogradio@vnnplus.vn";
-    protected static $PASSWORD = "hoicaigi!@#";
+    protected static $USERNAME = "no-reply@very.vn";
+    protected static $PASSWORD = "GhFgFfHhDFgF";
+//    protected static $USERNAME = "noreply-blogradio@vnnplus.vn";
+//    protected static $PASSWORD = "hoicaigi!@#";
 
     /*public static function sendMail($subject, $address, $content)
     {
@@ -42,7 +44,7 @@ class Email extends Component
 //        }
 
     }*/
-    public static function sendMail($subject,$to,$body)
+    public static function sendMail($subject, $to, $body)
     {
         require '../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
         $mail = new \PHPMailer();
