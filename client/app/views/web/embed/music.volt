@@ -21,10 +21,11 @@
             var playerSolution = "html, flash";
 
             var repeat = Cookies.get('jPlayer-audio-repeat');
-            if (repeat == 'true')
+            if (repeat == 'true' || repeat == undefined)
                 repeat = true;
-            else
+            else {
                 repeat = false;
+            }
 
             $("#jquery_jplayer").jPlayer({
                 ready: function () {

@@ -5,11 +5,11 @@
     //<![CDATA[
     $(document).ready(function () {
         var repeat = Cookies.get('jPlayer-audio-repeat');
-        if (repeat == 'true')
+        if (repeat == 'true' || repeat == undefined)
             repeat = true;
-        else
+        else {
             repeat = false;
-
+        }
         var playlistPlayer = new jPlayerPlaylist({
             jPlayer: "#jquery_jplayer",
             cssSelectorAncestor: "#jp_container"

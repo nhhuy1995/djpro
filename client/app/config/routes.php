@@ -1,5 +1,9 @@
 <?php
 $router = new \Phalcon\Mvc\Router();
+$router->add("/", array(
+    'controller' => 'index',
+    'action' => 'index'
+));
 $router->add("/trang-chu.html", array(
     'controller' => 'index',
     'action' => 'index'

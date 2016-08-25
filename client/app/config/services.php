@@ -121,14 +121,28 @@ $di->set(
                     case \Phalcon\Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
                     case \Phalcon\Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
                         $dispatcher->forward(array(
-						    'controller' => 'notfound',
-						    'action' => 'show404',
+                            'controller' => 'notfound',
+                            'action' => 'show404',
                         ));
 
                         return false;
                 }
             }
         });
+
+        $evManager->attach(
+            "dispatch:beforeDispatch",
+            function($event, $dispatcher, $exception) {
+                $matchedRoute = \Phalcon\DI::getDefault()->get('router')->getMatchedRoute();
+
+                if (!$matchedRoute && $dispatcher->getControllerName() != 'notfound') {
+                    $dispatcher->forward(array(
+                        'controller' => 'notfound',
+                        'action' => 'show404',
+                    ));
+                }
+            }
+        );
 
         $dispatcher = new PhDispatcher();
         $dispatcher->setEventsManager($evManager);
