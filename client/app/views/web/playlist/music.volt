@@ -10,6 +10,7 @@
         else {
             repeat = false;
         }
+
         var playlistPlayer = new jPlayerPlaylist({
             jPlayer: "#jquery_jplayer",
             cssSelectorAncestor: "#jp_container"
@@ -58,7 +59,7 @@
 
 
                 },
-                playItemCallback: function (item) {
+                playItemCallback: function (item, indexSong) {
                     $.post("/incoming/getlyric", {id: item.id}, function (re) {
                         var data = re.data;
                         if (re.status == 200) {
@@ -98,17 +99,19 @@
                             $('.dropdownContain').html(htmlQuality);
 
                             var quality = Cookies.get('jPlayer-audio-quality');
-                            if (typeof quality == 'string' && quality != 'undefined') {
-                                if (typeof data['media_link_' + quality + 'k'] != 'undefined') {
-                                    changeQuality(".media_quality_select[data-media-type='" + quality + "']");
-                                }
-
-                            }
+                            if (typeof quality != 'string' || quality != 'undefined') {
+                                quality = '128';
+                            } 
+                            changeQuality(".media_quality_select[data-media-type='" + quality + "']", data);
+                            var currentUrl = window.location.href;
+                            var newUrl = addParameterToUrl(currentUrl, 'st', indexSong + 1, false);
+                            window.history.replaceState(null, null, newUrl);
                         } else {
                             alert(re.msg);
                         }
                     });
-                }
+                },
+                nextActionCallback: function (index) {}
             },
             cssSelector: {
                 videoPlay: ".jp-video-play",
@@ -727,11 +730,13 @@
 
     });
     //change quanlity
-    function changeQuality(obj) {
+    function changeQuality(obj, dataItem) {
         var player = $("#jquery_jplayer");
         var audioRrl = $(obj).attr("data-media-src");
         var currentTime = jplayerCurrentTime();
         var quality = $(obj).attr("data-media-type");
+        if (!audioRrl)
+            audioRrl = dataItem['direct_media_url'];
         //set active icon quanlity
         $('.media_quality_select').removeAttr('style');
 

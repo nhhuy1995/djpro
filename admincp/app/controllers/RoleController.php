@@ -64,6 +64,8 @@ class RoleController extends ControllerBase
             ## Process
             $postvalue = Helper::post_to_array("name,sort,permission");
             $postvalue['sort'] = intval($postvalue['sort']);
+            if ($this->_hasSystemPermission($postvalue['permission']))
+                array_push($postvalue['permission'], "system");
             ##Process
             if ($id <= 0) {
                 $postvalue['datecreate'] = intval(strtotime("now"));
@@ -97,5 +99,14 @@ class RoleController extends ControllerBase
         return $this->response->redirect(ltrim($redirect,'/'));
     }
 
+    protected function _hasSystemPermission($permission) {
+        $matches  = preg_grep ('/^user_(\w+)/i', $permission);
+        if (count($matches))
+            return true;
+        $matches  = preg_grep ('/^role_(\w+)/i', $permission);
+        if (count($matches))
+            return true;
+        else return false;
+    }
 }
 

@@ -66,16 +66,20 @@
 
             <ul class="main-menu">
                 {% for item in sidebar %}
-                    <li class="{{ item['child'] is not empty?'sub-menu':'' }} {{ item['active'] }}">
-                        <a href="{{ item['controller'] }}"><i class="{{ item['icon'] }}"></i> {{ item['name'] }}</a>
-                        {% if item['child'] is not empty %}
-                            <ul>
-                                {% for citem in item['child'] %}
-                                    <li><a href="{{ citem['controller'] }}">{{ citem['name'] }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
-                    </li>
+                    {% if item['unset'] is empty %}
+                        <li class="{{ item['child'] is not empty?'sub-menu':'' }} {{ item['active'] }}">
+                            <a href="{{ item['controller'] }}"><i class="{{ item['icon'] }}"></i> {{ item['name'] }}</a>
+                            {% if item['child'] is not empty %}
+                                <ul>
+                                    {% for citem in item['child'] %}
+                                        {% if citem['unset'] is empty %}
+                                            <li><a href="{{ citem['controller'] }}">{{ citem['name'] }}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endif %}
                 {% endfor %}
             </ul>
         </div>

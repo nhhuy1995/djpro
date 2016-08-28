@@ -98,21 +98,21 @@ class Module extends Component
         $sidebar[] = array("name" => "Home", "icon" => "md md-home", "key" => "index", "controller" => "/index/index");
         $sidebar[] = array("name" => "Media", "icon" => "md md-receipt", "key" => "media", "controller" => "/media/index");
         $sidebar[] = array("name" => "Nhạc yêu cầu", "icon" => "md md-receipt", "key" => "mediarequire", "controller" => "/mediarequire/index");
-        $sidebar[] = array("name" => "Album - Playlist - Topic", "icon" => "md md-slideshow", "key" => "video", "controller" => "/album/index");
+        $sidebar[] = array("name" => "Album - Playlist - Topic", "icon" => "md md-slideshow", "key" => "album", "controller" => "/album/index");
         $sidebar[] = array("name" => "Artist", "icon" => "md md-star-outline", "key" => "artist", "controller" => "/artist/index");
         $sidebar[] = array("name" => "Chuyên mục", "icon" => "md md-folder", "key" => "category", "controller" => "/category/index");
         $sidebar[] = array("name" => "Hỏi đáp", "icon" => "md md-comment", "key" => "category", "controller" => "/answer/index");
         $sidebar[] = array("name" => "Comment", "icon" => "md md-comment", "key" => "comment", "controller" => "/comment/index");
         $sidebar[] = array("name" => "Tag", "icon" => "md md-turned-in", "key" => "tag", "controller" => "/tag/index");
         $sidebar[] = array("name" => "Feedback", "icon" => "md md-warning", "key" => "reportspam", "controller" => "/reportspam/index");
-        $sidebar[] = array("name" => "Cấu hình hiển thị", "icon" => "md md-view-list", "key" => "viewconfig,livescorehome", "controller" => "javascript:void(0)", "child" => array(
-            array("name" => "Danh sách Menu", "key" => "listmenuindex", "controller" => "/viewcomponent/listmenuindex"),
-            array("name" => "Slideshow", "key" => "slideshow", "controller" => "/viewcomponent/slideshow"),
-            array("name" => "Tác phẩm chọn lọc", "key" => "selectivearticle", "controller" => "/viewcomponent/selectivearticle")
+        $sidebar[] = array("name" => "Cấu hình hiển thị", "icon" => "md md-view-list", "key" => "viewcomponent", "controller" => "javascript:void(0)", "child" => array(
+            array("name" => "Danh sách Menu", "key" => "viewcomponent_listmenuindex", "controller" => "/viewcomponent/listmenuindex"),
+            array("name" => "Slideshow", "key" => "viewcomponent_slideshow", "controller" => "/viewcomponent/slideshow"),
+            array("name" => "Tác phẩm chọn lọc", "key" => "viewcomponent_selectivearticle", "controller" => "/viewcomponent/selectivearticle")
         ));
-        $sidebar[] = array("name" => "Hệ thống", "icon" => "md md-settings-applications", "key" => "role,user", "controller" => "javascript:void(0)", "child" => array(
+        $sidebar[] = array("name" => "Hệ thống", "icon" => "md md-settings-applications", "key" => "system", "controller" => "javascript:void(0)", "child" => array(
             array("name" => "Nhóm quyền", "key" => "role", "controller" => "/role/index"),
-            array("name" => "Users", "key" => "user", "controller" => "/users/index")
+            array("name" => "Users", "key" => "users", "controller" => "/users/index")
         ));
         return $sidebar;
     }

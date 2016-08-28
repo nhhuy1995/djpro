@@ -162,7 +162,8 @@
                 freeItemClass: "jp-playlist-item-free",
                 removeItemClass: "jp-playlist-item-remove",
                 displayItemAction: null,
-                playItemCallback: null
+                playItemCallback: null,
+                nextActionCallback: null
             }
         },
         option: function (option, value) { // For changing playlist options only
@@ -213,9 +214,9 @@
         },
         _refresh: function (instant) {
             /* instant: Can be undefined, true or a function.
-             *	undefined -> use animation timings
-             *	true -> no animation
-             *	function -> use animation timings and excute function at half way point.
+             *  undefined -> use animation timings
+             *  true -> no animation
+             *  function -> use animation timings and excute function at half way point.
              */
             var self = this;
 
@@ -435,7 +436,7 @@
                 if (this.playlist.length) {
                     this.current = this.select(index);
                     if (this.options.playlistOptions.playItemCallback) {
-                        this.options.playlistOptions.playItemCallback(this.playlist[this.current]);
+                        this.options.playlistOptions.playItemCallback(this.playlist[this.current], index);
                     }
                     $(this.cssSelector.jPlayer).jPlayer("play");
                 }
@@ -448,18 +449,23 @@
         },
         next: function () {
             var index = (this.current + 1 < this.playlist.length) ? this.current + 1 : 0;
-
             if (this.loop) {
                 // See if we need to shuffle before looping to start, and only shuffle if more than 1 item.
                 if (index === 0 && this.shuffled && this.options.playlistOptions.shuffleOnLoop && this.playlist.length > 1) {
                     this.shuffle(true, true); // playNow
                 } else {
                     this.play(index);
+                    if (this.options.playlistOptions.nextActionCallback) {
+                        this.options.playlistOptions.nextActionCallback(index);
+                    }
                 }
             } else {
                 // The index will be zero if it just looped round
                 if (index > 0) {
                     this.play(index);
+                    if (this.options.playlistOptions.nextActionCallback) {
+                        this.options.playlistOptions.nextActionCallback(index);
+                    }
                 }
             }
         },
@@ -476,7 +482,7 @@
             if (shuffled === undefined) {
                 shuffled = !this.shuffled;
             }
-
+            Cookies.set('jPlayer-playlist-shuffle', shuffled, { expires: 7 });
             if (shuffled || shuffled !== this.shuffled) {
 
                 $(this.cssSelector.playlist + " ul").slideUp(this.options.playlistOptions.shuffleTime, function () {
