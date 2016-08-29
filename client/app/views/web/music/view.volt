@@ -72,18 +72,18 @@
     <div class="bgclr"></div>
     <div class="bg-cmmusic">
         <div class="container">
-            <ul class="breadcrumbs">
+            {% include '/layouts/breadcrumb.volt' %}
+            {#<ul class="breadcrumbs">
                 <li><a href="/"><i class="fa fa-home fa-lg"></i></a></li>
                 <li><a href="/bai-hat.html">Bài hát</a></li>
                 {% if listcategory %}
                     {% for item in listcategory %}
-                        <li><a href="{{ item['link'] }}" title="{{ item['name'] }}"
-                               alt="{{ item['name'] }}">{{ item['name'] }}</a></li>
+                        <li><a href="{{ item['link'] }}" title="{{ item['name'] }}"  alt="{{ item['name'] }}">{{ item['name'] }}</a></li>
                     {% endfor %}
                 {% else %}
                     <li>Đang cập nhật!</li>
                 {% endif %}
-            </ul>
+            </ul>#}
         </div>
 
         <div class="container">

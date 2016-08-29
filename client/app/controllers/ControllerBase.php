@@ -8,6 +8,7 @@ use DjClient\Models\Media;
 use DjClient\Models\Settings;
 use DjClient\Models\Users;
 use DjClient\Services\ViewComponent as ViewComponent;
+use DjClient\Library\BreadCrumb;
 use Phalcon\Mvc\Controller;
 
 class ControllerBase extends Controller
@@ -30,7 +31,7 @@ class ControllerBase extends Controller
     protected static $OPTION_TYPE_NEWS = 'news';
     protected static $OPTION_TYPE_DISLIKE = 'dislike';
     protected static $OPTION_TYPE_NOMINATIONS = 'nominations';
-
+    protected  $breadCrumbs;
     /**
      * @var ViewComponent
      */
@@ -62,14 +63,14 @@ class ControllerBase extends Controller
         $this->view->setVars(array(
             'listcategory_header' => $listcategory_header,
             'listCategory_footer' => Settings::getElementByKey(self::$TYPE_CATEGORY_FOOTER),//Menu footer,
-            'listcategory_form_uploadmusic' => Category::findAndReturnArray(array('condition' => array('type' => array('$in' => array('audio', 'video')),'status' => static::$STATUS_ON),'sort' => array('sort' => 1),)),
+            'listcategory_form_uploadmusic' => Category::findAndReturnArray(array('condition' => array('type' => array('$in' => array('audio', 'video')), 'status' => static::$STATUS_ON), 'sort' => array('sort' => 1),)),
             'listMusic' => Media::ListMusicByMultiConditions(self::$TYPE_MUSIC, 10, 1),## list music maybe you want to hear
             'listcategory' => Category::findAndReturnArray(array('condition' => array('status' => static::$STATUS_ON))),//list category for form upload music
         ));
 
         $this->viewComponent = new ViewComponent();
         $this->view->DOMAIN = DOMAIN;
-        $session_userinfo['link'] = Makelink::link_view_member($session_userinfo['username'],$session_userinfo['_id']);
+        $session_userinfo['link'] = Makelink::link_view_member($session_userinfo['username'], $session_userinfo['_id']);
         $this->view->session = $session_userinfo;
         $this->redisConnect = $this->getDI()->getShared('redisConnect');
         ##link login fb
@@ -78,7 +79,14 @@ class ControllerBase extends Controller
         $this->view->urllogin_fb = $urlfb;
         ##link login google
         $this->view->urllogin_google = Helper::genlinkConfirmGoogle();
+        $this->breadCrumbs = new BreadCrumb();
 //        $this->redisConnect = $this->getDI()->getShared('redisConnect');
 
+    }
+
+    public function afterExecuteRoute()
+    {
+        if($this->breadCrumbs->getItems())
+            $this->view->breadCrumbs = $this->breadCrumbs;
     }
 }

@@ -3,9 +3,7 @@
     <div class="bg-cmmusic">
         <div class="container">
             <ul class="breadcrumbs">
-                <li><a href="/"><i class="fa fa-home fa-lg"></i></a></li>
-                <li><a href="/bai-hat.html">Bài hát</a></li>
-                <li><a href="/bai-hat-chon-loc.html">Bài hát chọn lọc</a></li>
+                {% include '/layouts/breadcrumb.volt' %}
             </ul>
         </div>
         <div class="container">

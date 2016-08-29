@@ -29,6 +29,8 @@ class MusicController extends ControllerBase
         //audio selective
         $listIdAudio = Settings::getElementByKey(self::$TYPE_SELECTIVE_AUDIO);
         $listAudioSelectvie = Helper::resortarray(Media::ListMusicByMultiConditions(self::$TYPE_MUSIC, $limit, 1, $listIdAudio), $listIdAudio, "_id");
+        ##breadcrumbs
+        $this->breadCrumbs->addItem(array('name' => "Bài hát", 'link' => '/bai-hat.html'));
         $this->view->listMusic = $listMusic;
         $this->view->listAudioSelectvie = $listAudioSelectvie;
         $this->view->header = Helper::setHeader('Bài hát', '', '');
@@ -58,7 +60,11 @@ class MusicController extends ControllerBase
         $count = Media::findAndReturnArray(array(
             'condition' => array('type' => self::$TYPE_MUSIC, 'status' => static::$STATUS_ON),
         ));
-
+        $breakcrumbs = array(
+            array('name' => "Bài hát", 'link' => '/bai-hat.html'),
+            array('name' => "Bài hát mới", 'link' => '/bai-hat-moi.html'),
+        );
+        $this->breadCrumbs->addListItems($breakcrumbs);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listMusic = $data;
         $this->view->header = Helper::setHeader('Bài hát mới', '', '');
@@ -79,6 +85,9 @@ class MusicController extends ControllerBase
         $listCategory = array();
         if ($categoryId) {
             $listCategory = Category::getCategoryByID(self::$TYPE_MUSIC, $categoryId);
+            ##breadcrumbs
+            $this->breadCrumbs->addItem(array('name' => "Bài hát", 'link' => '/bai-hat.html'));
+            $this->breadCrumbs->addListItems($listCategory);
         }
         ##get artist
         $artistId = $o->artist;
@@ -193,6 +202,11 @@ class MusicController extends ControllerBase
         $count = Media::findAndReturnArray(array(
             'condition' => array('_id' => array('$in' => $listIdAudio), 'status' => static::$STATUS_ON),
         ));
+        $breakcrumbs = array(
+            array('name' => "Bài hát", 'link' => '/bai-hat.html'),
+            array('name' => "Bài hát chọn lọc", 'link' => '/bai-hat-chon-loc.html'),
+        );
+        $this->breadCrumbs->addListItems($breakcrumbs);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listAudio_selective = $data;
         $this->view->header = Helper::setHeader('Bài hát chọn lọc', '', '');
@@ -224,7 +238,8 @@ class MusicController extends ControllerBase
         $count = Media::count(array(
             'conditions' => array('category' => $id, 'type' => self::$TYPE_MUSIC, 'status' => static::$STATUS_ON),
         ));
-
+        $this->breadCrumbs->addItem(array('name' => "Bài hát", 'link' => '/bai-hat.html'));
+        $this->breadCrumbs->addItem($o->toArray());
         $this->view->painginfo = Helper::paginginfo($count, $limit, $p);
         $this->view->listMusic = $data;
         $this->view->header = Helper::setHeader($o->name, '', '');

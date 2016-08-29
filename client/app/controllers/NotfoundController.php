@@ -1,5 +1,6 @@
 <?php
 namespace DjClient\Controller;
+use DjClient\Library\Helper;
 use Phalcon\Mvc\View;
 class NotfoundController extends ControllerBase
 {
@@ -8,8 +9,6 @@ class NotfoundController extends ControllerBase
         $this->response->setStatusCode(404, 'Not Found');
 //        $this->view->setRenderLevel(View::LEVEL_ACTION_VIEW);
 //        $this->view->disableLevel(View::LEVEL_MAIN_LAYOUT);
-        $this->view->setVars(array(
-            "title" => "Không tìm thấy trang",
-        ));
+        $this->view->header = Helper::setHeader("Không tìm thấy trang");
     }
 }
