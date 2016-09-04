@@ -1,0 +1,191 @@
+Traceback (most recent call last):
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 90, in <module>
+    virtual_host='/', credentials = credentials
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 339, in __init__
+    self._process_io_for_connection_setup()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 374, in _process_io_for_connection_setup
+    self._open_error_result.is_ready)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 395, in _flush_output
+    raise exceptions.ConnectionClosed()
+pika.exceptions.ConnectionClosed
+Traceback (most recent call last):
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 90, in <module>
+    virtual_host='/', credentials = credentials
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 339, in __init__
+    self._process_io_for_connection_setup()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 374, in _process_io_for_connection_setup
+    self._open_error_result.is_ready)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 395, in _flush_output
+    raise exceptions.ConnectionClosed()
+pika.exceptions.ConnectionClosed
+ [*] Waiting for messages. To exit press CTRL+C
+
+ ----------------- Upload file ------------
+
+In time: 05:47:41 03/29/16 ADT
+
+Traceback (most recent call last):
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 105, in <module>
+    channel.start_consuming()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1681, in start_consuming
+    self.connection.process_data_events(time_limit=None)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 656, in process_data_events
+    self._dispatch_channel_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 469, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1310, in _dispatch_events
+    evt.body)
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 66, in rabbbit_callback
+    fileExists = os.path.isfile(params['mediaDir'])
+KeyError: 'mediaDir'
+ [*] Waiting for messages. To exit press CTRL+C
+
+ ----------------- Upload file ------------
+
+In time: 05:48:29 03/29/16 ADT
+
+Traceback (most recent call last):
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 105, in <module>
+    channel.start_consuming()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1681, in start_consuming
+    self.connection.process_data_events(time_limit=None)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 656, in process_data_events
+    self._dispatch_channel_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 469, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1310, in _dispatch_events
+    evt.body)
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 71, in rabbbit_callback
+    stderr = subprocess.STDOUT
+  File "/usr/lib/python2.7/subprocess.py", line 544, in check_output
+    raise CalledProcessError(retcode, cmd, output=output)
+subprocess.CalledProcessError: Command '['youtube-upload', '--title=', u'"Hoc sinh Nepal"', '--privacy=', u'"unlisted"', u'/home/saasbook/Videos/con-duong-tu-than-den-truong-cua-tre-em-nepal-1458906990.mp4']' returned non-zero exit status 2
+ [*] Waiting for messages. To exit press CTRL+C
+
+ ----------------- Upload file ------------
+
+In time: 05:50:24 03/29/16 ADT
+
+Traceback (most recent call last):
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 105, in <module>
+    channel.start_consuming()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1681, in start_consuming
+    self.connection.process_data_events(time_limit=None)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 656, in process_data_events
+    self._dispatch_channel_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 469, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1310, in _dispatch_events
+    evt.body)
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 73, in rabbbit_callback
+    callback_after_upload(result, dbMongoWorker, params)
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 29, in callback_after_upload
+    client = connect_mongo_db(dbConfig, params)
+NameError: global name 'connect_mongo_db' is not defined
+ [*] Waiting for messages. To exit press CTRL+C
+
+ ----------------- Upload file ------------
+
+In time: 05:54:05 03/29/16 ADT
+
+Traceback (most recent call last):
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 105, in <module>
+    channel.start_consuming()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1681, in start_consuming
+    self.connection.process_data_events(time_limit=None)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 656, in process_data_events
+    self._dispatch_channel_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 469, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1310, in _dispatch_events
+    evt.body)
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 73, in rabbbit_callback
+    callback_after_upload(result, dbMongoWorker, params)
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 29, in callback_after_upload
+    mongo = DjMongoConnect()
+TypeError: __init__() takes exactly 2 arguments (1 given)
+ [*] Waiting for messages. To exit press CTRL+C
+
+ ----------------- Upload file ------------
+
+In time: 06:03:39 03/29/16 ADT
+
+Traceback (most recent call last):
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 105, in <module>
+    channel.start_consuming()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1681, in start_consuming
+    self.connection.process_data_events(time_limit=None)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 656, in process_data_events
+    self._dispatch_channel_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 469, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1310, in _dispatch_events
+    evt.body)
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 73, in rabbbit_callback
+    callback_after_upload(result, dbMongoWorker, params)
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 32, in callback_after_upload
+    regex_pattern = re.compile('(?<=watch\?v=)(.*)')
+NameError: global name 're' is not defined
+ [*] Waiting for messages. To exit press CTRL+C
+
+ ----------------- Upload file ------------
+
+In time: 06:09:59 03/29/16 ADT
+
+Traceback (most recent call last):
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 106, in <module>
+    channel.start_consuming()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1681, in start_consuming
+    self.connection.process_data_events(time_limit=None)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 656, in process_data_events
+    self._dispatch_channel_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 469, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1310, in _dispatch_events
+    evt.body)
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 74, in rabbbit_callback
+    callback_after_upload(result, dbMongoWorker, params)
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 34, in callback_after_upload
+    regex_id = regex_pattern.search(out_text)
+NameError: global name 'out_text' is not defined
+ [*] Waiting for messages. To exit press CTRL+C
+
+ ----------------- Upload file ------------
+
+In time: 06:28:08 03/29/16 ADT
+
+Traceback (most recent call last):
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 107, in <module>
+    channel.start_consuming()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1681, in start_consuming
+    self.connection.process_data_events(time_limit=None)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 656, in process_data_events
+    self._dispatch_channel_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 469, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1310, in _dispatch_events
+    evt.body)
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 75, in rabbbit_callback
+    callback_after_upload(result, dbMongoWorker, params)
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 42, in callback_after_upload
+    'at_id' 	: params['at_id'],
+KeyError: 'at_id'
+ [*] Waiting for messages. To exit press CTRL+C
+
+ ----------------- Upload file ------------
+
+In time: 06:36:08 03/29/16 ADT
+
+
+ ----------------- End upload file ----------
+
+Traceback (most recent call last):
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 109, in <module>
+    
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1681, in start_consuming
+    self.connection.process_data_events(time_limit=None)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 647, in process_data_events
+    self._flush_output(common_terminator)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 420, in _flush_output
+    result.reason_text)
+pika.exceptions.ConnectionClosed: (320, "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'")

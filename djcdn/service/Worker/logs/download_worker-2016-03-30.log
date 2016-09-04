@@ -1,0 +1,756 @@
+ [*] Waiting for messages. To exit press CTRL+C
+
+ ----------------- Download file ------------
+
+In time: 05:45:01 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 05:45:06 03/30/16 ADT
+
+{'type': u'720', 'file_path': u'/home/saasbook/Music/111113235/Hoc sinh Nepal-_fw1280e_-fh720e.mp4'}
+True
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 05:45:25 03/30/16 ADT
+
+{'type': u'480', 'file_path': u'/home/saasbook/Music/111113235/Hoc sinh Nepal-_fw854e_-fh480e.mp4'}
+True
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 05:49:22 03/30/16 ADT
+
+{'type': u'360', 'file_path': u'/home/saasbook/Music/111113235/Hoc sinh Nepal-_fw640e_-fh360e.mp4'}
+True
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 05:49:33 03/30/16 ADT
+
+{'type': u'240', 'file_path': u'/home/saasbook/Music/111113235/Hoc sinh Nepal-_fw426e_-fh240e.mp4'}
+True
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 05:51:00 03/30/16 ADT
+
+{'type': u'144', 'file_path': u'/home/saasbook/Music/111113235/Hoc sinh Nepal-_fw256e_-fh144e.mp4'}
+True
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:01:01 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:01:07 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:01:09 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:01:12 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:01:14 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:01:16 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:02:02 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:02:06 03/30/16 ADT
+
+{'type': u'720', 'file_path': u'/home/saasbook/Music/111113235/Bam Huyet-_fw1280e_-fh720e.mp4'}
+True
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:02:16 03/30/16 ADT
+
+{'type': u'480', 'file_path': u'/home/saasbook/Music/111113235/Bam Huyet-_fw854e_-fh480e.mp4'}
+True
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:02:45 03/30/16 ADT
+
+{'type': u'360', 'file_path': u'/home/saasbook/Music/111113235/Bam Huyet-_fw640e_-fh360e.mp4'}
+True
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:02:51 03/30/16 ADT
+
+{'type': u'240', 'file_path': u'/home/saasbook/Music/111113235/Bam Huyet-_fw426e_-fh240e.mp4'}
+True
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:03:17 03/30/16 ADT
+
+{'type': u'144', 'file_path': u'/home/saasbook/Music/111113235/Bam Huyet-_fw256e_-fh144e.mp4'}
+True
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:03:41 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:04:01 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:05:01 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:06:01 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:07:02 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:08:01 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:09:01 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:10:02 03/30/16 ADT
+
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:11:01 03/30/16 ADT
+
+
+ 
+
+ [*] Waiting for messages. To exit press CTRL+C
+
+ ----------------- Download file ------------
+
+In time: 06:14:02 03/30/16 ADT
+
+['-f', u'137+141', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593292422470', u'at_id': u'111113236', u'video_url': u'https://www.youtube.com/watch?v=mJokRNuFzAM', u'video_type': u'137+141'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:14:04 03/30/16 ADT
+
+['-f', u'22', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593292424642', u'at_id': u'111113236', u'video_url': u'https://www.youtube.com/watch?v=mJokRNuFzAM', u'video_type': u'22'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:14:07 03/30/16 ADT
+
+['-f', u'135+140', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593292421569', u'at_id': u'111113236', u'video_url': u'https://www.youtube.com/watch?v=mJokRNuFzAM', u'video_type': u'135+140'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:14:09 03/30/16 ADT
+
+['-f', u'18', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593292421439', u'at_id': u'111113236', u'video_url': u'https://www.youtube.com/watch?v=mJokRNuFzAM', u'video_type': u'18'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:14:11 03/30/16 ADT
+
+['-f', u'133+140', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593292423844', u'at_id': u'111113236', u'video_url': u'https://www.youtube.com/watch?v=mJokRNuFzAM', u'video_type': u'133+140'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:14:13 03/30/16 ADT
+
+['-f', u' 160+140', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593292425381', u'at_id': u'111113236', u'video_url': u'https://www.youtube.com/watch?v=mJokRNuFzAM', u'video_type': u' 160+140'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:15:02 03/30/16 ADT
+
+['-f', u'137+141', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593292422470', u'at_id': u'111113236', u'video_url': u'https://www.youtube.com/watch?v=mJokRNuFzAM', u'video_type': u'137+141'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:15:07 03/30/16 ADT
+
+['-f', u'22', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593292424642', u'at_id': u'111113236', u'video_url': u'https://www.youtube.com/watch?v=mJokRNuFzAM', u'video_type': u'22'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:15:10 03/30/16 ADT
+
+['-f', u'135+140', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593292421569', u'at_id': u'111113236', u'video_url': u'https://www.youtube.com/watch?v=mJokRNuFzAM', u'video_type': u'135+140'}
+Video in format: 480
+File location: /home/saasbook/Music/111113236/Bam Huyet-_fw854e_-fh480e.mp4
+File url:http://s2.download.stream.djscdn.com/media/111113236/Bam Huyet-_fw854e_-fh480e.mp4
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:16:42 03/30/16 ADT
+
+['-f', u'18', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593292421439', u'at_id': u'111113236', u'video_url': u'https://www.youtube.com/watch?v=mJokRNuFzAM', u'video_type': u'18'}
+Video in format: 360
+File location: /home/saasbook/Music/111113236/Bam Huyet-_fw640e_-fh360e.mp4
+File url:http://s2.download.stream.djscdn.com/media/111113236/Bam Huyet-_fw640e_-fh360e.mp4
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:16:50 03/30/16 ADT
+
+['-f', u'133+140', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593292423844', u'at_id': u'111113236', u'video_url': u'https://www.youtube.com/watch?v=mJokRNuFzAM', u'video_type': u'133+140'}
+Video in format: 240
+File location: /home/saasbook/Music/111113236/Bam Huyet-_fw426e_-fh240e.mp4
+File url:http://s2.download.stream.djscdn.com/media/111113236/Bam Huyet-_fw426e_-fh240e.mp4
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:18:00 03/30/16 ADT
+
+['-f', u' 160+140', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593292425381', u'at_id': u'111113236', u'video_url': u'https://www.youtube.com/watch?v=mJokRNuFzAM', u'video_type': u' 160+140'}
+Video in format: 144
+File location: /home/saasbook/Music/111113236/Bam Huyet-_fw256e_-fh144e.mp4
+File url:http://s2.download.stream.djscdn.com/media/111113236/Bam Huyet-_fw256e_-fh144e.mp4
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:27:01 03/30/16 ADT
+
+['-f', u'137+141', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593300211243', u'at_id': u'1111132359', u'video_url': u'https://www.youtube.com/watch?v=bptST5QIqnE', u'video_type': u'137+141'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:27:04 03/30/16 ADT
+
+['-f', u'22', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593300215436', u'at_id': u'1111132359', u'video_url': u'https://www.youtube.com/watch?v=bptST5QIqnE', u'video_type': u'22'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:27:06 03/30/16 ADT
+
+['-f', u'135+140', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593300211645', u'at_id': u'1111132359', u'video_url': u'https://www.youtube.com/watch?v=bptST5QIqnE', u'video_type': u'135+140'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:27:08 03/30/16 ADT
+
+['-f', u'18', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593300217595', u'at_id': u'1111132359', u'video_url': u'https://www.youtube.com/watch?v=bptST5QIqnE', u'video_type': u'18'}
+Video in format: 360
+File location: /home/saasbook/Music/111113236/Hoc tro hoc sinh ton-_fw640e_-fh360e.mp4
+File url:http://s2.download.stream.djscdn.com/media/111113236/Hoc tro hoc sinh ton-_fw640e_-fh360e.mp4
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:27:17 03/30/16 ADT
+
+['-f', u'133+140', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593300214198', u'at_id': u'1111132359', u'video_url': u'https://www.youtube.com/watch?v=bptST5QIqnE', u'video_type': u'133+140'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:27:20 03/30/16 ADT
+
+['-f', u' 160+140', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593300213071', u'at_id': u'1111132359', u'video_url': u'https://www.youtube.com/watch?v=bptST5QIqnE', u'video_type': u' 160+140'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:30:01 03/30/16 ADT
+
+['-f', u'137+141', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593300211243', u'at_id': u'1111132359', u'video_url': u'https://www.youtube.com/watch?v=bptST5QIqnE', u'video_type': u'137+141'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:30:05 03/30/16 ADT
+
+['-f', u'22', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593300215436', u'at_id': u'1111132359', u'video_url': u'https://www.youtube.com/watch?v=bptST5QIqnE', u'video_type': u'22'}
+Video in format: 720
+File location: /home/saasbook/Music/111113236/Hoc tro hoc sinh ton-_fw1280e_-fh720e.mp4
+File url:http://s2.download.stream.djscdn.com/media/111113236/Hoc tro hoc sinh ton-_fw1280e_-fh720e.mp4
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:30:24 03/30/16 ADT
+
+['-f', u'135+140', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593300211645', u'at_id': u'1111132359', u'video_url': u'https://www.youtube.com/watch?v=bptST5QIqnE', u'video_type': u'135+140'}
+Video in format: 480
+File location: /home/saasbook/Music/111113236/Hoc tro hoc sinh ton-_fw854e_-fh480e.mp4
+File url:http://s2.download.stream.djscdn.com/media/111113236/Hoc tro hoc sinh ton-_fw854e_-fh480e.mp4
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:31:16 03/30/16 ADT
+
+['-f', u'133+140', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593300214198', u'at_id': u'1111132359', u'video_url': u'https://www.youtube.com/watch?v=bptST5QIqnE', u'video_type': u'133+140'}
+Video in format: 240
+File location: /home/saasbook/Music/111113236/Hoc tro hoc sinh ton-_fw426e_-fh240e.mp4
+File url:http://s2.download.stream.djscdn.com/media/111113236/Hoc tro hoc sinh ton-_fw426e_-fh240e.mp4
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:31:56 03/30/16 ADT
+
+['-f', u' 160+140', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593300213071', u'at_id': u'1111132359', u'video_url': u'https://www.youtube.com/watch?v=bptST5QIqnE', u'video_type': u' 160+140'}
+Video in format: 144
+File location: /home/saasbook/Music/111113236/Hoc tro hoc sinh ton-_fw256e_-fh144e.mp4
+File url:http://s2.download.stream.djscdn.com/media/111113236/Hoc tro hoc sinh ton-_fw256e_-fh144e.mp4
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:33:01 03/30/16 ADT
+
+['-f', u'137+141', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593300211243', u'at_id': u'1111132359', u'video_url': u'https://www.youtube.com/watch?v=bptST5QIqnE', u'video_type': u'137+141'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:36:01 03/30/16 ADT
+
+['-f', u'137+141', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593300211243', u'at_id': u'1111132359', u'video_url': u'https://www.youtube.com/watch?v=bptST5QIqnE', u'video_type': u'137+141'}
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:39:02 03/30/16 ADT
+
+['-f', u'137+141', '-o', u'/home/saasbook/Music/111113236/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593300211243', u'at_id': u'1111132359', u'video_url': u'https://www.youtube.com/watch?v=bptST5QIqnE', u'video_type': u'137+141'}
+
+ 
+
+ [*] Waiting for messages. To exit press CTRL+C
+
+ ----------------- Download file ------------
+
+In time: 06:42:01 03/30/16 ADT
+
+1111132359
+['-f', u'137+141', '-o', u'/home/saasbook/Music/1111132359/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593300211243', u'at_id': u'1111132359', u'video_url': u'https://www.youtube.com/watch?v=bptST5QIqnE', u'video_type': u'137+141'}
+++++Error+++ 
+
+ERROR: requested format not available
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:45:01 03/30/16 ADT
+
+11111388
+['-f', u'137+141', '-o', u'/home/saasbook/Music/1111132359/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593311012373', u'at_id': u'11111388', u'video_url': u'https://www.youtube.com/watch?v=aFL8MjpvAB4', u'video_type': u'137+141'}
+++++Error+++ 
+
+ERROR: requested format not available
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:45:05 03/30/16 ADT
+
+11111388
+['-f', u'22', '-o', u'/home/saasbook/Music/1111132359/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593311014490', u'at_id': u'11111388', u'video_url': u'https://www.youtube.com/watch?v=aFL8MjpvAB4', u'video_type': u'22'}
+Video in format: 720
+File location: /home/saasbook/Music/1111132359/Ben trong ham ruou-_fw1280e_-fh720e.mp4
+File url:http://s2.download.stream.djscdn.com/media/1111132359/Ben trong ham ruou-_fw1280e_-fh720e.mp4
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:45:16 03/30/16 ADT
+
+11111388
+['-f', u'135+140', '-o', u'/home/saasbook/Music/1111132359/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593311012895', u'at_id': u'11111388', u'video_url': u'https://www.youtube.com/watch?v=aFL8MjpvAB4', u'video_type': u'135+140'}
+Video in format: 480
+File location: /home/saasbook/Music/1111132359/Ben trong ham ruou-_fw854e_-fh480e.mp4
+File url:http://s2.download.stream.djscdn.com/media/1111132359/Ben trong ham ruou-_fw854e_-fh480e.mp4
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:46:54 03/30/16 ADT
+
+11111388
+['-f', u'18', '-o', u'/home/saasbook/Music/1111132359/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593311011908', u'at_id': u'11111388', u'video_url': u'https://www.youtube.com/watch?v=aFL8MjpvAB4', u'video_type': u'18'}
+Video in format: 360
+File location: /home/saasbook/Music/1111132359/Ben trong ham ruou-_fw640e_-fh360e.mp4
+File url:http://s2.download.stream.djscdn.com/media/1111132359/Ben trong ham ruou-_fw640e_-fh360e.mp4
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:51:16 03/30/16 ADT
+
+11111388
+['-f', u'133+140', '-o', u'/home/saasbook/Music/1111132359/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593311013579', u'at_id': u'11111388', u'video_url': u'https://www.youtube.com/watch?v=aFL8MjpvAB4', u'video_type': u'133+140'}
+Video in format: 240
+File location: /home/saasbook/Music/1111132359/Ben trong ham ruou-_fw426e_-fh240e.mp4
+File url:http://s2.download.stream.djscdn.com/media/1111132359/Ben trong ham ruou-_fw426e_-fh240e.mp4
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 06:52:58 03/30/16 ADT
+
+11111388
+['-f', u' 160+140', '-o', u'/home/saasbook/Music/1111132359/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593311014113', u'at_id': u'11111388', u'video_url': u'https://www.youtube.com/watch?v=aFL8MjpvAB4', u'video_type': u' 160+140'}
+Video in format: 144
+File location: /home/saasbook/Music/1111132359/Ben trong ham ruou-_fw256e_-fh144e.mp4
+File url:http://s2.download.stream.djscdn.com/media/1111132359/Ben trong ham ruou-_fw256e_-fh144e.mp4
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 07:03:01 03/30/16 ADT
+
+112311380
+['-f', u'137+141', '-o', u'/home/saasbook/Music/1111132359/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593321813582', u'at_id': u'112311380', u'video_url': u'https://www.youtube.com/watch?v=bdWImeRTHko', u'video_type': u'137+141'}
+++++Error+++ 
+
+ERROR: We're processing this video. Check back later.
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 07:03:03 03/30/16 ADT
+
+112311380
+['-f', u'22', '-o', u'/home/saasbook/Music/1111132359/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593321815056', u'at_id': u'112311380', u'video_url': u'https://www.youtube.com/watch?v=bdWImeRTHko', u'video_type': u'22'}
+++++Error+++ 
+
+ERROR: We're processing this video. Check back later.
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 07:03:06 03/30/16 ADT
+
+112311380
+['-f', u'135+140', '-o', u'/home/saasbook/Music/1111132359/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593321819966', u'at_id': u'112311380', u'video_url': u'https://www.youtube.com/watch?v=bdWImeRTHko', u'video_type': u'135+140'}
+++++Error+++ 
+
+ERROR: We're processing this video. Check back later.
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 07:03:08 03/30/16 ADT
+
+112311380
+['-f', u'18', '-o', u'/home/saasbook/Music/1111132359/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593321813965', u'at_id': u'112311380', u'video_url': u'https://www.youtube.com/watch?v=bdWImeRTHko', u'video_type': u'18'}
+++++Error+++ 
+
+ERROR: We're processing this video. Check back later.
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 07:03:10 03/30/16 ADT
+
+112311380
+['-f', u'133+140', '-o', u'/home/saasbook/Music/1111132359/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593321818124', u'at_id': u'112311380', u'video_url': u'https://www.youtube.com/watch?v=bdWImeRTHko', u'video_type': u'133+140'}
+++++Error+++ 
+
+ERROR: We're processing this video. Check back later.
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 07:03:12 03/30/16 ADT
+
+112311380
+['-f', u' 160+140', '-o', u'/home/saasbook/Music/1111132359/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593321815699', u'at_id': u'112311380', u'video_url': u'https://www.youtube.com/watch?v=bdWImeRTHko', u'video_type': u' 160+140'}
+++++Error+++ 
+
+ERROR: We're processing this video. Check back later.
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 07:06:01 03/30/16 ADT
+
+112311380
+['-f', u'137+141', '-o', u'/home/saasbook/Music/1111132359/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593321813582', u'at_id': u'112311380', u'video_url': u'https://www.youtube.com/watch?v=bdWImeRTHko', u'video_type': u'137+141'}
+++++Error+++ 
+
+ERROR: requested format not available
+
+ 
+
+
+ ----------------- Download file ------------
+
+In time: 07:06:05 03/30/16 ADT
+
+112311380
+['-f', u'22', '-o', u'/home/saasbook/Music/1111132359/%(title)s-_fw%(width)se_-fh%(height)se.%(ext)s']
+{u'_id': u'14593321815056', u'at_id': u'112311380', u'video_url': u'https://www.youtube.com/watch?v=bdWImeRTHko', u'video_type': u'22'}
+Video in format: 720
+File location: /home/saasbook/Music/1111132359/Ben trong ham ruou-_fw1280e_-fh720e.mp4
+File url:http://s2.download.stream.djscdn.com/media/1111132359/Ben trong ham ruou-_fw1280e_-fh720e.mp4
+
+ 
+
+Traceback (most recent call last):
+  File "/home/saasbook/web/djcdn/service/Worker/download_worker.py", line 177, in <module>
+    
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1681, in start_consuming
+    self.connection.process_data_events(time_limit=None)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 656, in process_data_events
+    self._dispatch_channel_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 469, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1310, in _dispatch_events
+    evt.body)
+  File "/home/saasbook/web/djcdn/service/Worker/download_worker.py", line 151, in rabbbit_callback
+    
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1889, in basic_ack
+    self._flush_output()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1174, in _flush_output
+    *waiters)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 395, in _flush_output
+    raise exceptions.ConnectionClosed()
+pika.exceptions.ConnectionClosed

@@ -1,0 +1,52 @@
+ [*] Waiting for messages. To exit press CTRL+C
+
+ ----------------- Upload file ------------
+
+In time: 00:52:14 03/30/16 ADT
+
+
+ ----------------- End upload file ----------
+
+
+ ----------------- Upload file ------------
+
+In time: 01:13:44 03/30/16 ADT
+
+
+ ----------------- End upload file ----------
+
+
+ ----------------- Upload file ------------
+
+In time: 01:55:51 03/30/16 ADT
+
+
+ ----------------- End upload file ----------
+
+
+ ----------------- Upload file ------------
+
+In time: 04:46:20 03/30/16 ADT
+
+
+ ----------------- End upload file ----------
+
+ [*] Waiting for messages. To exit press CTRL+C
+
+ ----------------- Upload file ------------
+
+In time: 04:49:05 03/30/16 ADT
+
+
+ ----------------- End upload file ----------
+
+Traceback (most recent call last):
+  File "/home/saasbook/web/djcdn/service/Worker/upload_worker.py", line 107, in <module>
+    channel.start_consuming()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1681, in start_consuming
+    self.connection.process_data_events(time_limit=None)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 647, in process_data_events
+    self._flush_output(common_terminator)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 420, in _flush_output
+    result.reason_text)
+pika.exceptions.ConnectionClosed: (320, "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'")
