@@ -33,24 +33,47 @@ $app->post('/upload_media', function() use ($app) {
 				$isAllow = false;
 			    $fileParts = pathinfo($file->getName());
 				$targetFolder = $uploadDir .  DIRECTORY_SEPARATOR .date("Y/m_d");
+				$videoFormat = array( 'mp4', 'avi', 'mkv');
 				
 				if (in_array($fileParts['extension'], array('jpg', 'jpeg', 'gif', 'png'))) {
 					$targetFolder .= '/picture/';
 					$isAllow = true;
 				}
+
+				if (in_array($fileParts['extension'], $videoFormat)) {
+					$avatarFolder = $targetFolder . '/picture/';
+				}
+
 				if (in_array($fileParts['extension'], array('mp3', 'mp4', 'avi', 'mkv'))) {
 					$targetFolder .= '/song/';
 					$isAllow = true;
 				}
 
+
 				if ($isAllow) {
 					if (!file_exists($targetFolder)) {
 						$mkresult = mkdir($targetFolder, 0775, true);
 					}
-					$newPathFile = $targetFolder . preg_replace('/\s+/', '_', $fileParts['filename']);
-					$newPathFile .=  '_' . time() . "_" . rand(1000, 9999) . '.'. $fileParts['extension'];
+					if (isset($avatarFolder)) {
+						if (!file_exists($avatarFolder)) {
+						$mkresult = mkdir($avatarFolder, 0775, true);
+					}
+					}
+					$newFileName = preg_replace('/\s+/', '_', $fileParts['filename']);
+					$newFileName .= '_' . time() . "_" . rand(1000, 9999) ;
+					$newPathFile = $targetFolder . $newFileName .'.'. $fileParts['extension'];
 					$hasMoveFile = $file->moveTo($newPathFile);
 					if ($hasMoveFile)  {
+						if (isset($avatarFolder)) {
+							$newPathAvatarFile = $avatarFolder . $newFileName .'.jpg';
+							$newPathSmallAvatarFile = $avatarFolder . $newFileName .'_small.jpg';
+							$commandConvert = 'ffmpeg -itsoffset -1 -i ' . $newPathFile .' -vframes 1 " ' . $newPathAvatarFile;
+							system(escapeshellcmd($commandConvert));
+							$commandConvertSmall = 'ffmpeg -itsoffset -1 -i ' . $newPathFile .' -vframes 1 -filter:v scale="280:-1" ' . $newPathAvatarFile;
+							system(escapeshellcmd($commandConvertSmall));
+							$result['avatar'] = getMediaUrl($newPathAvatarFile);
+							$result['avatar_small'] = getMediaUrl($newPathSmallAvatarFile);
+						}
 						$result['path'][] = getMediaUrl($newPathFile);
 					};
 				}
@@ -141,14 +164,14 @@ $app->get('/test_upload_youtube', function() use ($app) {
 	// if (empty($mid) || empty($filePath)) {
 	// 	$filePath = getMediaPath($fileUrl);
 	// 	if (file_exists($filePath)) {
-			$jobClient = new SendWorkload();
-			$jobClient->pushVideoUpload(array(
-				"file_path" => '/home/nhung-phat-ngon-an-tuong-tai-nhiem-ky-quoc-hoi-khoa-13-1459384747.mp4',
-		    	"title" => "Thong diep",
-		        "privacy" => "unlisted"
-		    ));
-		    $result['status'] = 200;
-		    $result['message'] = 'Push Success';
+			// $jobClient = new SendWorkload();
+			// $jobClient->pushVideoUpload(array(
+			// 	"file_path" => '/home/nhung-phat-ngon-an-tuong-tai-nhiem-ky-quoc-hoi-khoa-13-1459384747.mp4',
+		 //    	"title" => "Thong diep",
+		 //        "privacy" => "unlisted"
+		 //    ));
+		 //    $result['status'] = 200;
+		 //    $result['message'] = 'Push Success';
 	// 	} else {
 	// 		$result['message'] = 'File not exists';
 	// 	}
