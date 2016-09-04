@@ -3,7 +3,7 @@
  * Local variables
  * @var \Phalcon\Mvc\Micro $app
  */
-// Test commit
+
 /**
  * Add your routes here
  */
@@ -76,6 +76,8 @@ $app->post('/convert_media', function() use ($app) {
 	);
 	$fileUrl = $app->request->getPost('media_url');
 	$mid = $app->request->getPost('mid');
+	$title = $app->request->getPost('title');
+	$artist = $app->request->getPost('artist');
 
 	if (empty($mid) || empty($filePath)) {
 		$filePath = getMediaPath($fileUrl);
@@ -83,7 +85,9 @@ $app->post('/convert_media', function() use ($app) {
 			$jobClient = new SendWorkload();
 			$jobClient->pushMediaToConvert(array(
 		    	"mediaDir" => $filePath,
-		        "atid" => $mid
+		        "atid" => $mid,
+		        "title" => $title,
+		        "artist" => $artist
 		    ));
 		    $result['status'] = 200;
 		    $result['message'] = 'Push Success';
@@ -94,6 +98,66 @@ $app->post('/convert_media', function() use ($app) {
 
 	returnJson($result);
 });
+
+
+$app->post('/upload_youtupe', function() use ($app) {
+	$result = array(
+		'status' => 404,
+		'message' => 'System error. Please try again later'
+	);
+	$fileUrl = $app->request->getPost('media_url');
+	$title = $app->request->getPost('title');
+	$mid = $app->request->getPost('mid');
+
+	if (empty($mid) || empty($filePath)) {
+		$filePath = getMediaPath($fileUrl);
+
+		if (file_exists($filePath)) {
+			$jobClient = new SendWorkload();
+			$jobClient->pushVideoUpload(array(
+				"file_path" => $filePath,
+				"title" => $title,
+		        "privacy" => "unlisted",
+		        "at_id" => $mid
+		    ));
+		    $result['status'] = 200;
+		    $result['message'] = 'Push Success';
+		} else {
+			$result['message'] = 'File not exists';
+		}
+	}
+
+	returnJson($result);
+});
+
+$app->get('/test_upload_youtube', function() use ($app) {
+	// $result = array(
+	// 	'status' => 404,
+	// 	'message' => 'System error. Please try again later'
+	// );
+	// $fileUrl = $app->request->getPost('media_url');
+	// $mid = $app->request->getPost('mid');
+
+	// if (empty($mid) || empty($filePath)) {
+	// 	$filePath = getMediaPath($fileUrl);
+	// 	if (file_exists($filePath)) {
+			$jobClient = new SendWorkload();
+			$jobClient->pushVideoUpload(array(
+				"file_path" => '/home/nhung-phat-ngon-an-tuong-tai-nhiem-ky-quoc-hoi-khoa-13-1459384747.mp4',
+		    	"title" => "Thong diep",
+		        "privacy" => "unlisted"
+		    ));
+		    $result['status'] = 200;
+		    $result['message'] = 'Push Success';
+	// 	} else {
+	// 		$result['message'] = 'File not exists';
+	// 	}
+	// }
+
+	returnJson($result);
+});
+
+
 /**
  * Not found handler
  */

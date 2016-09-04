@@ -8,8 +8,8 @@ class SendWorkload extends Component
 {
 
     private $_rabbitClient;
-    private $_remoteUrl = 'http://s2.download.stream.djscdn.com/convert_media';
-    private $_uploadVideoUrl = 'http://s2.download.stream.djscdn.com/upload_youtupe';
+    private $_remoteUrl = 'http://s1.download.stream.djscdn.com/convert_media';
+    private $_uploadVideoUrl = 'http://s1.download.stream.djscdn.com/upload_youtupe';
 
     public function __construct() {
 //        include __DIR__ . "/../../vendor/autoload.php";

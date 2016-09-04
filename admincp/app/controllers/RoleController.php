@@ -36,8 +36,9 @@ class RoleController extends ControllerBase
         ## Process
         $helper = new Module();
         $module = $helper->Permission();
+        $roleCl = Role::getCollectionInstance();
         if ($id) {
-            $roleInfo = (array)Role::findById($id);
+            $roleInfo = $roleCl->findOne(array('_id' => $id));
         }
         $list_permission = $roleInfo['permission'];
         //set active for rolegroup
@@ -84,15 +85,12 @@ class RoleController extends ControllerBase
 
     public function deleteAction()
     {
-        ##Check Permission
-        if (!$this->checkpermission("role_delete")) return false;
-        $dbmg = $this->getConnection();
         $id = $this->request->get('id');
-        if (is_array($id)) { // delete in
-            $id = array_map("strval",$id);
-            $dbmg->role->remove(array('_id' => array('$in'=>$id)),array('multiple'=>true));
-
-        } else  $dbmg->role->remove(array('_id' => "$id"));
+        if (is_array($id)) { //delete in
+            $id = array_map("strval", $id);
+            Role::deleteDocument(array('_id' => array('$in' => $id)), array('multiple' => true));
+        }
+        if ($id) Role::deleteDocument(array('_id' => $id));
         $this->flash->success($this->getLanguage()->delete_success);
         $redirect = Helper::cpagerparm("tact,id,status", "/role/index");
         if (!$redirect) $redirect = '/role/index';

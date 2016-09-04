@@ -14,8 +14,8 @@ return new \Phalcon\Config(array(
     ),
 
     'application' => array(
-        'domain'         => 'http://s2.download.stream.djscdn.com/',
-        'uploadMediaUrl' => 'http://s2.download.stream.djscdn.com/media',
+        'domain'         => 'http://s1.download.stream.djscdn.com/',
+        'uploadMediaUrl' => 'http://s1.download.stream.djscdn.com/media',
         'modelsDir'      => APP_PATH . '/models/',
         'migrationsDir'  => APP_PATH . '/migrations/',
         'viewsDir'       => APP_PATH . '/views/',
