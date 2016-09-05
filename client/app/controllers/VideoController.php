@@ -27,6 +27,8 @@ class VideoController extends ControllerBase
         $listVideoSelectvie = Helper::resortarray(Media::ListMusicByMultiConditions(self::$TYPE_SELECTIVE_VIDEO, $limit, 1, $listIdVideo), $listIdVideo, "_id");
         $this->view->listvideo = $listVideo;
         $this->view->listvideoselective = $listVideoSelectvie;
+        ##breadcrumbs
+        $this->breadCrumbs->addItem(array(), static::$TYPE_VIDEO);
         $this->view->header = Helper::setHeader('Video', '', '');
     }
 
@@ -52,7 +54,8 @@ class VideoController extends ControllerBase
         $count = Media::findAndReturnArray(array(
             'condition' => array('type' => self::$TYPE_VIDEO, 'status' => static::$STATUS_ON),
         ));
-
+        ##breadcrumbs
+        $this->breadCrumbs->addItem(array('name' => "Video mới", 'link' => '/video-moi.html'), static::$TYPE_VIDEO);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listVideo = $data;
         $this->view->header = Helper::setHeader("Video mới", '', '');
@@ -81,6 +84,8 @@ class VideoController extends ControllerBase
         $count = Media::findAndReturnArray(array(
             'condition' => array('_id' => array('$in' => $listIdVideo), 'status' => static::$STATUS_ON),
         ));
+        ##breadcrumbs
+        $this->breadCrumbs->addItem(array('name' => "Video chọn lọc", 'link' => '/video-chon-loc.html'), static::$TYPE_VIDEO);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listVideo_selective = $data;
         $this->view->header = Helper::setHeader("Video chọn lọc", '', '');
@@ -156,7 +161,7 @@ class VideoController extends ControllerBase
             $listArtistName = ' - ' . rtrim($listArtistName, 'ft. ');
             $listArtistNameRePlace = str_replace(' - ', '', $listArtistName);
         }
-        $title = $o->name .' Full HD Mp4'. $listArtistName . ' - Upload bởi ' . $o->usercreate;
+        $title = $o->name . ' Full HD Mp4' . $listArtistName . ' - Upload bởi ' . $o->usercreate;
         if (empty($o->content) || strip_tags($o->content) == 'No Track!') {
             $namenonUtf = Helper::convertToUtf8($o->name);
             $content = "{$o->name} Video Clip, Tải Download VIDEO CLIP {$namenonUtf} - $listArtistNameRePlace HAY MỚI NHẤT chất lượng Full HD Mp4";
@@ -173,7 +178,7 @@ class VideoController extends ControllerBase
         $keyword = "Xem, Video Clip, Mp4, Download, {$o->name}, {$listArtistNameRePlace}{$o->usercreate},{$listCategoryName}Full HD";
         $keyword = str_replace('  ', ' ', $keyword);
 
-        $this->view->header = Helper::setHeader($title, strip_tags($content), $o->priavatar, $content,$keyword);
+        $this->view->header = Helper::setHeader($title, strip_tags($content), $o->priavatar, $content, $keyword);
     }
 
     public function categoryAction()
@@ -184,33 +189,30 @@ class VideoController extends ControllerBase
         $skip = ($p - 1) * $limit;
         $id = $this->dispatcher->getParam('catId');
         $o = Category::findById($id);
-        if ($o == false) $this->response->redirect('/error.html');
-        else {
-            $this->viewComponent->createBreadcrumb($id);
-
-            $listVideo = Media::findAndReturnArray(array(
-                'condition' => array('category' => $id, '_id' => array('$ne' => $id), 'status' => static::$STATUS_ON),
-                'skip' => $skip,
-                'limit' => $limit,
-                'sort' => array('datecreate' => -1),
-            ));
-            $data = array();
-            foreach ($listVideo as $item) {
-                $artistid = $item['artist'];
-                $item['usercreate'] = Users::getUserInfo($item['usercreate']);
-                $item['link'] = Makelink::link_view_article_video($item['name'], $item['_id']);
-                if (!empty($artistid)) $item['listartist'] = Artist::getArtistByID($artistid);
-                $data[] = $item;
-            }
-            $count = Media::findAndReturnArray(array(
-                'condition' => array('category' => $id, 'status' => static::$STATUS_ON),
-            ));
-            $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
-            $this->view->listVideo = $data;
-            $this->view->header = Helper::setHeader($o->name, '', '');
-            $this->view->object = $o;
-            $this->view->link = Makelink::link_view_category_video($o->name, $o->getId());
+        if (!$o) return $this->response->redirect('/error.html');
+        $listVideo = Media::findAndReturnArray(array(
+            'condition' => array('category' => $id, '_id' => array('$ne' => $id), 'status' => static::$STATUS_ON),
+            'skip' => $skip,
+            'limit' => $limit,
+            'sort' => array('datecreate' => -1),
+        ));
+        $data = array();
+        foreach ($listVideo as $item) {
+            $artistid = $item['artist'];
+            $item['usercreate'] = Users::getUserInfo($item['usercreate']);
+            $item['link'] = Makelink::link_view_article_video($item['name'], $item['_id']);
+            if (!empty($artistid)) $item['listartist'] = Artist::getArtistByID($artistid);
+            $data[] = $item;
         }
+        $count = Media::findAndReturnArray(array(
+            'condition' => array('category' => $id, 'status' => static::$STATUS_ON),
+        ));
+        $o->link = Makelink::link_view_category_video($o->name, $o->getId());
+        $this->breadCrumbs->addItem($o->toArray(), static::$TYPE_VIDEO);
+        $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
+        $this->view->listVideo = $data;
+        $this->view->header = Helper::setHeader($o->name, '', '');
+        $this->view->object = $o;
     }
 
 }

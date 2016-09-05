@@ -99,5 +99,20 @@ class BaseCollection extends Collection
         }
         return iterator_to_array($cursor, $needKeys);
     }
-
+    /**
+     *@param string |int object's id
+     * Some strange error override this method to fix that
+     *@return mixed Object needed
+     */
+    public static function findById($id) {
+        $object = parent::findById($id);
+        if (!$object) {
+            $object = static::findFirst(
+                array(
+                    array('_id' => $id)
+                )
+            );
+        }
+        return $object;
+    }
 }

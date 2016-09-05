@@ -39,7 +39,8 @@ class ArtistController extends ControllerBase
         $this->view->setVars(array(
             'listcategory' => $listcategory,
         ));
-        $this->view->header = Helper::setHeader('Nghệ sỹ','','');
+        $this->breadCrumbs->addItem(array(), static::$TYPE_ARTIST);
+        $this->view->header = Helper::setHeader('Nghệ sỹ', '', '');
     }
 
     public function categoryAction()
@@ -69,7 +70,8 @@ class ArtistController extends ControllerBase
                 'category' => $o,
                 'painginfo' => Helper::paginginfo(count($count), $limit, $p),
             ));
-            $this->view->header = Helper::setHeader($o->name,'','');
+            $this->breadCrumbs->addItem($o->toArray(), static::$TYPE_ARTIST);
+            $this->view->header = Helper::setHeader($o->name, '', '');
         }
     }
 
@@ -88,68 +90,71 @@ class ArtistController extends ControllerBase
                 ));
         }
         $object = Artist::findById($id);
-        if ($object == false) $this->response->redirect('/error.html');
-        else {
-            if (empty($object->banner) || !isset($object->banner)) $object->banner = Helper::getBannerDefault();
-            if (empty($object->priavatar) || !isset($object->priavatar)) $object->priavatar = Helper::getAvatarDefault();
-            $object->link = Makelink::link_view_artist($object->username, $object->getId());
-            $listcatid = $object->category;
-            if (!empty($listcatid) && isset($listcatid)) $listcat = Category::getCategoryByID(self::$TYPE_ARTIST, $listcatid);
-            //list media
-            $listMedia = Media::findAndReturnArray(array(
-                'condition' => array('artist' => $object->getId(), 'type' => self::$TYPE_MUSIC, 'status' => self::$STATUS_ON),
-                'limit' => 10,
-                'sort' => array('datecreate' => -1),
-            ));
-            $listVideo = Media::findAndReturnArray(array(
-                'condition' => array('artist' => $object->getId(), 'type' => self::$TYPE_VIDEO, 'status' => self::$STATUS_ON),
-                'limit' => 8,
-                'sort' => array('datecreate' => -1),
-            ));
-            $listAlbum = Album::findAndReturnArray(array(
-                'condition' => array('artist' => $object->getId(), 'type' => self::$TYPE_ALBUM, 'status' => self::$STATUS_ON),
-                'limit' => 8,
-                'sort' => array('datecreate' => -1),
-            ));
-            foreach ($listMedia as &$item) {
-                $item['link'] = Makelink::link_view_article_music($item['name'], $item['_id']);
-            }
-            //list video
-            foreach ($listVideo as &$item) {
-                $artistid = $item['artist'];
-                $item['link'] = Makelink::link_view_article_video($item['name'], $item['_id']);
-                $item['usercreate'] = Users::getUserInfo($item['usercreate']);
-                if (isset($artistid) || !empty($artistid)) $item['listartist'] = Artist::getArtistByID($artistid);
-            }
-            //list album
-            foreach ($listAlbum as &$item) {
-                $artistid = $item['artist'];
-                $item['link'] = Makelink::link_view_article_playlist_music($item['name'], $item['_id']);
-                if (isset($artistid) || !empty($artistid)) $item['listartist'] = Artist::getArtistByID($artistid);
-            }
-            //list artist other
-            $listArtist = Artist::findAndReturnArray(array('sort' => array('datecreate' => -1), 'limit' => 10,));
-            foreach ($listArtist as &$item) {
-                if (empty($item['priavatar']) || !isset($item['priavatar'])) $item['priavatar'] = Helper::getAvatarDefault();
-                $item['link'] = Makelink::link_view_artist($item['username'], $item['_id']);
-            }
-            $countaudio = count(Media::findAndReturnArray(array('condition' => array('artist' => $object->getId(), 'type' => self::$TYPE_MUSIC, 'status' => self::$STATUS_ON))));
-            $countvideo = count(Media::findAndReturnArray(array('condition' => array('artist' => $object->getId(), 'type' => self::$TYPE_VIDEO, 'status' => self::$STATUS_ON))));
-            $countalbum = count(Album::findAndReturnArray(array('condition' => array('artist' => $object->getId(), 'type' => self::$TYPE_ALBUM, 'status' => self::$STATUS_ON))));
-            $this->view->setVars(array(
-                'listmedia' => $listMedia,
-                'listvideo' => $listVideo,
-                'listalbum' => $listAlbum,
-                'listartist' => $listArtist,
-                'listcategory' => $listcat,
-                'countaudio' => $countaudio,
-                'countvideo' => $countvideo,
-                'countalbum' => $countalbum,
-                'object' => $object,
-                'title' => $object->username,
-            ));
-            $this->view->header = Helper::setHeader($object->username,$object->description,$object->priavatar);
+        if (!$object) return $this->response->redirect('/error.html');
+
+        if (empty($object->banner) || !isset($object->banner)) $object->banner = Helper::getBannerDefault();
+        if (empty($object->priavatar) || !isset($object->priavatar)) $object->priavatar = Helper::getAvatarDefault();
+        $object->link = Makelink::link_view_artist($object->username, $object->getId());
+        $object->name = $object->username;
+        $listcatid = $object->category;
+        if (!empty($listcatid) && isset($listcatid)) $listcat = Category::getCategoryByID(self::$TYPE_ARTIST, $listcatid);
+        //list media
+        $listMedia = Media::findAndReturnArray(array(
+            'condition' => array('artist' => $object->getId(), 'type' => self::$TYPE_MUSIC, 'status' => self::$STATUS_ON),
+            'limit' => 10,
+            'sort' => array('datecreate' => -1),
+        ));
+        $listVideo = Media::findAndReturnArray(array(
+            'condition' => array('artist' => $object->getId(), 'type' => self::$TYPE_VIDEO, 'status' => self::$STATUS_ON),
+            'limit' => 8,
+            'sort' => array('datecreate' => -1),
+        ));
+        $listAlbum = Album::findAndReturnArray(array(
+            'condition' => array('artist' => $object->getId(), 'type' => self::$TYPE_ALBUM, 'status' => self::$STATUS_ON),
+            'limit' => 8,
+            'sort' => array('datecreate' => -1),
+        ));
+        foreach ($listMedia as &$item) {
+            $item['link'] = Makelink::link_view_article_music($item['name'], $item['_id']);
         }
+        //list video
+        foreach ($listVideo as &$item) {
+            $artistid = $item['artist'];
+            $item['link'] = Makelink::link_view_article_video($item['name'], $item['_id']);
+            $item['usercreate'] = Users::getUserInfo($item['usercreate']);
+            if (isset($artistid) || !empty($artistid)) $item['listartist'] = Artist::getArtistByID($artistid);
+        }
+        //list album
+        foreach ($listAlbum as &$item) {
+            $artistid = $item['artist'];
+            $item['link'] = Makelink::link_view_article_playlist_music($item['name'], $item['_id']);
+            if (isset($artistid) || !empty($artistid)) $item['listartist'] = Artist::getArtistByID($artistid);
+        }
+        //list artist other
+        $listArtist = Artist::findAndReturnArray(array('sort' => array('datecreate' => -1), 'limit' => 10,));
+        foreach ($listArtist as &$item) {
+            if (empty($item['priavatar']) || !isset($item['priavatar'])) $item['priavatar'] = Helper::getAvatarDefault();
+            $item['link'] = Makelink::link_view_artist($item['username'], $item['_id']);
+        }
+        $countaudio = count(Media::findAndReturnArray(array('condition' => array('artist' => $object->getId(), 'type' => self::$TYPE_MUSIC, 'status' => self::$STATUS_ON))));
+        $countvideo = count(Media::findAndReturnArray(array('condition' => array('artist' => $object->getId(), 'type' => self::$TYPE_VIDEO, 'status' => self::$STATUS_ON))));
+        $countalbum = count(Album::findAndReturnArray(array('condition' => array('artist' => $object->getId(), 'type' => self::$TYPE_ALBUM, 'status' => self::$STATUS_ON))));
+        array_push($listcat, $object->toArray());
+        $this->breadCrumbs->addListItems($listcat, static::$TYPE_ARTIST);
+        $this->view->setVars(array(
+            'listmedia' => $listMedia,
+            'listvideo' => $listVideo,
+            'listalbum' => $listAlbum,
+            'listartist' => $listArtist,
+            'listcategory' => $listcat,
+            'countaudio' => $countaudio,
+            'countvideo' => $countvideo,
+            'countalbum' => $countalbum,
+            'object' => $object,
+            'title' => $object->username,
+        ));
+        $this->view->header = Helper::setHeader($object->username, $object->description, $object->priavatar);
+
     }
 
     public function storyAction()
@@ -194,7 +199,10 @@ class ArtistController extends ControllerBase
 
         if (isset($object->facebook) && !empty($object->facebook)) $object->facebook = "<a href=\"{$object->facebook}\" target=\"_blank\">{$object->facebook}</a>";
         else $object->facebook = 'Đang cập nhật';
-
+        ##breadcrumb
+        $object->name = $object->username;
+        array_push($listcat, $object->toArray());
+        $this->breadCrumbs->addListItems($listcat, static::$TYPE_ARTIST);
         $this->view->setVars(array(
             'artisttype' => Helper::getAllArtistTypes(),
             'listartist' => $listArtist,
@@ -202,7 +210,7 @@ class ArtistController extends ControllerBase
             'listCate' => $listCate,
             'object' => $object,
         ));
-        $this->view->header = Helper::setHeader($object->username,$object->description,$object->priavatar);
+        $this->view->header = Helper::setHeader($object->username, $object->description, $object->priavatar);
     }
 
     public function audioAction()
@@ -234,6 +242,11 @@ class ArtistController extends ControllerBase
             $item['link'] = Makelink::link_view_artist($item['username'], $item['_id']);
         }
         $count = count(Media::findAndReturnArray(array('condition' => array('artist' => $object->getId(), 'type' => self::$TYPE_MUSIC, 'status' => self::$STATUS_ON))));
+        ##breadcrumb
+        $object->name = $object->username;
+        array_push($listcat, $object->toArray());
+        $this->breadCrumbs->addListItems($listcat, static::$TYPE_ARTIST);
+
         $this->view->setVars(array(
             'listmedia' => $listMedia,
             'listartist' => $listArtist,
@@ -241,7 +254,7 @@ class ArtistController extends ControllerBase
             'painginfo' => Helper::paginginfo($count, $limit, $p),
             'object' => $object,
         ));
-        $this->view->header = Helper::setHeader($object->username,$object->description,$object->priavatar);
+        $this->view->header = Helper::setHeader($object->username, $object->description, $object->priavatar);
     }
 
     public function albumAction()
@@ -278,6 +291,11 @@ class ArtistController extends ControllerBase
             $item['link'] = Makelink::link_view_artist($item['username'], $item['_id']);
         }
         $count = count(Album::findAndReturnArray(array('condition' => array('artist' => $object->getId(), 'type' => self::$TYPE_ALBUM, 'status' => self::$STATUS_ON))));
+        ##breadcrumb
+        $object->name = $object->username;
+        array_push($listcat, $object->toArray());
+        $this->breadCrumbs->addListItems($listcat, static::$TYPE_ARTIST);
+
         $this->view->setVars(array(
             'listalbum' => $listAlbum,
             'listartist' => $listArtist,
@@ -285,7 +303,7 @@ class ArtistController extends ControllerBase
             'painginfo' => Helper::paginginfo($count, $limit, $p),
             'object' => $object,
         ));
-        $this->view->header = Helper::setHeader($object->username,$object->description,$object->priavatar);
+        $this->view->header = Helper::setHeader($object->username, $object->description, $object->priavatar);
 
     }
 
@@ -322,6 +340,11 @@ class ArtistController extends ControllerBase
             $item['link'] = Makelink::link_view_artist($item['username'], $item['_id']);
         }
         $count = count(Media::findAndReturnArray(array('condition' => array('artist' => $object->getId(), 'type' => self::$TYPE_VIDEO, 'status' => self::$STATUS_ON))));
+        ##breadcrumb
+        $object->name = $object->username;
+        array_push($listcat, $object->toArray());
+        $this->breadCrumbs->addListItems($listcat, static::$TYPE_ARTIST);
+
         $this->view->setVars(array(
             'listvideo' => $listVideo,
             'listartist' => $listArtist,
@@ -329,7 +352,7 @@ class ArtistController extends ControllerBase
             'painginfo' => Helper::paginginfo($count, $limit, $p),
             'object' => $object,
         ));
-        $this->view->header = Helper::setHeader($object->username,$object->description,$object->priavatar);
+        $this->view->header = Helper::setHeader($object->username, $object->description, $object->priavatar);
     }
 }
 

@@ -4,14 +4,7 @@
 
     <div class="banner-gs">
         <div class="container">
-            <ul class="breadcrumbs">
-                <li><a href="/"><i class="fa fa-home fa-lg"></i></a></li>
-                <li><a href="/nghe-sy.html">Nghệ sỹ</a></li>
-                {% for item in listcategory %}
-                <li><a href="{{ item['link'] }}">{{ item['name'] }}</a></li>
-                {% endfor %}
-                <li><a href="{{ object.link }}">{{ object.username }}</a></li>
-            </ul>
+            {% include "/layouts/breadcrumb.volt" %}
         </div>
         <div class="container">
             <div class="divpre">

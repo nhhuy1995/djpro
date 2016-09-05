@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="318266f1-5900-4592-9e57-186369b90119" name="DjPro_Client" url="http://108.61.250.47">
-        <fileTransfer host="108.61.250.47" port="21" rootFolder="/home/djpro/public_html" password="dfcedfc0dfdadfd8dfc5dfeadf8e" username="djpro">
+      <webServer id="318266f1-5900-4592-9e57-186369b90119" name="DjPro_Client" url="http://103.9.156.125">
+        <fileTransfer host="103.9.156.125" port="21" rootFolder="/public_html" password="dfcedfc0dfc9dfc6dfc3dfcfdfc4dfdedff5dfeadf8e" username="djclient">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

@@ -5,11 +5,7 @@
     <div class="bgclr"></div>
     <div class="bg-cmmusic">
         <div class="container">
-            <ul class="breadcrumbs">
-                <li><a href="/"><i class="fa fa-home fa-lg"></i></a></li>
-                <li><a href="/video.html">Video</a></li>
-                <li><a href="/video-moi.html">Video mới</a></li>
-            </ul>
+            {% include '/layouts/breadcrumb.volt' %}
         </div>
         <div class="container">
             <div class="row">

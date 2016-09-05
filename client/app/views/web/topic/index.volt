@@ -3,10 +3,8 @@
 
     <div class="banner-gs">
         <div class="container">
-            <ul class="breadcrumbs">
-                <li><a href="/trang-chu.html"><i class="fa fa-home fa-lg"></i></a></li>
-                <li><a href="/chu-de.html">Chủ đề</a></li>
-            </ul>
+            {% include 'layouts/breadcrumb.volt' %}
+
         </div>
         <div class="container">
             <div class="divpre">

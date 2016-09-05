@@ -214,9 +214,9 @@
         },
         _refresh: function (instant) {
             /* instant: Can be undefined, true or a function.
-             *  undefined -> use animation timings
-             *  true -> no animation
-             *  function -> use animation timings and excute function at half way point.
+             *	undefined -> use animation timings
+             *	true -> no animation
+             *	function -> use animation timings and excute function at half way point.
              */
             var self = this;
 

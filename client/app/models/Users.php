@@ -31,10 +31,10 @@ class Users extends BaseCollection
 
     public static function getUserById($userid)
     {
-        $data = Users::findById($userid);
+        $data = Users::findFirst(array('conditions' => array('_id' => $userid)));
         $data->link = Makelink::link_view_member($data->username, $data->_id);
         $roleid = $data->role;
-        if (isset($roleid) || !empty($roleid)) { // get name role
+        if (isset($roleid) && !empty($roleid)) { // get name role
             $roleinfo = Role::findAndReturnArray(array('condition' => array('_id' => array('$in' => $roleid))));
             $data->namerole = $roleinfo[0]['name'];
             $data->is_role = 1;

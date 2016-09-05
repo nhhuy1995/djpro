@@ -37,6 +37,7 @@ class TopicController extends ControllerBase
             'sort' => array('sort' => 1),
             'limit' => $limit
         ));
+        $this->breadCrumbs->addItem(array('name' => 'Chủ đề','link' => '/chu-de.html'));
         foreach ($listcategory as $key => $item) {
             $categoryid = $item['_id'];
             $listopic = Album::getListAlbumByCategory($categoryid, 5, 3);

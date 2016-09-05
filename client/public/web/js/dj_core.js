@@ -141,6 +141,7 @@ function jPlayerPlaylistSetDefault(playlistPlayer) {
         playlistPlayer.shuffle(true);
     else
         playlistPlayer.shuffle(false);
+
 }
 
 function addParameterToUrl(url, parameterName, parameterValue, atStart/*Add param before others*/){

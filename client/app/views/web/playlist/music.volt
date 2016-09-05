@@ -101,7 +101,7 @@
                             var quality = Cookies.get('jPlayer-audio-quality');
                             if (typeof quality != 'string' || quality != 'undefined') {
                                 quality = '128';
-                            } 
+                            }
                             changeQuality(".media_quality_select[data-media-type='" + quality + "']", data);
                             var currentUrl = window.location.href;
                             var newUrl = addParameterToUrl(currentUrl, 'st', indexSong + 1, false);
@@ -111,7 +111,8 @@
                         }
                     });
                 },
-                nextActionCallback: function (index) {}
+                nextActionCallback: function (index) {
+                }
             },
             cssSelector: {
                 videoPlay: ".jp-video-play",
@@ -152,9 +153,12 @@
             autoBlur: false,
             smoothPlayBar: true,
             keyEnabled: true,
+
         });
         isPlaylistPage = true;
         jPlayerPlaylistSetDefault(playlistPlayer);
+        var st = {{ _GET['st'] }};
+        playlistPlayer.play(parseInt(st) - 1);
     });
     //]]>
 </script>
@@ -314,7 +318,7 @@
 
                                             <ul class="jp-toggles">
                                                 <li><a href="javascript:void(0)" class="jp-shuffle" tabindex="1"
-                                                title="shuffle"></a></li>
+                                                       title="shuffle"></a></li>
                                                 <li><a href="javascript:void(0)" class="jp-shuffle-off" tabindex="1"
                                                        title="shuffle off" style="display: none;"></a></li>
                                                 <li class="drop">
@@ -399,7 +403,7 @@
                                       data-layout="button_count"></div>#}
                                 <li><i class="fa fa-share-alt"></i>
                                     <!-- <a href="javascript:void(0)" onclick="share_facebook()">Chia sẻ</a> -->
-                                    <a href="javascript:void(0)"  data-toggle="modal" data-target="#embed-share-popup">Chia sẻ</a>
+                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#embed-share-popup">Chia sẻ</a>
                                 </li>
                             </ul>
                         {% else %}
@@ -424,7 +428,7 @@
                                       data-layout="button_count"></div>#}
                                 <li><i class="fa fa-share-alt"></i>
                                     <!-- <a href="javascript:void(0)" onclick="share_facebook()">Chia sẻ</a> -->
-                                    <a href="javascript:void(0)"  data-toggle="modal" data-target="#embed-share-popup">Chia sẻ</a>
+                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#embed-share-popup">Chia sẻ</a>
                                 </li>
                             </ul>
                         {% endif %}
