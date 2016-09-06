@@ -159,6 +159,57 @@ $(document).ready(function () {
     };
     djCropImage.register = false;
 
+    // if (typeof djPictureUpload == 'undefined') {
+    //     djPictureUpload = function () {
+    //         var _option = {
+    //             selectElem: "",
+    //             urlAjax: "",
+    //             thumbnail: "/img/240x240.png",
+    //             currentSrc: "",
+    //             label: "Ảnh đại diện",
+    //             method: 'post'
+    //         }
+
+    //         this.getOpt = function () {
+    //             return _option;
+    //         }
+    //     };
+
+    //      djPictureUpload.prototype = {
+    //         init: function (option) {
+    //             var opt = this.getOpt();
+    //             $.extend(opt, option);
+    //             this._bindHtmlForm();
+    //         },
+
+    //         _bindHtmlForm: function() {
+    //             var opt = this.getOpt();
+    //             var currentContent = $(opt.selectElem)[0].outerHTML;
+    //             var currentImageUrl = (opt.currentSrc !== '') ? opt.currentSrc : opt.thumbnail;
+    //             var formContent = '<div class="form-group fg-float">'
+    //                 + '<div class="fg-line"><div class="">' + opt.label + '</div></div>'
+    //                 + '<div class="fg-line">'
+    //                     + '<div class="fileinput fileinput-new" data-provides="fileinput">'
+    //                         + '<div class="fileinput-preview thumbnail" data-trigger="fileinput">'
+    //                             + '<img src="' + currentImageUrl +'">'
+    //                         + '</div>'
+    //                         + '<div class="image">'
+    //                             + '<span class="btn btn-info btn-file waves-effect">'
+    //                                 + '<span class="fileinput-new">Select</span>'
+    //                                 + '<span class="fileinput-exists">Change</span>'
+    //                                 + '<input type="file" name="file">'
+    //                             + '</span>'
+    //                             + '<a href="#" class="btn btn-danger waves-effect" data-dismiss="fileinput" style="float: right;">Remove</a>'
+    //                         + '</div>'
+    //                         + currentContent
+    //                         + '</div>'
+    //                 + '</div>'
+    //             + '</div>';
+    //             $(opt.selectElem).replaceWith(formContent);
+    //         }
+    //     }
+    // }
+
     $('.fileinput').on('change.bs.fileinput', function (event, previewId) {
         $(this).find('.edit_crop').click();
     });

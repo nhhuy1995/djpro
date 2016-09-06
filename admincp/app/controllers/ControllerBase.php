@@ -130,35 +130,54 @@ class ControllerBase extends Controller
         $listimage = null;
         $priavatar = null;
         if ($this->request->hasFiles() == true) {
-            $uploaddir = $this->config->upload->dir;
+            $uploaddir = $this->config->upload->temp_folder;
+            // $uploaddir = getcwd(). "/temp_file/";
             $allow = (array)$this->config->upload->extension;
-            $folder = "uploads/" . date("Y/m/d/");
-            if (!file_exists($uploaddir . $folder)) mkdir($uploaddir . $folder, 0777, true);
+            // $folder = "uploads/" . date("Y/m/d/");
+            // if (!file_exists($uploaddir . $folder)) mkdir($uploaddir . $folder, 0777, true);
             $uploads = $this->request->getUploadedFiles(); 
             
             foreach ($uploads as $upload) {
                 if (in_array($upload->getType(), $allow)) {
                     $filename = md5(uniqid(rand(), true)) . '_' . strtolower($upload->getname());
-                    $priavatar = $folder . $filename;
-                    $upload->moveTo($uploaddir . $priavatar);
-
-                    $priavatar = get_client_static_dir() . $priavatar;
+                    $fullPath = $uploaddir . $filename;
+                    $upload->moveTo($fullPath);
+                    $resultUpload = $this->_uploadFileToStreamServer($fullPath, $filename, $upload->getType());
+                    $imageUrl = $resultUpload['path'][0];
+                    if (file_exists($fullPath)) {
+                        unlink($fullPath);
+                    }
+                    // $priavatar = get_client_static_dir() . $priavatar;
                     $refObj  = new \ReflectionObject($upload);
                     $refProp1 = $refObj->getProperty('_key');
                     $refProp1->setAccessible(TRUE);
                     $fieldName = $refProp1->getValue($upload);  
                     if (empty($listimage[$fieldName]))
-                        $listimage[$fieldName] = $priavatar;
+                        $listimage[$fieldName] = $imageUrl;
                     else if (is_array($listimage[$fieldName]))
-                        $listimage[$fieldName][] = $priavatar; 
+                        $listimage[$fieldName][] = $imageUrl; 
                     else if (is_string($listimage[$fieldName]))
-                        $listimage[$fieldName] = array($listimage[$fieldName], $priavatar); 
+                        $listimage[$fieldName] = array($listimage[$fieldName], $imageUrl); 
                 }
             }
         }
         if ($returnarray == true) return $listimage;
-        else return $priavatar;
+        else return $imageUrl;
 
+    }
+
+    protected function _uploadFileToStreamServer($filePath, $fileName, $fileType) {
+        $target_url = 'http://s1.download.stream.djscdn.com/upload_media';
+        $ch = curl_init($target_url);
+        $cfile = new \CURLFile(realpath($filePath), $fileType, $fileName);
+        $data = array('test_file' => $cfile);
+        curl_setopt($ch, CURLOPT_POST,1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $result=curl_exec ($ch);
+        curl_close ($ch);
+        return json_decode($result, true);
     }
 
     public function getLanguage()

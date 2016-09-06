@@ -77,8 +77,8 @@ class MediaController extends ControllerBase
                     $listmedia[$key]['categoryname'] = $catName;
                 }
                 unset($catids, $catName, $userid);
-                if (!empty($listmedia[$key]['priavatar']))
-                    $listmedia[$key]['priavatar'] = $this->getRealPathImage($listmedia[$key]['priavatar']);
+                // if (!empty($listmedia[$key]['priavatar']))
+                //     $listmedia[$key]['priavatar'] = $this->getRealPathImage($listmedia[$key]['priavatar']);
             }
         } catch (\Exception $e) {
             var_dump($e->getMessage());
@@ -109,7 +109,7 @@ class MediaController extends ControllerBase
         }
 
         $o['note'] = Helper::br2nl($o['note']);
-        $o['priavatar'] = $this->getRealPathImage($o['priavatar']);
+        // $o['priavatar'] = $this->getRealPathImage($o['priavatar']);
         if (!is_array($o['tags']) || !count($o['tags']))
             $o['tags'] = array();
         if (!is_array($o['artist']) || !count($o['artist']))
@@ -139,7 +139,7 @@ class MediaController extends ControllerBase
             $id = $this->request->getPost('id');
             $uinfo = (array)$this->session->get("uinfo");
             ##Process
-            $postvalue = Helper::post_to_array("name,description,category,mediaurl,content,type,status,view,like,replay,spamflag,artist,ishot,priavatar,is_convert_quality");
+            $postvalue = Helper::post_to_array("name,description,category,mediaurl,content,type,status,view,like,replay,spamflag,artist,ishot,priavatar,is_convert_quality,gen_priavatar");
             $postvalue['view'] = intval($postvalue['view']);
             $postvalue['like'] = intval($postvalue['like']);
             $postvalue['replay'] = intval($postvalue['replay']);
@@ -176,16 +176,12 @@ class MediaController extends ControllerBase
                     $duration = $youtubeApi->getVideoLength($urlFirstVideo);
                     if (!isset($duration) || !$duration) $duration = 0;
                 } else {
-                    // require_once(__DIR__ . '/../library/getid3/getid3.php');
-                    // $getID3 = new \getID3();
-                    // $fileInfo = $getID3->analyze(trim($postvalue['mediaurl'], "//"));
-                    // $duration = $fileInfo['playtime_string'];
-
                     if ($this->_isFromStreamServer($postvalue['mediaurl']) && empty($postvalue['is_convert_quality'])) {
-                        $mediaUrl = $this->_getMediaLocalpath($postvalue['mediaurl']);
+                        // $mediaUrl = $this->_getMediaLocalpath($postvalue['mediaurl']);
+                        $mediaUrl = $postvalue['mediaurl'];
                         $jobClient = new SendWorkload();
                         $jobClient->pushVideoToYoutube(array(
-                            "media_url" => $mediaUrl,
+                            "media_url" => $postvalue['mediaurl'],
                             "title" => $postvalue['name'],
                             "mid" => (!empty($id)) ? $id : $postvalue['_id']
                         ));
@@ -199,11 +195,11 @@ class MediaController extends ControllerBase
             #Avatar + Status
             $priavatar = $this->post_file_to_array();
             if (empty($priavatar))
-                $priavatar = $this->request->getPost('priavatar');
+                $priavatar = $this->request->getPost('gen_priavatar');
 
             if ($priavatar != null) {
                 $postvalue['priavatar'] = $priavatar;
-                $postvalue['priavatar'] = $this->getShortenPathImage($postvalue['priavatar']);
+                // $postvalue['priavatar'] = $this->getShortenPathImage($postvalue['priavatar']);
             }
 
             if (empty($priavatar_small))
@@ -211,12 +207,13 @@ class MediaController extends ControllerBase
 
             if ($priavatar_small != null) {
                 $postvalue['priavatar_small'] = $priavatar_small;
-                $postvalue['priavatar_small'] = $this->getShortenPathImage($postvalue['priavatar_small']);
+                // $postvalue['priavatar_small'] = $this->getShortenPathImage($postvalue['priavatar_small']);
             }
 
             if (empty($postvalue['is_convert_quality']) && defined('HAS_RABBIT_MQ')) {
                 if ($this->_isFromStreamServer($postvalue['mediaurl']) && $postvalue['type'] === "audio") {
-                    $mediaUrl = $this->_getMediaLocalpath($postvalue['mediaurl']);
+                    // $mediaUrl = $this->_getMediaLocalpath($postvalue['mediaurl']);
+                    $mediaUrl = $postvalue['mediaurl'];
                     $artistNames = array();
                     if (empty($postvalue['artist']))
                         $postvalue['artist'] = array();

@@ -69,7 +69,7 @@ $app->post('/upload_media', function() use ($app) {
 							$newPathSmallAvatarFile = $avatarFolder . $newFileName .'_small.jpg';
 							$commandConvert = 'ffmpeg -itsoffset -1 -i ' . $newPathFile .' -vframes 1 " ' . $newPathAvatarFile;
 							system(escapeshellcmd($commandConvert));
-							$commandConvertSmall = 'ffmpeg -itsoffset -1 -i ' . $newPathFile .' -vframes 1 -filter:v scale="280:-1" ' . $newPathAvatarFile;
+							$commandConvertSmall = 'ffmpeg -itsoffset -1 -i ' . $newPathFile .' -vframes 1 -filter:v scale="240:135" ' . $newPathSmallAvatarFile;
 							system(escapeshellcmd($commandConvertSmall));
 							$result['avatar'] = getMediaUrl($newPathAvatarFile);
 							$result['avatar_small'] = getMediaUrl($newPathSmallAvatarFile);

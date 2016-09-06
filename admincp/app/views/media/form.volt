@@ -213,7 +213,7 @@
                                                     <span class="btn btn-info btn-file">
                                                         <span class="fileinput-new">Select image</span>
                                                         <span class="fileinput-exists">Change</span>
-                                                        <input type="file" name="file"/>
+                                                        <input type="file" name="priavatar"/>
                                                     </span>
                                                     <a href="#" class="btn btn-danger"
                                                        data-dismiss="fileinput">Remove</a>
@@ -224,7 +224,7 @@
                                                         <i class="glyphicon glyphicon-pencil"></i> Edit</a>
                                                 </div>
 
-                                                <input id="image_priavatar" name="priavatar" type="hidden"
+                                                <input id="image_priavatar" name="gen_priavatar" type="hidden"
                                                        value="{{ object['priavatar'] }}"/>
                                                 <input name="priavatar_small" type="hidden"
                                                        value="{{ object['priavatar_small'] }}"/>
@@ -331,7 +331,7 @@
                 $('#mediaurl').val(obj.path[0]);
                 if (obj.avatar != undefined) {
                     $("#cropbox_source img").attr('src', obj.avatar);
-                    $("input[name=priavatar]").val(obj.avatar);
+                    $("input[name=gen_priavatar]").val(obj.avatar);
                     $("input[name=priavatar_small]").val(obj.avatar_small);
                 }
             } else {

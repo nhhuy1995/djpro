@@ -168,7 +168,7 @@
                                         <div class="fileinput-preview thumbnail" data-trigger="fileinput"
                                              id="cropbox_source">
                                             <img
-                                                    src="{{ object['_id'] <= 0 or object['priavatar'] is empty ?"/img/240x240.png":config.upload.mediaurl~object['priavatar'] }}"/>
+                                                    src="{{ object['_id'] <= 0 or object['priavatar'] is empty ?"/img/240x240.png":object['priavatar'] }}"/>
                                         </div>
                                         <div class="image">
                                             <span class="btn btn-info btn-file">
@@ -194,7 +194,7 @@
                                         <div class="fileinput-preview thumbnail" data-trigger="fileinput"
                                              id="cropbox_source_banner">
                                             <img
-                                                    src="{{ object['_id'] <= 0 or object['banner'] is empty ?"/img/1160x341.png":config.upload.mediaurl~object['banner'] }}"/>
+                                                    src="{{ object['_id'] <= 0 or object['banner'] is empty ?"/img/1160x341.png":object['banner'] }}"/>
                                         </div>
                                         <div class="image">
                                             <span class="btn btn-info btn-file">
@@ -242,7 +242,7 @@
 <script src="/vendors/fileinput/fileinput.min.js"></script>
 <script>
     $(document).ready(function () {
-        djCropImage.register = false;
+        // djCropImage.register = false;
     });
     $(document).ready(function () {
         $('.fileinput').on('change.bs.fileinput', function (event, previewId) {

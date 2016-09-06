@@ -41,8 +41,8 @@ class AnswerController extends ControllerBase
                 $userid = $item['usercreate'];
                 $userInfo = Users::findById($userid);
                 $listmedia[$key]['usercreate'] = $userInfo->username;
-                if (!empty($listmedia[$key]['priavatar']))
-                    $listmedia[$key]['priavatar'] = $this->getRealPathImage($listmedia[$key]['priavatar']);
+                // if (!empty($listmedia[$key]['priavatar']))
+                //     $listmedia[$key]['priavatar'] = $this->getRealPathImage($listmedia[$key]['priavatar']);
             }
         } catch (\Exception $e) {
             var_dump($e->getMessage());
