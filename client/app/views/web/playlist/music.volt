@@ -157,8 +157,7 @@
         });
         isPlaylistPage = true;
         jPlayerPlaylistSetDefault(playlistPlayer);
-        var st = {{ _GET['st'] }};
-        playlistPlayer.play(parseInt(st) - 1);
+        playlistPlayer.play(parseInt({{ st }}) - 1);
     });
     //]]>
 </script>
@@ -168,24 +167,7 @@
     <div class="bgclr"></div>
     <div class="bg-cmmusic">
         <div class="container">
-            <ul class="breadcrumbs">
-                <li><a href="/"><i class="fa fa-home fa-lg"></i></a></li>
-                {% if object.type == 'album' %}
-                    <li><a href="/album.html">Album</a></li>
-                {% elseif object.type == 'playlist' %}
-                    <li><a href="/playlist.html">Playlist</a></li>
-                {% elseif object.type == 'topic' %}
-                    <li><a href="/chu-de.html">Chủ đề</a></li>
-                {% endif %}
-                {% if listcategory %}
-                    {% for item in listcategory %}
-                        <li><a href="{{ item['link'] }}" title="{{ item['name'] }}"
-                               alt="{{ item['name'] }}">{{ item['name'] }}</a></li>
-                    {% endfor %}
-                {% else %}
-                    <li>Đang cập nhật!</li>
-                {% endif %}
-            </ul>
+            {% include 'layouts/breadcrumb.volt' %}
         </div>
 
         <div class="container">

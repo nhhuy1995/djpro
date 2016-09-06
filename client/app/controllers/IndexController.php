@@ -47,18 +47,19 @@ class IndexController extends ControllerBase
         $this->view->listMedia_ByView = $ranking->getMediaConditions('Media', 'audio', 'month', 10);## list music by view
 
         $this->view->header = Helper::setHeader(
-            'Nhạc Sàn Mp3, Nghe nhạc DJ, Nonstop HAY mới 2016' ,
+            'Nhạc Sàn Mp3, Nghe nhạc DJ, Nonstop HAY mới 2016',
             'DJ cực HAY nhất, nhạc sàn TUYỂN CHỌN, Download tải nhạc DJ, nhạc bay Mp3, Nghe nhạc việt remix chất lượng cao 320Kbps!',
             '/web/images/default.jpg',
             'DJ cực HAY nhất, nhạc sàn TUYỂN CHỌN, Download tải nhạc DJ, nhạc bay Mp3, Nghe nhạc việt remix chất lượng cao 320Kbps!',
             'Nghe nhạc sàn, Download DJ, Nonstop, Tải nhạc Dance, Mp3'
-            );
+        );
 
     }
 
     public function rssAction()
     {
-        $this->view->title = "RSS - Dj.pro.vn";
+        $this->breadCrumbs->addItem(array("name" => "RSS", "link" => "/rss"));
+        $this->view->header = Helper::setHeader("RSS - Dj.pro.vn");
     }
 
     public function answerAction()
@@ -66,8 +67,9 @@ class IndexController extends ControllerBase
         $listAnswer = Answer::findAndReturnArray(array(
             'sort' => array('sort' => 1)
         ));
+        $this->breadCrumbs->addItem(array("name" => "Hỏi đáp", "link" => "/hoi-dap.html"));
         $this->view->listanswer = $listAnswer;
-        $this->view->title = "Hỏi đáp";
+        $this->view->header = Helper::setHeader("Hỏi đáp");
     }
 
     public function dieukhoanAction()

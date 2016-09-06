@@ -1,7 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92353190-70d0-482f-a0b9-dec84b7f977b" name="Default" comment="" />
+    <list default="true" id="92353190-70d0-482f-a0b9-dec84b7f977b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/controllers/CategoryController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/controllers/SelectivearticleController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/views/web/category/view.phtml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/views/web/index/index.phtml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking.BAK/nominationplaylist.volt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/views/web/search/index.phtml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/views/web/selectivearticle/topic.volt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/views/web/topic/view.volt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index/index.volt" afterPath="$PROJECT_DIR$/app/views/index/index.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/AlbumController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/AlbumController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/ImagesController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/ImagesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/IndexController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/IndexController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/MusicController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/MusicController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/NewsController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/NewsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/PlaylistController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/PlaylistController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/RankingController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/RankingController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/SearchController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/SearchController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/TagsController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/TagsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/TopicController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/TopicController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/UserController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/UserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/VideoController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/VideoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/library/BreadCrumb.php" afterPath="$PROJECT_DIR$/../client/app/library/BreadCrumb.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/album/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/album/index.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/album/new.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/album/new.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/album/selective.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/album/selective.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/images/category.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/images/category.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/images/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/images/index.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/index/answer.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/index/answer.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/index/rss.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/index/rss.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/news/category.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/news/category.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/news/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/news/index.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/news/view.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/news/view.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/playlist/category.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/playlist/category.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/playlist/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/playlist/index.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/playlist/music.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/playlist/music.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/playlist/new.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/playlist/new.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/playlist/selective.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/playlist/selective.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhalbum.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhalbum.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhplaylist.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhplaylist.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhtopic.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhtopic.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhvideo.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhvideo.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/index.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/nomination.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/nomination.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationalbum.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationalbum.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationplaylist.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationplaylist.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationtopic.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationtopic.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationvideo.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationvideo.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/top100.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/top100.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/top100album.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/top100album.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/top100playlist.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/top100playlist.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/top100topic.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/top100topic.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/top100video.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/top100video.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/search/album.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/search/album.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/search/artist.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/search/artist.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/search/audio.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/search/audio.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/search/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/search/index.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/search/playlist.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/search/playlist.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/search/topic.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/search/topic.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/search/video.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/search/video.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/album.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/album.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/images.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/images.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/index.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/music.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/music.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/news.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/news.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/playlist.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/playlist.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/topic.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/topic.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/video.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/video.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/topic/highlights.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/topic/highlights.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/topic/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/topic/index.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/topic/new.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/topic/new.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/topic/selective.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/topic/selective.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/user/playlist.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/user/playlist.volt" />
+    </list>
     <ignored path="admincp.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -28,12 +105,12 @@
     <favorites_list name="admincp" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.volt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/index/index.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8150358">
-              <caret line="227" column="26" selection-start-line="227" selection-start-column="26" selection-end-line="227" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.8078759">
+              <caret line="221" column="40" selection-start-line="221" selection-start-column="40" selection-end-line="221" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -42,7 +119,7 @@
       <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.52">
+            <state vertical-scroll-proportion="0.0">
               <caret line="129" column="48" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
               <folding />
             </state>
@@ -50,6 +127,9 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -102,14 +182,14 @@
     <option name="width" value="1296" />
     <option name="height" value="1000" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="false" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -127,8 +207,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -327,12 +405,14 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="D:/Developer/phalcon/ide/2.0.9" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="SearchEverywhereHistoryKey" value="makel&#9;FILE&#9;file://D:/Freelance/DjPro/admincp/app/library/Makelink.php" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
@@ -357,6 +437,11 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -384,7 +469,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26640624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26484376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -422,11 +507,26 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/views/index/index.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="129" column="48" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09546539">
           <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -434,7 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6443914">
           <caret line="69" column="58" selection-start-line="69" selection-start-column="58" selection-end-line="69" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -442,7 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5704057">
           <caret line="104" column="36" selection-start-line="104" selection-start-column="36" selection-end-line="104" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -450,9 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6897375">
           <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
-          <folding>
-            <marker date="1468571579460" expanded="true" signature="2058:2068" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -460,9 +555,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.0">
           <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding>
-            <element signature="e#31#58#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -470,7 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.92">
           <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -478,7 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.12">
           <caret line="47" column="35" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -486,7 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.4">
           <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -494,7 +583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.12">
           <caret line="142" column="32" selection-start-line="142" selection-start-column="32" selection-end-line="142" selection-end-column="145" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -502,7 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.1296296">
           <caret line="51" column="63" selection-start-line="51" selection-start-column="63" selection-end-line="51" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -510,7 +597,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.72">
           <caret line="61" column="42" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -518,9 +604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.2">
           <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
-          <folding>
-            <element signature="e#35#62#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -528,7 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.6">
           <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -536,7 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.36">
           <caret line="43" column="135" selection-start-line="43" selection-start-column="135" selection-end-line="43" selection-end-column="135" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -544,7 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.40572792">
           <caret line="56" column="60" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -552,9 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14081146">
           <caret line="73" column="14" selection-start-line="6" selection-start-column="7" selection-end-line="73" selection-end-column="14" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -562,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.64">
           <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="29" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -570,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.4">
           <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -578,7 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.2">
           <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -586,7 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.52505964">
           <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -594,7 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.7183771">
           <caret line="84" column="40" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -602,7 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38186157">
           <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -610,9 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-46.4">
           <caret line="69" column="106" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="106" />
-          <folding>
-            <marker date="1468570914632" expanded="true" signature="2315:2325" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -620,7 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.0">
           <caret line="10" column="64" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -628,7 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.16">
           <caret line="78" column="39" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -636,22 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.32">
           <caret line="131" column="17" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="17" />
-          <folding>
-            <marker date="1468809709931" expanded="true" signature="5390:6838" placeholder="..." />
-            <marker date="1468809709931" expanded="true" signature="5438:5586" placeholder="..." />
-            <marker date="1468809709931" expanded="true" signature="5619:6791" placeholder="..." />
-            <marker date="1468809709931" expanded="true" signature="5653:6780" placeholder="..." />
-            <marker date="1468809709931" expanded="true" signature="5670:5868" placeholder="..." />
-            <marker date="1468809709931" expanded="true" signature="5727:5850" placeholder="..." />
-            <marker date="1468809709931" expanded="true" signature="5885:6098" placeholder="..." />
-            <marker date="1468809709931" expanded="true" signature="5955:6080" placeholder="..." />
-            <marker date="1468809709931" expanded="true" signature="6115:6303" placeholder="..." />
-            <marker date="1468809709931" expanded="true" signature="6164:6285" placeholder="..." />
-            <marker date="1468809709931" expanded="true" signature="6320:6518" placeholder="..." />
-            <marker date="1468809709931" expanded="true" signature="6377:6500" placeholder="..." />
-            <marker date="1468809709931" expanded="true" signature="6535:6766" placeholder="..." />
-            <marker date="1468809709931" expanded="true" signature="6627:6748" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -667,13 +717,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33770883">
           <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.52">
+        <state vertical-scroll-proportion="0.0">
           <caret line="129" column="48" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
           <folding />
         </state>
@@ -681,8 +730,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index/index.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8150358">
-          <caret line="227" column="26" selection-start-line="227" selection-start-column="26" selection-end-line="227" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.8078759">
+          <caret line="221" column="40" selection-start-line="221" selection-start-column="40" selection-end-line="221" selection-end-column="40" />
           <folding />
         </state>
       </provider>

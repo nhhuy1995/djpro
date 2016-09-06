@@ -2,17 +2,7 @@
 <div id="content">
     <div class="bg-cmmusic">
         <div class="container">
-            <ul class="breadcrumbs">
-                <li><a href="/"><i class="fa fa-home fa-lg"></i></a></li>
-                {% if category.type == "topic" %}
-                    <li><a href="/chu-de.html">Chủ đề</a></li>
-                {% elseif category.type == "playlist" %}
-                    <li><a href="/playlist.html">Playlist</a></li>
-                {% elseif category.type == "album" %}
-                    <li><a href="/album.html">Album</a></li>
-                {% endif %}
-                <li><a href="{{ category.link }}">{{ category.name }}</a></li>
-            </ul>
+            {% include 'layouts/breadcrumb.volt' %}
         </div>
         <div class="container">
             <div class="row">

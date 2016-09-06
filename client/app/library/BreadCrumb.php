@@ -29,23 +29,52 @@ class BreadCrumb
 
     public function prependMainCategory($catType)
     {
-        if ($catType == "audio") {
-            array_unshift($this->items, array(
+        $data = array(
+            'audio' => array(
                 "name" => "Bài hát",
                 "link" => "/bai-hat.html"
-            ));
-        }
-        if ($catType == "video") {
-            array_unshift($this->items, array(
+            ),
+            'news' => array(
+                "name" => "Tin tức",
+                "link" => "/tin-tuc.html"
+            ),
+            'images' => array(
+                "name" => "Ảnh",
+                "link" => "/anh.html"
+            ),
+            'video' => array(
                 "name" => "Video",
                 "link" => "/video.html"
-            ));
-        }
-        if ($catType == "artist") {
-            array_unshift($this->items, array(
+            ),
+            'artist' => array(
                 "name" => "Nghệ sỹ",
                 "link" => "/nghe-sy.html"
-            ));
-        }
+            ),
+            'ranking' => array(
+                "name" => "Bảng xếp hạng",
+                "link" => "/bxh.html"
+            ),
+            'top100' => array(
+                "name" => "TOP 100",
+                "link" => "/top100.html"
+            ),
+            'topdecu' => array(
+                "name" => "TOP đề cử",
+                "link" => "/bai-hat-de-cu.html"
+            ),
+            'album' => array(
+                "name" => "Album",
+                "link" => "/album.html"
+            ),
+            'playlist' => array(
+                "name" => "Playlist",
+                "link" => "/playlist.html"
+            ),
+            'topic' => array(
+                "name" => "Chủ đề",
+                "link" => "/chu-de.html"
+            ),
+        );
+        if ($data[$catType]) array_unshift($this->items, $data[$catType]);
     }
 }

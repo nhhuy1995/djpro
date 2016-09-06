@@ -13,12 +13,15 @@ use DjClient\Services\RankingArticle;
 class RankingController extends ControllerBase
 {
     const REDIS_PREFIX_KEY = "dj_top_rank_";
-
+    private static $TYPE_RANKING = "ranking";
+    private static $TYPE_TOP100 = "top100";
+    private static $TYPE_DE_CU = "topdecu";
     /*
      *@description: page bxh audio
      */
     public function indexAction()
     {
+
         $type = $this->request->get('t');
         if (isset($type)) {
             if ($type == static::$TYPE_VIDEO) $action = 'bxhvideo';
@@ -35,7 +38,7 @@ class RankingController extends ControllerBase
             "collection" => "Media",
             "limit" => 10
         ));
-
+        $this->breadCrumbs->addItem(array(),static::$TYPE_RANKING);
         $this->view->setVars(array(
             "listAudio" => $listAudio,
         ));
@@ -58,6 +61,7 @@ class RankingController extends ControllerBase
         $this->view->setVars(array(
             "listVideo" => $listVideo,
         ));
+        $this->breadCrumbs->addItem(array(),static::$TYPE_RANKING);
         $this->view->header = Helper::setHeader('Bảng xếp hạng','', '');
     }
 
@@ -74,7 +78,7 @@ class RankingController extends ControllerBase
             "collection" => "Album",
             "limit" => 10
         ));
-
+        $this->breadCrumbs->addItem(array(),static::$TYPE_RANKING);
         $this->view->setVars(array(
             "listAlbum" => $listAlbum,
         ));
@@ -95,6 +99,7 @@ class RankingController extends ControllerBase
                     'action' => $action,
                 ));
         }
+        $this->breadCrumbs->addItem(array(),static::$TYPE_DE_CU);
         $listAudio = $this->getTopRankArticleByWeek(array(
             "redisKey" => self::getRedisKey("audio", "nomination", "week"),
             "type" => "audio",
@@ -124,6 +129,7 @@ class RankingController extends ControllerBase
         $this->view->setVars(array(
             "listVideo" => $listVideo,
         ));
+        $this->breadCrumbs->addItem(array(),static::$TYPE_DE_CU);
         $this->view->header = Helper::setHeader('TOP đề cử bởi thành viên','', '');
     }
 
@@ -144,6 +150,7 @@ class RankingController extends ControllerBase
         $this->view->setVars(array(
             "listAlbum" => $listAlbum,
         ));
+        $this->breadCrumbs->addItem(array(),static::$TYPE_DE_CU);
         $this->view->header = Helper::setHeader('TOP đề cử bởi thành viên','', '');
     }
 
@@ -172,6 +179,7 @@ class RankingController extends ControllerBase
         $this->view->setVars(array(
             "listAudio" => $listAudio,
         ));
+        $this->breadCrumbs->addItem(array(),static::$TYPE_TOP100);
         $this->view->header = Helper::setHeader('TOP 100','', '');
     }
 
@@ -190,6 +198,7 @@ class RankingController extends ControllerBase
         $this->view->setVars(array(
             "listVideo" => $listVideo,
         ));
+        $this->breadCrumbs->addItem(array(),static::$TYPE_TOP100);
         $this->view->header = Helper::setHeader('TOP 100','', '');
     }
 
@@ -206,6 +215,7 @@ class RankingController extends ControllerBase
             "collection" => "Album",
             "limit" => 100
         ));
+        $this->breadCrumbs->addItem(array(),static::$TYPE_TOP100);
         $this->view->setVars(array(
             "listAlbum" => $listAlbum,
             "title" => "TOP 100",

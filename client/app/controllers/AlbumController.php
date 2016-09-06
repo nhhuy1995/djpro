@@ -21,6 +21,7 @@ class AlbumController extends ControllerBase
         //list album selective
         $listIdAlbum = Settings::getElementByKey(self::$TYPE_SELECTIVE_ALBUM);
         $listAlbumSelectvie = Helper::resortarray(Album::ListAlbumByMultiConditions(self::$TYPE_SELECTIVE_ALBUM, $limit, 1, $listIdAlbum), $listIdAlbum, "_id");
+        $this->breadCrumbs->addItem(array(),static::$TYPE_ALBUM);
         $this->view->listalbum = $listAlbum;
         $this->view->listalbumselective = $listAlbumSelectvie;
         $this->view->header = Helper::setHeader('Album','','');
@@ -48,6 +49,7 @@ class AlbumController extends ControllerBase
         $count = Album::findAndReturnArray(array(
             'condition' => array('type' => self::$TYPE_ALBUM, 'status' => static::$STATUS_ON),
         ));
+        $this->breadCrumbs->addItem(array("name" => "Album mới nhất","link" => "/album-moi.html"),static::$TYPE_ALBUM);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listalbum = $data;
         $this->view->header = Helper::setHeader('Album mới nhất','','');
@@ -77,6 +79,7 @@ class AlbumController extends ControllerBase
         $count = Album::findAndReturnArray(array(
             'condition' => array('_id' => array('$in' => $listIdAlbum), 'status' => static::$STATUS_ON),
         ));
+        $this->breadCrumbs->addItem(array("name" => "Album chọn lọc","link" => "/album-chon-loc.html"),static::$TYPE_ALBUM);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listAlbum_selective = $data;
         $this->view->header = Helper::setHeader('Album chọn lọc','','');

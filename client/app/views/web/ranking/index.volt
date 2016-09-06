@@ -11,10 +11,7 @@
 
     <div class="bg-BXH">
         <div class="container">
-            <ul class="breadcrumbs">
-                <li><a href="/"><i class="fa fa-home fa-lg"></i></a></li>
-                <li><a href="/bxh.html">Bảng xếp hạng</a></li>
-            </ul>
+            {% include "layouts/breadcrumb.volt" %}
         </div>
         <div class="container">
             <div class="row">

@@ -7,14 +7,16 @@
         });
     });
 </script>
+<style>
+    .breadcrumbs li a {
+        color: #C73030;
+    }
+</style>
 {% include "/layouts/header.volt" %}
 <div id="content">
     <div class="bg-rss-index">
         <div class="container">
-            <ul class="breadcrumbs">
-                <li><a href="/" style="color: #C73030;"><i class="fa fa-home fa-lg"></i></a></li>
-                <li><a href="/hoi-dap.html" style="color: #C73030;">Hỏi đáp</a></li>
-            </ul>
+            {% include "/layouts/breadcrumb.volt" %}
         </div>
         <div class="container">
             <div class="row">

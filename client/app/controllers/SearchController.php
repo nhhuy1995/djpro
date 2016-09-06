@@ -60,7 +60,12 @@ class SearchController extends ControllerBase
             'countartist' => $countArtist,
             'countTotal' => $countTotal,
         ));
-        $this->view->header = Helper::setHeader('Tìm kiếm','', '');
+        $bread = array(
+            array("link" => "/tim-kiem.html?q={$keyword}", "name" => $this->request->get('q')),
+            array("link" => "javascript:void(0)", "name" => "Có tất cả '" . $countTotal . "' kết quả"),
+        );
+        $this->breadCrumbs->addListItems($bread);
+        $this->view->header = Helper::setHeader('Tìm kiếm', '', '');
     }
 
     public function audioAction()
@@ -72,7 +77,7 @@ class SearchController extends ControllerBase
         $skip = ($p - 1) * $limit;
         $listAudio = Media::findAndReturnArray(array(
             'condition' => array('$text' => array('$search' => "$q"), 'type' => static::$TYPE_MUSIC, 'status' => static::$STATUS_ON),
-            'sort' => array('datecreate',-1),
+            'sort' => array('datecreate', -1),
             'limit' => $limit,
             'skip' => $skip,
         ));
@@ -90,7 +95,9 @@ class SearchController extends ControllerBase
             'painginfo' => Helper::paginginfo(count($countAudio), $limit, $p),
             'countaudio' => count($countAudio),
         ));
-        $this->view->header = Helper::setHeader('Tìm kiếm theo nhạc','', '');
+
+        $this->breadCrumbs->addItem(array("link" => "/tim-kiem/nhac.html?q={$keyword}", "name" => $this->request->get('q')));
+        $this->view->header = Helper::setHeader('Tìm kiếm theo nhạc', '', '');
     }
 
     public function videoAction()
@@ -102,7 +109,7 @@ class SearchController extends ControllerBase
         $skip = ($p - 1) * $limit;
         $listVideo = Media::findAndReturnArray(array(
             'condition' => array('$text' => array('$search' => "$q"), 'type' => static::$TYPE_VIDEO, 'status' => static::$STATUS_ON),
-            'sort' => array('datecreate',-1),
+            'sort' => array('datecreate', -1),
             'limit' => $limit,
             'skip' => $skip,
         ));
@@ -120,7 +127,8 @@ class SearchController extends ControllerBase
             'painginfo' => Helper::paginginfo(count($countVideo), $limit, $p),
             'countvideo' => count($countVideo),
         ));
-        $this->view->header = Helper::setHeader('Tìm kiếm theo Video','', '');
+        $this->breadCrumbs->addItem(array("link" => "/tim-kiem/video.html?q={$keyword}", "name" => $this->request->get('q')));
+        $this->view->header = Helper::setHeader('Tìm kiếm theo Video', '', '');
     }
 
     public function artistAction()
@@ -149,7 +157,8 @@ class SearchController extends ControllerBase
             'countartist' => count($count),
             'painginfo' => Helper::paginginfo(count($count), $limit, $p),
         ));
-        $this->view->header = Helper::setHeader('Tìm kiếm theo nghệ sỹ','', '');
+        $this->breadCrumbs->addItem(array("link" => "/tim-kiem/nghe-sy.html?q={$keyword}", "name" => $this->request->get('q')));
+        $this->view->header = Helper::setHeader('Tìm kiếm theo nghệ sỹ', '', '');
     }
 
     public function albumAction()
@@ -157,6 +166,7 @@ class SearchController extends ControllerBase
         $keyword = Helper::convertToUtf8($_GET['q']);
         $p = $_GET['p'];
         $this->getAlbumOrPlaylistOrTopic($keyword, self::$TYPE_ALBUM, $p, 12);
+
     }
 
     public function playlistAction()
@@ -198,8 +208,10 @@ class SearchController extends ControllerBase
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->count = count($count);
         $this->view->keyword = $keyword;
-        $this->view->listdata = $listAlbum; 
-        $this->view->header = Helper::setHeader($title,'', '');
+        $this->view->listdata = $listAlbum;
+        $this->view->header = Helper::setHeader($title, '', '');
+        if ($type == 'topic') $type = "chu-de";
+        $this->breadCrumbs->addItem(array("link" => "/tim-kiem/{$type}.html?q={$keyword}", "name" => $this->request->get('q')));
     }
 }
 

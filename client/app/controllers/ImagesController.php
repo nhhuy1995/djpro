@@ -35,6 +35,7 @@ class ImagesController extends ControllerBase
         $count = Media::findAndReturnArray(array(
             'condition' => array('type' => static::$TYPE_IMAGES, 'status' => static::$STATUS_ON),
         ));
+        $this->breadCrumbs->addItem(array(), static::$TYPE_IMAGES);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listimages = $data;
         $this->view->title = "Ảnh";
@@ -66,6 +67,7 @@ class ImagesController extends ControllerBase
             $count = Media::findAndReturnArray(array(
                 'condition' => array('type' => static::$TYPE_IMAGES, 'category' => $catid, 'status' => static::$STATUS_ON),
             ));
+            $this->breadCrumbs->addItem($catinfo->toArray(), static::$TYPE_IMAGES);
             $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
             $this->view->listimages = $data;
             $this->view->catinfo = $catinfo;

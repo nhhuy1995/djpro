@@ -26,6 +26,7 @@ class PlaylistController extends ControllerBase
         //list playlist selective
         $listIdPlaylist = Settings::getElementByKey(self::$TYPE_SELECTIVE_PLAYLIST);
         $listPlaylistSelectvie = Helper::resortarray(Album::ListAlbumByMultiConditions(self::$TYPE_PLAYLIST, $limit, 1, $listIdPlaylist), $listIdPlaylist, "_id");
+        $this->breadCrumbs->addItem(array(), static::$TYPE_PLAYLIST);
         $this->view->listplaylist = $listPlaylist;
         $this->view->listplselective = $listPlaylistSelectvie;
         $this->view->header = Helper::setHeader('Playlist', '', '');
@@ -55,6 +56,7 @@ class PlaylistController extends ControllerBase
         $count = Album::findAndReturnArray(array(
             'condition' => array('_id' => array('$in' => $listIdPlaylist), 'status' => static::$STATUS_ON),
         ));
+        $this->breadCrumbs->addItem(array("name" => "Playlist chọn lọc", "link" => "playlist-chon-loc.html"), static::$TYPE_PLAYLIST);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listPlaylist_selective = $data;
         $this->view->header = Helper::setHeader('Playlist chọn lọc', '', '');
@@ -68,6 +70,7 @@ class PlaylistController extends ControllerBase
         if (!isset($o->_id)) $this->response->redirect('/error.html');
         $categoryId = $o->category;
         $tagsid = $o->tags;
+        $listCategory = array(array("name" => "Đang cập nhật", "link" => "javascript:void(0)"));
         if ($categoryId) $listCategory = Category::getCategoryByID(self::$TYPE_PLAYLIST, $categoryId);
         if (isset($tagsid) || !empty($tagsid)) $listtags = Helper::resortarray(Tags::getListTagsByID(self::$TYPE_PLAYLIST, $tagsid), $tagsid, '_id');
         if (isset($o->usercreate) && !empty($o->usercreate)) { // get info of user create
@@ -131,6 +134,8 @@ class PlaylistController extends ControllerBase
         $total_comment = Comment::count(array(
             'conditions' => array('atid' => $id),
         ));
+        $this->breadCrumbs->addListItems($listCategory, $o->type);
+
         $this->view->setVars(array(
             'listartist' => Helper::resortarray(Artist::getArtistByID($o->artist), $o->artist, '_id'),
             'check_like' => $o_like,
@@ -145,6 +150,7 @@ class PlaylistController extends ControllerBase
             'listSong' => $data,
             'listags' => $listtags,
             'listcategory' => $listCategory,
+            'st' => $this->request->get('st'),
             'object' => $o,
         ));
         $this->view->header = Helper::setHeader($o->name, $o->description, $o->priavatar);
@@ -173,6 +179,7 @@ class PlaylistController extends ControllerBase
         $count = $listAlbum = Album::findAndReturnArray(array(
             'condition' => array('type' => self::$TYPE_PLAYLIST, 'status' => static::$STATUS_ON),
         ));
+        $this->breadCrumbs->addItem(array("name" => "Playlist mới nhất", "link" => "/playlist-moi.html"), static::$TYPE_PLAYLIST);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listalbum = $data;
         $this->view->header = Helper::setHeader('Playlist mới nhất', '', '');
@@ -205,6 +212,7 @@ class PlaylistController extends ControllerBase
             $count = Album::findAndReturnArray(array(
                 'condition' => array('category' => $catid, 'status' => static::$STATUS_ON),
             ));
+            $this->breadCrumbs->addItem($category->toArray(), $category->type);
             $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
             $this->view->listalbum = $data;
             $this->view->category = $category;

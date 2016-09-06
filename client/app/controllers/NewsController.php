@@ -35,41 +35,43 @@ class NewsController extends ControllerBase
         $count = Media::findAndReturnArray(array(
             'condition' => array('type' => static::$TYPE_NEWS, 'status' => static::$STATUS_ON),
         ));
+        $this->breadCrumbs->addItem(array(), static::$TYPE_NEWS);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listNews = $data;
-        $this->view->header = Helper::setHeader('Tin tức','','');
+        $this->view->header = Helper::setHeader('Tin tức', '', '');
     }
 
     public function categoryAction()
     {
         $catid = $this->dispatcher->getParam('catId');
         $catinfo = Category::findById($catid);
-        if ($catinfo == false) $this->response->redirect('/error.html');
-        else {
-            $catinfo->link = Makelink::link_view_category_news($catinfo->name, $catinfo->getId());
-            $p = $_GET['p'];
-            if ($p <= 1) $p = 1;
-            $limit = 6;
-            $skip = ($p - 1) * $limit;
-            $listNews = Media::findAndReturnArray(array(
-                'condition' => array('type' => static::$TYPE_NEWS, 'category' => $catid, 'status' => static::$STATUS_ON),
-                'skip' => $skip,
-                'limit' => $limit,
-                'sort' => array('datecreate' => -1),
-            ));
-            $data = array();
-            foreach ($listNews as $item) {
-                $item['link'] = Makelink::link_view_article($item['name'], $item['_id']);
-                $data[] = $item;
-            }
-            $count = Media::findAndReturnArray(array(
-                'condition' => array('type' => static::$TYPE_NEWS, 'category' => $catid, 'status' => static::$STATUS_ON),
-            ));
-            $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
-            $this->view->listNews = $data;
-            $this->view->catinfo = $catinfo;
-            $this->view->header = Helper::setHeader($catinfo->name,'','');
+        if (!$catinfo) return $this->response->redirect('/error.html');
+
+        $catinfo->link = Makelink::link_view_category_news($catinfo->name, $catinfo->getId());
+        $p = $_GET['p'];
+        if ($p <= 1) $p = 1;
+        $limit = 6;
+        $skip = ($p - 1) * $limit;
+        $listNews = Media::findAndReturnArray(array(
+            'condition' => array('type' => static::$TYPE_NEWS, 'category' => $catid, 'status' => static::$STATUS_ON),
+            'skip' => $skip,
+            'limit' => $limit,
+            'sort' => array('datecreate' => -1),
+        ));
+        $data = array();
+        foreach ($listNews as $item) {
+            $item['link'] = Makelink::link_view_article($item['name'], $item['_id']);
+            $data[] = $item;
         }
+        $count = Media::findAndReturnArray(array(
+            'condition' => array('type' => static::$TYPE_NEWS, 'category' => $catid, 'status' => static::$STATUS_ON),
+        ));
+
+        $this->breadCrumbs->addItem($catinfo->toArray(), static::$TYPE_NEWS);
+        $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
+        $this->view->listNews = $data;
+        $this->view->catinfo = $catinfo;
+        $this->view->header = Helper::setHeader($catinfo->name, '', '');
     }
 
     public function viewAction()
@@ -93,7 +95,7 @@ class NewsController extends ControllerBase
         $categoryid = $object->category;
 
         $listtags = array();
-        $listcategory = array();
+        $listcategory = array(array("name" => "Đang cập nhật", "link" => "javascript:void(0)"));
         if (!empty($tagid) && isset($tagid)) $listtags = Helper::resortarray(Tags::getListTagsByID(self::$TYPE_NEWS, $tagid), $tagid, '_id');
         if (!empty($categoryid) && isset($categoryid)) $listcategory = Category::getCategoryByID($object->type, $categoryid);
 
@@ -117,6 +119,8 @@ class NewsController extends ControllerBase
         $total_comment = Comment::count(array(
             'conditions' => array('atid' => $id),
         ));
+
+        $this->breadCrumbs->addListItems($listcategory, $object->type);
         $this->view->setVars(array(
             'check_like' => $o_like,
             'check_dislike' => $o_dislike,
@@ -127,10 +131,10 @@ class NewsController extends ControllerBase
             "listcategory" => $listcategory,
             "articlerelative" => $article_relative,
             "not_link_embed" => true,
-            'currentLink' => str_replace('?','',DOMAIN . Helper::cpagerparm(""))
+            'currentLink' => str_replace('?', '', DOMAIN . Helper::cpagerparm(""))
         ));
 
-        $this->view->header = Helper::setHeader($object->name,$object->description, $object->priavatar);
+        $this->view->header = Helper::setHeader($object->name, $object->description, $object->priavatar);
     }
 }
 

@@ -1,14 +1,9 @@
 {% include '/layouts/header.volt' %}
-
-
 <div id="content">
     <div class="bgclr"></div>
     <div class="bg-cmmusic">
         <div class="container">
-            <ul class="breadcrumbs">
-                <li><a href="/"><i class="fa fa-home fa-lg"></i></a></li>
-                <li><a href="{{ object.link }}">{{ object.name }}</a></li>
-            </ul>
+            {% include "/layouts/breadcrumb.volt" %}
         </div>
         <div class="container">
             <div class="row">

@@ -78,12 +78,10 @@ class MusicController extends ControllerBase
         if (!isset($o->_id)) return $this->response->redirect('/error.html');
         $o->link = $this->config->application->site . Makelink::link_view_article_music($o->name, $o->_id);
         $categoryId = $o->category;
-        $listCategory = array();
-        if ($categoryId) {
-            $listCategory = Category::getCategoryByID(self::$TYPE_MUSIC, $categoryId);
-            ##breadcrumbs
-            $this->breadCrumbs->addListItems($listCategory, static::$TYPE_MUSIC);
-        }
+        $listCategory = array(array("name" => "Đang cập nhật", "link" => "javascript:void(0)"));
+        if ($categoryId) $listCategory = Category::getCategoryByID(self::$TYPE_MUSIC, $categoryId);
+        ##breadcrumbs
+        $this->breadCrumbs->addListItems($listCategory, static::$TYPE_MUSIC);
         ##get artist
         $artistId = $o->artist;
         $listArtist = array();

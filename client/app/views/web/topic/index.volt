@@ -4,7 +4,6 @@
     <div class="banner-gs">
         <div class="container">
             {% include 'layouts/breadcrumb.volt' %}
-
         </div>
         <div class="container">
             <div class="divpre">

@@ -69,78 +69,10 @@ class TagsController extends ControllerBase
             'link_view_tags_album' => Makelink::link_view_tags_index($o->name, $o->getId()) . '?t=album',
             'link_view_tags_playlist' => Makelink::link_view_tags_index($o->name, $o->getId()) . '?t=playlist',
         ));
+        $this->breadCrumbs->addItem($o->toArray());
         $this->view->header = Helper::setHeader('Danh sách media theo tag ' . $o->name,$o->description, $o->priavatar);
     }
 
-    /*public function musicAction()
-    {
-        $tagid = $this->dispatcher->getParam('tId');
-        $p = $_GET['p'];
-        if ($p <= 1) $p = 1;
-        $limit = 10;
-        $skip = ($p - 1) * $limit;
-        $this->mediaAction($tagid, static::$TYPE_MUSIC, $skip, $limit, $p);
-    }
-
-    public function newsAction()
-    {
-        $p = $_GET['p'];
-        $tagid = $this->dispatcher->getParam('tId');
-        if ($p <= 1) $p = 1;
-        $limit = 6;
-        $skip = ($p - 1) * $limit;
-        $this->mediaAction($tagid, static::$TYPE_NEWS, $skip, $limit, $p);
-    }
-
-    public function imagesAction()
-    {
-        $p = $_GET['p'];
-        $tagid = $this->dispatcher->getParam('tId');
-        if ($p <= 1) $p = 1;
-        $limit = 6;
-        $skip = ($p - 1) * $limit;
-        $this->mediaAction($tagid, static::$TYPE_IMAGES, $skip, $limit, $p);
-    }
-
-    public function videoAction()
-    {
-        $p = $_GET['p'];
-        if ($p <= 1) $p = 1;
-        $limit = 15;
-        $skip = ($p - 1) * $limit;
-        $tagid = $this->dispatcher->getParam('tId');
-        $this->mediaAction($tagid, static::$TYPE_VIDEO, $skip, $limit, $p);
-    }*/
-
-    /*public function topicAction()
-    {
-        $p = $_GET['p'];
-        if ($p <= 1) $p = 1;
-        $limit = 12;
-        $skip = ($p - 1) * $limit;
-        $tagid = $this->dispatcher->getParam('tId');
-        $this->teamplateplaylistAction($tagid, static::$TYPE_TOPIC, $skip, $limit, $p);
-    }*/
-
-    /*public function albumAction()
-    {
-        $p = $_GET['p'];
-        if ($p <= 1) $p = 1;
-        $limit = 12;
-        $skip = ($p - 1) * $limit;
-        $tagid = $this->dispatcher->getParam('tId');
-        $this->teamplateplaylistAction($tagid, static::$TYPE_ALBUM, $skip, $limit, $p);
-    }*/
-
-    /* public function playlistAction()
-     {
-         $p = $_GET['p'];
-         if ($p <= 1) $p = 1;
-         $limit = 12;
-         $skip = ($p - 1) * $limit;
-         $tagid = $this->dispatcher->getParam('tId');
-         $this->teamplateplaylistAction($tagid, static::$TYPE_PLAYLIST, $skip, $limit, $p);
-     }*/
 
     public function playlistAction()
     {
@@ -174,6 +106,7 @@ class TagsController extends ControllerBase
         if ($type == static::$TYPE_PLAYLIST) $view = 'tags/playlist';
         if ($type == static::$TYPE_TOPIC) $view = 'tags/topic';
         if ($type == static::$TYPE_ALBUM) $view = 'tags/album';
+        $this->breadCrumbs->addItem($o->toArray());
         $this->view->pick($view);
     }
 
@@ -225,6 +158,7 @@ class TagsController extends ControllerBase
         $this->view->listdata = $data;
         $this->view->object = $o;
         $this->view->header = Helper::setHeader($o->name,$o->description, $o->priavatar);
+        $this->breadCrumbs->addItem($o->toArray());
         $this->view->pick($view);
     }
 

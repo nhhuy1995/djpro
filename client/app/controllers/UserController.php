@@ -112,10 +112,10 @@ class UserController extends ControllerBase
     {
         $type = $this->request->get('t');
         $uid = $this->dispatcher->getParam('uid');
-        if(isset($type)){
-            if($type == static::$TYPE_MUSIC) $action = 'memberaudio';
-            if($type == static::$TYPE_PLAYLIST) $action = 'memberplaylist';
-            if($type == static::$TYPE_VIDEO) $action = 'membervideo';
+        if (isset($type)) {
+            if ($type == static::$TYPE_MUSIC) $action = 'memberaudio';
+            if ($type == static::$TYPE_PLAYLIST) $action = 'memberplaylist';
+            if ($type == static::$TYPE_VIDEO) $action = 'membervideo';
             $this->dispatcher->forward(
                 array('controller' => 'user',
                     'action' => $action,
@@ -200,10 +200,10 @@ class UserController extends ControllerBase
         else if ($uinfo->sex == 'NA') $uinfo->sex = 'N/A';
         $this->view->listplaylist = $data;
         $this->view->uinfo = $uinfo;
-        $this->view->countaudio = Media::count(array('conditions' => array('usercreate' => $uid, 'type' => self::$TYPE_MUSIC,'status' => self::$STATUS_ON)));
-        $this->view->countvideo = Media::count(array('conditions' => array('usercreate' => $uid, 'type' => self::$TYPE_VIDEO,'status' => self::$STATUS_ON)));
-        $this->view->countplaylist = Album::count(array('conditions' => array('usercreate' => $uid, 'type' => self::$TYPE_PLAYLIST,'status' => self::$STATUS_ON)));
-        $this->view->header = Helper::setHeader("Thành viên - " . $uinfo->username,'', '');
+        $this->view->countaudio = Media::count(array('conditions' => array('usercreate' => $uid, 'type' => self::$TYPE_MUSIC, 'status' => self::$STATUS_ON)));
+        $this->view->countvideo = Media::count(array('conditions' => array('usercreate' => $uid, 'type' => self::$TYPE_VIDEO, 'status' => self::$STATUS_ON)));
+        $this->view->countplaylist = Album::count(array('conditions' => array('usercreate' => $uid, 'type' => self::$TYPE_PLAYLIST, 'status' => self::$STATUS_ON)));
+        $this->view->header = Helper::setHeader("Thành viên - " . $uinfo->username, '', '');
     }
 
     public function memberplaylistAction()
@@ -265,7 +265,7 @@ class UserController extends ControllerBase
         else if ($uinfo->sex == 'female') $uinfo->sex = 'Nữ';
         else if ($uinfo->sex == 'NA') $uinfo->sex = 'N/A';
         $this->view->uinfo = $uinfo;
-        $this->view->header = Helper::setHeader("Thành viên - " . $uinfo->username,'', '');
+        $this->view->header = Helper::setHeader("Thành viên - " . $uinfo->username, '', '');
     }
 
     public function membervideoAction()
@@ -307,7 +307,7 @@ class UserController extends ControllerBase
             $item['link'] = Makelink::link_view_article_video($item['name'], $item['_id']);
             if (!empty($artistid)) $item['listartist'] = Artist::getArtistByID($artistid);
         }
-        $count = Media::count(array('conditions' => array('usercreate' => $uid, 'type' => self::$TYPE_VIDEO,'status' => self::$STATUS_ON)));
+        $count = Media::count(array('conditions' => array('usercreate' => $uid, 'type' => self::$TYPE_VIDEO, 'status' => self::$STATUS_ON)));
         $this->view->listvideo = $listVideo;
         $this->view->painginfo = Helper::paginginfo($count, $limit, $p);
         // validate user
@@ -326,7 +326,7 @@ class UserController extends ControllerBase
         else if ($uinfo->sex == 'female') $uinfo->sex = 'Nữ';
         else if ($uinfo->sex == 'NA') $uinfo->sex = 'N/A';
         $this->view->uinfo = $uinfo;
-        $this->view->header = Helper::setHeader("Thành viên - " . $uinfo->username,'', '');
+        $this->view->header = Helper::setHeader("Thành viên - " . $uinfo->username, '', '');
     }
 
     public function memberaudioAction()
@@ -382,7 +382,7 @@ class UserController extends ControllerBase
         else if ($uinfo->sex == 'female') $uinfo->sex = 'Nữ';
         else if ($uinfo->sex == 'NA') $uinfo->sex = 'N/A';
         $this->view->uinfo = $uinfo;
-        $this->view->header = Helper::setHeader("Thành viên - " . $uinfo->username,'', '');
+        $this->view->header = Helper::setHeader("Thành viên - " . $uinfo->username, '', '');
     }
 
     public function loginAction()
@@ -411,7 +411,7 @@ class UserController extends ControllerBase
             } else $msg = 'Không tìm thấy tài khoản hợp lệ';
         }
         $this->view->msg = $msg;
-        $this->view->header = Helper::setHeader('Đăng nhập','', '');
+        $this->view->header = Helper::setHeader('Đăng nhập', '', '');
     }
 
     public function registerAction()
@@ -453,7 +453,7 @@ class UserController extends ControllerBase
             } else $msg = 'Vui lòng điền đẩy đủ thông tin!';
         }
         $this->view->msg = $msg;
-        $this->view->header = Helper::setHeader('Đăng ký tài khoản','', '');
+        $this->view->header = Helper::setHeader('Đăng ký tài khoản', '', '');
     }
 
     public function changepasswordAction()
@@ -480,7 +480,7 @@ class UserController extends ControllerBase
             } else $msg = array('msg' => 'Mật khẩu hiện tại không đúng', 'status' => 0);
         }
         $this->view->msg = $msg;
-        $this->view->header = Helper::setHeader('Đổi mật khẩu','', '');
+        $this->view->header = Helper::setHeader('Đổi mật khẩu', '', '');
     }
 
     public function forgotpasswordAction()
@@ -509,7 +509,7 @@ class UserController extends ControllerBase
             }
         }
         $this->view->error = $msg;
-        $this->view->header = Helper::setHeader('Quên mật khẩu','', '');
+        $this->view->header = Helper::setHeader('Quên mật khẩu', '', '');
     }
 
     public function resetpasswordAction()
@@ -519,9 +519,9 @@ class UserController extends ControllerBase
         $password = $this->request->get('password');
         $repassword = $this->request->get('re-password');
         if ($this->request->isPost()) {
-            if(strlen($password) < 6) $msg = array('status' => 0, 'msg' => "Mật khẩu phải từ 6 kí tự trở lên");
+            if (strlen($password) < 6) $msg = array('status' => 0, 'msg' => "Mật khẩu phải từ 6 kí tự trở lên");
             else if ($password != $repassword) $msg = array('status' => 0, 'msg' => "Mật khẩu không khớp nhau!");
-            else{
+            else {
                 $password_encryp = Helper::encryptpassword($password);
                 $o = Token_key::findFirst(array("conditions" => array('token' => $token)));
                 if ($o->_id) {
@@ -535,7 +535,7 @@ class UserController extends ControllerBase
         $this->view->setVars(array(
             'error' => $msg,
         ));
-        $this->view->header = Helper::setHeader('Khôi phục mật khẩu','', '');
+        $this->view->header = Helper::setHeader('Khôi phục mật khẩu', '', '');
     }
 
     public function logoutAction()
@@ -610,9 +610,10 @@ class UserController extends ControllerBase
         $count = Album::findAndReturnArray(array(
             'condition' => array('condition' => array('usercreate' => $uinfo['_id'])),
         ));
+        $this->breadCrumbs->addItem(array('name' => "Playlist của tôi", 'link' => "/playlist-cua-toi.html"), static::$TYPE_PLAYLIST);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listplaylist = $data;
-        $this->view->header = Helper::setHeader('Playlist của tôi','', '');
+        $this->view->header = Helper::setHeader('Playlist của tôi', '', '');
     }
 
     public function updateinfoAction()
@@ -662,7 +663,7 @@ class UserController extends ControllerBase
             'object' => $o,
             'msg' => $msg,
         ));
-        $this->view->header = Helper::setHeader('Đổi thông tin cá nhân','', '');
+        $this->view->header = Helper::setHeader('Đổi thông tin cá nhân', '', '');
     }
 }
 
