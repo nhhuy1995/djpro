@@ -4,6 +4,7 @@ import time
 import json
 import os
 import subprocess
+from random import randint
 from downloader import YoutubeDLDownloader
 from threading import Thread
 import setproctitle
@@ -109,7 +110,38 @@ class DownloadWorker:
 			}
 		)
 
+		self._check_copyright_error(params)
+
+
 		pass
+
+	def _check_copyright_error(self, params):
+		copyright_error = 'who has blocked it'
+		delete_error = "This video has been removed"
+		if copyright_error in params or delete_error in params:
+			self.mongo_cusor.media.update(
+				{'_id': self.params['at_id']},
+				{
+					"$set": {
+						'download_video_error': 'Khong the download video do vi pham ban quyen'
+					}
+				}
+			)
+			copyright_log = self.mongo_cusor.alert_cms.find_one(
+				{'at_id': self.params['at_id'], 'type': 'copyright'}
+			)
+			if (copyright_log == None) :
+				self.mongo_cusor.alert_cms.insert(
+					{
+						'_id': str(int(time.time())) + str(randint(1000, 9999)),
+						'at_id': self.params['at_id'],
+						'type': 'copyright',
+						'unread': 1,
+						'time': time.time()
+					}
+				)
+		pass
+
 
 	def _check_params_valid(self):
 		if 'at_id' not in self.params:

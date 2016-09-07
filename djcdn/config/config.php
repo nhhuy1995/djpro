@@ -22,5 +22,15 @@ return new \Phalcon\Config(array(
         'serviceDir'     => APP_PATH . '/service/',
         'baseUri'        => '/',
         'uploadDir'      => APP_PATH . '/public/media'
+    ),
+
+    'web_database' => array(
+        'adapter' => 'MongoDB',
+        'host' => '103.9.156.125',
+        'port' => 27017,
+        'username' => 'root',
+        'password' => '123456$',
+        'dbname' => 'djpro',
+        'charset' => 'utf8',
     )
 ));

@@ -67,14 +67,15 @@ $app->post('/upload_media', function() use ($app) {
 						if (isset($avatarFolder)) {
 							$newPathAvatarFile = $avatarFolder . $newFileName .'.jpg';
 							$newPathSmallAvatarFile = $avatarFolder . $newFileName .'_small.jpg';
-							$commandConvert = 'ffmpeg -itsoffset -1 -i ' . $newPathFile .' -vframes 1 " ' . $newPathAvatarFile;
-							system(escapeshellcmd($commandConvert));
-							$commandConvertSmall = 'ffmpeg -itsoffset -1 -i ' . $newPathFile .' -vframes 1 -filter:v scale="240:135" ' . $newPathSmallAvatarFile;
-							system(escapeshellcmd($commandConvertSmall));
+							$commandConvert = 'ffmpeg -itsoffset -1 -i ' . escapeshellcmd($newPathFile) .' -vframes 1 ' . escapeshellcmd($newPathAvatarFile);
+							system($commandConvert);
+							$commandConvertSmall = 'ffmpeg -itsoffset -1 -i ' . escapeshellcmd($newPathFile) .' -vframes 1 -filter:v scale="240:135" ' . escapeshellcmd($newPathSmallAvatarFile);
+							system($commandConvertSmall);
 							$result['avatar'] = getMediaUrl($newPathAvatarFile);
 							$result['avatar_small'] = getMediaUrl($newPathSmallAvatarFile);
 						}
 						$result['path'][] = getMediaUrl($newPathFile);
+						$result['cmd'] = $commandConvert;
 					};
 				}
 
@@ -187,4 +188,34 @@ $app->get('/test_upload_youtube', function() use ($app) {
 $app->notFound(function () use ($app) {
     $app->response->setStatusCode(404, "Not Found")->sendHeaders();
     echo $app['view']->render('404');
+});
+
+$app->get('/download_media', function() use ($app) {
+	$config = $app->config;
+	$quality = $this->request->get('quality');
+	$at_id = $this->request->get('id');
+
+	$host = $config->web_database->host;
+    $user = $config->web_database->username;
+    $pass = $config->web_database->password;
+    $port = $config->web_database->port;
+    $dbname = $config->web_database->dbname;
+
+    $mongo = new MongoClient("mongodb://$user:$pass@$host:$port");
+    $cursor = $mongo->selectDB("$dbname")->media;
+
+    $media = $cursor->findOne(array("_id" => $at_id), array($quality));
+    
+    if ($media) {
+    	$absoluteFilePath = getMediaPath($media[$quality]);
+    	if (file_exists($absoluteFilePath)) {
+    		header('X-Sendfile: ' . $absoluteFilePath);
+    		header('Content-Disposition: attachment; filename="' . basename($absoluteFilePath) . '"');
+    	} else {
+    		echo "File not Found";
+    	}
+    } else {
+    	echo "File not Found";
+    }
+
 });
