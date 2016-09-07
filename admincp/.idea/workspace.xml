@@ -2,82 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92353190-70d0-482f-a0b9-dec84b7f977b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/controllers/CategoryController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/controllers/SelectivearticleController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/views/web/category/view.phtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/views/web/index/index.phtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking.BAK/nominationplaylist.volt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/views/web/search/index.phtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/views/web/selectivearticle/topic.volt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/app/views/web/topic/view.volt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index/index.volt" afterPath="$PROJECT_DIR$/app/views/index/index.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/AlbumController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/AlbumController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/ImagesController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/ImagesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/IndexController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/MusicController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/MusicController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/NewsController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/NewsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/PlaylistController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/PlaylistController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/RankingController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/RankingController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/SearchController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/SearchController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/TagsController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/TagsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/TopicController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/TopicController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/UserController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/controllers/VideoController.php" afterPath="$PROJECT_DIR$/../client/app/controllers/VideoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/library/BreadCrumb.php" afterPath="$PROJECT_DIR$/../client/app/library/BreadCrumb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/album/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/album/index.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/album/new.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/album/new.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/album/selective.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/album/selective.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/images/category.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/images/category.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/images/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/images/index.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/index/answer.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/index/answer.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/index/rss.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/index/rss.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/news/category.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/news/category.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/news/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/news/index.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/news/view.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/news/view.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/playlist/category.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/playlist/category.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/playlist/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/playlist/index.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/playlist/music.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/playlist/music.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/playlist/new.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/playlist/new.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/playlist/selective.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/playlist/selective.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhalbum.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhalbum.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhplaylist.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhplaylist.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhtopic.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhtopic.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhvideo.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/bxhvideo.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/index.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/nomination.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/nomination.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationalbum.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationalbum.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationplaylist.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationplaylist.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationtopic.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationtopic.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationvideo.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/nominationvideo.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/top100.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/top100.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/top100album.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/top100album.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/top100playlist.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/top100playlist.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/top100topic.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/top100topic.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/ranking/top100video.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/ranking/top100video.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/search/album.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/search/album.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/search/artist.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/search/artist.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/search/audio.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/search/audio.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/search/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/search/index.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/search/playlist.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/search/playlist.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/search/topic.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/search/topic.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/search/video.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/search/video.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/album.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/album.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/images.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/images.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/index.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/music.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/music.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/news.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/news.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/playlist.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/playlist.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/topic.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/topic.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/tags/video.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/tags/video.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/topic/highlights.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/topic/highlights.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/topic/index.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/topic/index.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/topic/new.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/topic/new.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/topic/selective.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/topic/selective.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/app/views/web/user/playlist.volt" afterPath="$PROJECT_DIR$/../client/app/views/web/user/playlist.volt" />
     </list>
     <ignored path="admincp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,20 +32,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.volt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.volt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/index/index.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8078759">
+            <state vertical-scroll-proportion="-27.08">
               <caret line="221" column="40" selection-start-line="221" selection-start-column="40" selection-end-line="221" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.6420048">
               <caret line="129" column="48" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
               <folding />
             </state>
@@ -465,7 +391,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -720,18 +646,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/IndexController.php">
+    <entry file="file://$PROJECT_DIR$/app/views/index/index.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="129" column="48" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
+        <state vertical-scroll-proportion="-27.08">
+          <caret line="221" column="40" selection-start-line="221" selection-start-column="40" selection-end-line="221" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/index/index.volt">
+    <entry file="file://$PROJECT_DIR$/app/controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8078759">
-          <caret line="221" column="40" selection-start-line="221" selection-start-column="40" selection-end-line="221" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.6420048">
+          <caret line="129" column="48" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
           <folding />
         </state>
       </provider>

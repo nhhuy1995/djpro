@@ -31,7 +31,7 @@ class ControllerBase extends Controller
     protected static $OPTION_TYPE_NEWS = 'news';
     protected static $OPTION_TYPE_DISLIKE = 'dislike';
     protected static $OPTION_TYPE_NOMINATIONS = 'nominations';
-    protected  $breadCrumbs;
+    protected $breadCrumbs;
     /**
      * @var ViewComponent
      */
@@ -84,9 +84,9 @@ class ControllerBase extends Controller
 
     }
 
-    public function afterExecuteRoute()
+    private function afterExecuteRoute()
     {
-        if($this->breadCrumbs->getItems())
+        if ($this->breadCrumbs->getItems())
             $this->view->breadCrumbs = $this->breadCrumbs;
     }
 }
