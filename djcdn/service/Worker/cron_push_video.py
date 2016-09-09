@@ -7,7 +7,14 @@ from config import *
 from lib import *
 
 # all available video format with type mp4
-list_format_wanted = ['137+140', '22', '135+140' , '18' , '133+140' ,' 160+140']
+list_format_wanted = {
+	'1080': '137+140',
+	'720': '22',
+	'480': '135+140',
+	'360': '18',
+	'240': '133+140',
+	'144': '160+140'
+}
 # list_format_wanted = ['137+141', ' 160+140']
 
 def push_upload_job(channel, dbConfig):
@@ -49,13 +56,15 @@ def insert_upload_from_media_queue(elem, db):
 
 ############ Insert from media_queue
 def insert_from_media_queue(elem, db):
-	for video_type in list_format_wanted:
+	for video_resolution, video_type in list_format_wanted.iteritems():
 		elem_id = str(int(time.time())) + str(randint(1000, 9999))
 		message = {
 			'_id':	str(elem_id),
 			'at_id': str(elem['at_id']),
+			'user_id': str(elem['user_id']),
 			'video_id': elem['video_id'],
-			'video_type': video_type
+			'video_type': video_type,
+			'video_resolution': video_resolution
 		}
 		result = channel.basic_publish(
 			exchange='', 
@@ -73,7 +82,9 @@ def insert_from_worker_logs(elem, db):
 		'_id':	elem['_id'],
 		'at_id': elem['at_id'],
 		'video_id': elem['video_id'],
-		'video_type': elem['video_type']
+		'user_id': str(elem['user_id']),
+		'video_type': elem['video_type'],
+		'video_resolution': elem['video_resolution']
 	}
 	result = channel.basic_publish(
 		exchange='', 

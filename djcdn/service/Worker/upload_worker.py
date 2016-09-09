@@ -46,6 +46,7 @@ def callback_after_upload(result, dbConfig, params):
 				'video_id' 	: video_id,
 				'status'	: 'not_in_queue',
 				'type'		: 'upload_video_youtube_success',
+				'user_id'	: str(params['user_id']),
 				'in_time'	: time.time()
 			}
 		)
@@ -55,6 +56,7 @@ def callback_after_upload(result, dbConfig, params):
 			{
 				'_id'		: in_time,
 				'at_id' 	: params['at_id'],
+				'user_id'	: str(params['user_id']),
 				'message' 	: out_text,
 				'type'		: 'upload_video_youtube_error',
 				'in_time'	: in_time
@@ -97,7 +99,6 @@ def upload_video_process(redisCon, params):
 	callback_after_upload(result, dbMongoWorker, params)
 
 def insert_video_duration(dbConfig, params):
-	print params
 	video_utility = VideoUtility(params['file_path'])
 	video_duration = video_utility.getDuration()
 

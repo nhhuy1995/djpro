@@ -183,7 +183,8 @@ class MediaController extends ControllerBase
                         $jobClient->pushVideoToYoutube(array(
                             "media_url" => $postvalue['mediaurl'],
                             "title" => $postvalue['name'],
-                            "mid" => (!empty($id)) ? $id : $postvalue['_id']
+                            "mid" => (!empty($id)) ? $id : $postvalue['_id'],
+                            "user_id" => $uinfo['_id']
                         ));
                         $postvalue['is_convert_quality'] = 1;
                     }

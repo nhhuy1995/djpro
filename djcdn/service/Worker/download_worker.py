@@ -63,7 +63,7 @@ class DownloadWorker:
 		)
 
 		if newFileExists:
-			field_name = 'link_video_' + self.file_info['type']
+			field_name = 'link_video_' + self.params['video_resolution']
 			field_value = get_media_url(self.file_info['file_path']).encode('utf-8').strip()
 
 			self.mongo_cusor.media.update(
@@ -135,6 +135,7 @@ class DownloadWorker:
 					{
 						'_id': str(int(time.time())) + str(randint(1000, 9999)),
 						'at_id': self.params['at_id'],
+						'user_id': self.params['user_id'],
 						'type': 'copyright',
 						'unread': 1,
 						'time': time.time()

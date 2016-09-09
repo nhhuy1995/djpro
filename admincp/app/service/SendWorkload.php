@@ -52,7 +52,8 @@ class SendWorkload extends Component
         $defaultParams = array(
             "media_url" => "",
             "title" => "Title",
-            "privacy" => "unlisted"
+            "privacy" => "unlisted",
+            "user_id" => "0"
         );
         $params = array_merge($defaultParams, $params);
         $server_output = false;

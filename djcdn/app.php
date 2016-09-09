@@ -61,6 +61,7 @@ $app->post('/upload_media', function() use ($app) {
 					}
 					$newFileName = preg_replace('/\s+/', '_', $fileParts['filename']);
 					$newFileName .= '_' . time() . "_" . rand(1000, 9999) ;
+					$newFileName = convertToUtf8($newFileName);
 					$newPathFile = $targetFolder . $newFileName .'.'. $fileParts['extension'];
 					$hasMoveFile = $file->moveTo($newPathFile);
 					if ($hasMoveFile)  {
@@ -132,6 +133,7 @@ $app->post('/upload_youtupe', function() use ($app) {
 	$fileUrl = $app->request->getPost('media_url');
 	$title = $app->request->getPost('title');
 	$mid = $app->request->getPost('mid');
+	$userId = $app->request->getPost('user_id');
 
 	if (empty($mid) || empty($filePath)) {
 		$filePath = getMediaPath($fileUrl);
@@ -142,7 +144,8 @@ $app->post('/upload_youtupe', function() use ($app) {
 				"file_path" => $filePath,
 				"title" => $title,
 		        "privacy" => "unlisted",
-		        "at_id" => $mid
+		        "at_id" => $mid,
+		        "user_id" => $userId
 		    ));
 		    $result['status'] = 200;
 		    $result['message'] = 'Push Success';
