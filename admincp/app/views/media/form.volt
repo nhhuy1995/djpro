@@ -283,8 +283,8 @@
         else  $('.block_view').html('Lượt nghe');
         //check avatar
         var avatar = '';
-        if (link_avatar == '/img/240x240' || link_avatar == '/img/240x135.png' || link_avatar == '/img/410x206.png' || link_avatar == '') {
-            if (type == 'audio') avatar = "/img/240x240";
+        if (link_avatar == '/img/240x240.png' || link_avatar == '/img/240x135.png' || link_avatar == '/img/410x206.png' || link_avatar == '') {
+            if (type == 'audio') avatar = "/img/240x240.png";
             else if (type == 'video') avatar = "/img/240x135.png";
             else avatar = "/img/410x206.png";
             $('#link_avatar').attr("src", avatar);
@@ -312,7 +312,7 @@
         //check avatar
         var avatar = '';
         if (link_avatar == '/img/240x240.png' || link_avatar == '/img/240x135.png' || link_avatar == '/img/410x206.png' || link_avatar == '') {
-            if (type == 'audio') avatar = "/img/240x240";
+            if (type == 'audio') avatar = "/img/240x240.png";
             else if (type == 'video') avatar = "/img/240x135.png";
             else avatar = "/img/410x206.png";
             $('#link_avatar').attr("src", avatar);

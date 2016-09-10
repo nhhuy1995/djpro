@@ -69,7 +69,7 @@ class MediaController extends ControllerBase
                 $userInfo = Users::findById($userid);
                 if(isset($userInfo) && !empty($userInfo)){
                     $listmedia[$key]['usercreate'] = $userInfo->username;
-                    $listmedia[$key]['user_link'] = DOMAIN.Makelink::link_view_member($userInfo->username,$userInfo->_id);
+                    $listmedia[$key]['user_link'] = DOMAIN.Makelink::link_view_member($userInfo->username,$userInfo->getId());
                 }
                 $catids = $item['category'];
                 if (!empty($catids) && isset($catids)) {

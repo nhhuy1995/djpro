@@ -2,8 +2,88 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92353190-70d0-482f-a0b9-dec84b7f977b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/1160x341.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/1160x403.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/240x135.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/240x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/371x136.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/410x206.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/032f92891ad59fc615473756ebea9604_avatar3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/051aaa98277a812d3695bd0e71a7c859_avatar6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/06f54ff0265d230e1df43fe6c358345d_dj.very.vn-300x250.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/0f1173a8723f8d70d8e959af307dd59b_avatar2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/37611726b33d54e831dfa93cd3d3c76b_default.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/3ff208c50185549e1fd3ecb3de85120a_dj.very.vn-300x250.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/405c3648127a8d8c172b256074f81773_default9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/594444db488f61d33e89226510a386d9_default4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-0226f7d80348844755a96001882189d6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-02d6f84a17a47f9468756dc5830588a0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-10d51ca06ea42f9acbe6d16d7b9066ef.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-15f5fc3d917aacca0dd40f381190eaa8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-29f2dae54cb3f05667c0dad03b697dfc.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-359077b38e0d6afaaaaa15112082cab9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-398edc1450ed05b74f78b5301d0ba879.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-3c528f4f95ef2d5e01f37d2c14b72216.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-4562529865546d2ee3d7d4f10245c4d3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-49befc8e37580298ca0f50dcddc4881c.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-55dd11809149da54f57764b56dca7d70.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-5f15122256aa645255761603d3d66ec5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-69a6502c1f3942e02ef413fb5f890597.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-72803cffe6c2f49136d6deea2c45c7e6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-83eff353aa4272505f66aaf2f1ac4d08.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-85e31741b9b8c80928c1b714ad1b2eb1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-9ca41172bbbaf3d09d733a9bb2b08fd0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-a0e03bb8cc9fc5182672aa9855731d5d.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-cd6e29197439b6a3cf64e2573c6a6a67.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-de6243684c998a4de7e1f5944a81bc41.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-e2c5c789d6f11c704aa38d34e0ed3175.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8-275-275-f31060bbcf648b0956e705e10fc5ef1f.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/5ea223facc4a8dd3baa737d3852281e8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/696392210a40a1b59946b0550e6dca2e_avatar.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/6ffbdc036b13ff11f52672d80bd76966_default8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/70ff295ac2c34104dc2e6964d12645cf_dj.very.vn-300x250.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/7c5810891b3307d4267105e13780945a_default6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/83128ba8593a15647b90ec78afafbb44_avatar5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/acc2f0391207dcc2b6c7ed8bfcf05041_dj.very.vn-300x250.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/b0e9d4c2f386b8d56b68e541aada9cb7_default7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/b52f225bc86e763af8951a2ee1e056f5_avatar4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/c104f04576f1635e577194668220a0d9_default5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/cbc5ace2d6fc81127eb853b99b97ce42_mqdefault2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/da6a08eef3fef3a525888e048513d36c_default.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/f1194f9238c45755e9bd78fe8625f573_avatar7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/video/1443667690_hay-la-chia-tay-khac-viet.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/01/video/1443667843_em-la-cua-anh-ho-viet-trung-ho-quang-hieu.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/02/video/1443798619_hay-la-chia-tay-khac-viet.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/10/02/video/1443802551_gat-di-nuoc-mat-noo-phuoc-thinh-tonny-viet.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/28/video/1443431875_da-biet-se-co-ngay-hom-qua-trinh-thang-binh.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/28/video/1443432829_gat-di-nuoc-mat-noo-phuoc-thinh-tonny-viet.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/3a124419e7d01a9e40ffbc16e2508502_img4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/5ea223facc4a8dd3baa737d3852281e8-275-275-6f420231101a414fd8f6b4ceb5b34a46.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/5ea223facc4a8dd3baa737d3852281e8-275-275-7a4faa182bcc21f134ec6feb9be5b87a.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/5ea223facc4a8dd3baa737d3852281e8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/88b6ac1caedec69cbaa8bea61db21cfc-275-275-87daa7bcd5db669bbbd530758e9e56b5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/88b6ac1caedec69cbaa8bea61db21cfc.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/9a4da08a2ba46b67ce548004d5f1ad80-275-275-b0cc0705f0aae0bd10926f34a45a5396.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/9a4da08a2ba46b67ce548004d5f1ad80.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/aab72948bd5afcf9f95335613e4699c5_img1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/ab7cea9bed01e5d60849bfaaa8507bd7_img3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/f89f8fefa6f91da689c0000be575ba1e_img2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/video/1443534675_chua-bao-gio-trung-quan-idol.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/video/1443534723_joel-fletcher-afterdark-original-mix-.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/video/1443534773_kiep-do-den.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/video/1443534827_lk-remix-a-nh-tr-ng-bu-n-ng-cay.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/video/1443534845_joel-fletcher-afterdark-original-mix-.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/video/1443534890_hay-la-chia-tay-khac-viet.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/video/1443534919_vu-dieu-chong-chieng-cover-tnt-dance-crew.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/video/1443535091_kiep-do-den.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/video/1443539336_kiep-do-den.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/video/1443539537_hai-ba-nam-pham-truong.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/2015/09/29/video/1443539563_em-la-cua-anh-ho-viet-trung-ho-quang-hieu.mp3" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/MediaController.php" afterPath="$PROJECT_DIR$/app/controllers/MediaController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/media/form.volt" afterPath="$PROJECT_DIR$/app/views/media/form.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bak/app15072016/views/media/form.volt" afterPath="$PROJECT_DIR$/bak/app15072016/views/media/form.volt" />
     </list>
     <ignored path="admincp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,19 +115,42 @@
       <file leaf-file-name="index.volt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/index/index.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.08">
+            <state vertical-scroll-proportion="-176.8">
               <caret line="221" column="40" selection-start-line="221" selection-start-column="40" selection-end-line="221" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6420048">
-              <caret line="129" column="48" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
+            <state vertical-scroll-proportion="-10.16">
+              <caret line="123" column="41" selection-start-line="123" selection-start-column="41" selection-end-line="123" selection-end-column="41" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form.volt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/media/form.volt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-252.8">
+              <caret line="316" column="45" selection-start-line="316" selection-start-column="45" selection-end-line="316" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MediaController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/MediaController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5051546">
+              <caret line="73" column="44" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
+              <folding>
+                <element signature="e#6#90#0#PHP" expanded="true" />
+                <element signature="e#120#166#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -61,7 +164,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/controllers/ControllerBase.php" />
-        <option value="$PROJECT_DIR$/app/controllers/MediaController.php" />
         <option value="$PROJECT_DIR$/app/views/media/index.volt" />
         <option value="$PROJECT_DIR$/app/controllers/AlbumController.php" />
         <option value="$PROJECT_DIR$/app/views/album/index.volt" />
@@ -86,6 +188,9 @@
         <option value="$PROJECT_DIR$/app/views/index.volt" />
         <option value="$PROJECT_DIR$/app/controllers/IndexController.php" />
         <option value="$PROJECT_DIR$/app/views/index/index.volt" />
+        <option value="$PROJECT_DIR$/bak/app15072016/views/media/form.volt" />
+        <option value="$PROJECT_DIR$/app/views/media/form.volt" />
+        <option value="$PROJECT_DIR$/app/controllers/MediaController.php" />
       </list>
     </option>
   </component>
@@ -105,8 +210,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="1000" />
+    <option name="width" value="1376" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -133,6 +238,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -161,15 +267,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bak" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app15072016" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -183,37 +281,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bak" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app15072016" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mediarequire" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admincp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admincp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bak" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app15072016" />
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -254,6 +326,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mediarequire" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admincp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admincp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="media" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -331,7 +425,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -346,6 +439,127 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Freelance\DjPro\admincp\public\img" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/MediaController.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/service/SendWorkload.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../djcdn/app.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../djcdn/config/utility.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../djcdn/service/Worker/cron_push_video.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../djcdn/service/Worker/download_worker.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../djcdn/service/Worker/upload_worker.py</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -391,30 +605,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
+    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26484376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2647059" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884398" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32755905" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968536" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2929293" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -436,6 +650,22 @@
     <entry file="file://$PROJECT_DIR$/app/views/index/index.volt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="221" column="40" selection-start-line="221" selection-start-column="40" selection-end-line="221" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/index/index.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -453,13 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09546539">
           <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/MediaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6443914">
-          <caret line="69" column="58" selection-start-line="69" selection-start-column="58" selection-end-line="69" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -648,17 +871,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index/index.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.08">
+        <state vertical-scroll-proportion="-176.8">
           <caret line="221" column="40" selection-start-line="221" selection-start-column="40" selection-end-line="221" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/240x240.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bak/app15072016/views/media/form.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26039782">
+          <caret line="283" column="22" selection-start-line="283" selection-start-column="22" selection-end-line="283" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/media/form.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-252.8">
+          <caret line="316" column="45" selection-start-line="316" selection-start-column="45" selection-end-line="316" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6420048">
-          <caret line="129" column="48" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
+        <state vertical-scroll-proportion="-10.16">
+          <caret line="123" column="41" selection-start-line="123" selection-start-column="41" selection-end-line="123" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/MediaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5051546">
+          <caret line="73" column="44" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
+          <folding>
+            <element signature="e#6#90#0#PHP" expanded="true" />
+            <element signature="e#120#166#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
