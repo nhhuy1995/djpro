@@ -27,7 +27,10 @@ class Helper
     {
         $param = explode(",", $param);
         $arr = array();
-        foreach ($param as $item) $arr[$item] = Helper::xss_clean($_POST[$item]);
+        foreach ($param as $item) {
+            if ($_POST[$item] !== '')
+                $arr[$item] = Helper::xss_clean($_POST[$item]);
+        }
         return $arr;
     }
 

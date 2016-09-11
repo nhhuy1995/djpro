@@ -189,6 +189,7 @@ class ControllerBase extends Controller
     public function checkpermission($key)
     {
         $module = new Module();
+        if ($key == 'ads_homepage') return 1;
         if ($module->is_accept_permission($key) == 0) {
             $uinfo = $this->session->get('uinfo');
             if (!count($uinfo)) {

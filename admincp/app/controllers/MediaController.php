@@ -140,6 +140,9 @@ class MediaController extends ControllerBase
             $uinfo = (array)$this->session->get("uinfo");
             ##Process
             $postvalue = Helper::post_to_array("name,description,category,mediaurl,content,type,status,view,like,replay,spamflag,artist,ishot,priavatar,is_convert_quality,gen_priavatar");
+            $postvalueVid = Helper::post_to_array("link_video_1080,link_video_720,link_video_480,link_video_360,link_video_240,link_video_144");
+            $postvalueAud = Helper::post_to_array("media_link_320k,media_link_128k,media_link_64k");
+            $postvalue = $postvalue + $postvalueVid + $postvalueAud;
             $postvalue['view'] = intval($postvalue['view']);
             $postvalue['like'] = intval($postvalue['like']);
             $postvalue['replay'] = intval($postvalue['replay']);

@@ -104,11 +104,35 @@
         </li>
 
         <li class="logo hidden-xs">
-            <a href="index.html">Djpro Admincp</a>
+            <a href="/">Djpro Admincp</a>
         </li>
 
         <li class="pull-right">
             <ul class="top-menu">
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="tm-notification" href="">
+                        <i class="tmn-counts" id="header-notif-count" style="display: none"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg pull-right">
+                        <div class="listview empty" id="notifications">
+                            <div class="lv-header">
+                                Thông báo
+                                <ul class="actions">
+                                    <li class="dropdown" id="header-wrapper-clear-notif" style='display:none'>
+                                        <a href="" data-clear="notification" id="header-clear-notification">
+                                            <i class="md md-done-all"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="lv-body c-overflow" id="header-list-alert">
+                            </div>
+                    
+                            <a class="lv-footer" href="">Xem toàn bộ</a>
+                        </div>
+                    
+                    </div>
+                </li>
                 <li id="toggle-width">
                     <div class="toggle-switch">
                         <input id="tw-switch" type="checkbox" hidden="hidden">

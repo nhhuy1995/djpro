@@ -14,6 +14,7 @@
                         <li class="active"><a data-toggle="tab" role="tab" aria-controls="home11" href="#home11">Thông
                                 tin</a></li>
                         <li><a data-toggle="tab" role="tab" aria-controls="home22" href="#home22">Chuyên mục</a></li>
+                        <li><a data-toggle="tab" role="tab" aria-controls="home22" href="#home23">Link định dạng</a></li>
                     </ul>
 
                     <div class="tab-content">
@@ -245,6 +246,48 @@
                                 {{ categoryview }}
                             </div>
                         </div>
+                        <div id="home23" class="tab-pane" role="tabpanel">
+                            <div class="card-body">
+                                {% set list_video_resolution = ["link_video_1080", "link_video_720", "link_video_480", "link_video_360", "link_video_240", "link_video_144"] %}
+                                {% set list_video_resolution_name = ["video 1080p", "video 720p", "video 480p", "video 360p", "video 240p", "video 144p"] %}
+                                {% for key, elem in list_video_resolution %}
+                                    <div class="video">
+                                        <div class="form-group fg-float">
+                                            <div class="fg-line">
+                                                <input type="text" id="mediaurl_{{ elem }}" name="{{ elem }}"
+                                                       value="{{ object[elem] }}"
+                                                       class="input-sm form-control fg-input">
+                                            </div>
+                                            <label class="fg-label">Đường dẫn file {{ list_video_resolution_name[key] }}</label>
+                                        </div>
+                                        <div class="form-group fg-float">
+                                            <div class="fg-line" data-type="{{ elem }}">
+                                                <input type="file" name="file_upload" class="upload_media_alter" id="file_upload_{{ elem }}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                {% set list_audio_type = ["media_link_320k", "media_link_128k", "media_link_64k"] %}
+                                {% set list_audio_type_name = ["audio 320k", "audio 128k", "audio 64k"] %}
+                                {% for key, elem in list_audio_type %}
+                                    <div class="audio">
+                                        <div class="form-group fg-float">
+                                            <div class="fg-line">
+                                                <input type="text" id="mediaurl_{{ elem }}" name="{{ elem }}"
+                                                       value="{{ object[elem] }}"
+                                                       class="input-sm form-control fg-input">
+                                            </div>
+                                            <label class="fg-label">Đường dẫn file {{ list_audio_type_name[key] }}</label>
+                                        </div>
+                                        <div class="form-group fg-float">
+                                            <div class="fg-line" data-type="{{ elem }}">
+                                                <input type="file" name="file_upload" class="upload_media_alter" id="file_upload_{{ elem }}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group fg-float">
@@ -338,6 +381,27 @@
                 alert(obj.mss);
             }
         }
+    });
+
+    $('.upload_media_alter').each(function(index, elem) {
+        var parent = $(elem).parent();
+        $(elem).uploadify({
+            'swf': '../plugin/uploadify/uploadify.swf',
+            // 'uploader': '../plugin/uploadify/uploadify.php',
+            'uploader': 'http://s1.download.stream.djscdn.com/upload_media',
+            'fileTypeExts': '*.mp3;*.mp4;*.m4a',
+        //  'debug': true,
+            'onUploadSuccess': function (file, data, response) {
+                var obj = JSON.parse(data);
+                if (obj.status == 200) {
+                    console.log(parent);
+                    var media_type = parent.attr('data-type');
+                    $('#mediaurl_' + media_type).val(obj.path[0]);
+                } else {
+                    alert(obj.mss);
+                }
+            }
+        });
     });
 
     $(document).ready(function () {

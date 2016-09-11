@@ -10,6 +10,7 @@ use DjCms\Models\Media;
 use DjCms\Models\News;
 use DjCms\Models\Tag;
 use DjCms\Models\Topic;
+use DjCms\Models\AlertCms;
 
 class IncomingController extends ControllerBase
 {
@@ -409,6 +410,48 @@ class IncomingController extends ControllerBase
             'status' => 1,
             'message' => "success"
         ));
+    }
+
+    public function getalertcmsAction()
+    {
+        if ($this->request->isPost()) {
+            $uinfo = (array)$this->session->get('uinfo');
+            $listAlert = AlertCms::getAlertNotRead($uinfo['_id']);
+            foreach ($listAlert as $key => $alert) {
+                $media = Media::findById($alert['at_id']);
+                $listAlert[$key]['title'] = $media->name;
+                if ($alert['type'] == 'copyright') {
+                    $listAlert[$key]['content'] = 'Không thể Download do vi phạm bản quyền';
+                    $listAlert[$key]['url'] = '/media/form?&id=' . $alert['at_id'];
+                }
+            }
+
+            self::jsonResponse(array(
+                'status' => 404,
+                'data' => $listAlert
+            ));
+        } else {
+            self::jsonResponse(array(
+                'status' => 404,
+                'message' => 'Not Found'
+            ));
+        }
+    }
+
+    public function markallalertreadAction() {
+        if ($this->request->isPost()) {
+            $uinfo = (array)$this->session->get('uinfo');
+            $listAlert = AlertCms::markReadAllAlert($uinfo['_id']);
+
+            self::jsonResponse(array(
+                'status' => 200
+            ));
+        } else {
+            self::jsonResponse(array(
+                'status' => 404,
+                'message' => 'Not Found'
+            ));
+        }
     }
 
 
