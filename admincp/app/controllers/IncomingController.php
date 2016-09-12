@@ -11,6 +11,7 @@ use DjCms\Models\News;
 use DjCms\Models\Tag;
 use DjCms\Models\Topic;
 use DjCms\Models\AlertCms;
+use DjCms\Models\Ads;
 
 class IncomingController extends ControllerBase
 {
@@ -445,6 +446,57 @@ class IncomingController extends ControllerBase
 
             self::jsonResponse(array(
                 'status' => 200
+            ));
+        } else {
+            self::jsonResponse(array(
+                'status' => 404,
+                'message' => 'Not Found'
+            ));
+        }
+    }
+
+    public function getadscontentAction() {
+        if ($this->request->isPost()) {
+            $adsId = $this->request->getPost('ads_id');
+            $adsContent = Ads::findById($adsId);
+
+            self::jsonResponse(array(
+                'status' => 200,
+                'data' => $adsContent
+            ));
+        } else {
+            self::jsonResponse(array(
+                'status' => 404,
+                'message' => 'Not Found'
+            ));
+        }
+    }
+
+    public function updateadscontentAction() {
+        if ($this->request->isPost()) {
+            $adsId = $this->request->getPost('ads_id');
+            $currentContent = $this->request->getPost('current_content');
+            $draftContent = $this->request->getPost('draft_content');
+            $adsContent = Ads::findById($adsId);
+
+            $contentUpdate = array(
+                'current_content' => $currentContent,
+                'draft_content' => $draftContent,
+                'update_time' => time()
+            );
+            if ($adsContent) {
+                Ads::updateDocument(
+                    array('_id' => $adsId),
+                    array('$set' => $contentUpdate)
+                );
+            } else {
+                $contentUpdate['_id'] = $adsId;
+                Ads::insertDocument($contentUpdate);
+            }
+            
+            self::jsonResponse(array(
+                'status' => 200,
+                'data' => $adsContent
             ));
         } else {
             self::jsonResponse(array(

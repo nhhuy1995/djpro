@@ -21,4 +21,10 @@ class AdsController extends ControllerBase
     {
 
     }
+
+    public function afterExecuteRoute()
+    {
+    	$ads = new Ads();
+       	$this->view->ads = (object) $ads->getAdsPosition();
+    }
 }

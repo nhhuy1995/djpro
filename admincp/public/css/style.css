@@ -72,3 +72,16 @@ ul, li {
 .mg-bt-30 {
     margin-bottom: 30px;
 }
+
+/** Ads manager custom css */
+.ads-full-width {
+    max-width: 100%;
+}
+
+.ads-edit-textarea {
+    overflow: hidden;
+    word-wrap: break-word;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+}
