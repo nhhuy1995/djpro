@@ -12,15 +12,13 @@ class AdsController extends ControllerBase
         
     }
 
-    public function homepageAction()
-    {
-        
-    }
+    public function homepageAction() {}
 
-    public function formprocessAction()
-    {
-
-    }
+    public function homepagetabletAction() {}
+    
+    public function homepagemobileAction() {}
+    
+    public function musicplaypageAction() {}
 
     public function afterExecuteRoute()
     {
