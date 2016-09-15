@@ -13,6 +13,7 @@ use DjClient\Models\Notify;
 use DjClient\Models\Settings;
 use DjClient\Models\Tags;
 use DjClient\Models\Users;
+use DjClient\Models\Ads;
 use DjClient\Services\RankingArticle;
 
 class MusicController extends ControllerBase
@@ -33,6 +34,8 @@ class MusicController extends ControllerBase
         $this->breadCrumbs->addItem(array(), static::$TYPE_MUSIC);
         $this->view->listMusic = $listMusic;
         $this->view->listAudioSelectvie = $listAudioSelectvie;
+        
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('Bài hát', '', '');
         unset($data);
 
@@ -63,6 +66,8 @@ class MusicController extends ControllerBase
         $this->breadCrumbs->addItem(array('name' => "Bài hát mới", 'link' => '/bai-hat-moi.html'), static::$TYPE_MUSIC);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listMusic = $data;
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('Bài hát mới', '', '');
         unset($data);
 
@@ -167,6 +172,9 @@ class MusicController extends ControllerBase
         if (empty($listArtistNameRePlace)) $listArtistNameRePlace = '';
         else $listArtistNameRePlace = str_replace(' ft.', ', ', $listArtistNameRePlace) . ', ';
 
+        $this->view->ads = $this->getAdsSidebarRight();
+        $ads = new Ads();
+        $ads->addAdsInLyric($this->view->ads);
         $keyword = "Nghe, Bài hát, Mp3, Download, {$o->name}, {$listArtistNameRePlace}{$o->usercreate},{$listCategoryName}320Kbps";
         $keyword = str_replace('  ', ' ', $keyword);
         $this->view->header = Helper::setHeader($title, strip_tags($content), $o->priavatar, $content, $keyword);
@@ -198,6 +206,8 @@ class MusicController extends ControllerBase
         $this->breadCrumbs->addItem(array('name' => "Bài hát chọn lọc", 'link' => '/bai-hat-chon-loc.html'), static::$TYPE_MUSIC);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listAudio_selective = $data;
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('Bài hát chọn lọc', '', '');
         unset($data);
     }
@@ -230,6 +240,8 @@ class MusicController extends ControllerBase
         $this->breadCrumbs->addItem($o->toArray(), static::$TYPE_MUSIC);
         $this->view->painginfo = Helper::paginginfo($count, $limit, $p);
         $this->view->listMusic = $data;
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader($o->name, '', '');
         $this->view->object = $o;
         $this->view->link = Makelink::link_view_category_music($o->name, $o->getId());

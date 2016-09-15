@@ -24,6 +24,8 @@ class AlbumController extends ControllerBase
         $this->breadCrumbs->addItem(array(),static::$TYPE_ALBUM);
         $this->view->listalbum = $listAlbum;
         $this->view->listalbumselective = $listAlbumSelectvie;
+        
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('Album','','');
     }
 
@@ -52,6 +54,8 @@ class AlbumController extends ControllerBase
         $this->breadCrumbs->addItem(array("name" => "Album mới nhất","link" => "/album-moi.html"),static::$TYPE_ALBUM);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listalbum = $data;
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('Album mới nhất','','');
     }
 
@@ -82,6 +86,8 @@ class AlbumController extends ControllerBase
         $this->breadCrumbs->addItem(array("name" => "Album chọn lọc","link" => "/album-chon-loc.html"),static::$TYPE_ALBUM);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listAlbum_selective = $data;
+        
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('Album chọn lọc','','');
     }
 }

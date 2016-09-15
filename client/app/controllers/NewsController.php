@@ -38,6 +38,8 @@ class NewsController extends ControllerBase
         $this->breadCrumbs->addItem(array(), static::$TYPE_NEWS);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listNews = $data;
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('Tin tức', '', '');
     }
 
@@ -71,6 +73,8 @@ class NewsController extends ControllerBase
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listNews = $data;
         $this->view->catinfo = $catinfo;
+        
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader($catinfo->name, '', '');
     }
 
@@ -134,6 +138,7 @@ class NewsController extends ControllerBase
             'currentLink' => str_replace('?', '', DOMAIN . Helper::cpagerparm(""))
         ));
 
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader($object->name, $object->description, $object->priavatar);
     }
 }

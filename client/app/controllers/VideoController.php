@@ -11,6 +11,7 @@ use DjClient\Models\Notify;
 use DjClient\Models\Settings;
 use DjClient\Models\Tags;
 use DjClient\Models\Users;
+use DjClient\Models\Ads;
 use DjClient\Services\RankingArticle;
 
 
@@ -29,6 +30,8 @@ class VideoController extends ControllerBase
         $this->view->listvideoselective = $listVideoSelectvie;
         ##breadcrumbs
         $this->breadCrumbs->addItem(array(), static::$TYPE_VIDEO);
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('Video', '', '');
     }
 
@@ -57,6 +60,8 @@ class VideoController extends ControllerBase
         ##breadcrumbs
         $this->breadCrumbs->addItem(array('name' => "Video mới", 'link' => '/video-moi.html'), static::$TYPE_VIDEO);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->listVideo = $data;
         $this->view->header = Helper::setHeader("Video mới", '', '');
     }
@@ -88,6 +93,8 @@ class VideoController extends ControllerBase
         $this->breadCrumbs->addItem(array('name' => "Video chọn lọc", 'link' => '/video-chon-loc.html'), static::$TYPE_VIDEO);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listVideo_selective = $data;
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader("Video chọn lọc", '', '');
         unset($data);
     }
@@ -177,6 +184,10 @@ class VideoController extends ControllerBase
         if (empty($listArtistNameRePlace)) $listArtistNameRePlace = '';
         else $listArtistNameRePlace = str_replace(' ft.', ', ', $listArtistNameRePlace) . ', ';
 
+        $this->view->ads = $this->getAdsSidebarRight();
+        $ads = new Ads();
+        $ads->addAdsInLyric($this->view->ads);
+
         $keyword = "Xem, Video Clip, Mp4, Download, {$o->name}, {$listArtistNameRePlace}{$o->usercreate},{$listCategoryName}Full HD";
         $keyword = str_replace('  ', ' ', $keyword);
 
@@ -213,6 +224,8 @@ class VideoController extends ControllerBase
         $this->breadCrumbs->addItem($o->toArray(), static::$TYPE_VIDEO);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listVideo = $data;
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader($o->name, '', '');
         $this->view->object = $o;
     }

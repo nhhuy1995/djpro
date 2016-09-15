@@ -42,6 +42,8 @@ class RankingController extends ControllerBase
         $this->view->setVars(array(
             "listAudio" => $listAudio,
         ));
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('Bảng xếp hạng','', '');
 
     }
@@ -62,6 +64,8 @@ class RankingController extends ControllerBase
             "listVideo" => $listVideo,
         ));
         $this->breadCrumbs->addItem(array(),static::$TYPE_RANKING);
+
+        $this->view->ads = $this->getAdsSidebarRight(); 
         $this->view->header = Helper::setHeader('Bảng xếp hạng','', '');
     }
 
@@ -82,6 +86,8 @@ class RankingController extends ControllerBase
         $this->view->setVars(array(
             "listAlbum" => $listAlbum,
         ));
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('Bảng xếp hạng','', '');
     }
 
@@ -110,6 +116,8 @@ class RankingController extends ControllerBase
         $this->view->setVars(array(
             "listAudio" => $listAudio,
         ));
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('TOP đề cử bởi thành viên','', '');
     }
 
@@ -129,6 +137,8 @@ class RankingController extends ControllerBase
         $this->view->setVars(array(
             "listVideo" => $listVideo,
         ));
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->breadCrumbs->addItem(array(),static::$TYPE_DE_CU);
         $this->view->header = Helper::setHeader('TOP đề cử bởi thành viên','', '');
     }
@@ -150,6 +160,8 @@ class RankingController extends ControllerBase
         $this->view->setVars(array(
             "listAlbum" => $listAlbum,
         ));
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->breadCrumbs->addItem(array(),static::$TYPE_DE_CU);
         $this->view->header = Helper::setHeader('TOP đề cử bởi thành viên','', '');
     }
@@ -179,6 +191,8 @@ class RankingController extends ControllerBase
         $this->view->setVars(array(
             "listAudio" => $listAudio,
         ));
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->breadCrumbs->addItem(array(),static::$TYPE_TOP100);
         $this->view->header = Helper::setHeader('TOP 100','', '');
     }
@@ -198,6 +212,8 @@ class RankingController extends ControllerBase
         $this->view->setVars(array(
             "listVideo" => $listVideo,
         ));
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->breadCrumbs->addItem(array(),static::$TYPE_TOP100);
         $this->view->header = Helper::setHeader('TOP 100','', '');
     }
@@ -215,6 +231,8 @@ class RankingController extends ControllerBase
             "collection" => "Album",
             "limit" => 100
         ));
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->breadCrumbs->addItem(array(),static::$TYPE_TOP100);
         $this->view->setVars(array(
             "listAlbum" => $listAlbum,

@@ -12,6 +12,7 @@ use DjClient\Models\Notify;
 use DjClient\Models\Settings;
 use DjClient\Models\Tags;
 use DjClient\Models\Users;
+use DjClient\Models\Ads;
 use DjClient\Services\RankingArticle;
 
 class PlaylistController extends ControllerBase
@@ -29,6 +30,8 @@ class PlaylistController extends ControllerBase
         $this->breadCrumbs->addItem(array(), static::$TYPE_PLAYLIST);
         $this->view->listplaylist = $listPlaylist;
         $this->view->listplselective = $listPlaylistSelectvie;
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('Playlist', '', '');
     }
 
@@ -59,6 +62,8 @@ class PlaylistController extends ControllerBase
         $this->breadCrumbs->addItem(array("name" => "Playlist chọn lọc", "link" => "playlist-chon-loc.html"), static::$TYPE_PLAYLIST);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listPlaylist_selective = $data;
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('Playlist chọn lọc', '', '');
     }
 
@@ -153,6 +158,10 @@ class PlaylistController extends ControllerBase
             'st' => $this->request->get('st'),
             'object' => $o,
         ));
+
+        $this->view->ads = $this->getAdsSidebarRight();
+        $ads = new Ads();
+        $ads->addAdsInLyric($this->view->ads);
         $this->view->header = Helper::setHeader($o->name, $o->description, $o->priavatar);
         RankingArticle::increaseActionNumber("view", $o->_id, $o->type);
     }
@@ -182,6 +191,8 @@ class PlaylistController extends ControllerBase
         $this->breadCrumbs->addItem(array("name" => "Playlist mới nhất", "link" => "/playlist-moi.html"), static::$TYPE_PLAYLIST);
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listalbum = $data;
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('Playlist mới nhất', '', '');
     }
 
@@ -216,6 +227,8 @@ class PlaylistController extends ControllerBase
             $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
             $this->view->listalbum = $data;
             $this->view->category = $category;
+
+            $this->view->ads = $this->getAdsSidebarRight();
             $this->view->header = Helper::setHeader($category->name, '', '');
         }
     }

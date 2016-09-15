@@ -7,6 +7,7 @@ use DjClient\Models\Category;
 use DjClient\Models\Media;
 use DjClient\Models\Settings;
 use DjClient\Models\Users;
+use DjClient\Models\Ads;
 use DjClient\Services\ViewComponent as ViewComponent;
 use DjClient\Library\BreadCrumb;
 use Phalcon\Mvc\Controller;
@@ -88,5 +89,10 @@ class ControllerBase extends Controller
     {
         if ($this->breadCrumbs->getItems())
             $this->view->breadCrumbs = $this->breadCrumbs;
+    }
+
+    protected function getAdsSidebarRight() {
+        $ads = new Ads();
+        return $ads->getAdsSidebarRight();
     }
 }

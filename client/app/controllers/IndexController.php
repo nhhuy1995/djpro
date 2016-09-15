@@ -11,6 +11,7 @@ use DjClient\Models\RankingWeek;
 use DjClient\Models\Settings;
 use DjClient\Models\Topic;
 use DjClient\Models\Users;
+use DjClient\Models\Ads;
 use DjClient\Services\Email;
 use DjClient\Services\RankingArticle;
 
@@ -45,6 +46,21 @@ class IndexController extends ControllerBase
         ##list Audio by view
         $ranking = new RankingController();
         $this->view->listMedia_ByView = $ranking->getMediaConditions('Media', 'audio', 'month', 10);## list music by view
+        
+        ## Get Ads Content
+        $adsCl = new Ads();
+        $adsPosition = $adsCl->getAdsPosition();
+
+        $this->view->ads = $adsCl->getAdsContents(
+            array(
+                $adsPosition['HOME_DESKTOP_TOP'],
+                $adsPosition['HOME_TABLET_TOP'],
+                $adsPosition['HOME_MOBILE_TOP'],
+                $adsPosition['HOME_DESKTOP_RIGHT_1'],
+                $adsPosition['HOME_DESKTOP_RIGHT_2'],
+                $adsPosition['HOME_DESKTOP_RIGHT_3']
+            )
+        );
 
         $this->view->header = Helper::setHeader(
             'Nhạc Sàn Mp3, Nghe nhạc DJ, Nonstop HAY mới 2016',

@@ -39,6 +39,8 @@ class ImagesController extends ControllerBase
         $this->view->painginfo = Helper::paginginfo(count($count), $limit, $p);
         $this->view->listimages = $data;
         $this->view->title = "Ảnh";
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('Ảnh','', '');
     }
 
