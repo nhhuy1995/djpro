@@ -90,6 +90,12 @@ class Module extends Component
             array("name" => "Xem danh sách", "key" => "view"),
             array("name" => "Xóa", "key" => "delete")
         ));
+        $permission["ads"] = array("name" => "Cấu hình quảng cáo", "child" => array(
+            array("name" => "Trang chủ - desktop", "key" => "homepage"),
+            array("name" => "Trang chủ - tablet", "key" => "homepagetablet"),
+            array("name" => "Trang chủ - mobile", "key" => "homepagemobile"),
+            array("name" => "Trang nghe nhạc", "key" => "musicplaypage")
+        ));
         return $permission;
     }
 
@@ -105,6 +111,12 @@ class Module extends Component
         $sidebar[] = array("name" => "Comment", "icon" => "md md-comment", "key" => "comment", "controller" => "/comment/index");
         $sidebar[] = array("name" => "Tag", "icon" => "md md-turned-in", "key" => "tag", "controller" => "/tag/index");
         $sidebar[] = array("name" => "Feedback", "icon" => "md md-warning", "key" => "reportspam", "controller" => "/reportspam/index");
+        $sidebar[] = array("name" => "Cấu hình quảng cáo", "icon" => "md md-desktop-mac", "key" => "ads", "controller" => "javascript:void(0)", "child" => array(
+            array("name" => "Trang chủ - Desktop", "key" => "ads_homepage", "controller" => "/ads/homepage"),
+            array("name" => "Trang chủ - Tablet", "key" => "ads_homepagetablet", "controller" => "/ads/homepagetablet"),
+            array("name" => "Trang chủ - Mobile", "key" => "ads_homepagemobile", "controller" => "/ads/homepagemobile"),
+            array("name" => "Trang nghe nhạc", "key" => "ads_musicplaypage", "controller" => "/ads/musicplaypage")
+        ));
         $sidebar[] = array("name" => "Cấu hình hiển thị", "icon" => "md md-view-list", "key" => "viewcomponent", "controller" => "javascript:void(0)", "child" => array(
             array("name" => "Danh sách Menu", "key" => "viewcomponent_listmenuindex", "controller" => "/viewcomponent/listmenuindex"),
             array("name" => "Slideshow", "key" => "viewcomponent_slideshow", "controller" => "/viewcomponent/slideshow"),

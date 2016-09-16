@@ -31,4 +31,5 @@
     </div>
 </div>
 
+{% include "partial/ads_manual.volt" %}
 {% include "partial/ads_modal.volt" %}
