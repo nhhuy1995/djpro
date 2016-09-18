@@ -61,6 +61,7 @@
       // Change menu button label to the label of this item if the menu button label is provided
       if(this.label) {
         this.label.innerHTML = this.options_.label;
+
       }
     },
     onClick: function(customSourcePicker){
@@ -89,14 +90,16 @@
       if(this.player_.techName_ !== 'Youtube' && this.player_.preload() === 'none' && this.player_.techName_ !== 'Flash') {
         handleSeekEvent = 'timeupdate';
       }
+      var label = this.options_.label;
       setSourcesSanitized(this.player_, this.src, this.options_.label, customSourcePicker).one(handleSeekEvent, function() {
         this.player_.currentTime(currentTime);
         this.player_.handleTechSeeked_();
+
         if(!isPaused){
           // Start playing and hide loadingSpinner (flash issue ?)
           this.player_.play().handleTechSeeked_();
         }
-        this.player_.trigger('resolutionchange');
+        this.player_.trigger('resolutionchange', {label: label});
         });
       }
     });

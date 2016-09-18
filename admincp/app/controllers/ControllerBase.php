@@ -125,7 +125,7 @@ class ControllerBase extends Controller
         }
     }
 
-    public function post_file_to_array($returnarray = false)
+    public function post_file_to_array($img_type = null, $returnarray = false)
     {
         $listimage = null;
         $priavatar = null;
@@ -142,7 +142,7 @@ class ControllerBase extends Controller
                     $filename = md5(uniqid(rand(), true)) . '_' . strtolower($upload->getname());
                     $fullPath = $uploaddir . $filename;
                     $upload->moveTo($fullPath);
-                    $resultUpload = $this->_uploadFileToStreamServer($fullPath, $filename, $upload->getType());
+                    $resultUpload = $this->_uploadFileToStreamServer($fullPath, $filename, $upload->getType(), $img_type);
                     $imageUrl = $resultUpload['path'][0];
                     if (file_exists($fullPath)) {
                         unlink($fullPath);
@@ -166,11 +166,11 @@ class ControllerBase extends Controller
 
     }
 
-    protected function _uploadFileToStreamServer($filePath, $fileName, $fileType) {
-        $target_url = 'http://s1.download.stream.djscdn.com/upload_media';
+    protected function _uploadFileToStreamServer($filePath, $fileName, $fileType, $ownerType) {
+        $target_url = 'http://s1.download.stream.djscdn.com/upload_image';
         $ch = curl_init($target_url);
         $cfile = new \CURLFile(realpath($filePath), $fileType, $fileName);
-        $data = array('test_file' => $cfile);
+        $data = array('test_file' => $cfile, 'img_type' => $ownerType);
         curl_setopt($ch, CURLOPT_POST,1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

@@ -205,14 +205,15 @@
     });
     //Upload File
     $('#file_upload_avatar').uploadify({
+        'formData'      : {'img_type' : 'user'},
         'swf': '/web/plugin/uploadify/uploadify.swf',
-        'uploader': '/web/plugin/uploadify/uploadify.php',
+        'uploader': 'http://s1.download.stream.djscdn.com/upload_image',
         'fileTypeExts': '*.jpg; *.png; *.gif',
         'onUploadSuccess': function (file, data, response) {
             var obj = JSON.parse(data);
             if (obj.status == 200) {
-                $('#priavatar').val(obj.file.path);
-                $('#previewavatar').attr('src', obj.file.path);
+                $('#priavatar').val(obj.path[0]);
+                $('#previewavatar').attr('src', obj.path[0]);
                 $('#previewavatar').fadeIn();
             } else {
                 alert(obj.mss);

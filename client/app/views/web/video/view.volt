@@ -130,12 +130,19 @@
                                     HTML5 video</a></p>
                         </video>
                         <script>
-                            /*videojs('videodj', {
-                             plugins: {
-                             resolutions: true
-                             }
-                             });*/
-                            videojs('videodj').videoJsResolutionSwitcher();
+                            var videoDjPlayer = videojs('videodj', {
+                                plugins: {
+                                    videoJsResolutionSwitcher: {
+                                        default: 'high',
+                                    },
+                                }
+                            });
+                            // videojs('videodj').videoJsResolutionSwitcher({
+                            //     default: '240',
+                            //     resolutionchange: function (evt) {
+                            //         console.log(evt);
+                            //     }
+                            // });
                         </script>
                     {% endif %}
                     <!--End-video-->
@@ -492,13 +499,14 @@
     $(document).ready(function () {
         {% if object.link_video_360 %}
         //set selected quality default is 360p
-        $('li.vjs-menu-item').attr('class', 'vjs-menu-item');
-        $('li.vjs-menu-item:contains("360p")').attr('class', 'vjs-menu-item vjs-selected');
+        // $('li.vjs-menu-item').attr('class', 'vjs-menu-item');
+        // $('li.vjs-menu-item:contains("360p")').attr('class', 'vjs-menu-item vjs-selected');
         {% endif %}
         var heightlyric = $('#divLyric').height();
         if (heightlyric < 255)   $('#seeMoreLyric').hide();
         $('#hideMoreLyric').hide();
         loadComment();
+        videoPlayerSetDefault();
     });
     function showFormAddPlaylist() {
         $('#my-playlist-box').show();

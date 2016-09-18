@@ -169,7 +169,7 @@ class MediarequireController extends ControllerBase
                 $postvalue['duration'] = $duration;
             }
             #Avatar + Status
-            $priavatar = $this->post_file_to_array();
+            $priavatar = $this->post_file_to_array($postvalue['type']);
             if ($priavatar != null) $postvalue['priavatar'] = get_client_static_dir() . $priavatar;
             $postvalue['priavatar'] = $this->getShortenPathImage($postvalue['priavatar']);
 

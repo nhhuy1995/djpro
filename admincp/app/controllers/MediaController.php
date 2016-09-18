@@ -197,7 +197,7 @@ class MediaController extends ControllerBase
             }
 
             #Avatar + Status
-            $priavatar = $this->post_file_to_array();
+            $priavatar = $this->post_file_to_array($postvalue['type']);
             if (empty($priavatar))
                 $priavatar = $this->request->getPost('gen_priavatar');
 

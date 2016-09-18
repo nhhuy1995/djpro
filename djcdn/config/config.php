@@ -21,7 +21,9 @@ return new \Phalcon\Config(array(
         'viewsDir'       => APP_PATH . '/views/',
         'serviceDir'     => APP_PATH . '/service/',
         'baseUri'        => '/',
-        'uploadDir'      => APP_PATH . '/public/media'
+        'uploadDir'      => APP_PATH . '/public/media',
+        'uploadImageDir' => APP_PATH . '/public/media/picture',
+        'imageType'      => array('user', 'artist', 'video', 'playlist', 'album', 'topic')
     ),
 
     'web_database' => array(

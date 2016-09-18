@@ -81,7 +81,7 @@ class UsersController extends ControllerBase
             $postvalue['month'] = intval($postvalue['month']);
             $postvalue['year'] = intval($postvalue['year']);
             #Avatar
-            $priavatar = $this->post_file_to_array();
+            $priavatar = $this->post_file_to_array('user');
             if (!strlen($postvalue['priavatar']) && $priavatar != null) $postvalue['priavatar'] = $priavatar;
             $postvalue['priavatar'] = 'http://dj.pro.vn/web/'.$postvalue['priavatar'];
             $postvalue['priavatar'] = $this->getShortenPathImage($postvalue['priavatar']);

@@ -98,7 +98,7 @@ class ArtistController extends ControllerBase
             #Avatar
             $postvalue['status'] = intval($postvalue['status']);
             $postvalue['description'] = htmlspecialchars($postvalue['description']);
-            $priavatar = $this->post_file_to_array(true);
+            $priavatar = $this->post_file_to_array('artist', true);
             if (!strlen($postvalue['priavatar']) && $priavatar['priavatar'] != null) {
                 $postvalue['priavatar'] = $priavatar['priavatar'];
                 $postvalue['priavatar'] = $this->getShortenPathImage($postvalue['priavatar']);

@@ -170,7 +170,7 @@ class AlbumController extends ControllerBase
             }
 
             #Avatar
-            $priavatar = $this->post_file_to_array(true);
+            $priavatar = $this->post_file_to_array($postvalue['type'], true);
 
             if (!strlen($postvalue['priavatar']) && $priavatar['priavatar'] != null) {
                 $postvalue['priavatar'] = $priavatar['priavatar'];

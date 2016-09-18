@@ -144,6 +144,45 @@ function jPlayerPlaylistSetDefault(playlistPlayer) {
 
 }
 
+function videoPlayerSetDefault() {
+    var muted = Cookies.get('video-player-muted');
+    var videoDjPlayer = videojs('videodj');
+    // if (typeof muted == 'string' && muted == 'yes')
+        // $("#jquery_jplayer").jPlayer("mute", true);
+
+    var volume = Cookies.get('video-player-volume');
+    if (volume !== undefined) {
+        videoDjPlayer.volume(volume);
+    }
+    videoDjPlayer.on('volumechange', function(){
+        Cookies.set('video-player-volume', videoDjPlayer.volume(), {expires: 7});
+    });
+
+    videoDjPlayer.on('resolutionchange', function(evt, res) {
+        Cookies.set('video-player-quality', res.label, {expires: 7});
+    });
+    var quality =  Cookies.get('video-player-quality');
+    
+    if (typeof quality == 'string') {
+        $('li.vjs-menu-item').attr('class', 'vjs-menu-item');
+        $('li.vjs-menu-item:contains("' + quality + '")').click();
+        
+        // if (audioRrl != undefined) {
+        //     $('.media_quality_select').removeAttr('style');
+        //     qualityElem.attr('style','color: #B302CB');
+
+        //     if (quality == '32')
+        //         $("#jquery_jplayer").jPlayer("setMedia", {
+        //             m4a: audioRrl
+        //         });
+        //     else
+        //         $("#jquery_jplayer").jPlayer("setMedia", {
+        //             mp3: audioRrl
+        //         });
+        // }
+    }
+}
+
 function addParameterToUrl(url, parameterName, parameterValue, atStart/*Add param before others*/){
     replaceDuplicates = true;
     if(url.indexOf('#') > 0){

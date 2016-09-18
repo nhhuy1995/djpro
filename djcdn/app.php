@@ -76,7 +76,6 @@ $app->post('/upload_media', function() use ($app) {
 							$result['avatar_small'] = getMediaUrl($newPathSmallAvatarFile);
 						}
 						$result['path'][] = getMediaUrl($newPathFile);
-						$result['cmd'] = $commandConvert;
 					};
 				}
 
@@ -185,14 +184,6 @@ $app->get('/test_upload_youtube', function() use ($app) {
 });
 
 
-/**
- * Not found handler
- */
-$app->notFound(function () use ($app) {
-    $app->response->setStatusCode(404, "Not Found")->sendHeaders();
-    echo $app['view']->render('404');
-});
-
 $app->get('/download_media', function() use ($app) {
 	$config = $app->config;
 	$quality = $this->request->get('quality');
@@ -221,4 +212,66 @@ $app->get('/download_media', function() use ($app) {
     	echo "File not Found";
     }
 
+});
+
+$app->post('/upload_image', function() use ($app) {
+
+	$result = array(
+		'status' => 404,
+		'message' => 'System error. Please try again later'
+	);
+	try {
+		if ($app->request->hasFiles()) {
+			$uploadDir = $app->config->application->uploadImageDir;
+			$imageType = (array)$app->config->application->imageType;
+			$type = $app->request->getPost('img_type');
+
+			if (!in_array($type, $imageType)) {
+				returnJson($result);
+			}
+
+			foreach ($app->request->getUploadedFiles() as $file) {
+				$isAllow = false;
+			    $fileParts = pathinfo($file->getName());
+				$targetFolder = $uploadDir .  DIRECTORY_SEPARATOR . $type;
+				$targetFolder .= DIRECTORY_SEPARATOR .  date("Y/m_d/");
+				
+				if (in_array($fileParts['extension'], array('jpg', 'jpeg', 'gif', 'png'))) {
+					$isAllow = true;
+				}
+
+				if ($isAllow) {
+					if (!file_exists($targetFolder)) {
+						$mkresult = mkdir($targetFolder, 0775, true);
+					}
+
+					$newFileName = preg_replace('/\s+/', '_', $fileParts['filename']);
+					$newFileName .= '_' . time() . "_" . rand(1000, 9999) ;
+					$newFileName = convertToUtf8($newFileName);
+					$newPathFile = $targetFolder . $newFileName .'.'. $fileParts['extension'];
+					$hasMoveFile = $file->moveTo($newPathFile);
+					if ($hasMoveFile)  {
+						$result['path'][] = getMediaUrl($newPathFile);
+					};
+				}
+
+		    }	
+		    $result['status'] = 200;
+		    $result['message'] = 'Success';
+		} else {
+			$result['message'] = 'File Empty';
+		}
+    } catch( Exception $e) {
+    	$result['message'] = $e->getMessage();
+    }
+
+	returnJson($result);
+});
+
+/**
+ * Not found handler
+ */
+$app->notFound(function () use ($app) {
+    $app->response->setStatusCode(404, "Not Found")->sendHeaders();
+    echo $app['view']->render('404');
 });
