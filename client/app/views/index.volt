@@ -18,6 +18,7 @@
     {{ stylesheet_link("css/app.min.2.css") }}
     {{ stylesheet_link("css/bootstrap-editable.css") }}
     {{ stylesheet_link("css/style.css") }}
+    {{ stylesheet_link("css/ads.css") }}
     {{ stylesheet_link("css/jquery.Jcrop.css") }}
     {{ stylesheet_link("plugin/jquery.select2/css/select2.min.css") }}
     {% if assets.collection('actionCss').count() %}

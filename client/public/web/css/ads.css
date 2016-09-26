@@ -1,0 +1,30 @@
+/*
+.adv_728_ipad {
+    width: 728px;
+    background: #ddd;
+    margin-bottom: 10px;
+    display: none
+}
+
+@media screen and (max-width: 979px) and (min-width: 767px) {
+    .adv_728_ipad {
+        display: block;
+    }
+    .adv_980_desktop {
+        display: none;
+    }
+}
+
+.adv_980_desktop {
+    width: 980px;
+    background: #ddd;
+    margin-bottom: 10px;
+    display: none
+}
+
+@media screen and (max-width: 1920px) and (min-width: 980px) {
+    .adv_980_desktop {
+        display: block
+    }
+}
+*/
