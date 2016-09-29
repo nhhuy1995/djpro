@@ -40,6 +40,8 @@ class ArtistController extends ControllerBase
             'listcategory' => $listcategory,
         ));
         $this->breadCrumbs->addItem(array(), static::$TYPE_ARTIST);
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader('Nghệ sỹ', '', '');
     }
 
@@ -71,6 +73,8 @@ class ArtistController extends ControllerBase
                 'painginfo' => Helper::paginginfo(count($count), $limit, $p),
             ));
             $this->breadCrumbs->addItem($o->toArray(), static::$TYPE_ARTIST);
+
+            $this->view->ads = $this->getAdsSidebarRight();
             $this->view->header = Helper::setHeader($o->name, '', '');
         }
     }
@@ -153,6 +157,8 @@ class ArtistController extends ControllerBase
             'object' => $object,
             'title' => $object->username,
         ));
+
+        $this->view->ads = $this->getAdsSidebarRight();
         $this->view->header = Helper::setHeader($object->username, $object->description, $object->priavatar);
 
     }

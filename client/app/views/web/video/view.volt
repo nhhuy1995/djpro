@@ -152,9 +152,10 @@
 
                         {% if session['_id'] %}
                             <ul class="media-func">
-                                <li><i class="fa fa-plus"></i> <a href="javascript:void(0)"
-                                                                  onclick="showFormAddPlaylist();">Thêm vào</a>
-                                </li>
+                               <!--  <li>
+                                    <i class="fa fa-plus"></i> 
+                                    <a href="javascript:void(0)" onclick="showFormAddPlaylist();">Thêm vào</a>
+                                </li> -->
                                 <li><i class="fa fa-download"></i> <a href="javascript:void(0)" data-toggle="modal" data-target="#down-video">Tải
                                         về</a>
                                 </li>
@@ -191,9 +192,10 @@
                             </ul>
                         {% else %}
                             <ul class="media-func ">
-                                <li class="main-nav"><i class="fa fa-plus"></i> <a class="cd-signin"
-                                                                                   href="javascript:void(0)">Thêm vào
-                                    </a></li>
+                                <!-- <li class="main-nav">
+                                    <i class="fa fa-plus"></i>
+                                    <a class="cd-signin"href="javascript:void(0)">Thêm vào</a>
+                                </li> -->
                                 <li><i class="fa fa-download"></i> <a href="javascript:void(0)" data-toggle="modal" data-target="#down-video">Tải
                                         về</a>
                                 </li>

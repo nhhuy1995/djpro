@@ -2,6 +2,8 @@
 	RewriteEngine on
 		RewriteRule ^soundcloud/([0-9]+).mp3$ http://api.soundcloud.com/tracks/$1/stream?client_id=15d2ec16e436db90303c6438ead51450 [L]
     	RewriteRule ^zippyshare/(.*)/([a-zA-Z0-9]+).(.*)$ http://$1/music/$2/0/file.$3 [L]
+	RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+	RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 	RewriteRule  ^$ public/    [L]
 	RewriteRule  (.*) public/$1 [L]
 </IfModule>
