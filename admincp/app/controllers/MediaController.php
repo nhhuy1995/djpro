@@ -139,7 +139,7 @@ class MediaController extends ControllerBase
             $id = $this->request->getPost('id');
             $uinfo = (array)$this->session->get("uinfo");
             ##Process
-            $postvalue = Helper::post_to_array("name,description,category,mediaurl,content,type,status,view,like,replay,spamflag,artist,ishot,priavatar,is_convert_quality,gen_priavatar");
+            $postvalue = Helper::post_to_array("name,description,category,mediaurl,content,type,status,view,like,replay,spamflag,artist,ishot,priavatar,is_convert_quality,gen_priavatar,use_convert_gen_tool");
             $postvalueVid = Helper::post_to_array("link_video_1080,link_video_720,link_video_480,link_video_360,link_video_240,link_video_144");
             $postvalueAud = Helper::post_to_array("media_link_320k,media_link_128k,media_link_64k");
             $postvalue = $postvalue + $postvalueVid + $postvalueAud;
@@ -170,6 +170,7 @@ class MediaController extends ControllerBase
                 $postvalue['_id'] = strval(strtotime("now"));
             }
 
+            $useOwnTool = !empty($postvalue['use_convert_gen_tool']);
             ## Get duration if type is video to display in web
             if ($postvalue['type'] == "video" && strlen($postvalue['mediaurl'])) {
                 $parseUrl = parse_url($postvalue['mediaurl']);
@@ -179,7 +180,7 @@ class MediaController extends ControllerBase
                     $duration = $youtubeApi->getVideoLength($urlFirstVideo);
                     if (!isset($duration) || !$duration) $duration = 0;
                 } else {
-                    if ($this->_isFromStreamServer($postvalue['mediaurl']) && empty($postvalue['is_convert_quality'])) {
+                    if ($this->_isFromStreamServer($postvalue['mediaurl']) && empty($postvalue['is_convert_quality']) && $useOwnTool) {
                         // $mediaUrl = $this->_getMediaLocalpath($postvalue['mediaurl']);
                         $mediaUrl = $postvalue['mediaurl'];
                         $jobClient = new SendWorkload();
@@ -215,7 +216,7 @@ class MediaController extends ControllerBase
             }
 
             if (empty($postvalue['is_convert_quality']) && defined('HAS_RABBIT_MQ')) {
-                if ($this->_isFromStreamServer($postvalue['mediaurl']) && $postvalue['type'] === "audio") {
+                if ($this->_isFromStreamServer($postvalue['mediaurl']) && $postvalue['type'] === "audio" && $useOwnTool) {
                     // $mediaUrl = $this->_getMediaLocalpath($postvalue['mediaurl']);
                     $mediaUrl = $postvalue['mediaurl'];
                     $artistNames = array();

@@ -473,6 +473,10 @@
                         </ul>
 
                     </div>
+                    <div class="adv-300 div2">
+                        {{ ads.MUSIC_PLAY_DESKTOP_ABOVE_SUGGEST['current_content'] }}
+                    </div>
+
                     <div class="sidebar">
                         <h2 class="heading">Có thể bạn muốn nghe</h2>
 

@@ -83,6 +83,16 @@
                                         </div>
                                     </div>
 
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="1" name="use_convert_gen_tool">
+                                                    <i class="input-helper"></i>Có sử dụng tool convert hoặc gen video</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="form-group fg-float hideon_block">
                                         <div class="fg-line mg-bt-30">
                                             <label class="fg-label">Tên nghệ sĩ</label>

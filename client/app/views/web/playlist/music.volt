@@ -104,7 +104,10 @@
                             }
                             changeQuality(".media_quality_select[data-media-type='" + quality + "']", data);
                             var currentUrl = window.location.href;
-                            var newUrl = addParameterToUrl(currentUrl, 'st', indexSong + 1, false);
+                            if (indexSong > 0)
+                                var newUrl = addParameterToUrl(currentUrl, 'st', indexSong + 1, false);
+                            else 
+                                var newUrl = removeURLParameter(currentUrl, 'st');
                             window.history.replaceState(null, null, newUrl);
                         } else {
                             alert(re.msg);
