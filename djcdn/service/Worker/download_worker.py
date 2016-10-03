@@ -164,6 +164,7 @@ class DownloadWorker:
 	def _standard_command(self):
 		self.core_command[3] = os.path.join(
 			appConfig['mediaDir'],
+			'yt_dl',
 			self.core_command[3]
 		)
 		self.core_command[1] = self.params['video_type']
