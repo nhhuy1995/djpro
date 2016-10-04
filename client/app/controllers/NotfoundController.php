@@ -11,6 +11,7 @@ class NotfoundController extends ControllerBase
         $this->response->setStatusCode(404, 'Not Found');
 //        $this->view->setRenderLevel(View::LEVEL_ACTION_VIEW);
         // $this->view->disableLevel(View::LEVEL_MAIN_LAYOUT);
+
         $this->view->header = Helper::setHeader("Không tìm thấy trang");
     }
 }

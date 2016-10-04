@@ -134,7 +134,6 @@ $di->set(
             "dispatch:beforeDispatch",
             function($event, $dispatcher, $exception) {
                 $matchedRoute = \Phalcon\DI::getDefault()->get('router')->getMatchedRoute();
-
                 if (!$matchedRoute && $dispatcher->getControllerName() != 'notfound') {
                     $dispatcher->forward(array(
                         'controller' => 'notfound',
