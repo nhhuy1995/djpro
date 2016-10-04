@@ -171,6 +171,14 @@ class MediaController extends ControllerBase
             }
 
             $useOwnTool = !empty($postvalue['use_convert_gen_tool']);
+            $mediaLinksType = array (
+                "link_video_1080","link_video_720",
+                "link_video_480","link_video_360",
+                "link_video_240","link_video_144",
+                "media_link_320k","media_link_128k","media_link_64k"
+            );
+            $unsetValue = array();
+
             ## Get duration if type is video to display in web
             if ($postvalue['type'] == "video" && strlen($postvalue['mediaurl'])) {
                 $parseUrl = parse_url($postvalue['mediaurl']);
@@ -182,6 +190,11 @@ class MediaController extends ControllerBase
                 } else {
                     if ($this->_isFromStreamServer($postvalue['mediaurl']) && empty($postvalue['is_convert_quality']) && $useOwnTool) {
                         // $mediaUrl = $this->_getMediaLocalpath($postvalue['mediaurl']);
+                        $unsetValue = array_fill_keys($mediaLinksType, true);
+                        foreach ($mediaLinksType as $key => $linkType) {
+                            unset($postvalue[$linkType]);
+                        }
+
                         $mediaUrl = $postvalue['mediaurl'];
                         $jobClient = new SendWorkload();
                         $jobClient->pushVideoToYoutube(array(
@@ -218,6 +231,11 @@ class MediaController extends ControllerBase
             if (empty($postvalue['is_convert_quality']) && defined('HAS_RABBIT_MQ')) {
                 if ($this->_isFromStreamServer($postvalue['mediaurl']) && $postvalue['type'] === "audio" && $useOwnTool) {
                     // $mediaUrl = $this->_getMediaLocalpath($postvalue['mediaurl']);
+                    $unsetValue = array_fill_keys($mediaLinksType, true);
+                    foreach ($mediaLinksType as $key => $linkType) {
+                        unset($postvalue[$linkType]);
+                    }
+                    
                     $mediaUrl = $postvalue['mediaurl'];
                     $artistNames = array();
                     if (empty($postvalue['artist']))
@@ -247,7 +265,16 @@ class MediaController extends ControllerBase
                 Media::insertDocument($postvalue);
                 $this->flash->success($this->getLanguage()->insert_success);
             } else {
-                Media::updateDocument(array('_id' => $id), array('$set' => $postvalue, '$push' => array("usermodify" => array("uid" => $uinfo['_id'], "datecreate" => intval(strtotime("now"))))));
+                Media::updateDocument(
+                    array('_id' => $id), 
+                    array(
+                        '$set' => $postvalue,
+                        '$unset' => $unsetValue
+                        // '$push' => array(
+                        //     "usermodify" => array("uid" => $uinfo['_id'], "datecreate" => intval(strtotime("now")))
+                        // )
+                    )
+                );
                 $this->flash->success($this->getLanguage()->update_success);
             }
 

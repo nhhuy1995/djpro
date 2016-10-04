@@ -115,6 +115,10 @@ class PlaylistController extends ControllerBase
                     $item['listartistname'] = $artistName;
                 }
                 ##check link default
+                // Get Sym link media
+                $object = Media::getSymLinkMedia((object) $item);
+                $item = (array) $object;
+
                 if (isset($item['media_link_64k'])) $media_url = $item['media_link_64k'];
                 else $media_url = $item['media_link_64k'];
                 $item["direct_media_url"] = $media_url;

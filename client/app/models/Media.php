@@ -87,4 +87,49 @@ class Media extends BaseCollection
         }
         return $data;
     }
+
+    public static function getSymLinkMedia($media) {
+        $mediaLinksType = array (
+            "link_video_1080","link_video_720",
+            "link_video_480","link_video_360",
+            "link_video_240","link_video_144",
+            "media_link_320k","media_link_128k","media_link_64k"
+        );
+        foreach ($mediaLinksType as $key => $type) {
+            if ($media->$type) 
+                $media->$type = Media::_getSymLinkForLink($media->$type);
+        }
+        return $media;
+    }
+
+    public static function _getSymLinkForLink($mediaLink)
+    {
+        preg_match('(media/[0-9\/_]+/song)', $mediaLink, $reg_result);
+        if ($reg_result) {
+            $key_secret = 'DJ_SECRET';
+            $prefix_folder = 'media_symb';
+
+            $seperators = array('-', '_', '/');
+            $rand_sp = $seperators[array_rand($seperators)];
+            $format = join($rand_sp, array('d', 'm', 'Y'));
+            $symbolName = $reg_result[0].date($format).$key_secret;
+            $symbolLink = $prefix_folder . '/' . md5($symbolName);
+            $mediaLink = preg_replace('(media/[0-9\/_]+/song)', $symbolLink, $mediaLink);
+            return $mediaLink;
+        }
+
+        preg_match('(media/yt_dl/[a-zA-Z0-9-_]+)', $mediaLink, $reg_result);
+        if ($reg_result) {
+            $key_secret = 'DJ_SECRET';
+            $prefix_folder = 'media_symb/yt_dl';
+
+            $seperators = array('-', '_', '/');
+            $rand_sp = $seperators[array_rand($seperators)];
+            $format = join($rand_sp, array('d', 'm', 'Y'));
+            $symbolName = $reg_result[0].date($format).$key_secret;
+            $symbolLink = $prefix_folder . '/' . md5($symbolName);
+            $mediaLink = preg_replace('(media/yt_dl/[a-zA-Z0-9-_]+)', $symbolLink, $mediaLink);
+            return $mediaLink;
+        }
+    }
 }

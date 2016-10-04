@@ -1,3 +1,7 @@
 * * * * * /usr/local/bin/python2.7 /home/djcdn/public_html/service/Worker/cron_push_video.py
 
 * * * * * /usr/local/bin/python2.7 /home/djcdn/public_html/service/Worker/cron_push_audio.py
+
+0 0 * * * /usr/local/bin/python2.7 /home/djcdn/public_html/service/Worker/cron_change_link.py change
+
+0 1 * * * /usr/local/bin/python2.7 /home/djcdn/public_html/service/Worker/cron_change_link.py clean

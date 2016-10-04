@@ -83,8 +83,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="form-group fg-float">
+                                        <div class="">
                                             <div class="checkbox">
                                                 <label>
                                                     <input type="checkbox" value="1" name="use_convert_gen_tool">

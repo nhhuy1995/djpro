@@ -79,7 +79,11 @@ class IncomingController extends ControllerBase
     public function getlyricAction()
     {
         $id = $this->request->get('id');
-        $object = (array)Media::findById($id);
+        $object = Media::findById($id);
+        // Get Sym link media
+        Media::getSymLinkMedia($object);
+        $object = (array)$object;
+
         $object['link'] = Makelink::link_view_article_music($object['name'], $object['_id']);
         $object["userinfo"] = Users::getUserById($object['usercreate']);
         if ($object) {

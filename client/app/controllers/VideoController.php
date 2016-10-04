@@ -147,6 +147,8 @@ class VideoController extends ControllerBase
         //check link video
         $checklink = Helper::contains('https://www.youtube', $o->mediaurl);
         RankingArticle::increaseActionNumber("view", $o->_id, $o->type);
+        // Get Sym link media
+        Media::getSymLinkMedia($o);
         ##breadcrumb
         $this->breadCrumbs->addListItems($listCategory,static::$TYPE_VIDEO);
         $this->view->setVars(array(

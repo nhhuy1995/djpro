@@ -107,6 +107,9 @@ class MusicController extends ControllerBase
             $o->is_role = $usercreateInfo->is_role;
         }
 
+        // Get Sym link media
+        Media::getSymLinkMedia($o);
+
         $o->link = Makelink::link_view_article_music($o->name, $o->_id);
         if (isset($o->media_link_64k)) $media_url = $o->media_link_64k;
         else $media_url = $o->direct_media_url;
