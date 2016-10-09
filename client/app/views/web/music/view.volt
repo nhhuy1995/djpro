@@ -71,6 +71,7 @@
 
     <div class="bgclr"></div>
     <div class="bg-cmmusic">
+        {% include 'layouts/ads_top.volt' %}
         <div class="container">
             {% include '/layouts/breadcrumb.volt' %}
             {#<ul class="breadcrumbs">

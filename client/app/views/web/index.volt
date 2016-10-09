@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="/web/skins/login.css"/>
     <link rel="stylesheet" href="/web/skins/tabs.css"/>
     <link rel="stylesheet" href="/web/css/style.css"/>
+    <link rel="stylesheet" href="/web/css/ads.css"/>
     <link rel="stylesheet" href="/web/skins/jplayer.css"/>
     <link rel="stylesheet" href="/web/plugin/jquery.select2/css/select2.min.css"/>
     {#<link rel="stylesheet"  href="/web/playlist/jplayer.skin.css" type="text/css" />#}

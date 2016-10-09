@@ -1,6 +1,7 @@
 {% include 'layouts/header.volt' %}
 <div id="content">
     <div class="bg-cmmusic">
+        {% include 'layouts/ads_top.volt' %}
         <div class="container">
             <ul class="breadcrumbs">
                 <li><a href="/"><i class="fa fa-home fa-lg"></i></a></li>

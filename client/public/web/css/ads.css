@@ -28,3 +28,16 @@
     }
 }
 */
+.adv_980_desktop {
+    width: 980px;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin: auto;
+    display: none
+}
+
+@media screen and (max-width: 1920px) and (min-width: 980px) {
+    .adv_980_desktop {
+        display: block
+    }
+}
