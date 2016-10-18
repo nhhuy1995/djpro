@@ -67,6 +67,8 @@ class Ads extends BaseCollection {
     	return $this->getAdsContents(
             array(
                 $this->_position_ads['HOME_DESKTOP_TOP'],
+                $this->_position_ads['HOME_TABLET_TOP'],
+                $this->_position_ads['HOME_MOBILE_TOP'],
                 $this->_position_ads['HOME_DESKTOP_RIGHT_1'],
                 $this->_position_ads['HOME_DESKTOP_RIGHT_2'],
                 $this->_position_ads['HOME_DESKTOP_RIGHT_3'],

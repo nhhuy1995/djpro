@@ -1,3 +1,4 @@
+{% include 'layouts/ads_top.volt' %}
 <ul class="breadcrumbs">
     <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
         <a href="/" itemprop="url">

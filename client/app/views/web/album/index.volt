@@ -1,7 +1,7 @@
 {% include 'layouts/header.volt' %}
 <div id="content">
     <div class="bg-cmmusic">
-        {% include 'layouts/ads_top.volt' %}
+        {#{% include 'layouts/ads_top.volt' %}#}
         <div class="container">
             {% include 'layouts/breadcrumb.volt' %}
         </div>
