@@ -204,7 +204,13 @@ $app->get('/download_media', function() use ($app) {
     
     if ($media) {
     	$absoluteFilePath = getMediaPath($media[$quality]);
+    	$absoluteFilePath = getSymLinkForMedia($absoluteFilePath);
+    	
     	if (file_exists($absoluteFilePath)) {
+    		$cursor->update(
+    			array("_id" => $at_id),
+    			array('$inc' => array('download' => +1))
+    		);
     		header('X-Sendfile: ' . $absoluteFilePath);
     		header('Content-Disposition: attachment; filename="' . basename($absoluteFilePath) . '"');
     	} else {
