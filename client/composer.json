@@ -1,5 +1,5 @@
 {
   "require": {
-    "google/apiclient": "1.0.*@beta"
+    "swiftmailer/swiftmailer": ">=4.2.0,~5.0"
   }
 }

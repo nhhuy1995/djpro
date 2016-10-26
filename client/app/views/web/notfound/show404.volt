@@ -1,4 +1,7 @@
-<section class="error-wrap">
+{% include 'layouts/header.volt' %}
+<div id="content">
+    <div class="bg-cmmusic1">
+<section class="error-wrap" style="margin-top:10px; ">
     <div class="container">
 
         <div class="error">
@@ -39,3 +42,7 @@
         }
     }
 </script>
+    </div>
+</div>
+
+{% include 'layouts/footer.volt' %}

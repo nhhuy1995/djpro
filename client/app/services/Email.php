@@ -7,10 +7,10 @@ class Email extends Component
 {
 
     const MAIL_ADDRESS = "djpro@gmail.com";
-    protected static $USERNAME = "no-reply@very.vn";
-    protected static $PASSWORD = "GhFgFfHhDFgF";
-//    protected static $USERNAME = "noreply-blogradio@vnnplus.vn";
-//    protected static $PASSWORD = "hoicaigi!@#";
+//    protected static $USERNAME = "no-reply@very.vn";
+//    protected static $PASSWORD = "GhFgFfHhDFgF";
+    protected static $USERNAME = "noreply-blogradio@vnnplus.vn";
+    protected static $PASSWORD = "hoicaigi!@#";
 
     /*public static function sendMail($subject, $address, $content)
     {
@@ -71,7 +71,7 @@ class Email extends Component
             echo 'Message could not be sent.';
             echo 'Mailer Error: ' . $mail->ErrorInfo;
         } else {
-//            echo 'Message has been sent';
+            echo 'Message has been sent';
         }
     }
 }
