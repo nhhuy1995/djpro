@@ -7,10 +7,12 @@ class Email extends Component
 {
 
     const MAIL_ADDRESS = "djpro@gmail.com";
-//    protected static $USERNAME = "no-reply@very.vn";
-//    protected static $PASSWORD = "GhFgFfHhDFgF";
-    protected static $USERNAME = "noreply-blogradio@vnnplus.vn";
-    protected static $PASSWORD = "hoicaigi!@#";
+    // protected static $USERNAME = "no-reply@very.vn";
+    // protected static $PASSWORD = "GhFgFfHhDFgF";
+    // protected static $USERNAME = "noreply-blogradio@vnnplus.vn";
+    // protected static $PASSWORD = "hoicaigi!@#";
+    protected static $USERNAME = "hungln.gamudaland@gmail.com";
+    protected static $PASSWORD = "25072004";
 
     /*public static function sendMail($subject, $address, $content)
     {
@@ -53,11 +55,13 @@ class Email extends Component
 
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+        $mail->IsSMTP(); 
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
         $mail->Username = static::$USERNAME;                 // SMTP username
         $mail->Password = static::$PASSWORD;                           // SMTP password
-        $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-        $mail->Port = 465;                                    // TCP port to connect to
+        $mail->SMTPSecure = 'tsl';                            // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 465;           
+        $mail->SMTPDebug  = 1;                         // TCP port to connect to
 
         $mail->setFrom(static::MAIL_ADDRESS, "DjPro");
         $mail->addAddress($to);
@@ -74,4 +78,5 @@ class Email extends Component
             echo 'Message has been sent';
         }
     }
+
 }

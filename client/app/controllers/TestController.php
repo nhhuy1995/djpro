@@ -1,5 +1,8 @@
 <?php
 namespace DjClient\Controller;
+
+use DjClient\Services\Email;
+
 class TestController extends ControllerBase
 {
     public function indexAction()
@@ -8,6 +11,16 @@ class TestController extends ControllerBase
 
         $data = implode($chars,',');
 //        echo $data;die(123);
+    }
+
+    public function mailAction() {
+    	Email::sendtestAction();die;
+    	// echo !extension_loaded('openssl')?"Not Available":"Available";die;
+    	$email = 'lenhamhung.pfiev@gmail.com';
+    	$subject = "Lấy lại mật khẩu Dj.pro.vn";
+        $content = "<a href='http://dj.pro.vn/khoi-phuc-mat-khau.html?token=$token_key'>Click vào đây để lấy lại mật khẩu.</a>";
+        Email::sendMail($subject, $email, $content);
+        echo 'Success';die;
     }
 
 }
