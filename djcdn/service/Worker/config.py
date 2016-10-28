@@ -27,6 +27,7 @@ rabbitMq = {
 
 appConfig = {
 	'mediaDir' : '/home/djcdn/public_html/public/media',
+	'mediaYtDir' : '/home/djcdn/public_html/public/media/yt_dl',
 	'uploadUrl' : 'http://s1.download.stream.djscdn.com/media'
 }
 

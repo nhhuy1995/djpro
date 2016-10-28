@@ -163,7 +163,7 @@ class DownloadWorker:
 
 	def _standard_command(self):
 		self.core_command[3] = os.path.join(
-			appConfig['mediaDir'],
+			appConfig['mediaYtDir'],
 			'yt_dl',
 			self.core_command[3]
 		)

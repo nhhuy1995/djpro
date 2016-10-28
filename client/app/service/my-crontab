@@ -1,0 +1,1 @@
+00 00 * * * /usr/bin/php /home/djclient/public_html/app/service/CronTab.php
