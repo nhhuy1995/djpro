@@ -158,32 +158,32 @@ $app->post('/upload_youtupe', function() use ($app) {
 	returnJson($result);
 });
 
-$app->get('/test_upload_youtube', function() use ($app) {
-	// $result = array(
-	// 	'status' => 404,
-	// 	'message' => 'System error. Please try again later'
-	// );
-	// $fileUrl = $app->request->getPost('media_url');
-	// $mid = $app->request->getPost('mid');
+// $app->get('/test_upload_youtube', function() use ($app) {
+// 	// $result = array(
+// 	// 	'status' => 404,
+// 	// 	'message' => 'System error. Please try again later'
+// 	// );
+// 	// $fileUrl = $app->request->getPost('media_url');
+// 	// $mid = $app->request->getPost('mid');
 
-	// if (empty($mid) || empty($filePath)) {
-	// 	$filePath = getMediaPath($fileUrl);
-	// 	if (file_exists($filePath)) {
-			// $jobClient = new SendWorkload();
-			// $jobClient->pushVideoUpload(array(
-			// 	"file_path" => '/home/nhung-phat-ngon-an-tuong-tai-nhiem-ky-quoc-hoi-khoa-13-1459384747.mp4',
-		 //    	"title" => "Thong diep",
-		 //        "privacy" => "unlisted"
-		 //    ));
-		 //    $result['status'] = 200;
-		 //    $result['message'] = 'Push Success';
-	// 	} else {
-	// 		$result['message'] = 'File not exists';
-	// 	}
-	// }
+// 	// if (empty($mid) || empty($filePath)) {
+// 	// 	$filePath = getMediaPath($fileUrl);
+// 	// 	if (file_exists($filePath)) {
+// 			// $jobClient = new SendWorkload();
+// 			// $jobClient->pushVideoUpload(array(
+// 			// 	"file_path" => '/home/nhung-phat-ngon-an-tuong-tai-nhiem-ky-quoc-hoi-khoa-13-1459384747.mp4',
+// 		 //    	"title" => "Thong diep",
+// 		 //        "privacy" => "unlisted"
+// 		 //    ));
+// 		 //    $result['status'] = 200;
+// 		 //    $result['message'] = 'Push Success';
+// 	// 	} else {
+// 	// 		$result['message'] = 'File not exists';
+// 	// 	}
+// 	// }
 
-	returnJson($result);
-});
+// 	returnJson($result);
+// });
 
 
 $app->get('/download_media', function() use ($app) {
@@ -276,6 +276,43 @@ $app->post('/upload_image', function() use ($app) {
 	returnJson($result);
 });
 
+$app->post('/send_email', function() use ($app) {
+	$subject = $this->request->getPost('subject');
+	$body = $this->request->getPost('body');
+	$to = $this->request->getPost('to');
+
+	if(!$subject || !$body || !$to) {
+		echo 'Message could not be sent because lack of infor';
+		exit;
+	}
+	
+	include __DIR__ . "/vendor/autoload.php";
+    $mail = new PHPMailer();
+    $mail->CharSet = "UTF-8";                              // Enable verbose debug output
+
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+    $mail->IsSMTP(); 
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'no-reply@very.vn';                 // SMTP username
+    $mail->Password = 'GhFgFfHhDFgF';                           // SMTP password
+    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 465;                       // TCP port to connect to
+
+    $mail->setFrom('djpro@gmail.com', "DjPro");
+    $mail->addAddress($to);
+    $mail->isHTML(true);                                  // Set email format to HTML
+
+    $mail->Subject = $subject;
+    $mail->Body = $body;
+//    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    if (!$mail->send()) {
+        echo 'Message could not be sent.';
+        echo 'Mailer Error: ' . $mail->ErrorInfo;
+    } else {
+        echo 'Message has been sent';
+    }
+});
 /**
  * Not found handler
  */

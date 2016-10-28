@@ -7,12 +7,11 @@ class Email extends Component
 {
 
     const MAIL_ADDRESS = "djpro@gmail.com";
-    // protected static $USERNAME = "no-reply@very.vn";
-    // protected static $PASSWORD = "GhFgFfHhDFgF";
+    protected static $USERNAME = "no-reply@very.vn";
+    protected static $PASSWORD = "GhFgFfHhDFgF";
+    protected static $_REMOTE_URL = "http://s1.download.stream.djscdn.com/send_email";
     // protected static $USERNAME = "noreply-blogradio@vnnplus.vn";
     // protected static $PASSWORD = "hoicaigi!@#";
-    protected static $USERNAME = "hungln.gamudaland@gmail.com";
-    protected static $PASSWORD = "25072004";
 
     /*public static function sendMail($subject, $address, $content)
     {
@@ -46,37 +45,62 @@ class Email extends Component
 //        }
 
     }*/
+
+
     public static function sendMail($subject, $to, $body)
     {
-        require '../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
-        $mail = new \PHPMailer();
-        $mail->CharSet = "UTF-8";
-//$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
-        $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-        $mail->IsSMTP(); 
-        $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = static::$USERNAME;                 // SMTP username
-        $mail->Password = static::$PASSWORD;                           // SMTP password
-        $mail->SMTPSecure = 'tsl';                            // Enable TLS encryption, `ssl` also accepted
-        $mail->Port = 465;           
-        $mail->SMTPDebug  = 1;                         // TCP port to connect to
+        $server_output = false;
+        $ch = curl_init();
 
-        $mail->setFrom(static::MAIL_ADDRESS, "DjPro");
-        $mail->addAddress($to);
-        $mail->isHTML(true);                                  // Set email format to HTML
+        $params = array(
+            'subject' => $subject,
+            'to' => $to,
+            'body' => $body
+        );
 
-        $mail->Subject = $subject;
-        $mail->Body = $body;
-//        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        curl_setopt($ch, CURLOPT_URL, static::$_REMOTE_URL);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        if (!empty($params['subject']) && $params['to'] && $params['body']) {
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
 
-        if (!$mail->send()) {
-            echo 'Message could not be sent.';
-            echo 'Mailer Error: ' . $mail->ErrorInfo;
-        } else {
-            echo 'Message has been sent';
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $server_output = curl_exec ($ch);
+
+            curl_close ($ch);
         }
+        var_dump($server_output);die;
+        return $server_output;
+
+//         require '../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
+//         $mail = new \PHPMailer();
+//         $mail->CharSet = "UTF-8";
+// //$mail->SMTPDebug = 3;                               // Enable verbose debug output
+
+//         $mail->isSMTP();                                      // Set mailer to use SMTP
+//         $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+//         $mail->IsSMTP(); 
+//         $mail->SMTPAuth = true;                               // Enable SMTP authentication
+//         $mail->Username = static::$USERNAME;                 // SMTP username
+//         $mail->Password = static::$PASSWORD;                           // SMTP password
+//         $mail->SMTPSecure = 'tsl';                            // Enable TLS encryption, `ssl` also accepted
+//         $mail->Port = 465;           
+//         $mail->SMTPDebug  = 1;                         // TCP port to connect to
+
+//         $mail->setFrom(static::MAIL_ADDRESS, "DjPro");
+//         $mail->addAddress($to);
+//         $mail->isHTML(true);                                  // Set email format to HTML
+
+//         $mail->Subject = $subject;
+//         $mail->Body = $body;
+// //        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+//         if (!$mail->send()) {
+//             echo 'Message could not be sent.';
+//             echo 'Mailer Error: ' . $mail->ErrorInfo;
+//         } else {
+//             echo 'Message has been sent';
+//         }
     }
 
 }

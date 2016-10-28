@@ -14,8 +14,6 @@ class TestController extends ControllerBase
     }
 
     public function mailAction() {
-    	Email::sendtestAction();die;
-    	// echo !extension_loaded('openssl')?"Not Available":"Available";die;
     	$email = 'lenhamhung.pfiev@gmail.com';
     	$subject = "Lấy lại mật khẩu Dj.pro.vn";
         $content = "<a href='http://dj.pro.vn/khoi-phuc-mat-khau.html?token=$token_key'>Click vào đây để lấy lại mật khẩu.</a>";

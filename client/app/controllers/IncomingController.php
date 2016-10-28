@@ -68,7 +68,6 @@ class IncomingController extends ControllerBase
                 );
                 Token_key::insertDocument($newtoken);
                 $dtr = array('status' => 200, 'msg' => "Chúng tôi đã gửi link lấy lại mật khẩu vào email của bạn, vui lòng check lại email");
-                die(123);
             } else {
                 $dtr = array('status' => 300, 'msg' => "Email này ko tồn tại trong hệ thống!");
             }
