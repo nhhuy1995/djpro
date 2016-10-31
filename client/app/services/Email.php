@@ -69,7 +69,7 @@ class Email extends Component
 
             curl_close ($ch);
         }
-        var_dump($server_output);die;
+//        var_dump($server_output);die;
         return $server_output;
 
 //         require '../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
