@@ -5,7 +5,7 @@
         </div>
         <div class="row">
             <div class="col-md-2">
-                <a href="/user/form">
+                <a href="/users/form">
                     <button class="btn btn-success waves-effec" style="margin-left: 25px;"><i
                                 class="md md-add-circle-outline"></i> Thêm mới
                     </button>
