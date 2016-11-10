@@ -90,14 +90,18 @@ class Media extends BaseCollection
 
     public static function getSymLinkMedia($media) {
         $mediaLinksType = array (
+            "direct_media_url",
             "link_video_1080","link_video_720",
             "link_video_480","link_video_360",
             "link_video_240","link_video_144",
             "media_link_320k","media_link_128k","media_link_64k"
         );
         foreach ($mediaLinksType as $key => $type) {
-            if ($media->$type) 
+            if ($media->$type) {
                 $media->$type = Media::_getSymLinkForLink($media->$type);
+                if (!$media->direct_media_url)
+                    $media->direct_media_url = $media->$type;
+            }
         }
         return $media;
     }
