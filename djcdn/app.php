@@ -54,7 +54,7 @@ $app->post('/upload_media', function() use ($app) {
 					if (!file_exists($targetFolder)) {
 						$mkresult = mkdir($targetFolder, 0775, true);
 						// Create symblink for non exists folder
-						exec('python2.7 /home/djcdn/public_html/service/Worker/cron_change_link.py');
+						exec('python2.7 /home/djcdn/public_html/service/Worker/cron_change_link.py change');
 					}
 					if (isset($avatarFolder)) {
 						if (!file_exists($avatarFolder)) {

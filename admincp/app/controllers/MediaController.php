@@ -190,7 +190,7 @@ class MediaController extends ControllerBase
                 } else {
                     if ($this->_isFromStreamServer($postvalue['mediaurl']) && empty($postvalue['is_convert_quality']) && $useOwnTool) {
                         // $mediaUrl = $this->_getMediaLocalpath($postvalue['mediaurl']);
-                        $unsetValue = array_fill_keys($mediaLinksType, true);
+                        $unsetValue = $this->_unsetMediaLink($id);
                         foreach ($mediaLinksType as $key => $linkType) {
                             unset($postvalue[$linkType]);
                         }
@@ -231,7 +231,7 @@ class MediaController extends ControllerBase
             if (empty($postvalue['is_convert_quality']) && defined('HAS_RABBIT_MQ')) {
                 if ($this->_isFromStreamServer($postvalue['mediaurl']) && $postvalue['type'] === "audio" && $useOwnTool) {
                     // $mediaUrl = $this->_getMediaLocalpath($postvalue['mediaurl']);
-                    $unsetValue = array_fill_keys($mediaLinksType, true);
+                    $unsetValue = $this->_unsetMediaLink($id);
                     foreach ($mediaLinksType as $key => $linkType) {
                         unset($postvalue[$linkType]);
                     }
@@ -265,15 +265,18 @@ class MediaController extends ControllerBase
                 Media::insertDocument($postvalue);
                 $this->flash->success($this->getLanguage()->insert_success);
             } else {
+                $updateInfor = array(
+                    '$set' => $postvalue
+                    // '$push' => array(
+                    //     "usermodify" => array("uid" => $uinfo['_id'], "datecreate" => intval(strtotime("now")))
+                    // )
+                );
+                if ($unsetValue)
+                    $updateInfor['$unset'] = $unsetValue;
+                
                 Media::updateDocument(
-                    array('_id' => $id), 
-                    array(
-                        '$set' => $postvalue,
-                        '$unset' => $unsetValue
-                        // '$push' => array(
-                        //     "usermodify" => array("uid" => $uinfo['_id'], "datecreate" => intval(strtotime("now")))
-                        // )
-                    )
+                    array('_id' => $id),
+                    $updateInfor                    
                 );
                 $this->flash->success($this->getLanguage()->update_success);
             }
@@ -307,6 +310,22 @@ class MediaController extends ControllerBase
     protected function _isFromStreamServer($mediaUrl)
     {
         return preg_match('/^(http:\/\/s1\.download\.stream\.djscdn\.com\/media)/', $mediaUrl);
+    }
+
+    protected function _unsetMediaLink($mediaId) {
+        $mediaLinksType = array (
+            "link_video_1080","link_video_720",
+            "link_video_480","link_video_360",
+            "link_video_240","link_video_144",
+            "media_link_320k","media_link_128k","media_link_64k"
+        );
+        $unsetValue = array();
+        $media = Media::findById($mediaId);
+        foreach ($mediaLinksType as $key => $type) {
+            if ($media->$type)
+                $unsetValue[$type] = true;
+        }
+        return $unsetValue;
     }
 
 }
