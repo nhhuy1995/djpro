@@ -91,6 +91,7 @@ class Media extends BaseCollection
     public static function getSymLinkMedia($media) {
         $mediaLinksType = array (
             "direct_media_url",
+            "mediaurl",
             "link_video_1080","link_video_720",
             "link_video_480","link_video_360",
             "link_video_240","link_video_144",
@@ -119,7 +120,6 @@ class Media extends BaseCollection
             $symbolName = $reg_result[0].date($format).$key_secret;
             $symbolLink = $prefix_folder . '/' . md5($symbolName);
             $mediaLink = preg_replace('(media/[0-9\/_]+/song)', $symbolLink, $mediaLink);
-            return $mediaLink;
         }
 
         preg_match('(media/yt_dl/[a-zA-Z0-9-_]+)', $mediaLink, $reg_result);
@@ -133,7 +133,7 @@ class Media extends BaseCollection
             $symbolName = $reg_result[0].date($format).$key_secret;
             $symbolLink = $prefix_folder . '/' . md5($symbolName);
             $mediaLink = preg_replace('(media/yt_dl/[a-zA-Z0-9-_]+)', $symbolLink, $mediaLink);
-            return $mediaLink;
         }
+        return $mediaLink;
     }
 }
