@@ -36,7 +36,7 @@ ul.jp-toggles ul li a:hover{  color:#B302CB !important}
     position: absolute;
     z-index: 0;
     left: 50%;
-    margin-left: -74px;
+    margin-left: -140px; /* half of width */
 }
 .dropOut {
     background:#000;
@@ -137,10 +137,7 @@ http://icomoon.io
     -moz-osx-font-smoothing: grayscale;
 }
 
-.wolf-jplayer-playlist div.jp-audio .jp-click {
-    right: 6px;
-    top: 21px;
-}
+
 .wolf-jplayer-playlist .wolf-jp-song-url .addplaylist, .wolf-jplayer-playlist .wolf-jp-song-url .decu, .wolf-jplayer-playlist div.jp-audio .jp-click {
     font-family: 'FontAwesome';
     speak: none;
@@ -201,8 +198,7 @@ http://icomoon.io
     content: "\e915";
 }
 .wolf-jplayer-playlist div.jp-audio .jp-repeat, .wolf-jplayer-playlist div.jp-audio .jp-repeat-off {
-    right: -18px;
-    top: 31px;
+    right: 46px; top:31px;
 }
 .wolf-jplayer-playlist div.jp-audio .jp-repeat:before, .wolf-jplayer-playlist div.jp-audio .jp-repeat-off:before {
     content: "\e912";
@@ -217,8 +213,7 @@ http://icomoon.io
 
 
 .wolf-jplayer-playlist div.jp-audio .jp-shuffle, .wolf-jplayer-playlist div.jp-audio .jp-shuffle-off {
-    right: 73px;
-    top: 31px;
+    right: 10px; top:31px;
 }
 .wolf-jplayer-playlist div.jp-audio .jp-shuffle:before, .wolf-jplayer-playlist div.jp-audio .jp-shuffle-off:before {
     content: "\e913";
@@ -227,10 +222,9 @@ http://icomoon.io
     display: inline-block;
     position: absolute;
     z-index: 10;
-    margin: 0;
-    color: #fff;
+    margin: 0; color:#fff;
     padding: 0;
-    right: 74px;
+    right: 10px;
     top: 30px;
     font-size: 16px;
 }

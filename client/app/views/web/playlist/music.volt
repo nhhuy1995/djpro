@@ -555,8 +555,8 @@
                                             {% if key == 1 %} {% set cl = 'special-2' %} {% endif %}
                                             {% if key == 2 %} {% set cl = 'special-3' %} {% endif %}
                                             <li>
-                                                <a href="{{ item['link'] }}" title="{{ item['name'] }}"><span
-                                                            class="number {{ cl }}">{{ key+1 }}</span>{{ item['name'] }}
+                                                <span class="number {{ cl }}">{{ key+1 }}</span>
+                                                <a href="{{ item['link'] }}" title="{{ item['name'] }}">{{ item['name'] }}
                                                 </a></li>
                                         {% endfor %}
                                     </ul>

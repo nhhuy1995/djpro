@@ -27,19 +27,7 @@
                             <section id="section-linemove-2"  style="display: block">
                                 <div class="td_heading"><h2><span class="while">Bài hát<i class="fa fa-angle-right"></i></span>
                                     </h2></div>
-                                {% if listmedia %}
-                                    <div data-special-type="app">
-                                        <ul class="listtop">
-                                            {% for key,item in listmedia %}
-                                                <li><a href="{{ item['link'] }}"><span>{{ key+1 }}
-                                                            . </span>{{ item['name'] }}  </a></li>
-                                            {% endfor %}
-                                        </ul>
-                                    </div>
-                                    {% include '/layouts/paging.volt' %}
-                                {% else %}
-                                    <p>Chưa cập nhật!</p>
-                                {% endif %}
+                                {% include '/layouts/cothebanmuonnghe.volt' %}
                             </section>
                         </div>
                         <!-- /content -->

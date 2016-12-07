@@ -27,18 +27,7 @@
                             <section id="section-linemove-1" class="content-current">
                                 <div class="td_heading"><h2><span class="while"><a href="/nhac-cho-duyet.html?t=audio">Bài hát</a> (<span id="clkeyword">{{ countaudio }}</span>)<i class="fa fa-angle-right"></i></span>
                                     </h2></div>
-                                {% if listmedia %}
-                                    <div data-special-type="app">
-                                        <ul class="listtop">
-                                            {% for key,item in listmedia %}
-                                                <li><a href="{{ item['link'] }}" title="{{ item['name'] }}"><span>{{ key+1 }}
-                                                            . </span>{{ item['name'] }}  </a></li>
-                                            {% endfor %}
-                                        </ul>
-                                    </div>
-                                {% else %}
-                                    <p>Chưa cập nhật!</p>
-                                {% endif %}
+                                {% include '/layouts/cothebanmuonnghe.volt' %}
                                 <div class="td_heading"><h2><span class="while"><a href="/nhac-cho-duyet.html?t=playlist">Playlist</a> (<span id="clkeyword">{{ countplaylist }}</span>)<i
                                                     class="fa fa-angle-right"></i></span></h2></div>
                                 {% if listplaylist %}

@@ -133,8 +133,10 @@ ul {
 
 .adv-300-phone {
     margin-bottom: 8px;
-    width: 300px;
-    display: none
+    text-align: center;
+    display: none;
+    position: relative;
+    z-index: 1;
 }
 
 @media screen and (max-width: 480px) and (min-width: 240px) {
